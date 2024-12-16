@@ -1,0 +1,7 @@
+sudo git pull
+
+
+
+Deploy from Rpi
+sudo git commit -a
+sudo git push
