@@ -1,3 +1,7 @@
+body, div {
+    box-sizing: border-box;
+}
+
 #navigation {
  background-color: Yellow;
 }
