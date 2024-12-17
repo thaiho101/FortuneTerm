@@ -1,3 +1,14 @@
+<?php
+// Set Cache-Control to no-cache, no-store, must-revalidate
+header("Cache-Control: no-cache, no-store, must-revalidate");
+
+// Set Pragma to no-cache (for HTTP/1.0 backward compatibility)
+header("Pragma: no-cache");
+
+// Set Expires to a past date to invalidate the cache
+header("Expires: 0");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

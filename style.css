@@ -4,6 +4,7 @@ body, div {
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+	display: block;
 }
 
 /* Navigation Bar */
@@ -18,6 +19,7 @@ body, div {
 /* Bottom Container */
 #bottom {
     color: red;
+	display: flex;
 }
 
 /* Data Change Section */
@@ -29,7 +31,8 @@ body, div {
 }
 
 .insert {
-    background-color: blue; /* Light Red */
+    background-color: red; /* Light Red */
+    color: yellow;
     padding: 10px;
     margin: 5px 0;
 }
@@ -49,7 +52,7 @@ body, div {
 }
 
 .filter {
-    background-color: #E1BEE7; /* Light Purple */
+    background-color: orange; /* Light Purple */
     padding: 10px;
     margin: 5px 0;
 }
