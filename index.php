@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="shoppingCart2.png">
 </head>
 <body>
-    <div id="navigation" style="background-color: #4CAF50; color: white;">Market Cost</div>
+    <div id="navigation">Market Cost</div>
 
     <div id="bottom">
         <div id="dataChange">

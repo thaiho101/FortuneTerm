@@ -1,12 +1,18 @@
 /* General Reset for Margins and Padding */
 body, div {
-    background-color: Blue;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 /* Navigation Bar */
 #navigation {
     background-color: #4CAF50; /* Green */
     color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 /* Bottom Container */
@@ -14,4 +20,63 @@ body, div {
     color: red;
 }
 
+/* Data Change Section */
+#dataChange {
+    background-color: #FFEB3B; /* Yellow */
+    padding: 10px;
+    flex: 1; /* Responsive width */
+    border: 1px solid #ccc;
+}
 
+.insert {
+    background-color: blue; /* Light Red */
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.budget {
+    background-color: #C8E6C9; /* Light Green */
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* Data Analyze Section */
+#dataAnalyze {
+    background-color: #BBDEFB; /* Light Blue */
+    padding: 10px;
+    flex: 2;
+    border: 1px solid #ccc;
+}
+
+.filter {
+    background-color: #E1BEE7; /* Light Purple */
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.header {
+    background-color: #FFE0B2; /* Light Orange */
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.content {
+    background-color: #B3E5FC; /* Light Cyan */
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.totalSummary {
+    background-color: #D7CCC8; /* Light Brown */
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* Graph Section */
+#graph {
+    background-color: #F8BBD0; /* Light Pink */
+    padding: 10px;
+    text-align: center;
+    flex: 1; /* Responsive width */
+    border: 1px solid #ccc;
+}
