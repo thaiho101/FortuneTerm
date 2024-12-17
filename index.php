@@ -27,7 +27,7 @@ header("Expires: 0");
             <div class="insert">Insert
                 <form method='post'>
                     <label for='date' type='text'>Date</label>
-                    <input type='text' name='date'></input>
+                    <input type='datetime' name='date'></input>
                     <br>
                     <label for='store' type='text'>Market</label>
                     <input type='text' name='store'></input>
