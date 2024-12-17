@@ -30,7 +30,7 @@ header("Expires: 0");
                     <input type='date' name='date' id='date' ></input>
                     <br>
                     <label for='store' type='text'>Market</label>
-                    <input type='text' name='store'></input>
+                    <input type='text' name='store' id='store'></input>
                     <br>
                     <label for='fbCost' type='text'>Food & Beverage Cost</label>
                     <input type='text' name='fbCost'></input>
