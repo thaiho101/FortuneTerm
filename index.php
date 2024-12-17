@@ -13,6 +13,30 @@
     </div>
 
     <div id='bottom'>
+        <div id='dataChange'>
+            <div class='insert'>Insert
+            </div>
+
+            <div class='budget'>Budget
+            </div>
+        </div>
+
+        <div id='dataAnalyze'>
+            <div class='filter'>Filter
+            </div>
+            
+            <div class='header'>Header
+            </div>
+
+            <div class='content'>Content
+            </div>
+
+            <div class='totalSummary'>Total
+            </div>
+        </div>
+
+        <div id='graph'>Graph
+        </div>
     </div>
 </body>
 </html>
