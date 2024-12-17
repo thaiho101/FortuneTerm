@@ -24,7 +24,19 @@ header("Expires: 0");
 
     <div id="bottom">
         <div id="dataChange">
-            <div class="insert">Insert</div>
+            <div class="insert">Insert
+                <form method='post'>
+                    <label for='date' type='text'>Date</label>
+                    <input type='text' name='date'></input>
+                    <label for='store' type='text'>Market</label>
+                    <input type='text' name='store'></input>
+                    <label for='fbCost' type='text'>Food & Beverage Cost</label>
+                    <input type='text' name='fbCost'></input>
+                    <label for='otherCost' type='text'>Other Cost</label>
+                    <input type='text' name='otherCost'></input>
+                    <button type='submit' name='insert'></button>
+                </form>
+            </div>
             <div class="budget">Budget</div>
         </div>
 
