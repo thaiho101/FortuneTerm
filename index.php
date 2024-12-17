@@ -28,13 +28,17 @@ header("Expires: 0");
                 <form method='post'>
                     <label for='date' type='text'>Date</label>
                     <input type='text' name='date'></input>
+                    <br>
                     <label for='store' type='text'>Market</label>
                     <input type='text' name='store'></input>
+                    <br>
                     <label for='fbCost' type='text'>Food & Beverage Cost</label>
                     <input type='text' name='fbCost'></input>
+                    <br>
                     <label for='otherCost' type='text'>Other Cost</label>
                     <input type='text' name='otherCost'></input>
-                    <button type='submit' name='insert'></button>
+                    <br>
+                    <button type='submit' name='insert' value='Insert'></button>
                 </form>
             </div>
             <div class="budget">Budget</div>
