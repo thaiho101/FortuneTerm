@@ -17,10 +17,7 @@ body, div {
 
 /* Bottom Container */
 #bottom {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Space between divs */
-    margin: 10px;
+    color: red;
 }
 
 /* Data Change Section */
