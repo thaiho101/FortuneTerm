@@ -51,10 +51,9 @@ label {
     background-color: lime;
     border: 1px solid black;
     padding: 5px;
-    width: 250px; /* Fixed width for inputs */
+    max-width: 100%; /* Đảm bảo không vượt quá khung */
+    box-sizing: border-box; /* Tính cả padding và border vào tổng width */
 }
-
-
 .budget {
     background-color: #C8E6C9; /* Light Green */
     padding: 10px;
