@@ -31,10 +31,27 @@ body, div {
 }
 
 .insert {
-    background-color: red; /* Light Red */
+    background-color: gray; /* Light Red */
     color: yellow;
     padding: 10px;
     margin: 5px 0;
+}
+
+form {
+    display: block;
+}
+
+.insertBox {
+    /* display: flex; */
+    margin-left: 55%;
+}
+
+.insertBox {
+    background-color: lime;
+    /* text-align: right; */
+    right: 0;
+
+
 }
 
 .budget {

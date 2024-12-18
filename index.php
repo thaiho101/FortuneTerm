@@ -26,19 +26,29 @@ header("Expires: 0");
         <div id="dataChange">
             <div class="insert">Insert
                 <form method='post'>
-                    <label for='date' type='text'>Date</label>
-                    <input type='date' name='date' id='date' ></input>
+                    <div class='col'>
+                        <label for='date' type='text'>Date</label>
+                        <input type='date' name='date' id='date' class='insertBox'></input>
+                    </div>
                     <br>
-                    <label for='store' type='text'>Market</label>
-                    <input type='text' name='store' id='store'></input>
+                    <div>
+                        <label for='store' type='text'>Market</label>
+                        <input type='text' name='store' id='store' class='insertBox'></input>
+                    </div>
                     <br>
-                    <label for='fbCost' type='text'>Food & Beverage Cost</label>
-                    <input type='text' name='fbCost'></input>
+                    <div>
+                        <label for='fbCost' type='text'>Food & Beverage Cost</label>
+                        <input type='text' name='fbCost' id='fbCost' class='insertBox'></input>
+                    </div>
                     <br>
-                    <label for='otherCost' type='text'>Other Cost</label>
-                    <input type='text' name='otherCost'></input>
+                    <div>
+                        <label for='otherCost' type='text'>Other Cost</label>
+                        <input type='text' name='otherCost' id='otherCost' class='insertBox'></input>
+                    </div>
                     <br>
-                    <button type='submit' name='insert' value='Insert'></button>
+                    <div>
+                        <button type='submit' name='insert'>Insert</button>
+                    </div>
                 </form>
             </div>
             <div class="budget">Budget</div>
