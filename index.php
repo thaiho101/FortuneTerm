@@ -90,7 +90,7 @@ header("Expires: 0");
                 <table class='headerTable'>
                     <thead>
                         <tr class='headerRow'>
-                            <th class='expand wrapText tdLength'>Day of Week</th>
+                            <th class='expand wrapText tdLength'>Day of     Week</th>
                             <th class='expand tdLength'>Date</th>
                             <th class='expand tdLength'>Store</th>
                             <th class='expand wrapText tdLength'>Food & Beverage Cost</th>
