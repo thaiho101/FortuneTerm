@@ -24,38 +24,44 @@ body, div {
 
 /* Data Change Section */
 #dataChange {
-    background-color: #FFEB3B; /* Yellow */
+    background-color: red; /* Yellow */
     padding: 10px;
     flex: 1; /* Responsive width */
     border: 1px solid #ccc;
+    width: 50%;
+    max-width: 220px;
 }
 
+
+.insert {
+    background-color: lightblue;
+    width: 100%;
+}
 /* Container for each row */
 .form-row {
     display: flex; /* Makes each row a flex container */
-    justify-content: space-between; /* Pushes label to left, input to right */
-    align-items: center; /* Aligns items vertically in the center */
-    margin: 10px 0; /* Adds spacing between rows */
+    justify-content: space-between;
+    margin: 10px 0;
 }
 
 /* Label Styling */
-label {
-    font-size: 16px;
-    color: yellow;
-    width: 150px; /* Consistent width for all labels */
-    text-align: left;
+.insertLabel {
+    color: black;
+    width: 150px;
 }
 
 /* Input Field Styling */
 .insertBox {
     background-color: lime;
-    border: 1px solid black;
-    padding: 5px;
+    text-align: right;
+    border-radius: 4px;
+    width: 50%;
     max-width: 100%; /* Đảm bảo không vượt quá khung */
     box-sizing: border-box; /* Tính cả padding và border vào tổng width */
 }
 .budget {
     background-color: #C8E6C9; /* Light Green */
+    width: 80%;
     padding: 10px;
     margin: 5px 0;
 }
