@@ -24,12 +24,12 @@ body, div {
 
 /* Data Change Section */
 #dataChange {
-    background-color: red; /* Yellow */
+    background-color: gray; /* Yellow */
     padding: 10px;
     flex: 1; /* Responsive width */
     border: 1px solid #ccc;
     width: 50%;
-    max-width: 220px;
+    max-width: 240px;
 }
 
 
@@ -37,7 +37,7 @@ body, div {
     background-color: lightblue;
     width: 100%;
 }
-/* Container for each row */
+
 .form-row {
     display: flex; /* Makes each row a flex container */
     justify-content: space-between;
@@ -59,6 +59,15 @@ body, div {
     max-width: 100%; /* Đảm bảo không vượt quá khung */
     box-sizing: border-box; /* Tính cả padding và border vào tổng width */
 }
+
+.button {
+    margin-left: 70%;
+    border-radius: 4px;
+    border-color: silver;
+    background-image: linear-gradient(white, silver, white);
+
+}
+
 .budget {
     background-color: #C8E6C9; /* Light Green */
     width: 80%;

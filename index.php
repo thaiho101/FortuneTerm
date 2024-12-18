@@ -38,16 +38,16 @@ header("Expires: 0");
 
                     <div class='form-row'>
                         <label for='fbCost' type='text' class='insertLabel'>Food & Beverage Cost</label>
-                        <input type='text' name='fbCost' id='fbCost' class='insertBox'></input>
+                        <input type='number' name='fbCost' id='fbCost' class='insertBox'></input>
                     </div>
 
                     <div class='form-row'>
                         <label for='otherCost' type='text' class='insertLabel'>Other Cost</label>
-                        <input type='text' name='otherCost' id='otherCost' class='insertBox'></input>
+                        <input type='number' name='otherCost' id='otherCost' class='insertBox'></input>
                     </div>
 
                     <div>
-                        <button type='submit' name='insert'>Insert</button>
+                        <button type='submit' name='insert' class='button'>Insert</button>
                     </div>
                 </form>
             </div>
