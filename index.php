@@ -26,22 +26,22 @@ header("Expires: 0");
         <div id="dataChange">
             <div class="insert">Insert
                 <form method='post'>
-                    <div class='col'>
+                    <div class='form-row'>
                         <label for='date' type='text'>Date</label>
                         <input type='date' name='date' id='date' class='insertBox'></input>
                     </div>
                     <br>
-                    <div>
+                    <div class='form-row'>
                         <label for='store' type='text'>Market</label>
                         <input type='text' name='store' id='store' class='insertBox'></input>
                     </div>
                     <br>
-                    <div>
+                    <div class='form-row'>
                         <label for='fbCost' type='text'>Food & Beverage Cost</label>
                         <input type='text' name='fbCost' id='fbCost' class='insertBox'></input>
                     </div>
                     <br>
-                    <div>
+                    <div class='form-row'>
                         <label for='otherCost' type='text'>Other Cost</label>
                         <input type='text' name='otherCost' id='otherCost' class='insertBox'></input>
                     </div>

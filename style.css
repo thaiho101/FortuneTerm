@@ -30,29 +30,30 @@ body, div {
     border: 1px solid #ccc;
 }
 
-.insert {
-    background-color: gray; /* Light Red */
+/* Container for each row */
+.form-row {
+    display: flex; /* Makes each row a flex container */
+    justify-content: space-between; /* Pushes label to left, input to right */
+    align-items: center; /* Aligns items vertically in the center */
+    margin: 10px 0; /* Adds spacing between rows */
+}
+
+/* Label Styling */
+label {
+    font-size: 16px;
     color: yellow;
-    padding: 10px;
-    margin: 5px 0;
+    width: 150px; /* Consistent width for all labels */
+    text-align: left;
 }
 
-form {
-    display: block;
-}
-
-.insertBox {
-    /* display: flex; */
-    margin-left: 55%;
-}
-
+/* Input Field Styling */
 .insertBox {
     background-color: lime;
-    /* text-align: right; */
-    right: 0;
-
-
+    border: 1px solid black;
+    padding: 5px;
+    width: 250px; /* Fixed width for inputs */
 }
+
 
 .budget {
     background-color: #C8E6C9; /* Light Green */
