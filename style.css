@@ -18,14 +18,14 @@ body, div {
 
 /* Bottom Container */
 #bottom {
-    color: red;
+    color: black;
 	display: flex;
+    height: 100vh;
 }
 
 /* Data Change Section */
 #dataChange {
     background-color: gray; /* Yellow */
-    padding: 10px;
     flex: 1; /* Responsive width */
     border: 1px solid #ccc;
     width: 50%;
@@ -36,6 +36,8 @@ body, div {
 .insert {
     background-color: lightblue;
     width: 100%;
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
 .form-row {
@@ -70,9 +72,8 @@ body, div {
 
 .budget {
     background-color: #C8E6C9; /* Light Green */
-    width: 80%;
-    padding: 10px;
-    margin: 5px 0;
+    /* width: 80%; */
+    height: 63.5vh;
 }
 
 /* Data Analyze Section */
@@ -81,24 +82,100 @@ body, div {
     padding: 10px;
     flex: 2;
     border: 1px solid #ccc;
+
 }
 
 .filter {
     background-color: orange; /* Light Purple */
     padding: 10px;
     margin: 5px 0;
+    justify-items: right;
 }
 
 .header {
     background-color: #FFE0B2; /* Light Orange */
-    padding: 10px;
-    margin: 5px 0;
+
+}
+
+.headerTable {
+
+}
+
+.headerRow {
+    background-color: silver;
+    color: black;
+}
+table {
+    width: 100%; /* Ensure the table spans the full container width */
+    table-layout: fixed; /* Enforce equal column widths */
+    border-collapse: collapse; /* Merge borders for cleaner look */
+}
+.expand {
+    text-align: center; /* Center-align text */
+    color: black; /* Set text color to orange */
+    white-space: normal; /* Allow text wrapping */
+    word-wrap: break-word; /* Ensure long words wrap */
+    border: 1px solid black; /* Add a border for clarity */
+}
+
+
+
+.wrapText {
+
 }
 
 .content {
     background-color: #B3E5FC; /* Light Cyan */
-    padding: 10px;
-    margin: 5px 0;
+}
+
+.actionStyle {
+    width: 100px;
+}
+
+.dataEditStyle {
+    text-align: center;
+    width: 48px;
+}
+
+.dataDeleteStyle {
+    text-align: center;
+    width: 48px;
+}
+
+.editSubmitStyle {
+	color: white;
+	border: none;
+	border-radius: 8px;
+	border: white outset 1px;
+	background-color: darkorange;
+}
+
+.editSubmitStyle:hover {
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 8px;
+/*	background-color: gold;*/
+	border: white inset 1px;
+	background-image: linear-gradient(white, darkorange, white);
+}
+
+.deleteSubmitStyle {
+	color: white;
+	border: none;
+	border-radius: 8px;
+	border: white outset 1px;
+	background-color: crimson;
+}
+
+.deleteSubmitStyle:hover {
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 8px;
+/*	background-color: gold;*/
+	border: white inset 1px;
+	background-image: linear-gradient(white, red, white);
 }
 
 .totalSummary {
