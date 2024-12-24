@@ -1,0 +1,104 @@
+#wholePage {
+    font-family: "poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("registerBackground1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#registerPanel {
+    font-family: "poppins", sans-serif;
+    display: block;
+    /* color: red; */
+    max-width: 350px;
+    width: 50%;
+    min-height: 400px;
+    border: solid .2px white;
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+
+    border-left-width: 3px;
+    border-left-color: gray;
+
+    border-bottom-width: 4px;
+    border-bottom-color: gray;
+
+    border-right-width: 1px;
+    border-right-color: silver;
+}
+
+#registerPanel:hover {
+    max-width: 400px;
+    /* width: 50%; */
+    min-height: 450px;
+    transition: 2s;
+    backdrop-filter: blur(2px);
+}
+
+form {
+    /* display: block; */
+}
+
+#registerLabel {
+    /* padding: 15px; */
+    padding-top: 35px;
+    padding-bottom: 30px;
+
+    /* justify-content: center; */
+    text-align: center;
+
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+#firstNameSection, #lastNameSection, #emailSection, #passwordSection, #signUpSection {
+    /* display: flex; */
+    /* margin-left: 10%; */
+    /* padding-bottom: 25px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 13px;
+}
+
+#firstNameSection div input {
+    /* padding-left: 20px; */
+}
+
+.spaceBetween {
+    padding-right: 40px;
+}
+
+.nameLabel {
+    font-weight: bold;
+    color: white;
+}
+
+.emailLabel {
+    padding-right: 75px;
+}
+
+.inputBox {
+    border-radius: 50px;
+    border: solid 1px silver;
+    padding: 10px;
+    width: 95%;
+}
+
+#signUpSection {
+    padding-top: 30px;
+}
+#signUpButton {
+    border-radius: 50px;
+    padding: 10px;
+    width: 50%;
+    border: solid 1px silver;
+}

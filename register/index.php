@@ -3,30 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Market Cost</title>
-    <link rel="stylesheet" href="/secure/style.css">
+    <link rel="stylesheet" href="/register/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/Icon/Moneybag.png">
 </head>
 
-<body>
-    <div>
+<body id='wholePage'>
+    <div id='registerPanel'>
         <form action="" method='post'>
+            <div id='registerLabel'>Sign Up</div>
             <div id='firstNameSection'>
-                <label for='firstName' class='NameLabel'>First Name</label>
-                <input type='text' name='firstName' id='firstName' placeholder="Enter your first name" class='inputBox' required>
+                <div class='spaceBetween'><label for='firstName' class='nameLabel'>First Name</label></div>
+                <div><input type='text' name='firstName' id='firstName' placeholder="Enter your first name" class='inputBox' required></div>
             </div>
             <div id='lastNameSection'>
-                <label for='lastName' class='NameLabel'>Last Name</label>
-                <input type='text' name='lastName' id='lastName' placeholder="Enter your last name" class='inputBox' required>
+                <div class='spaceBetween'>
+                    <label for='lastName' class='nameLabel'>Last Name</label>
+                </div>
+                <div>
+                    <input type='text' name='lastName' id='lastName' placeholder="Enter your last name" class='inputBox' required>
+                </div>
             </div>
             <div id='emailSection'>
-                <label for='email' class='NameLabel'>Email</label>
-                <input type='email' name='email' id='email' placeholder="Enter your email" class='inputBox' required>
+                <div class='spaceBetween emailLabel'>
+                    <label for='email' class='nameLabel'>Email</label>
+                </div>
+                <div>
+                    <input type='email' name='email' id='email' placeholder="Enter your email" class='inputBox' required>
+                </div>
+                
             </div>
             <div id='passwordSection'>
-                <label for='password' class='NameLabel'>Password</label>
-                <input type='password' name='password' id='password' placeholder="Enter your password" class='inputBox' minlength="6" required>
+                <div class='spaceBetween'>
+                    <label for='password' class='nameLabel'>Password</label>
+                </div>
+                <div>
+                    <input type='password' name='password' id='password' placeholder="Enter your password" class='inputBox' minlength="6" required>
+                </div>
             </div>
             <div id='signUpSection'>
                 <button type='submit' name='signUp' id='signUpButton'>Sign up</button>

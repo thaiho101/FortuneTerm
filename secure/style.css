@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     background-image: url("shoppingBackground.jpg");
-    background: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -22,7 +22,7 @@
     border-radius: 16px;
     backdrop-filter: blur(15px);
 
-    border-left-width: 3px;
+    border-left-width: 5px;
     border-left-color: gray;
 
     border-bottom-width: 4px;
