@@ -110,12 +110,12 @@ $stmt->close();
 
                     <div class='form-row'>
                         <button for='fbCost' class='insertLabel '>Food & Beverage Cost</button>
-                        <input type='number' name='fbCost' id='fbCost' placeholder="$" class='insertBox insertBoxFBCost'>
+                        <input type='number' name='fbCost' id='fbCost' placeholder="$" class='insertBox insertBoxFBCost' step="0.01">
                     </div>
 
                     <div class='form-row'>
                         <button for='otherCost' class='insertLabel'>Other Cost</button>
-                        <input type='number' name='otherCost' id='otherCost' placeholder="$" class='insertBox insertBoxOtherCost'>
+                        <input type='number' name='otherCost' id='otherCost' placeholder="$" class='insertBox insertBoxOtherCost' step="0.01">
                     </div>
 
                     <div class='insertButtonDiv'>
@@ -128,13 +128,23 @@ $stmt->close();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    if(isset($_POST) == 'insert')
+    if(isset($_POST['insert']))
     {
         // $userId on the top of the file
-        $visitDate = $_POST['date'] == "" ? "N/A" : $_POST['date'];
+        $visitDate = $_POST['date'];
         $marketName = $_POST['store']; //Need to convert marketName into market_id to push into market_cost table
-        $FBCost = $_POST['fbCost'] == '' ? 0 : $_POST['fbCost'];
+        // $FBCost = $_POST['fbCost'] == '' ? 0 : $_POST['fbCost'];
+        // $otherCost = $_POST['otherCost'] == '' ? 0 : $_POST['otherCost'];
+        $FBCost = $_POST['fbCost'];
+            if ($FBCost == '')
+            {
+                    $FBCost = 0;
+            }
         $otherCost = $_POST['otherCost'];
+            if ($otherCost == '')
+            {
+                    $otherCost = 0;
+            }
 
         if (is_numeric($FBCost) && is_numeric($otherCost))
         {
