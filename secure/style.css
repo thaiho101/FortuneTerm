@@ -1,0 +1,150 @@
+#wholePage {
+    font-family: "poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("shoppingBackground.jpg");
+    background: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#loginPanel {
+    font-family: "poppins", sans-serif;
+    display: block;
+    color: red;
+    max-width: 350px;
+    width: 50%;
+    min-height: 400px;
+    border: solid .2px white;
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+
+    border-left-width: 3px;
+    border-left-color: gray;
+
+    border-bottom-width: 4px;
+    border-bottom-color: gray;
+
+    border-right-width: 1px;
+    border-right-color: silver;
+    
+    
+    
+}
+
+#loginPanel:hover {
+    max-width: 400px;
+    /* width: 50%; */
+    min-height: 450px;
+    transition: 2s;
+    backdrop-filter: blur(2px);
+}
+
+form {
+    display: block;
+}
+
+.loginLabel {
+    /* padding: 15px; */
+    padding-top: 35px;
+    padding-bottom: 30px;
+
+    /* justify-content: center; */
+    text-align: center;
+
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.emailSection, .passwordSection {
+    display: flex;
+    margin-left: 10%;
+    padding-bottom: 25px;
+}
+
+.userIcon, .passwordIcon {
+    padding-right: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+.emailInputBox, .passwordInputBox {
+    border-radius: 50px;
+    width: 75%;
+    text-align: right;
+    background-color: transparent;
+    color: white;
+    border: solid 1px white;
+    font-size: 15px;
+}
+
+.emailInputBox::placeholder, .passwordInputBox::placeholder {
+    font-family: "poppins", sans-serif;
+    color: white;
+    font-size: 15px;
+}
+
+.userIcon, .passwordIcon, .emailInputBox, .passwordInputBox, .loginButton {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.emailInputBox:hover, .passwordInputBox:hover {
+    border-color: goldenrod;
+}
+
+.loginSection {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.loginButton {
+    font-family: "poppins", sans-serif;
+    width: 40%;
+    border-radius: 30px;
+    background-color: white;
+    border: solid 1px white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background-color: lightblue;
+    background-image: linear-gradient(white, goldenrod, white);
+}
+
+.registerSection {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.registerSection {
+    padding-top: 15px;
+    color: white;
+}
+
+.registerLink {
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    display: none;
+}

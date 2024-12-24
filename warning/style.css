@@ -1,0 +1,151 @@
+
+
+#binaryRunHorizontal {
+/*	position: absolute;*/
+/*	left: 80%;*/
+	width: 100%;
+	top: 20%;
+/*	height: 100vh;*/
+	z-index: -4;
+}
+
+#binaryRunVertical {
+/*	height: 1000px;
+	width: 10px;*/
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: -2;
+}
+@keyframes moveLeft {
+    from {
+        transform: translateX(100%); /* Start off the screen to the left */
+    }
+    to {
+        transform: translateX(-100%); /* Move across the screen to the right */
+    }
+}
+
+.firstRunHo, .secondRunHo, .thirdRunHo {
+	animation-name: moveLeft;
+	width: 800px;
+	font-weight: normal;
+	color: chartreuse;
+	text-shadow: -1px 0 lime, 0 1px lime, 2px 0 lime, 0 -1px lime;
+    
+/*    animation-duration: 8s;*/
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 15;
+    overflow: hidden; /* Prevent content overflow during animation */
+    white-space: nowrap; /* Prevent text wrapping */
+    position: relative; /* Ensure positioning context */
+}
+
+.firstRunHo {
+/*	width: 800px;*/
+	left: 20%;
+	top: 50%;
+	animation-duration: 8s;
+} 
+
+.secondRunHo {
+/*	width: 800px;*/
+	left: 20%;
+	top: 65%;
+	animation-duration: 15s;
+} 
+
+.thirdRunHo {
+/*	width: 800px;*/
+	left: 30%;
+	top: 80%;
+	margin-top: 200px;
+	animation-duration: 12s;
+}
+
+
+
+@keyframes moveDown {
+    from {
+        transform: translateY(100%); /* Start off the screen to the left */
+    }
+    to {
+        transform: translateY(-100%); /* Move across the screen to the right */
+    }
+}
+
+.firstRunVer, .secondRunVer, .thirdRunVer {
+/*	margin-left: 100px;*/
+/*	height: 100vh;*/
+	color: chartreuse;
+	text-shadow: -1px 0 lime, 0 1px lime, 2px 0 lime, 0 -1px lime;
+    animation-name: moveDown;
+/*    animation-duration: 5s;*/
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 15;
+    overflow: hidden; /* Prevent content overflow during animation */
+    white-space: nowrap; /* Prevent text wrapping */
+    position: relative; /* Ensure positioning context */
+}
+
+.firstRunVer {
+	height: 300px;
+	animation-duration: 5s;
+}
+
+.secondRunVer {
+	height: 200px;
+	left: 75%;
+	top: 75%;
+	animation-duration: 6s;
+}
+
+.thirdRunVer {
+	height: 300px;
+	left: 25%;
+	top: 5%;
+	animation-duration: 8s;
+}
+
+.hackWarningStyle {
+	color: lime;
+	font-size: 30px;
+	text-shadow: -1px 0 white, 0 1px black, 2px 0 black, 0 -1px black;
+	top: 55%;
+	left: 60%;
+	
+
+	position: fixed;
+}
+
+.gobackStyle {
+	color: lime;
+	width: 100px;
+	padding: 5px;
+/*	margin-left: 100px;*/
+	margin-top: 25px;
+	background-image: linear-gradient(yellow, black, yellow);
+}
+
+.gobackStyle:hover {
+	color: lime;
+	font-weight: bold;
+	background-image: linear-gradient(white, black, white);
+
+}
+
+.fas, .fa-exclamation-triangle {
+	color: yellow;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background-image: url('Binary.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}

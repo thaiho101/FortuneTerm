@@ -9,11 +9,29 @@ body, div {
 
 /* Navigation Bar */
 #navigation {
-    background-color: #4CAF50; /* Green */
-    color: white;
+    /* background-color: silver; */
+    /* background-image: url("navBarSilver.jpeg"); */
+    color: rgb(115, 115, 115);
     padding: 10px;
-    text-align: center;
+    text-align: left;
     font-size: 1.5em;
+    /* background-image: linear-gradient(white, lightblue, white); */
+    /* background-color:#6199c7; */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+}
+
+.webTitle {
+    font-size: 25px;
+    font-weight: bold;
+    color: #5580a3;
+}
+
+.greeting {
+    font-size: 18px;
+}
+
+.userName {
+    text-align: right;
 }
 
 /* Bottom Container */
@@ -26,61 +44,237 @@ body, div {
 
 /* Data Change Section */
 #dataChange {
-    background-color: gray; /* Yellow */
+    background-color: transparent; /* Yellow */
     flex: 1; /* Responsive width */
     border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
+    border-radius: 8px;
 }
 
+.newTransactionLabel{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.newTransactionStyle {
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 14px;
+    font-weight: bold;
+    
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); */
+    box-shadow: 4px 3px 5px gray;
+    border-width: 2px 1px 4px 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: rgb(231, 231, 231);
+    /* background-image: linear-gradient(white, lightblue, white); */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 160px;
+    color: white;
+    /* background-color:#4682B4; */
+    /* background-color:#6199c7; */
+    /* background-color: rgb(205, 94, 116); */
+    background-color: rgb(170, 53, 53);
+    border-top-color: white;
+    border-left-color: rgb(213, 213, 213);
+    border-left-width: 2px;
+    border-bottom-width: 3px;
+}
 
 .insert {
-    background-color: lightblue;
+    background-color: transparent;
     width: 100%;
-    padding-top: 60px;
+    padding-top: 30px;
     padding-bottom: 40px;
     flex: 1;
+    border: solid silver;
+    border-radius: 8px;
 }
 
 .form-row {
     display: flex; /* Makes each row a flex container */
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    align-items: center;
     margin: 10px 0;
 }
 
 /* Label Styling */
 .insertLabel {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
     color: black;
-    width: 150px;
+    width: 100px;
+    text-align: left;
+    display: inline-block;
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); */
+    box-shadow: 4px 3px 5px gray;
+    border-width: 2px 1px 4px 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 0;
+    border-color: white;
+    /* background-image: linear-gradient(white, white, white); */
+    border-top-color: white;
+        /* border-bottom-color: silver; */
+    border-right-width: 1px;
+
+}
+
+.interface {
+    /* background-image: linear-gradient(to #4682B4, #4682B4, #4682B4); */
+    color: white;
+    /* background-color:#4682B4; */
+    background-color: rgb(170, 53, 53);
 }
 
 /* Input Field Styling */
 .insertBox {
-    background-color: lime;
+    /* background-color: rgb(244, 243, 243); */
+    /* background-image: linear-gradient(white, #E0E0E0, white); */
+    background-image: linear-gradient(white, rgb(184, 223, 236), white);
     text-align: right;
     border-radius: 4px;
     width: 50%;
     max-width: 100%; /* Đảm bảo không vượt quá khung */
     box-sizing: border-box; /* Tính cả padding và border vào tổng width */
+    /* border: 2px; */
+    border-color: silver;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top: 9px;
+    border-left-color: white;
+    border-left-width: 0px;
+
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
-.button {
-    margin-left: 70%;
-    border-radius: 4px;
-    border-color: silver;
-    background-image: linear-gradient(white, silver, white);
+.insertBoxFBCost {
+    height: 51px;
+}
 
+.insertBoxOtherCost {
+    height: 20px;
+}
+
+.insertButton {
+    margin-left: 70%;
+    border-radius: 8px;
+    border-color: silver;
+    background-image: linear-gradient(white, rgb(219, 219, 219), white);
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+}
+
+.insertButton:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(white, white, white);
 }
 
 .budget {
-    background-color: #C8E6C9; /* Light Green */
+    background-color: transparent; /* Light Green */
     flex: 3;
+    border-radius: 8px;
+    border-color: solid black;
 
+}
+
+.budgetNotice {
+    display: flex;
+    text-align: center;
+    padding-bottom: 25px;
+    justify-content: center;
+    padding-top: 25px;
+    width: 100%;
+}
+
+.budgetNotification {
+    width: 175px;
+}
+
+#currentBudgetSetSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-exclamation-triangle {
+    border: 1px solid black; /* Đường viền đen dày 2px */
+    padding: 5px; /* Khoảng cách giữa biểu tượng và đường viền */
+    border-radius: 5px; /* Tùy chọn: Bo tròn góc đường viền */
+    display: inline-block; /* Đảm bảo viền bao quanh sát biểu tượng */
+    box-sizing: border-box; /* Bao gồm padding và border trong kích thước */
+}
+
+.currentSetBudgetColor {
+    color: green;
+}
+
+.fa-check {
+    font-size: 18px;
+}
+
+.checkIcon {
+    font-size: 24px; /* Adjust size */
+    color: green; /* Set color */
+    font-weight: bold; /* Make it bold */
+}
+
+#messageReminder {
+    color: orange;
+    /* background-color: red; */
+}
+
+.setBudgetButton, .showBudgetButton {
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 14px;
+    font-weight: bold;
+    
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); */
+    box-shadow: 4px 3px 5px gray;
+    border-width: 2px 1px 4px 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: rgb(231, 231, 231);
+    /* background-image: linear-gradient(white, lightblue, white); */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 160px;
+    color: white;
+    background-color:#5580a3;
+    border-top-color: white;
+    border-left-color: rgb(213, 213, 213);
+    border-left-width: 2px;
+    border-bottom-width: 3px;
+
+    cursor: pointer;
 }
 
 /* Data Analyze Section */
 #dataAnalyze {
-    background-color: #BBDEFB; /* Light Blue */
+    /* background-color: #BBDEFB; */
     padding: 10px;
     flex: 4;
     border: 1px solid #ccc;
@@ -88,33 +282,81 @@ body, div {
     flex-direction: column;
 }
 
+
+
 .filter {
-    background-color: orange; /* Light Purple */
+    display: flex;
+    align-items: center;
+    /* background-color: transparent; */
     padding: 10px;
     margin: 5px 0;
-    justify-items: right;
+    justify-content: right;
     flex: 1;
     max-height: 40px;
+
+}
+
+.yearMonthFilterStyle {
+    color: black;
+	font-weight: bold;
+	border-radius: 8px;
+    padding: 5px;
+}
+
+.fa, .fa-cog, .fa-spin {
+    color: #5580a3;
+}
+
+.yearOptionStyle, .monthOptionStyle {
+	color: black;
+	background-image: linear-gradient(white, rgb(222, 220, 220), white);
+	border-radius: 4px;
+	border: silver solid 2px;
+    border-width: 1px;
+    cursor: pointer;
+/*	background-image: linear-gradient(white, yellow, white);*/
+}
+
+.yearOptionStyle:hover, .monthOptionStyle:hover {
+    background-image: linear-gradient(white, lightblue, white);
+}
+
+.filterButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-color: silver;
+    background-image: linear-gradient(white, silver, white);
+    cursor: pointer;
+}
+
+.filterButton:hover {
+    background-image: linear-gradient(white, white, white);
 }
 
 .header {
-    background-color: #FFE0B2; /* Light Orange */
+    /* background-color: #FFE0B2; */
     flex: 1;
     max-height: 59.5px;
 }
 
 .headerTable {
     height: 100%;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .headerRow {
-    background-color: silver;
+    /* background-color: silver; */
     color: black;
+    font-size: 15px;
+    background-color: white;
 }
 
 .headerRow th:nth-child(1), th:nth-child(5) {
-    background-color: orange;
+    /* background-color: orange; */
     padding: 0 30px;
+
 }
 table {
     width: 100%; /* Ensure the table spans the full container width */
@@ -126,7 +368,8 @@ table {
     color: black; /* Set text color to orange */
     white-space: normal; /* Allow text wrapping */
     word-wrap: break-word; /* Ensure long words wrap */
-    border: 1px solid black; /* Add a border for clarity */
+    border: 1px solid silver; /* Add a border for clarity */
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -136,7 +379,7 @@ table {
 }
 
 .content {
-    background-color: #B3E5FC; /* Light Cyan */
+    /* background-color: #B3E5FC; */
     flex: 3;
     min-height: 381.9px;
     overflow-y: auto;
@@ -162,6 +405,7 @@ table {
 	border-radius: 8px;
 	border: white outset 1px;
 	background-color: darkorange;
+    cursor: pointer;
 }
 
 .editSubmitStyle:hover {
@@ -180,6 +424,7 @@ table {
 	border-radius: 8px;
 	border: white outset 1px;
 	background-color: crimson;
+    cursor: pointer;
 }
 
 .deleteSubmitStyle:hover {
@@ -193,18 +438,326 @@ table {
 }
 
 .totalSummary {
-    background-color: #D7CCC8; /* Light Brown */
-    padding: 10px;
-    margin: 5px 0;
+    /* background-color: #D7CCC8; */
+    /* padding: 10px; */
+    /* margin: 5px 0; */
     flex: 2;
 }
 
+.fontStyle {
+    font-family: 'Roboto', sans-serif;
+}
+
+.rowHighLight:hover {
+    background-color: lightblue;
+    background-image: linear-gradient(white, lightblue, white);
+}
+
+.gridTableColor {
+    border: 1px solid silver;
+}
+
+.redundantCol {
+    border: transparent;
+}
+
+.totalCostLabel {
+    text-align: center;
+    font-weight: bold;
+}
+
+.totalBudgetColor {
+    color: green;
+}
+
+.totalBalanceColor {
+    color: #5580a3;
+}
+
+.blueNumber {
+    color: blue;
+}
+
+.silverNumber {
+    color: rgb(167, 167, 167);
+}
+
+/* .numColor {
+    color: blue;
+} */
+
+.totalCostColor {
+    color: red;
+}
+
+.totalCostStyle {
+    /* font-size: 15px; */
+    text-align: right;
+    /* color: blue; */
+}
+
+.totalCostTextStyle {
+    font-size: 16px;
+    font-weight: bold;
+    /* color: blue; */
+} 
+
 /* Graph Section */
 #graph {
-    background-color: #F8BBD0; /* Light Pink */
+    /* background-color: #F8BBD0; */
     padding: 10px;
     text-align: center;
     flex: 2; /* Responsive width */
     border: 1px solid #ccc;
     width: 20%;
 }
+
+#logOutSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logOutButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-color: silver;
+    background-image: linear-gradient(white, silver, white);
+    cursor: pointer;
+    color: black;
+}
+
+.logOutButton:hover {
+    background-image: linear-gradient(white, white, white);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* Media reponsive on Mobile */
+/* Responsive Layout for Mobile Devices */
+@media (max-width: 768px) {
+    /* Bottom container: stack children vertically */
+    #bottom {
+        flex-direction: column;
+        height: auto; /* Adjust height */
+    }
+
+    /* Make each section take full width */
+    #dataChange, #dataAnalyze, #graph {
+        flex: none; /* Override flex property */
+        width: 100%; /* Full width */
+        max-height: none; /* Allow content to expand */
+    }
+
+    /* Adjust .insert and form row spacing */
+    .insert {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+
+    .form-row {
+        display: flex; /* Makes each row a flex container */
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+
+    .newTransactionStyle {
+        font-size: 17px;
+        border-top-color: white;
+        border-left-color: silver;
+        border-bottom-color: silver;
+        border-top-left-radius: 8px;
+        border-left-width: 2px;
+        color: white;
+        width: 180px;
+    }
+
+    .insertLabel {
+        width: 100%; /* Full width for labels */
+        margin-bottom: 5px; /* Add spacing below label */
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        width: 100px;
+        text-align: left;
+        display: inline-block;
+        /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); */
+        box-shadow: 4px 3px 5px gray;
+        border-width: 2px 1px 4px 1px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 0;
+        border-top-color: white;
+        border-bottom-color: silver;
+        width: 200px;
+        padding-right: 100px;
+    }
+
+    /* .dateLabel {
+        width: 240px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    } */
+
+    .insertLabel {
+        width: 240px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .interface {
+        /* background-image: linear-gradient(to #4682B4, #4682B4, #4682B4); */
+        color: white;
+        /* background-color:#4682B4; */
+        width: 240px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .insertBox {
+        width: 100%; /* Input fields take full width */
+        height: 27px;
+        background-image: linear-gradient(white, rgb(184, 223, 236), white);
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    .insertBoxFBCost {
+        height: 62px;
+    }
+
+    .insertBoxOtherCost {
+        height: 45px;
+    }
+
+    .budgetNotice {
+        display: block;
+        text-align: center;
+        padding-bottom: 25px;
+        justify-content: center;
+        padding-top: 25px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .header {
+        max-height: 127px;
+    }
+
+    /* Adjust table header for smaller screens */
+    .headerRow th {
+        font-size: 12px; /* Smaller font size */
+        padding: 0; /* Reduce padding */
+        
+    }
+
+    .headerRow th:nth-child(1) {
+        display: none;
+    }
+
+    .content table tr td:nth-child(1) {
+        display: none;
+    }
+
+    .content table tr td {
+        font-size: 12px;
+    }
+
+    /* Content Section: Allow scrolling */
+    .content {
+        min-height: 10px; /* Remove fixed height */
+        overflow-y: auto;
+    }
+
+    /* Buttons: Center-align and adjust margins */
+    .insertButtonDiv {
+        /* padding-top: 10px; */
+        /* display: flex; */
+        /* justify-items: center; */
+        /* padding-right: 50px; */
+        display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if needed) */
+    height: 100%; /* Optional: adjust height to align vertically */
+    
+    }
+    .insertButton {
+        /* margin-left: 0; */
+        /* width: 100%; */
+            /* margin-left: 70%; */
+            /* padding-top: 10px; */
+        color: black;
+        width: 100px;
+        align-content: center;
+        /* margin-left: 70%; */
+        border-radius: 6px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 4px 2px 5px gray;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .insertButton:hover {
+        border-width: 2px 1px 3px 1px;
+        background-image: linear-gradient(white, white, white);
+    }
+
+    .insertBox {
+        padding-top: 5px;
+        /* padding-bottom: 2.5px; */
+    }
+
+    .inserBoxDate {
+        padding: 10px;
+    }
+
+    .budgetNotice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .redundantCol {
+        display: none;
+    }
+
+    .totalCostLabel {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .totalCostTextStyle {
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .confirmation-popup {
+        border: 1px solid red;
+        background-color: blue;
+    }
+
+    .logOutButton {
+        color: black;
+    }
+}
+
+
