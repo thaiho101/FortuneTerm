@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($statement->execute()) {
                 header("Location: " . $_SERVER['PHP_SELF']);
+                header("Location: ../secure");
                 exit();
             } else {
                 echo "<div class='error'>Error: " . $conn->error . "</div>";
