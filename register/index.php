@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div id='signUpSection'>
-                <button type='submit' name='signUp' id='signUpButton'>Sign up</button>
+                <button type='submit' name='signUp' id='signUpButton'>Submit</button>
             </div>
         </form>
     </div>
