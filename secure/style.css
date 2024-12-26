@@ -1,14 +1,41 @@
 #wholePage {
     font-family: "poppins", sans-serif;
-    display: flex;
-    justify-content: center;
+    display: block;
+    text-align: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("shoppingBackground.jpg");
+    background-image: url("background.jpg");
+    /* background-size: 100%; */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
+}
+
+#navBar {
+    /* align-items: center; */
+    text-align: left;
+}
+
+#navBar a {
+    /* font-family: "poppins", sans-serif; */
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+
+    font-family: "Lilita One", serif;
+        /* font-weight: 50; */
+        font-style: normal;
+
+        -webkit-text-stroke: 1.3px brown;
+}
+
+#loginParent {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #loginPanel {
@@ -20,7 +47,7 @@
     min-height: 400px;
     border: solid .2px white;
     border-radius: 16px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(25px);
 
     border-left-width: 5px;
     border-left-color: gray;
@@ -40,7 +67,7 @@
     /* width: 50%; */
     min-height: 450px;
     transition: 2s;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
 }
 
 form {
@@ -144,7 +171,156 @@ form {
 
 
 
+/* Media reponsive on Mobile */
+/* Responsive Layout for Mobile Devices */
+@media (max-width: 768px) {
+    #wholePage {
+        font-family: "poppins", sans-serif;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 90vh;
+        background-image: url("background.jpg");
+        background-size: 300%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-footer {
-    display: none;
+    #navBar {
+        text-align: left;
+        /* padding-bottom: -20px; */
+    }
+    
+    #navBar a {
+        font-family: "poppins", sans-serif;
+        text-decoration: none;
+        font-size: 35px;
+        color: white;
+        
+        font-family: "Lilita One", serif;
+        font-weight: 50;
+        font-style: normal;
+
+        -webkit-text-stroke: 1.3px brown;
+    }
+    
+    #loginParent {
+        margin-top: -34%;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #loginPanel {
+        font-family: "poppins", sans-serif;
+        display: block;
+        color: red;
+        max-width: 300px;
+        width: 60%;
+        min-height: 200px;
+        height: 40%;
+        border: solid .2px white;
+        border-radius: 16px;
+        backdrop-filter: blur(15px);
+
+        border-left-width: 5px;
+        border-left-color: gray;
+
+        border-bottom-width: 4px;
+        border-bottom-color: gray;
+
+        border-right-width: 1px;
+        border-right-color: silver;
+    }
+
+    .loginLabel {
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+
+    .emailSection, .passwordSection {
+        display: flex;
+        margin-left: 10%;
+        padding-bottom: 15px;
+    }
+    
+    .userIcon, .passwordIcon {
+        padding-right: 2px;
+        color: white;
+        font-size: 20px;
+    }
+    
+    .emailInputBox, .passwordInputBox {
+        border-radius: 50px;
+        width: 75%;
+        text-align: right;
+        background-color: transparent;
+        color: white;
+        border: solid 1px white;
+        font-size: 15px;
+    }
+    
+    .emailInputBox::placeholder, .passwordInputBox::placeholder {
+        font-family: "poppins", sans-serif;
+        color: white;
+        font-size: 15px;
+    }
+
+    .userIcon, .passwordIcon, .emailInputBox, .passwordInputBox, .loginButton {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    
+    .emailInputBox:hover, .passwordInputBox:hover {
+        border-color: goldenrod;
+    }
+    
+    .loginSection {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+    }
+    
+    .loginButton {
+        font-family: "poppins", sans-serif;
+        width: 40%;
+        border-radius: 30px;
+        background-color: white;
+        border: solid 1px white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .loginButton:hover {
+        background-color: lightblue;
+        background-image: linear-gradient(white, goldenrod, white);
+    }
+    
+    .registerSection {
+        display: flex;
+        justify-content: center;
+        padding-top: 5px;
+    }
+    
+    .registerSection {
+        padding-top: 20px;
+        color: white;
+        display: block;
+        text-align: center;
+    }
+    
+    #loginPanel:hover {
+        max-width: 400px;
+        /* width: 50%; */
+        min-height: 350px;
+        transition: 2s;
+        backdrop-filter: blur(5px);
+    }
 }

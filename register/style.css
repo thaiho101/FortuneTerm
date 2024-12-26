@@ -109,6 +109,7 @@ form {
     border: solid 1px silver;
     background-color: white;
     cursor: pointer;
+    color: black;
 }
 
 #signUpButton:hover {

@@ -10,15 +10,20 @@ require_once('../config.php');
 <html lang='en'>
 <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Market Cost</title>
         <link rel="stylesheet" href="/secure/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="/Icon/Moneybag.png">
-</head>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
 <body id='wholePage'>
-        <div id='loginPanel'>
+        <div id='navBar'><a href='../' id='homeLink'>Market Cost</a></div>
+        <div id='loginParent'><div id='loginPanel'>
                 <form method='post'>
                         <div class='loginLabel'>Login</div>
 
@@ -49,9 +54,8 @@ require_once('../config.php');
                                 <a href='/register' class='registerLink'>Register</a>
                         </div> 
                 </form>
-        </div>
+        </div></div>
 </body>
-<footer class='messageGreeting'>Welcome back to OTE System</footer>
 
 <?php
 
