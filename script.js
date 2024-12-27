@@ -264,6 +264,7 @@ async function applyBudget()
         });
 
         const result = await response.json();
+        console.log(result);
         if (result.success) {
             console.log(result);
             window.location.reload();
