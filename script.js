@@ -255,6 +255,7 @@ async function applyBudget()
     // For debugging
     console.log(`${currentMonth} - ${currentYear} - ${currentBudget} - ${userId}`);
 
+    console.log("before 'try' processing in applyBudget");
     // Sending the request
     try {
         const response = await fetch("/api.php", {
