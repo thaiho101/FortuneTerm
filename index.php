@@ -86,7 +86,7 @@ $stmt->close();
 
                     <div class='form-row'>
                         <button for='store' class='insertLabel interface'><i class="fas fa-store"></i> Market</button>
-                        <!-- <input type='text' name='store' id='store' class='insertBox'> -->
+
                         <input list="store" name='store' class='insertBox' required>
                         <datalist id="store">
                     <?php
@@ -200,7 +200,7 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                     </div>
                     <input type="text" id='userInfo' class='hidden' value='<?php echo $userId ?>'>
                     <input type="text" id='currentBudget' class='hidden' value='<?php echo $currentBudget ?>'>
-                            <!-- <div class='test'>Hello</div> -->
+
                 </div>
                 <div class='newTransactionLabel'>
                     <button class='setBudgetButton' onclick="setBudget()">Set Budget</button>
