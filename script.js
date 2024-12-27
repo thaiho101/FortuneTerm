@@ -258,6 +258,7 @@ async function applyBudget()
     console.log("before 'try' processing in applyBudget");
     // Sending the request
     try {
+        console.log("inside 'try' processing in applyBudget");
         const response = await fetch("/api.php", {
             method: "POST",
             headers: {
