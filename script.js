@@ -229,6 +229,7 @@ function setBudget()
 
     // Append modal to body
     document.body.appendChild(modal);
+    console.log("set budget");
 }
 function cancelBudget() {
     // Remove the modal from the DOM
