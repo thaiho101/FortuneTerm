@@ -270,6 +270,7 @@ async function applyBudget()
         console.log("end of 'await' processing in applyBudget");
 
         const result = await response.json();
+        console.log("Raw response:", result);
         console.log("hello");
         console.log(result);
         if (result.success) {
