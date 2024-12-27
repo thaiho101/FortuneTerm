@@ -260,14 +260,14 @@ async function applyBudget()
     try {
         console.log("inside 'try' processing in applyBudget");
         const response = await fetch("/api.php", {
-            console.log("inside 'await' processing in applyBudget");
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
             body: `action=setBudget&user_id=${userId}&month=${currentMonth}&year=${currentYear}&amount=${currentBudget}`
-            console.log("end of 'await' processing in applyBudget");
         });
+
+        console.log("end of 'await' processing in applyBudget");
 
         const result = await response.json();
         console.log("hello");
