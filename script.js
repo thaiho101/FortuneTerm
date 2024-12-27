@@ -255,10 +255,10 @@ async function applyBudget()
     // For debugging
     console.log(`${currentMonth} - ${currentYear} - ${currentBudget} - ${userId}`);
 
-    console.log("before 'try' processing in applyBudget");
+    // console.log("before 'try' processing in applyBudget");
     // Sending the request
     try {
-        console.log("inside 'try' processing in applyBudget");
+        // console.log("inside 'try' processing in applyBudget");
         const response = await fetch("/api.php", {
             method: "POST",
             headers: {
@@ -267,12 +267,12 @@ async function applyBudget()
             body: `action=setBudget&user_id=${userId}&month=${currentMonth}&year=${currentYear}&amount=${currentBudget}`
         });
 
-        console.log("end of 'await' processing in applyBudget");
+        // console.log("end of 'await' processing in applyBudget");
 
         const result = await response.json();
-        console.log("Raw response:", result);
-        console.log("hello");
-        console.log(result);
+        // console.log("Raw response:", result);
+        // console.log("hello");
+        // console.log(result);
         if (result.success) {
             console.log(result);
             window.location.reload();

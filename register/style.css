@@ -1,6 +1,6 @@
 #wholePage {
     font-family: "poppins", sans-serif;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -11,16 +11,43 @@
     background-position: center;
 }
 
+#navBar {
+    /* align-items: center; */
+    text-align: left;
+}
+
+#navBar a {
+    /* font-family: "poppins", sans-serif; */
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+
+    font-family: "Lilita One", serif;
+        /* font-weight: 50; */
+        font-style: normal;
+
+        -webkit-text-stroke: 1.3px brown;
+}
+
+#registerParent {
+    margin-top: -5%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #registerPanel {
     font-family: "poppins", sans-serif;
     display: block;
     /* color: red; */
     max-width: 350px;
     width: 50%;
-    min-height: 400px;
+    min-height: 420px;
     border: solid .2px white;
     border-radius: 16px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(25px);
 
     border-left-width: 3px;
     border-left-color: gray;
@@ -37,7 +64,7 @@
     /* width: 50%; */
     min-height: 450px;
     transition: 2s;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
 }
 
 form {
@@ -66,7 +93,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 13px;
+    padding-bottom: 10px;
 }
 
 #firstNameSection div input {
@@ -114,4 +141,203 @@ form {
 
 #signUpButton:hover {
     background-image: linear-gradient(transparent, silver, transparent);
+}
+
+#confirmPasswordSection {
+    display: flex;
+    width: 60wh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+
+.emailLabelPadRight {
+    padding-right: 3px;
+}
+
+.passwordLabelPadRight {
+    padding-right: 4px;
+}
+
+.confirmLabelPadRight {
+    padding-right: 14px;
+}
+
+/* .unmatchedPassword {
+    background-color: white;
+    color: red;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    #wholePage {
+        font-family: "poppins", sans-serif;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 90vh;
+        background-image: url("registerBackground1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+#navBar {
+    text-align: left;
+    /* padding-bottom: -20px; */
+}
+
+#navBar a {
+    font-family: "poppins", sans-serif;
+    text-decoration: none;
+    font-size: 35px;
+    color: white;
+    
+    font-family: "Lilita One", serif;
+    font-weight: 50;
+    font-style: normal;
+
+    -webkit-text-stroke: 1.3px brown;
+}
+
+#registerParent {
+    margin-top: -20%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#registerPanel {
+    font-family: "poppins", sans-serif;
+    display: block;
+    /* color: red; */
+    max-width: 300px;
+    width: 60%;
+    min-height: 380px;
+    height: 40%;
+    border: solid .2px white;
+    border-radius: 16px;
+    backdrop-filter: blur(25px);
+
+    border-left-width: 3px;
+    border-left-color: gray;
+
+    border-bottom-width: 4px;
+    border-bottom-color: gray;
+
+    border-right-width: 1px;
+    border-right-color: silver;
+}
+
+#registerPanel:hover {
+    max-width: 500px;
+    width: 65%;
+    min-height: 400px;
+    transition: 2s;
+    backdrop-filter: blur(5px);
+}
+
+form {
+    /* display: block; */
+}
+
+#registerLabel {
+    /* padding: 15px; */
+    padding-top: 25px;
+    padding-bottom: 20px;
+
+    /* justify-content: center; */
+    text-align: center;
+
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#firstNameSection, #lastNameSection, #emailSection, #passwordSection, #signUpSection {
+    /* display: flex; */
+    /* margin-left: 10%; */
+    /* padding-bottom: 25px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    /* width: 150px; */
+}
+
+#firstNameSection div input {
+    /* padding-left: 20px; */
+}
+
+.spaceBetween {
+    padding-right: 20px;
+}
+
+.nameLabel {
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+}
+
+.emailLabel {
+    padding-right: 45px;
+}
+
+.inputBox {
+    border-radius: 50px;
+    border: solid 1px silver;
+    padding: 10px;
+    width: 85%;
+    background-color: transparent;
+    color: white;
+}
+
+.inputBox::placeholder {
+    color: white;
+}
+
+#signUpSection {
+    padding-top: 30px;
+}
+#signUpButton {
+    border-radius: 50px;
+    padding: 10px;
+    width: 50%;
+    border: solid 1px silver;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+}
+
+#signUpButton:hover {
+    background-image: linear-gradient(transparent, silver, transparent);
+}
+
 }
