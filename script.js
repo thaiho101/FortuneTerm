@@ -271,7 +271,8 @@ async function applyBudget()
             alert("Failed to update record: " + result.message);
         }
     } catch (error) {
-        console.error("Error updating record");
+        // console.error("Error updating record");
+        console.error("error updating record:", error)
     }
 
 }
