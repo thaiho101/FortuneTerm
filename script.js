@@ -237,6 +237,7 @@ function cancelBudget() {
     if (modal) {
         modal.remove();
     }
+    console.log("cancel budget");
 }
 
 // Send request to add/update the budget on click
