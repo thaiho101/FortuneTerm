@@ -425,7 +425,7 @@ if ($yearSelected && ($monthSelected == '')) {
     </tr></tfoot>";      
 
     echo "</table>";
-
+    $statement->close();
 ?>
             </div>
         </div>
@@ -437,15 +437,22 @@ if ($yearSelected && ($monthSelected == '')) {
     </div>
 <?php
 // Fetch data from SQL
+
+
 $sql = "SELECT market_name, COUNT(market_name) as total_visits
         FROM market_cost
-        WHERE DATE_FORMAT(visit_date, '%m') = '12'
-        AND DATE_FORMAT(visit_date, '%Y') = '2024'
-        AND user_id = 1
+        WHERE DATE_FORMAT(visit_date, '%Y') = ?
+        AND DATE_FORMAT(visit_date, '%m') = ?
+        AND user_id = ?
         AND deleted = 'N'
         GROUP BY market_name
         ORDER BY total_visits DESC";
-$result = $conn->query($sql);
+
+$statement = $conn->prepare($sql);
+$statement->bind_param('ssi', $yearSelected, $monthSelected, $userId);
+
+$statement->execute();
+$result = $statement->get_result();
 
 $chartData = [];
 if ($result->num_rows > 0) {
@@ -456,6 +463,7 @@ if ($result->num_rows > 0) {
 
 // Convert PHP array to JSON
 $chartDataJson = json_encode($chartData);
+$statement->close();
 ?>
 
     <script>
