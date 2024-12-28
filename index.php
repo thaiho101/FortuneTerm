@@ -483,6 +483,11 @@ $statement->close();
         const options = {
         title:'Market Cost Distribution',
         is3D:true,
+        titleTextStyle: {
+            fontSize: 15, // Set the font size (example: 24px)
+            bold: true,   // Optional: make the title bold
+            color: '#004C99' // Optional: set the title color
+        }
         };
 
         // Fetch data from PHP
@@ -496,6 +501,11 @@ $statement->close();
             title: 'Most Visited Markets',
             is3D: true,
             pieHole: 0.4,
+            titleTextStyle: {
+                fontSize: 15, // Set the font size (example: 24px)
+                bold: true,   // Optional: make the title bold
+                color: '#004C99' // Optional: set the title color
+            }
         };
 
         // Draw
