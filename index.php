@@ -50,6 +50,8 @@ $stmt->close();
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="shoppingCart2.png">
 
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -390,6 +392,7 @@ if ($yearSelected && ($monthSelected == '')) {
         while($row = $resultTotal->fetch_assoc())
         {
             $totalFBCost = $row['totalFBCost'];
+            $totalOtherCost = $row['totalOtherCost'];
             echo "<tr class='fontStyle'>
                 <td class='gridTableColor redundantCol'></td> 
                 <td class='gridTableColor totalCostLabel totalCostColor' colspan='2'>Total Cost</td> 
@@ -425,9 +428,36 @@ if ($yearSelected && ($monthSelected == '')) {
             </div>
         </div>
 
-        <div id="graph">Graph</div>
+        <div id="graph">Graph
+            <div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+        </div>
     </div>
 
+    <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+        // Set Data
+        const data = google.visualization.arrayToDataTable([
+        ['Cost', 'Mhl'],
+        ['Food & Beverage', <?php echo $totalFBCost ?>],
+        ['Other', <?php echo $totalOtherCost ?>],
+        ]);
+
+        // Set Options
+        const options = {
+        title:'Market Cost Distribution',
+        is3D:true
+        };
+
+        // Draw
+        const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+        chart.draw(data, options);
+
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
