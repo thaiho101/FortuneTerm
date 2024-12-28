@@ -20,15 +20,33 @@ body, div {
     background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
 }
 
-.webTitle {
+#navBar {
+    /* align-items: center; */
+    text-align: left;
+}
+
+#navBar a {
+    /* font-family: "poppins", sans-serif; */
+    text-decoration: none;
+    font-size: 40px;
+    color: #5580a3;
+
+    font-family: "Lilita One", serif;
+        /* font-weight: 50; */
+        font-style: normal;
+
+        -webkit-text-stroke: 1.3px rgb(34, 254, 254);
+}
+
+/* .webTitle {
     font-size: 35px;
     font-weight: bold;
     color: #5580a3;
     font-family: "Lilita One", serif;
     font-style: normal;
 
-    /* -webkit-text-stroke: 1.3px brown; */
-}
+    
+} */
 
 .greeting {
     font-size: 18px;

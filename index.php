@@ -58,9 +58,9 @@ $stmt->close();
 </head>
 <body>
     <div id="navigation">
-        <div class='webTitle'>Market Cost</div>
+        <div id='navBar'><a href='index.php' id='homeLink'>Market Cost</a></div>
         <div id='logOutSection'>
-            <div class='greeting'>Greeting, <?php echo $firstName;?>!</div>
+            <div class='greeting'>Welcome, <?php echo $firstName;?>!</div>
             <div>
                 <form action="" method='get'>
                     <button type='submit' name='logOut' class='logOutButton'><i class='bx bx-log-out' ></i></button>
