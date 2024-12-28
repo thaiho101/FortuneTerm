@@ -110,8 +110,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 document.getElementById('errorMessage').style.color = 'red';
                 document.getElementById('errorMessage').style.textAlign = 'center';
                 document.getElementById('errorMessage').style.paddingTop = '10px';
-                document.getElementById('errorMessage').style.borderBottomLeftRadius = '12px';
-                document.getElementById('errorMessage').style.borderBottomRightRadius = '12px';
+                document.getElementById('errorMessage').style.borderBottomLeftRadius = '8px';
+                document.getElementById('errorMessage').style.borderBottomRightRadius = '8px';
+                document.getElementById('errorMessage').style.borderTopLeftRadius = '8px';
+                document.getElementById('errorMessage').style.borderTopRightRadius = '8px';
+                document.getElementById('errorMessage').style.jutifyContent = 'center';
+                document.getElementById('errorMessage').style.alignItems = 'center';
+                document.getElementById('errorMessage').style.contentItems = 'center';
+                document.getElementById('errorMessage').style.height = '30px';
+                document.getElementById('errorMessage').style.backgroundImage = 'linear-gradient(white, yellow, white)';
             </script>";
         }
         
