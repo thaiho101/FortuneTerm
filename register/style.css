@@ -113,7 +113,7 @@ form {
 }
 
 .inputBox {
-    border-radius: 50px;
+    border-radius: 16px;
     border: solid 1px silver;
     padding: 10px;
     width: 95%;
