@@ -558,6 +558,10 @@ table {
     display: none;
 }
 
+#marketVisitedChart, #costDistributionChart {
+    border: solid 1px silver;
+}
+
 
 
 

@@ -285,3 +285,53 @@ async function applyBudget()
     }
 
 }
+
+// function showBudget() {
+//     const modal = document.createElement("div");
+//     modal.id = "budgetModal";
+//     modal.style.position = "fixed";
+//     modal.style.top = "50%";
+//     modal.style.left = "50%";
+//     modal.style.transform = "translate(-50%, -50%)";
+//     modal.style.backgroundColor = "white";
+//     modal.style.padding = "20px";
+//     modal.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+//     modal.style.borderRadius = "8px";
+//     modal.style.zIndex = "1000";
+
+//     modal.innerHTML = `
+//         <h2>Budgets</h2>
+//         <div>
+//             <?php
+//                 $sql = "SELECT year, month, amount
+//                     FROM budget
+//                     WHERE user_id = $userId
+//                     ORDER BY market_name ASC";
+
+//                         $result = $conn->query($sql);
+
+//                         if($result->num_rows > 0)
+//                         {
+//                             echo "<table border='1'>";
+//                             echo "<th>Year</th>
+//                                     <th>Month</th>
+//                                     <th>Budget</th>";
+//                             while($row = $result->fetch_assoc())
+//                             {
+//                                 echo "<tr>
+//                                     <td>{$row['year']}</td>
+//                                     <td>{$row['month']}</td>
+//                                     <td>{$row['amount']}</td>
+//                                 </tr>";
+//                             }
+//                         }
+//             ?>
+//         </div>
+//         <button id="cancelBudget" onclick="cancelBudget()">Cancel</button>
+//     `;
+
+//     // Append modal to body
+//     document.body.appendChild(modal);
+//     console.log("set budget");
+// }
+

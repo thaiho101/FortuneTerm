@@ -214,7 +214,9 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                     <button class='setBudgetButton' onclick="setBudget()">Set Budget</button>
                 </div>
                 <div class='newTransactionLabel'>
-                    <button class='showBudgetButton'>Show Budget</button>
+                    <form method='post'>
+                        <button id='openModal' name='showBudget' class='showBudgetButton' onclick='showBudget()'>Show Budget</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -428,10 +430,33 @@ if ($yearSelected && ($monthSelected == '')) {
             </div>
         </div>
 
-        <div id="graph">Graph
-            <div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+        <div id="graph">
+            <div id="marketVisitedChart" style="width: 100%; height: 300px;"></div>
+            <div id="costDistributionChart" style="width:100%; max-width:600px; height:250px;"></div>
         </div>
     </div>
+<?php
+// Fetch data from SQL
+$sql = "SELECT market_name, COUNT(market_name) as total_visits
+        FROM market_cost
+        WHERE DATE_FORMAT(visit_date, '%m') = '12'
+        AND DATE_FORMAT(visit_date, '%Y') = '2024'
+        AND user_id = 1
+        AND deleted = 'N'
+        GROUP BY market_name
+        ORDER BY total_visits DESC";
+$result = $conn->query($sql);
+
+$chartData = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $chartData[] = [$row['market_name'], (int)$row['total_visits']];
+    }
+}
+
+// Convert PHP array to JSON
+$chartDataJson = json_encode($chartData);
+?>
 
     <script>
         google.charts.load('current', {'packages':['corechart']});
@@ -449,13 +474,28 @@ if ($yearSelected && ($monthSelected == '')) {
         // Set Options
         const options = {
         title:'Market Cost Distribution',
-        is3D:true
+        is3D:true,
+        };
+
+        // Fetch data from PHP
+        const chartData = <?php echo $chartDataJson; ?>;
+        // Add headers to the data
+        chartData.unshift(['Market', 'Visits']);
+        // Set Data
+        const dataVisited = google.visualization.arrayToDataTable(chartData);
+
+        const optionVisited = {
+            title: 'Most Visited Markets',
+            is3D: true,
+            pieHole: 0.4,
         };
 
         // Draw
-        const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+        const chart = new google.visualization.PieChart(document.getElementById('costDistributionChart'));
         chart.draw(data, options);
 
+        const chartVisited = new google.visualization.PieChart(document.getElementById('marketVisitedChart'));
+        chartVisited.draw(dataVisited, optionVisited);
         }
     </script>
 
