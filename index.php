@@ -215,8 +215,61 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                 </div>
                 <div class='newTransactionLabel'>
                     <form method='post'>
-                        <button id='openModal' name='showBudget' class='showBudgetButton' onclick='showBudget()'>Show Budget</button>
+                        <button id='openModal' type='button' name='showBudget' class='showBudgetButton' onclick="document.getElementById('modal').showModal()">Show Budget</button>
                     </form>
+                    <dialog id='modal'>
+                            <h2>Your Budget Summary</h2>
+                            <div>
+<?php
+                $sql = "SELECT year, month, amount
+                    FROM budget
+                    WHERE user_id = $userId
+                    AND year = $yearSelected
+                    ";
+
+                        $result = $conn->query($sql);
+
+                        if($result->num_rows > 0)
+                        {
+                            echo "<table border='1'>";
+                            echo "<th>Year</th>
+                                    <th>Month</th>
+                                    <th>Budget</th>";
+                            
+                            $dataLoop = [];
+
+                            while($row = $result->fetch_assoc())
+                            {
+                                $dataLoop[$row['month']] = $row;
+                            }
+
+                            for ($monthBudget = 1; $monthBudget <= 12; $monthBudget++)
+                            {
+                                if (isset($dataLoop[$monthBudget]))
+                                {
+                                    $row = $dataLoop[$monthBudget];
+                                    echo "<tr>
+                                    <td>" . $row['year'] . "</td>
+                                    <td>" . $monthBudget . "</td>
+                                    <td>" . $row['amount'] . "</td>
+                                    </tr>";
+                                } else {
+                                    echo "<tr>
+                                    <td>" . $row['year'] . "</td>
+                                    <td>" . $monthBudget . "</td>
+                                    <td> Not set yet</td>
+                                    </tr>";
+                                }
+                            }
+                            
+                            echo "</table>";
+                        }
+?>
+</div>
+                            <div>
+                                <button onclick="document.getElementById('modal').close()">Close</button>
+                            </div>
+                    </dialog>
                 </div>
             </div>
         </div>

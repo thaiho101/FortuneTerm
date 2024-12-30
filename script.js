@@ -108,7 +108,7 @@ async function applyClick(id, event) {
                 applyButton.addEventListener("mouseover", function () {
                 applyButton.style.backgroundImage = "linear-gradient(white, darkorange, white)";
                 //Reload the page after clicking on the apply button
-                window.location.reload();
+                // window.location.reload();
             });
             } else {
                 alert("Failed to update record: " + result.message);
@@ -153,7 +153,7 @@ deleteButtons.forEach((deleteButton) => {
                 console.log(result.message);
                 if (row) row.remove();
                 //Reload the page after clicking on the delete button
-                window.location.reload();
+                // window.location.reload();
             } else {
                 alert("Failed to delete row: " + result.message);
             }
@@ -275,7 +275,7 @@ async function applyBudget()
         // console.log(result);
         if (result.success) {
             console.log(result);
-            window.location.reload();
+            // window.location.reload();
         } else {
             alert("Failed to update record: " + result.message);
         }
