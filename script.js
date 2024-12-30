@@ -1,16 +1,16 @@
-document.addEventListener("click", function (event) {
+document.addEventListener("click", async function (event) {
     // Kiểm tra nếu nút được nhấn là nút Edit
     if (event.target.closest(".editSubmitStyle")) {
         const button = event.target.closest(".editSubmitStyle");
         const rowId = button.id.split("_")[1];
-        editClick(rowId, event);
+        await editClick(rowId, event);
     }
 
     // Kiểm tra nếu nút được nhấn là nút Apply
     if (event.target.closest(".applyeditButtonStyle")) {
         const button = event.target.closest(".applyeditButtonStyle");
         const rowId = button.id.split("_")[1];
-        applyClick(rowId, event);
+        await applyClick(rowId, event);
     }
 });
 
