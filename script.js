@@ -1,16 +1,16 @@
-document.addEventListener("click", async function (event) {
+document.addEventListener("click", function (event) {
     // Kiểm tra nếu nút được nhấn là nút Edit
     if (event.target.closest(".editSubmitStyle")) {
         const button = event.target.closest(".editSubmitStyle");
         const rowId = button.id.split("_")[1];
-        await editClick(rowId, event);
+        editClick(rowId, event);
     }
 
     // Kiểm tra nếu nút được nhấn là nút Apply
     if (event.target.closest(".applyeditButtonStyle")) {
         const button = event.target.closest(".applyeditButtonStyle");
         const rowId = button.id.split("_")[1];
-        await applyClick(rowId, event);
+        applyClick(rowId, event);
     }
 });
 
@@ -96,7 +96,7 @@ async function applyClick(id, event) {
                 console.log(result.message);
 
                 // Update the row
-                cells[1].innerHTML = convertDateFormat(date);
+                cells[1].innerHTML = date;
                 console.log(cells[1].innerHTML)
                 cells[2].innerHTML = market;
                 cells[3].innerHTML = fbCost;
