@@ -24,6 +24,7 @@ async function editClick(id, event) {
         // Chuyển cột thành input field
         const dateCell = cells[1];
         const dateObject = new Date(dateCell.textContent);
+        console.log(dateObject.toISOString())
         const convertedDate = dateObject.toISOString().split("T")[0];
         dateCell.innerHTML = `<input type="date" value="${convertedDate}" />`;
 
@@ -61,7 +62,12 @@ async function editClick(id, event) {
     }
 }
 
-
+function convertDateFormat(dateString) {
+    // Split the input date string
+    const [year, month, day] = dateString.split("-");
+    // Return the date in mm/dd/yyyy format
+    return `${month}/${day}/${year}`;
+}
 
 async function applyClick(id, event) {
     event.preventDefault();
@@ -90,7 +96,8 @@ async function applyClick(id, event) {
                 console.log(result.message);
 
                 // Update the row
-                cells[1].innerHTML = date;
+                cells[1].innerHTML = convertDateFormat(date);
+                console.log(cells[1].innerHTML)
                 cells[2].innerHTML = market;
                 cells[3].innerHTML = fbCost;
                 cells[4].innerHTML = otherCost;
