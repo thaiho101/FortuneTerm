@@ -101,7 +101,6 @@ deleteButtons.forEach((deleteButton) => {
         const confirmDelete = confirm("Are you sure you want to delete this row?");
         if (!confirmDelete) return;
 
-        try {
             const response = await fetch("/api.php", {
                 method: "POST",
                 headers: {
@@ -110,18 +109,7 @@ deleteButtons.forEach((deleteButton) => {
                 body: `action=delete&id=${rowId}`
             });
 
-            const result = await response.json();
-            if (result.success) {
-                console.log(result.message);
-                if (row) row.remove();
-                //Reload the page after clicking on the delete button
-                // window.location.reload();
-            } else {
-                alert("Failed to delete row: " + result.message);
-            }
-        } catch (error) {
-            console.error("Error deleting row:", error);
-        }
+	    window.location.reload();
     });
 });
 
