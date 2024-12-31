@@ -259,7 +259,7 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                                     echo "<tr class='budgetSummaryAlign'>
                                     <td class='budgetSymmaryWidth'>" . $yearSelected . "</td>
                                     <td class='budgetSymmaryWidth monthWidth'>" . $monthBudget . "</td>
-                                    <td class='budgetSymmaryWidth awaitingInput'>Awaiting input&#10071;</td>
+                                    <td class='budgetSymmaryWidth awaitingInput'>Awaiting input &#8644;</td>
                                     </tr>";
                                 }
                             }

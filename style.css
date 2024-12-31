@@ -579,6 +579,13 @@ table {
     font-weight: bold;
 }
 
+.titleBackgroundShowBudget {
+    /* background-color: rgb(236, 234, 234); */
+    background: linear-gradient(white, #acf7fb, white);
+    font-weight: bold;
+    color: #1f6196;
+}
+
 #showBudgetModal.modal-active #budgetSummary {
     filter: blur(50px);
 }
@@ -634,11 +641,7 @@ table {
     background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
 }
 
-.titleBackgroundShowBudget {
-    /* background-color: rgb(236, 234, 234); */
-    background: linear-gradient(white, #acf7fb, white);
-    font-weight: bold;
-}
+
 
 
 
