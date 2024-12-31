@@ -83,7 +83,7 @@ $stmt->close();
         <div id="dataChange">
             <div class="insert">
                 <div class='newTransactionLabel'>
-                    <button class='newTransactionStyle'>New Transaction</button>
+                    <a class='newTransactionStyle' href="#date">New Transaction</a>
                 </div>
                 
                 <form method='post'>
@@ -197,8 +197,8 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                             {
                                 $row = $result->fetch_assoc();
                                 $currentBudget = $row['amount'];
-                                echo "You have set the budget for this month is: " . "<div id='currentBudgetSetSection'><div class='currentSetBudgetColor'>$" . $currentBudget . "</div>
-                                                                                        <div class='checkIcon'><i class='fas fa-check'></i></div></div>";
+                                echo "You have set the budget for this month is: " . "<div id='currentBudgetSetSection'><div class='currentSetBudgetColor'>$" . $currentBudget . " &#9989;</div>
+                                                                                        </div>";
                             } else {
                                 echo "You have not set the budget for this month!";
                                 echo "<div id='messageReminder'><i class='fas fa-exclamation-triangle'></i></div>";
@@ -215,11 +215,11 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                 </div>
                 <div class='newTransactionLabel'>
                     <form method='post'>
-                        <button id='openModal' type='button' name='showBudget' class='showBudgetButton' onclick="document.getElementById('modal').showModal()">Show Budget</button>
+                        <button id='openModal' type='button' name='showBudget' class='showBudgetButton' onclick="document.getElementById('showBudgetModal').showModal()">Show Budget</button>
                     </form>
-                    <dialog id='modal'>
-                            <h2>Your Budget Summary</h2>
-                            <div>
+                    <dialog id='showBudgetModal'>
+                            <h2 id='budgetSummaryTitle'>Your Budget Summary</h2>
+                            <div id='showBudgetContent'>
 <?php
                 $sql = "SELECT year, month, amount
                     FROM budget
@@ -232,9 +232,9 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                         if($result->num_rows > 0)
                         {
                             echo "<table border='1'>";
-                            echo "<th>Year</th>
-                                    <th>Month</th>
-                                    <th>Budget</th>";
+                            echo "<th class='titleBackgroundShowBudget yearWidth'>Year</th>
+                                    <th class='titleBackgroundShowBudget monthWidth'>Month</th>
+                                    <th class='titleBackgroundShowBudget'>Budget</th>";
                             
                             $dataLoop = [];
 
@@ -242,32 +242,36 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                             {
                                 $dataLoop[$row['month']] = $row;
                             }
-
+                            
+                            $totalBudget = 0;
                             for ($monthBudget = 1; $monthBudget <= 12; $monthBudget++)
                             {
                                 if (isset($dataLoop[$monthBudget]))
                                 {
                                     $row = $dataLoop[$monthBudget];
-                                    echo "<tr>
-                                    <td>" . $row['year'] . "</td>
-                                    <td>" . $monthBudget . "</td>
-                                    <td>" . $row['amount'] . "</td>
+                                    echo "<tr class='budgetSummaryAlign'>
+                                    <td class='budgetSymmaryWidth'>" . $row['year'] . "</td>
+                                    <td class='budgetSymmaryWidth monthWidth'>" . $monthBudget . "</td>
+                                    <td class='budgetSymmaryWidth blueBudgetSet'>" . $row['amount'] . " &#9989</td>
                                     </tr>";
+                                    $totalBudget += $row['amount'];
                                 } else {
-                                    echo "<tr>
-                                    <td>" . $row['year'] . "</td>
-                                    <td>" . $monthBudget . "</td>
-                                    <td> Not set yet</td>
+                                    echo "<tr class='budgetSummaryAlign'>
+                                    <td class='budgetSymmaryWidth'>" . $yearSelected . "</td>
+                                    <td class='budgetSymmaryWidth monthWidth'>" . $monthBudget . "</td>
+                                    <td class='budgetSymmaryWidth awaitingInput'>Awaiting input&#10071;</td>
                                     </tr>";
                                 }
                             }
-                            
+                            echo "<tr class='budgetSummaryAlign titleBackgroundShowBudget'><td>{$row['year']}</td>
+                                    <td class='titleBackgroundShowBudget'>Total Budget</td>
+                                    <td class='blueBudgetSet titleBackgroundShowBudget'>" . number_format($totalBudget,2) . "</td></tr>";
                             echo "</table>";
                         }
 ?>
 </div>
-                            <div>
-                                <button onclick="document.getElementById('modal').close()">Close</button>
+                            <div id='closeButtonShowBudgetSection'>
+                                <button id='closeButtonShowBudget' onclick="document.getElementById('showBudgetModal').close()">Close</button>
                             </div>
                     </dialog>
                 </div>

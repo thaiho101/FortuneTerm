@@ -112,6 +112,7 @@ body, div {
     border-left-color: rgb(213, 213, 213);
     border-left-width: 2px;
     border-bottom-width: 3px;
+    text-decoration: none;
 }
 
 .insert {
@@ -562,6 +563,83 @@ table {
     border: solid 1px silver;
 }
 
+#showBudgetModal {
+    width: 350px;
+    border-radius: 8px;
+    color: #5580a3;
+    border: solid 3px silver;
+
+    /* font-family: "Lilita One", serif; */
+}
+
+#budgetSummaryTitle {
+    text-align: center;
+    color: #1f6196;
+    /* font-family: "Lilita One", serif; */
+    font-weight: bold;
+}
+
+#showBudgetModal.modal-active #budgetSummary {
+    filter: blur(50px);
+}
+
+#showBudgetContent {
+    transition: filter 10s ease;
+}
+
+.budgetSummaryAlign {
+    text-align: center;
+}
+
+.yearWidth {
+    width: 80px;
+}
+.monthWidth {
+    width: 70px;
+}
+
+.blueBudgetSet {
+    color: blue;
+}
+
+.awaitingInput {
+    color: crimson;
+}
+
+.vCheckColor {
+    color: green;
+}
+
+#closeButtonShowBudgetSection {
+    padding-top: 20px;
+    text-align: right;
+}
+
+#closeButtonShowBudget {
+    color: black;
+        width: 100px;
+        align-content: center;
+        /* margin-left: 70%; */
+        border-radius: 6px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 4px 2px 5px gray;
+        cursor: pointer;
+        padding: 5px;
+}
+
+#closeButtonShowBudget:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
+}
+
+.titleBackgroundShowBudget {
+    /* background-color: rgb(236, 234, 234); */
+    background: linear-gradient(white, #acf7fb, white);
+    font-weight: bold;
+}
+
 
 
 
@@ -609,7 +687,7 @@ table {
         border-top-left-radius: 8px;
         border-left-width: 2px;
         color: white;
-        width: 180px;
+        width: 300px;
     }
 
     .insertLabel {
@@ -680,6 +758,8 @@ table {
         padding-top: 25px;
     }
 
+ 
+
     .hidden {
         display: none;
     }
@@ -745,7 +825,7 @@ table {
 
     .insertButton:hover {
         border-width: 2px 1px 3px 1px;
-        background-image: linear-gradient(white, white, white);
+        background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
     }
 
     .insertBox {
@@ -784,6 +864,27 @@ table {
     .logOutButton {
         color: black;
     }
+
+    #showBudgetModal {
+        width: 320px;
+        border-radius: 16px;
+    }
+
+    .yearWidth {
+        width: 80px;
+    }
+    .monthWidth {
+        width: 70px;
+    }
+
+    #budgetSummaryTitle {
+        text-align: center;
+        color: #1f6196;
+        /* font-family: "Lilita One", serif; */
+        font-weight: bold;
+    }
 }
+
+
 
 
