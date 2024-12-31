@@ -95,9 +95,9 @@ elseif ($action === 'setBudget') {
             $stmt = $conn->prepare($updateQuery);
             $stmt->bind_param("diss", $budgetAmount, $userId, $budgetYear, $budgetMonth);
             if ($stmt->execute()) {
-                echo json_encode(["success" => true, "message" => "Record updated successfully."]);
+                echo json_encode(["success" => true, "message" => "Budget updated successfully."]);
             } else {
-                echo json_encode(["success" => false, "message" => "Failed to update record: " . $stmt->error]);
+                echo json_encode(["success" => false, "message" => "Failed to update budget: " . $stmt->error]);
             }
         } else {
             // Insert new record

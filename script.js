@@ -1,18 +1,3 @@
-document.addEventListener("click", function (event) {
-    // Kiểm tra nếu nút được nhấn là nút Edit
-    if (event.target.closest(".editSubmitStyle")) {
-        const button = event.target.closest(".editSubmitStyle");
-        const rowId = button.id.split("_")[1];
-        editClick(rowId, event);
-    }
-
-    // Kiểm tra nếu nút được nhấn là nút Apply
-    if (event.target.closest(".applyeditButtonStyle")) {
-        const button = event.target.closest(".applyeditButtonStyle");
-        const rowId = button.id.split("_")[1];
-        applyClick(rowId, event);
-    }
-});
 
 async function editClick(id, event) {
     event.preventDefault();
@@ -24,6 +9,7 @@ async function editClick(id, event) {
         // Chuyển cột thành input field
         const dateCell = cells[1];
         const dateObject = new Date(dateCell.textContent);
+	console.log(dateCell.textContent);
         console.log(dateObject.toISOString())
         const convertedDate = dateObject.toISOString().split("T")[0];
         dateCell.innerHTML = `<input type="date" value="${convertedDate}" />`;
@@ -39,6 +25,7 @@ async function editClick(id, event) {
 
         // Cập nhật nút thành Apply
         const editButton = cells[5].querySelector("button");
+        editButton.setAttribute("onclick", `applyClick(${id}, event)`);
         editButton.innerHTML = `<i class="fas fa-check"></i>`;
         editButton.name = "apply";
         editButton.id = `apply_${id}`;
@@ -82,7 +69,6 @@ async function applyClick(id, event) {
         const fbCost = parseFloat(cells[3].querySelector("input").value).toFixed(2);
         const otherCost = parseFloat(cells[4].querySelector("input").value).toFixed(2);
 
-        try {
             const response = await fetch("/api.php", {
                 method: "POST",
                 headers: {
@@ -91,38 +77,7 @@ async function applyClick(id, event) {
                 body: `action=edit&id=${id}&date=${date}&market=${market}&fbCost=${fbCost}&otherCost=${otherCost}`
             });
 
-            const result = await response.json();
-            if (result.success) {
-                console.log(result.message);
-
-                // Update the row
-                cells[1].innerHTML = date;
-                console.log(cells[1].innerHTML)
-                cells[2].innerHTML = market;
-                cells[3].innerHTML = fbCost;
-                cells[4].innerHTML = otherCost;
-
-                // Change button back to Edit
-                const applyButton = cells[5].querySelector("button");
-                applyButton.innerHTML = `<i class="fas fa-pen"></i>`;
-                applyButton.name = "edit";
-                applyButton.id = `edit_${id}`;
-                applyButton.classList.add("editSubmitStyle");
-                applyButton.classList.remove("applyeditButtonStyle");
-                applyButton.style.backgroundColor = "darkorange";
-                applyButton.style.cursor = "pointer";
-
-                applyButton.addEventListener("mouseover", function () {
-                applyButton.style.backgroundImage = "linear-gradient(white, darkorange, white)";
-                //Reload the page after clicking on the apply button
-                // window.location.reload();
-            });
-            } else {
-                alert("Failed to update record: " + result.message);
-            }
-        } catch (error) {
-            console.error("Error updating record:", error);
-        }
+	window.location.reload();
     }
 }
 
