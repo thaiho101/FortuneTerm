@@ -218,7 +218,14 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
 
                 </div>
                 <div class='newTransactionLabel'>
-                    <button class='setBudgetButton' onclick="setBudget()">Set Budget</button>
+<?php 
+if($yearSelected == '' || $monthSelected == '')
+{
+    $hiddenClass = 'hidden';
+}
+                echo "<button class='setBudgetButton $hiddenClass' onclick='setBudget()'>Set Budget</button>"
+?>
+                    <!-- <button class='setBudgetButton' onclick="setBudget()">Set Budget</button> -->
                 </div>
                 <div class='newTransactionLabel'>
                     <form method='post'>
@@ -435,12 +442,13 @@ $statement->close();
             </div>
             <div class="totalSummary">
 <?php
-    $sqlTotal = "SELECT SUM(mc.food_bev_cost) AS totalFBCost, SUM(mc.other_cost) AS totalOtherCost 
-                FROM market_cost mc
-                WHERE user_id = ?
-                AND deleted = 'N' ";
-
+////SUM Filter////////////-->Header
+$sqlTotal = "SELECT SUM(mc.food_bev_cost) AS totalFBCost, SUM(mc.other_cost) AS totalOtherCost 
+            FROM market_cost mc
+            WHERE user_id = ?
+            AND deleted = 'N' ";
 if ($yearSelected == '' && $monthSelected == '') {
+    // All years and months are selected
     $sqlTotal .= " ORDER BY visit_date DESC";
     $statement = $conn->prepare($sqlTotal);
     $statement->bind_param('i', $userId);
@@ -450,6 +458,12 @@ if ($yearSelected == '' && $monthSelected == '') {
                     ORDER BY visit_date DESC";
     $statement = $conn->prepare($sqlTotal);
     $statement->bind_param('is', $userId, $yearSelected);
+} else if (($yearSelected == '') && $monthSelected) {
+    // Only month is selected
+    $sqlTotal .= "AND DATE_FORMAT(visit_date, '%m') = ?
+                    ORDER BY visit_date DESC";
+    $statement = $conn->prepare($sqlTotal);
+    $statement->bind_param('is', $userId, $monthSelected);
 } else if ($yearSelected && $monthSelected) {
     // Both year and month are selected
     $sqlTotal .= " AND DATE_FORMAT(visit_date, '%Y') = ? 
@@ -458,14 +472,10 @@ if ($yearSelected == '' && $monthSelected == '') {
     $statement = $conn->prepare($sqlTotal);
     $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
 }
-    
+////SUM Filter////////////-->Bottom  
 
-
-    // $statement = $conn->prepare($sqlTotal);
-    // $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
-    $statement->execute();
-    // $statement->execute();
-        $resultTotal = $statement->get_result();
+$statement->execute();
+$resultTotal = $statement->get_result();
 
     // $resultTotal = $conn->query($sqlTotal);
 
