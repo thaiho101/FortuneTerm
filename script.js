@@ -207,7 +207,6 @@ async function applyBudget()
 
     // console.log("before 'try' processing in applyBudget");
     // Sending the request
-    try {
         // console.log("inside 'try' processing in applyBudget");
         const response = await fetch("/api.php", {
             method: "POST",
@@ -216,23 +215,8 @@ async function applyBudget()
             },
             body: `action=setBudget&user_id=${userId}&month=${currentMonth}&year=${currentYear}&amount=${currentBudget}`
         });
+	window.location.reload();
 
-        // console.log("end of 'await' processing in applyBudget");
-
-        const result = await response.json();
-        // console.log("Raw response:", result);
-        // console.log("hello");
-        // console.log(result);
-        if (result.success) {
-            console.log(result);
-            // window.location.reload();
-        } else {
-            alert("Failed to update record: " + result.message);
-        }
-    } catch (error) {
-        // console.error("Error updating record");
-        console.error("error updating record:", error)
-    }
 
 }
 
