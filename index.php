@@ -186,11 +186,16 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                         <?php 
                             $sql = "SELECT amount
                             FROM budget
-                            WHERE user_id = $userId
-                            AND year = $yearSelected
-                            AND month = $monthSelected";
+                            WHERE user_id = ?
+                            AND year = ?
+                            AND month = ?";
+
+                            $stmt = $conn->prepare($sql);
+                            $stmt->bind_param('iss', $userId, $yearSelected, $monthSelected);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
     
-                            $result = $conn->query($sql);
+                            // $result = $conn->query($sql);
                             // $amoutBool =
                             $currentBudget = NULL;
                             if($result->num_rows > 0)
@@ -203,6 +208,8 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                                 echo "You have not set the budget for this month!";
                                 echo "<div id='messageReminder'><i class='fas fa-exclamation-triangle'></i></div>";
                             }
+
+                            $stmt->close();
                         ?>
                         
                     </div>
@@ -221,13 +228,15 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                             <h2 id='budgetSummaryTitle'>Your Budget Summary</h2>
                             <div id='showBudgetContent'>
 <?php
-                $sql = "SELECT year, month, amount
-                    FROM budget
-                    WHERE user_id = $userId
-                    AND year = $yearSelected
-                    ";
-
-                        $result = $conn->query($sql);
+                        $sql = "SELECT year, month, amount
+                            FROM budget
+                            WHERE user_id = ?
+                            AND year = ?
+                            ";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param('is', $userId, $yearSelected);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
 
                         if($result->num_rows > 0)
                         {
@@ -286,10 +295,13 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                     <?php
                         $sql = "SELECT distinct DATE_FORMAT(visit_date, '%Y') AS year
                                 FROM market_cost
-                                WHERE user_id = $userId
+                                WHERE user_id = ?
                                 ORDER BY market_name DESC";
 
-                        $result = $conn->query($sql);
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param('i', $userId);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
 
                         if($result->num_rows > 0)
                         {
@@ -302,14 +314,19 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                                     echo "<option value='" . $row['year'] . "'>" . $row['year'] . "</option>";
                                 }
                             }
-                            echo "<option value=''>All Years</option>";
+                            if ($yearSelected == '')
+                                {
+                                    echo "<option value='' selected>All Years</option>";
+                                } else {
+                                    echo "<option value='' >All Years</option>";
+                                }
                         }
                     ?>
                         </select>
                     <label for="month" class='yearMonthFilterStyle'><i class="fa fa-cog fa-spin"></i> Month: </label>
                         <select name="month" class='monthOptionStyle' id='month'>
                             <?php
-                                $monthSelectedByUser = $row['month'] == $monthSelected ? 'selected' : '';
+                                // $monthSelectedByUser = $row['month'] == $monthSelected ? 'selected' : '';
                                 for ($i = 1; $i < 13; $i++)
                                 {
                                     $monthModified = '';
@@ -327,8 +344,14 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
                                         echo "<option value='" . $monthModified . "'>" . "" . $monthModified . "</option>";
                                     }
                                 };
+
+                                if ($monthSelected == '')
+                                {
+                                    echo "<option value='' selected>All Months</option>";
+                                } else {
+                                    echo "<option value='' >All Months</option>";
+                                }
                             ?>
-                                <option value="">All Months</option>
                         </select>
                         <button type="submit" name='filter' class='filterButton'><i class="fa fa-filter"></i></button>
                 </form>
@@ -352,16 +375,7 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
             </div>
             <div class="content">
 <?php
-////////////
-// if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET) == 'filter')
-// {
-//     $yearSelected = $_GET['year'];
-//     $monthSelected = $_GET['month'];
-
-// Set default year and month to current values if not provided
-// $yearSelected = isset($_GET['year']) ? $_GET['year'] : date('Y');
-// $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
-/////////////////
+//// Year and Month Filter ////////////////// -->Head
 $sql = "SELECT market_cost_id as mcID, DATE_FORMAT(visit_date, '%W') AS DayOfWeek, DATE_FORMAT(visit_date, '%m/%d/%Y') as ShoppingDate, market_name, food_bev_cost, other_cost 
         FROM market_cost mc
         WHERE user_id = ? 
@@ -372,43 +386,51 @@ if ($yearSelected == '' && $monthSelected == '')
     $sql .= "ORDER BY visit_date DESC";
     $statement = $conn->prepare($sql);
     $statement->bind_param('i', $userId);
-}
-
-if ($yearSelected && $monthSelected)
-{
-    $sql .= "AND DATE_FORMAT(visit_date, '%Y') = ?
-            AND DATE_FORMAT(visit_date, '%m') = ?
-            ORDER BY visit_date DESC";
-    $statement = $conn->prepare($sql);
-    $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
-}
+} else if ($yearSelected && $monthSelected) {
+            $sql .= "AND DATE_FORMAT(visit_date, '%Y') = ?
+                    AND DATE_FORMAT(visit_date, '%m') = ?
+                    ORDER BY visit_date DESC";
+            $statement = $conn->prepare($sql);
+            $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
+        } else if ($yearSelected && $monthSelected == '') {
+                    $sql .= "AND DATE_FORMAT(visit_date, '%Y') = ?
+                            ORDER BY visit_date DESC";
+                    $statement = $conn->prepare($sql);
+                    $statement->bind_param('is', $userId, $yearSelected);
+                } else if ($yearSelected == '' && $monthSelected) {
+                            $sql .= "AND DATE_FORMAT(visit_date, '%m') = ?
+                                    ORDER BY visit_date DESC";
+                            $statement = $conn->prepare($sql);
+                            $statement->bind_param('is', $userId, $monthSelected);
+                        }
+//// Year and Month Filter ////////////////// -->Bottom
 $statement->execute();
-        $result = $statement->get_result();
+$result = $statement->get_result();
 
-        if($result->num_rows > 0)
+if($result->num_rows > 0)
+{
+    echo "<table border='1'>";
+        while($row = $result->fetch_assoc())
         {
-            echo "<table border='1'>";
-                while($row = $result->fetch_assoc())
-                {
-                    $numFBColor = $row['food_bev_cost'] == 0 ? 'silverNumber' : 'blueNumber';
-                    $numOtherColor = $row['other_cost'] == 0 ? 'silverNumber' : 'blueNumber';
-                    echo "<tr class='rowHighLight fontStyle' id= " . $row['mcID'] . ">
-                            <td class='expand tdLength'>" . $row['DayOfWeek'] . "</td>
-                            <td class='expand tdLength'>" . $row['ShoppingDate'] . "</td>
-                            <td class='expand tdLength'>" . $row['market_name'] . "</td>
-                            <td class='expand tdLength totalCostStyle " . $numFBColor . "'>" . number_format($row['food_bev_cost'],2). "</td>
-                            <td class='expand tdLength totalCostStyle " . $numOtherColor . "'>" . number_format($row['other_cost'],2). "</td>
-                            <td class='gridTableColor dataEditStyle'>
-                                    <button id=" ."edit_". $row['mcID'] . " onclick='editClick(".$row['mcID'].", event)' name='edit' class='editSubmitStyle'><i class='fas fa-pen'></i></button>
-                            </td>
-                            <td class='gridTableColor dataDeleteStyle'>
-                                    <button id=" ."delete_" . $row['mcID'] . " name='delete' class='deleteSubmitStyle'><i class='fas fa-trash-alt'></i></button>
-                            </td>";
-                }
-            echo "</table>";
+            $numFBColor = $row['food_bev_cost'] == 0 ? 'silverNumber' : 'blueNumber';
+            $numOtherColor = $row['other_cost'] == 0 ? 'silverNumber' : 'blueNumber';
+            echo "<tr class='rowHighLight fontStyle' id= " . $row['mcID'] . ">
+                    <td class='expand tdLength'>" . $row['DayOfWeek'] . "</td>
+                    <td class='expand tdLength'>" . $row['ShoppingDate'] . "</td>
+                    <td class='expand tdLength'>" . $row['market_name'] . "</td>
+                    <td class='expand tdLength totalCostStyle " . $numFBColor . "'>" . number_format($row['food_bev_cost'],2). "</td>
+                    <td class='expand tdLength totalCostStyle " . $numOtherColor . "'>" . number_format($row['other_cost'],2). "</td>
+                    <td class='gridTableColor dataEditStyle'>
+                            <button id=" ."edit_". $row['mcID'] . " onclick='editClick(".$row['mcID'].", event)' name='edit' class='editSubmitStyle'><i class='fas fa-pen'></i></button>
+                    </td>
+                    <td class='gridTableColor dataDeleteStyle'>
+                            <button id=" ."delete_" . $row['mcID'] . " name='delete' class='deleteSubmitStyle'><i class='fas fa-trash-alt'></i></button>
+                    </td>";
         }
-        $statement->close();
-////////////////
+    echo "</table>";
+}
+$statement->close();
+
 ?>
             </div>
             <div class="totalSummary">
@@ -418,24 +440,26 @@ $statement->execute();
                 WHERE user_id = ?
                 AND deleted = 'N' ";
 
-if ($yearSelected && ($monthSelected == '')) {
-    // Only year is selected
-    $sqlTotal .= "AND DATE_FORMAT(visit_date, '%Y') = ?";
-    $statement = $conn->prepare($sqlTotal);
-    $statement->bind_param('is', $userId, $yearSelected);
-} elseif ($yearSelected && $monthSelected) {
-    // Both year and month are selected
-    $sqlTotal .= " AND DATE_FORMAT(visit_date, '%Y') = ? 
-                   AND DATE_FORMAT(visit_date, '%m') = ?";
-    $statement = $conn->prepare($sqlTotal);
-    $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
-} else {
-    // No filters
+if ($yearSelected == '' && $monthSelected == '') {
     $sqlTotal .= " ORDER BY visit_date DESC";
     $statement = $conn->prepare($sqlTotal);
     $statement->bind_param('i', $userId);
+} else if ($yearSelected && ($monthSelected == '')) {
+    // Only year is selected
+    $sqlTotal .= "AND DATE_FORMAT(visit_date, '%Y') = ?
+                    ORDER BY visit_date DESC";
+    $statement = $conn->prepare($sqlTotal);
+    $statement->bind_param('is', $userId, $yearSelected);
+} else if ($yearSelected && $monthSelected) {
+    // Both year and month are selected
+    $sqlTotal .= " AND DATE_FORMAT(visit_date, '%Y') = ? 
+                   AND DATE_FORMAT(visit_date, '%m') = ?
+                   ORDER BY visit_date DESC";
+    $statement = $conn->prepare($sqlTotal);
+    $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
 }
     
+
 
     // $statement = $conn->prepare($sqlTotal);
     // $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
