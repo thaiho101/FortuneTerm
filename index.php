@@ -438,7 +438,7 @@ $statement->close();
             </div>
             <div class="totalSummary">
 <?php
-////SUM Filter////////////-->Header
+//// SUM Filter ////////////-->Header
 $sqlTotal = "SELECT SUM(mc.food_bev_cost) AS totalFBCost, SUM(mc.other_cost) AS totalOtherCost 
             FROM market_cost mc
             WHERE user_id = ?
@@ -523,21 +523,35 @@ $resultTotal = $statement->get_result();
         </div>
     </div>
 <?php
-// Fetch data from SQL
-
-
+// Fetch data from SQL for the CHART of VISIT the most
 $sql = "SELECT market_name, COUNT(market_name) as total_visits
         FROM market_cost
-        WHERE DATE_FORMAT(visit_date, '%Y') = ?
-        AND DATE_FORMAT(visit_date, '%m') = ?
-        AND user_id = ?
-        AND deleted = 'N'
-        GROUP BY market_name
-        ORDER BY total_visits DESC";
-
-$statement = $conn->prepare($sql);
-$statement->bind_param('ssi', $yearSelected, $monthSelected, $userId);
-
+        WHERE user_id = ?
+        AND deleted = 'N'";
+//// CHART Filter [The MOST VISITED MARKET CHART]//////-->Header
+if (($yearSelected == '') && ($monthSelected == '')) {
+    //[All Years + All Months]
+    $sql .= " GROUP BY market_name
+             ORDER BY total_visits DESC";
+    $statement = $conn->prepare($sql);
+    $statement->bind_param('i', $userId);
+} else if ($yearSelected && ($monthSelected == '')) {
+        //[Year selected and All Months]
+        $sql .= " AND DATE_FORMAT(visit_date, '%Y') = ?
+                GROUP BY market_name
+                ORDER BY total_visits DESC";
+        $statement = $conn->prepare($sql);
+        $statement->bind_param('is', $userId, $yearSelected);
+        } else {
+            //[Year selected and month selected]
+            $sql .= " AND DATE_FORMAT(visit_date, '%Y') = ?
+                    AND DATE_FORMAT(visit_date, '%m') = ?
+                    GROUP BY market_name
+                    ORDER BY total_visits DESC";
+            $statement = $conn->prepare($sql);
+            $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
+            }
+//// CHART Filter [The MOST VISITED MARKET CHART]//////-->Bottom
 $statement->execute();
 $result = $statement->get_result();
 
