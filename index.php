@@ -175,12 +175,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 ?>
 
 <?php
-echo date('Y') . "/";
-echo date('m');
 // Set default year and month to current values if not provided
 $yearSelected = isset($_GET['year']) ? $_GET['year'] : date('Y');
 $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
-echo $yearSelected;
 ?>
 
             <div class="budget">
@@ -306,13 +303,14 @@ if($yearSelected == '' || $monthSelected == '')
                         $sql = "SELECT distinct DATE_FORMAT(visit_date, '%Y') AS year
                                 FROM market_cost
                                 WHERE user_id = ?
-                                ORDER BY market_name DESC";
+                                AND deleted = 'N'
+                                ORDER BY year DESC";
 
                         $stmt = $conn->prepare($sql);
                         $stmt->bind_param('i', $userId);
                         $stmt->execute();
                         $result = $stmt->get_result();
-
+////[Year Selected]//////////-->Header
                         if($result->num_rows > 0)
                         {
                             // echo "<option value='" . date('Y') . "'>" . date('Y') . "</option>";
@@ -320,25 +318,21 @@ if($yearSelected == '' || $monthSelected == '')
                             {
                                 if ($row['year'] == $yearSelected) {
                                     echo "<option value='" . $row['year'] . "' selected >" . $row['year'] . "</option>";
-                                } else if ($row['year'] != $yearSelected) {
-                                        echo "<option value='" . $yearSelected . "' selected >" . $yearSelected . "</option>";  
                                 } else {
                                     echo "<option value='" . $row['year'] . "'>" . $row['year'] . "</option>";
                                 }
                             }
-                            if ($yearSelected == '')
-                            {
-                                echo "<option value='' selected>All Years</option>";
-                            } else {
-                                    echo "<option value='' >All Years</option>";
-                                }
+
+                            $allYearSelected = ($yearSelected == '') ? 'selected' : '';
+                            echo "<option value='' $allYearSelected >All Years</option>"; 
                         }
+////[Year Selected]/////////-->Bottom
                     ?>
                         </select>
                     <label for="month" class='yearMonthFilterStyle'><i class="fa fa-cog fa-spin"></i> Month: </label>
                         <select name="month" class='monthOptionStyle' id='month'>
                             <?php
-                                // $monthSelectedByUser = $row['month'] == $monthSelected ? 'selected' : '';
+////[Month Selected]/////////-->Header
                                 for ($i = 1; $i < 13; $i++)
                                 {
                                     $monthModified = '';
@@ -357,12 +351,9 @@ if($yearSelected == '' || $monthSelected == '')
                                     }
                                 };
 
-                                if ($monthSelected == '')
-                                {
-                                    echo "<option value='' selected>All Months</option>";
-                                } else {
-                                    echo "<option value='' >All Months</option>";
-                                }
+                                $allMonthSelected = ($monthSelected == '') ? 'selected' : '';
+                                echo "<option value='' $allMonthSelected>All Months</option>"; 
+////[Month Selected]/////////-->Bottom
                             ?>
                         </select>
                         <button type="submit" name='filter' class='filterButton'><i class="fa fa-filter"></i></button>
