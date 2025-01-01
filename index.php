@@ -501,17 +501,21 @@ $resultTotal = $statement->get_result();
         $budget = $currentBudget;
     }
     $balanceForShopping = $budget - $totalFBCost;
+    if ($yearSelected == '')
+    {
+        $totalHidden = "hidden";
+    }
     echo "<tr class='fontStyle'>
     <td class='gridTableColor redundantCol'></td> 
     <td class='gridTableColor totalCostLabel totalBudgetColor' colspan='2'>Total Budget</td> 
-    <td class='gridTableColor budgetStyle totalCostStyle totalCostTextStyle totalBudgetColor'>$" . number_format($budget,2) . "</td>
+    <td class='gridTableColor budgetStyle totalCostStyle totalCostTextStyle totalBudgetColor $totalHidden'>$" . number_format($budget,2) . "</td>
     <td class='gridTableColor redundantIdStyle dataEditStyle' colspan='3'></td>
     </tr>";
 
     echo "<tr class='fontStyle'>
     <td class='gridTableColor redundantCol'></td> 
     <td class='gridTableColor totalCostLabel totalBalanceColor' colspan='2'>Balance for Shopping</td> 
-    <td class='gridTableColor balanceStyle totalCostStyle totalCostTextStyle totalBalanceColor'>$" . number_format($balanceForShopping,2) . "</td>
+    <td class='gridTableColor balanceStyle totalCostStyle totalCostTextStyle totalBalanceColor $totalHidden'>$" . number_format($balanceForShopping,2) . "</td>
     <td class='gridTableColor redundantIdStyle dataEditStyle' colspan='3'></td>
     </tr></tfoot>";      
 
