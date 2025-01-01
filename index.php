@@ -175,9 +175,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 ?>
 
 <?php
+echo date('Y') . "/";
+echo date('m');
 // Set default year and month to current values if not provided
 $yearSelected = isset($_GET['year']) ? $_GET['year'] : date('Y');
 $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
+echo $yearSelected;
 ?>
 
             <div class="budget">
@@ -317,14 +320,16 @@ if($yearSelected == '' || $monthSelected == '')
                             {
                                 if ($row['year'] == $yearSelected) {
                                     echo "<option value='" . $row['year'] . "' selected >" . $row['year'] . "</option>";
+                                } else if ($row['year'] != $yearSelected) {
+                                        echo "<option value='" . $yearSelected . "' selected >" . $yearSelected . "</option>";  
                                 } else {
                                     echo "<option value='" . $row['year'] . "'>" . $row['year'] . "</option>";
                                 }
                             }
                             if ($yearSelected == '')
-                                {
-                                    echo "<option value='' selected>All Years</option>";
-                                } else {
+                            {
+                                echo "<option value='' selected>All Years</option>";
+                            } else {
                                     echo "<option value='' >All Years</option>";
                                 }
                         }
