@@ -235,6 +235,10 @@ if($yearSelected == '' || $monthSelected == '')
                             <h2 id='budgetSummaryTitle'>Your Budget Summary</h2>
                             <div id='showBudgetContent'>
 <?php
+                        if ($yearSelected == '')
+                        {
+                            echo "The [Year] filter must be specified.";
+                        }
                         $sql = "SELECT year, month, amount
                             FROM budget
                             WHERE user_id = ?
