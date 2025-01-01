@@ -793,7 +793,7 @@ table {
 
     /* Content Section: Allow scrolling */
     .content {
-        max-height: 300px; /* Remove fixed height */
+        max-height: 100px; /* Remove fixed height */
         overflow-y: auto;
     }
 
