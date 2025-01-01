@@ -501,7 +501,7 @@ $resultTotal = $statement->get_result();
         $budget = $currentBudget;
     }
     $balanceForShopping = $budget - $totalFBCost;
-    if ($yearSelected == '')
+    if ($yearSelected == '' || $monthSelected == '')
     {
         $totalHidden = "hidden";
     }
