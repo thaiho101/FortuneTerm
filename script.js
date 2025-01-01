@@ -269,3 +269,7 @@ async function applyBudget()
 //     console.log("set budget");
 // }
 
+function focusOnDate() {
+    const inputElement = document.getElementById('date');
+    inputElement.focus();
+}

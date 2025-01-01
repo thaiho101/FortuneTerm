@@ -404,7 +404,7 @@ table {
 .content {
     /* background-color: #B3E5FC; */
     flex: 3;
-    /* max-height: 381.9px; */
+    max-height: 381.9px;
     /* max-height: 200px; */
     overflow-y: auto;
 }
@@ -793,7 +793,8 @@ table {
 
     /* Content Section: Allow scrolling */
     .content {
-        max-height: 200px;
+        /* min-height: 0; */
+        max-height: 400px;
         overflow-y: auto;
     }
 

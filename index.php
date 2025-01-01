@@ -83,7 +83,7 @@ $stmt->close();
         <div id="dataChange">
             <div class="insert">
                 <div class='newTransactionLabel'>
-                    <a class='newTransactionStyle' href="#date">New Transaction</a>
+                    <a class='newTransactionStyle'  onclick="focusOnDate()">New Transaction</a>
                 </div>
                 
                 <form method='post'>
