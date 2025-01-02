@@ -175,9 +175,33 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 ?>
 
 <?php
+$sql = "SELECT DATE_FORMAT(visit_date, '%Y') AS YEAR, DATE_FORMAT(visit_date, '%m') AS MONTH
+        FROM market_cost
+        WHERE user_id = ?
+        AND deleted = 'N'
+        ORDER BY visit_date DESC
+        LIMIT 1";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('i', $userId);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$latestTransactionYear = date('Y');
+$latestTransactionMonth = date('m');
+if($result->num_rows > 0)
+{
+    $row = $result->fetch_assoc();
+    $latestTransactionYear = $row['YEAR'];
+    $latestTransactionMonth = $row['MONTH'];
+}
+$stmt->close();
 // Set default year and month to current values if not provided
-$yearSelected = isset($_GET['year']) ? $_GET['year'] : date('Y');
-$monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
+// $yearSelected = isset($_GET['year']) ? $_GET['year'] : date('Y');
+// $monthSelected = isset($_GET['month']) ? $_GET['month'] : date('m');
+
+$yearSelected = isset($_GET['year']) ? $_GET['year'] : $latestTransactionYear;
+$monthSelected = isset($_GET['month']) ? $_GET['month'] : $latestTransactionMonth;
 ?>
 
             <div class="budget">
@@ -353,6 +377,8 @@ if($yearSelected == '' || $monthSelected == '')
                                     } else {
                                         echo "<option value='" . $monthModified . "'>" . "" . $monthModified . "</option>";
                                     }
+
+                                    
                                 };
 
                                 $allMonthSelected = ($monthSelected == '') ? 'selected' : '';
