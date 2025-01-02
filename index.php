@@ -576,7 +576,14 @@ if (($yearSelected == '') && ($monthSelected == '')) {
                 ORDER BY total_visits DESC";
         $statement = $conn->prepare($sql);
         $statement->bind_param('is', $userId, $yearSelected);
-        } else {
+        } else if ($yearSelected == '' && $monthSelected) {
+            //[Year selected and All Months]
+            $sql .= " AND DATE_FORMAT(visit_date, '%m') = ?
+                    GROUP BY market_name
+                    ORDER BY total_visits DESC";
+            $statement = $conn->prepare($sql);
+            $statement->bind_param('is', $userId, $monthSelected);
+            } else {
             //[Year selected and month selected]
             $sql .= " AND DATE_FORMAT(visit_date, '%Y') = ?
                     AND DATE_FORMAT(visit_date, '%m') = ?
