@@ -68,7 +68,7 @@ $stmt->close();
                 <div class="dropDownOptions">
                     <div class='dropDownLinksDiv'><a class='dropDownLinks' href="#">My Profile</a></div>
                     <div class='dropDownLinksDiv'><a class='dropDownLinks' href="#">Setting</a></div>
-                    <div class='dropDownLinksDiv'><a class='dropDownLinks' href="?logOut=true"><i class='bx bx-log-out' ></i> Log out</a></div> 
+                    <div class='dropDownLinksDiv'><a class='dropDownLinks' href="?logOut=true">Log out <i class='bx bx-log-out' ></i> </a></div> 
                 </div>
             </div>
             <div class='hidden'>

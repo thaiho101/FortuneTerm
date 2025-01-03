@@ -716,6 +716,8 @@ table {
     align-items: center;
     /* border-bottom: solid 0.2px silver; */
     border-top: solid 0.2px silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .dropDownLinks {
     font-size: 15px;
@@ -723,6 +725,7 @@ table {
     align-content: center;
     text-align: center;
     align-items: center;
+    display: block;
 }
 
 /**/
