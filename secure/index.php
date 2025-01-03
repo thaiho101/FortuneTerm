@@ -47,7 +47,7 @@ require_once('../config.php');
                         </div>
 
                         <div class='loginSection'>
-                                <button type='submit' name='loginButton' class='loginButton'>Login</button>
+                                <button type='submit' name='loginButton' class='loginButton'><i class='bx bxs-lock-alt ' ></i> Login</button>
                         </div>
 
                         <div class='registerSection'>
