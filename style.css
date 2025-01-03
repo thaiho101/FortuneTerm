@@ -20,12 +20,12 @@ body, div {
     background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
 }
 
-#navBar {
+#webTitle {
     /* align-items: center; */
     text-align: left;
 }
 
-#navBar a {
+#webTitle a {
     /* font-family: "poppins", sans-serif; */
     text-decoration: none;
     font-size: 40px;
@@ -193,6 +193,7 @@ body, div {
     height: 20px;
 }
 
+
 .insertButton {
     margin-left: 70%;
     border-radius: 8px;
@@ -206,6 +207,7 @@ body, div {
 .insertButton:hover {
     border-width: 2px 1px 3px 1px;
     background-image: linear-gradient(white, white, white);
+    box-shadow: 4px 2px 8px rgb(228, 227, 227);
 }
 
 .budget {
@@ -536,10 +538,11 @@ table {
     width: 20%;
 }
 
-#logOutSection {
+#navBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* padding-bottom: 10px; */
 }
 
 .logOutButton {
@@ -644,7 +647,85 @@ table {
 
 
 
+/**/
+.dropDownSection {
+    display: inline-block;
+    position: relative;
+}
 
+#dropDownButton {
+    /* border-radius: 5px;
+    border: solid 1px silver; */
+    color: black;
+        align-content: center;
+        border-radius: 4px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 4px 2px 5px gray;
+        cursor: pointer;
+        padding: 6px;
+}
+
+#dropDownButton:hover {
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+}
+
+.dropDownOptions {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    border-radius: 5px;
+    background-color: white;
+    border: solid 2px rgb(78, 176, 209)
+}
+
+.dropDownSection:hover {
+    .dropDownOptions {
+        display: block;
+        z-index: 10;
+        width: 400%;
+        right: 5%;
+        
+    }
+
+    .dropDownLinks {
+        text-decoration: none;
+        color: black
+
+    }
+
+    .dropDownLinksDiv:hover {
+        /* width: 150px; */
+        background-color: rgb(156, 244, 244);
+        background-image: linear-gradient(white, cyan, white);
+
+    }
+}
+
+.dropDownOptions .dropDownLinks:hover {
+    /* background-color: yellow; */
+    color: black
+}
+
+.dropDownLinksDiv {
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    align-items: center;
+    /* border-bottom: solid 0.2px silver; */
+    border-top: solid 0.2px silver;
+}
+.dropDownLinks {
+    font-size: 15px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+/**/
 
 
 
@@ -808,7 +889,6 @@ table {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically (if needed) */
     height: 100%; /* Optional: adjust height to align vertically */
-    
     }
     .insertButton {
         /* margin-left: 0; */

@@ -60,16 +60,25 @@ $stmt->close();
 </head>
 <body>
     <div id="navigation">
-        <div id='navBar'><a href='index.php' id='homeLink'>Market Cost</a></div>
-        <div id='logOutSection'>
+        <div id='webTitle'><a href='index.php' id='homeLink'>Market Cost</a></div>
+        <div id='navBar'>
             <div class='greeting'>Welcome, <?php echo $firstName;?>!</div>
-            <div>
-                <form action="" method='get'>
-                    <button type='submit' name='logOut' class='logOutButton'><i class='bx bx-log-out' ></i></button>
+            <div class="dropDownSection">
+                <button id='dropDownButton'><i class="fas fa-bars"></i></button>
+                <div class="dropDownOptions">
+                    <div class='dropDownLinksDiv'><a class='dropDownLinks' href="#">My Profile</a></div>
+                    <div class='dropDownLinksDiv'><a class='dropDownLinks' href="#">Setting</a></div>
+                    <div class='dropDownLinksDiv'><a class='dropDownLinks' href="?logOut=true"><i class='bx bx-log-out' ></i> Log out</a></div> 
+                </div>
+            </div>
+            <div class='hidden'>
+                <form id='logOutForm' action="" method='get'>
+                    <button type='submit' name='logOut'  class='logOutButton'><i class='bx bx-log-out' ></i></button>
                 </form>
             </div>
                     <?php
                         if (isset($_GET['logOut'])) {
+                            // session_start();
                             $_SESSION = []; // Clear all session data
                             session_destroy(); // End the session
                             header("Location: ../secure");
