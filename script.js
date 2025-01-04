@@ -4,6 +4,11 @@ function focusOnDate() {
     inputElement.focus();
 }
 
+function focusOnHomeLink() {
+    const homeLink = document.getElementById('homeLink');
+    homeLink.focus();
+}
+
 async function editClick(id, event) {
     event.preventDefault();
     const row = document.getElementById(id);
