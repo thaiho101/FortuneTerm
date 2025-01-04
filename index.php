@@ -1,4 +1,5 @@
 <?php
+ob_start();
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -6,6 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 {
         header("Location: /secure");
+        exit();
 }
 // require_once("index.php"); 
 $userId = $_SESSION['user_id'];
@@ -106,22 +108,28 @@ $stmt->close();
 
                         <input list="store" name='store' class='insertBox' required>
                         <datalist id="store">
-                    <?php
-                        $sql = "SELECT distinct market_name
-                        FROM market_cost
-                        WHERE user_id = $userId
-                        ORDER BY market_name ASC";
+<?php
+    $sql = "SELECT distinct market_name
+    FROM market_cost
+    WHERE user_id = ?
+    ORDER BY market_name ASC";
 
-                        $result = $conn->query($sql);
+    $statement = $conn->prepare($sql);
+    $statement->bind_param('i', $userId);
+    $statement->execute();
+    $result = $statement->get_result();
 
-                        if($result->num_rows > 0)
-                        {
-                            while($row = $result->fetch_assoc())
-                            {
-                                echo "<option value='" . $row['market_name'] . "'></option>";
-                            }
-                        }
-                    ?>
+    // $result = $conn->query($sql);
+
+    if($result->num_rows > 0)
+    {
+        while($row = $result->fetch_assoc())
+        {
+            echo "<option value='" . $row['market_name'] . "'></option>";
+        }
+    }
+    $statement->close();
+?>
                         </datalist>
                     </div>
 
@@ -140,9 +148,7 @@ $stmt->close();
                     </div>
                 </form>
             </div>
-
 <?php
-
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     if(isset($_POST['insert']))
@@ -168,7 +174,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $insertQuery = "INSERT INTO market_cost (user_id, visit_date, market_name, food_bev_cost, other_cost) 
             VALUES (?, ?, ?, ?, ?)";
             $statement = $conn->prepare($insertQuery);
-            $statement->bind_param('dssdd', $userId, $visitDate, $marketName, $FBCost, $otherCost);
+            $statement->bind_param('issdd', $userId, $visitDate, $marketName, $FBCost, $otherCost);
             $statement->execute();
             $statement->close();
 
@@ -178,11 +184,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             header("Location: " . "/warning");
             exit(); 
         }
-
     }
 }
 ?>
-
 <?php
 $sql = "SELECT DATE_FORMAT(visit_date, '%Y') AS YEAR, DATE_FORMAT(visit_date, '%m') AS MONTH
         FROM market_cost
@@ -332,7 +336,7 @@ if($yearSelected == '' || $monthSelected == '')
         </div>
 
         <div id="dataAnalyze">
-            <div class="filter">
+            <div id='filter' class="filter">
                 <form method='get' class='yearMonthDiv'>
                     <label for="year" class='yearMonthFilterStyle'><i class="fa fa-cog fa-spin"></i> Year:  </label>
                         <select name="year" class='yearOptionStyle'id='year'>
@@ -403,7 +407,7 @@ if($yearSelected == '' || $monthSelected == '')
 ?>
             <div class="header">
                 <table class='headerTable'>
-                    <thead>
+                    <thead id='contentHeader'>
                         <tr class='headerRow'>
                             <th class='fontStyle expand wrapText tdLength'>Day of Week</th>
                             <th class='fontStyle expand tdLength'>Date</th>
@@ -669,5 +673,10 @@ $statement->close();
     </script>
 
     <script src="script.js"></script>
+    <button id="scrollToHomeLink" onclick="focusOnHomeLink()"><i class='fas fa-arrow-up'></i></button>
 </body>
 </html>
+<?php
+// End output buffering and flush the output
+ob_end_flush();
+?>

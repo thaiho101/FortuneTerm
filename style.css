@@ -676,9 +676,10 @@ table {
     display: none;
     position: absolute;
     overflow: auto;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: white;
-    border: solid 2px rgb(78, 176, 209)
+    border: solid 2px rgb(78, 176, 209);
+    border: solid 2px silver;
 }
 
 .dropDownSection:hover {
@@ -728,11 +729,50 @@ table {
     display: block;
 }
 
-.dropDownOptions:hover .logOutLink:hover {
+.logOutLink {
+    background-image: linear-gradient(white, orange, white);
+}
+
+.dropDownOptions:hover .logOutLink {
     background-image: linear-gradient(white, orange, white);
 }
 
 /* Drop-Down-Button -->Bottom*/
+
+
+
+
+/* Scroll-To-Top -->Header*/
+#contentHeader:focus {
+
+}
+
+#scrollToHomeLink {
+    position: fixed;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+    border-color: silver;
+    background-image: linear-gradient(white, silver, white);
+    box-shadow: 4px 4px 5px rgb(161, 161, 161);
+    z-index: 1000;
+}
+
+#scrollToHomeLink:hover {
+    /* background-color: #0066cc; */
+    background-image: linear-gradient(white, rgb(228, 218, 218), white);
+
+    box-shadow: 4px 2px 5px rgb(229, 229, 229);
+}
+
+.fa-arrow-up {
+    color: rgb(94, 93, 93);
+    font-size: 15px;
+}
+
+/* Scroll-To-Top -->Bottom*/
 
 
 
