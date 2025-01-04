@@ -647,7 +647,7 @@ table {
 
 
 
-/**/
+/* Drop-Down-Button -->Header*/
 .dropDownSection {
     display: inline-block;
     position: relative;
@@ -728,7 +728,42 @@ table {
     display: block;
 }
 
-/**/
+.dropDownOptions:hover .logOutLink:hover {
+    background-image: linear-gradient(white, orange, white);
+}
+
+/* Drop-Down-Button -->Bottom*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
