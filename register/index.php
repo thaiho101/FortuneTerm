@@ -78,9 +78,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST['password'];
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
-
         $confirmPassword = $_POST['confirmPassword'];
 
+        ////// Email Checking from Register page ///// -->Header
+            $stmt = $conn->prepare("SELECT email
+                                    FROM users WHERE email = ?");
+            $stmt->bind_param('s', $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $errorEmailMessage = '';
+            if($result->num_rows > 0)
+            {
+                $errorEmailMessage = "Your email already used!";
+                echo "<script>
+                document.getElementById('errorMessage').innerHTML = `<div><i class='fas fa-exclamation-triangle'></i> $errorEmailMessage</div>`;
+                document.getElementById('errorMessage').style.backgroundColor = 'white';
+                document.getElementById('errorMessage').style.color = 'red';
+                document.getElementById('errorMessage').style.textAlign = 'center';
+                document.getElementById('errorMessage').style.paddingTop = '10px';
+                document.getElementById('errorMessage').style.borderBottomLeftRadius = '8px';
+                document.getElementById('errorMessage').style.borderBottomRightRadius = '8px';
+                document.getElementById('errorMessage').style.borderTopLeftRadius = '8px';
+                document.getElementById('errorMessage').style.borderTopRightRadius = '8px';
+                document.getElementById('errorMessage').style.jutifyContent = 'center';
+                document.getElementById('errorMessage').style.alignItems = 'center';
+                document.getElementById('errorMessage').style.contentItems = 'center';
+                document.getElementById('errorMessage').style.height = '30px';
+                document.getElementById('errorMessage').style.backgroundImage = 'linear-gradient(white, yellow, white)';
+            </script>";
+            exit();
+            } 
+            $stmt->close(); 
+        ///// Email Checking from Register page ///// -->Bottom
         if ($password === $confirmPassword)
         {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // Secure password hashing
@@ -103,7 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "<div class='error'>Error preparing statement: " . $conn->error . "</div>";
             }
         } else {
-            // echo "<script src='regScript.js'></script>";
             echo "<script>
                 document.getElementById('errorMessage').innerHTML = `<div><i class='fas fa-exclamation-triangle'></i> Passwords do not match!</div>`;
                 document.getElementById('errorMessage').style.backgroundColor = 'white';
