@@ -24,13 +24,13 @@ $stmt->close();
 
 ?>
 <div id="navigation">
-    <div id='webTitle'><a href='index.php' id='homeLink'>Market Cost</a></div>
+    <div id='webTitle'><a href='../' id='homeLink'>Market Cost</a></div>
     <div id='navBar'>
         <div class='greeting'>Welcome, <?php echo $firstName;?>!</div>
         <div class="dropDownSection">
             <button id='dropDownButton'><i class="fas fa-bars"></i></button>
             <div class="dropDownOptions">
-                <div class='dropDownLinksDiv'><a class='dropDownLinks' href="index.php"><i class='fas fa-cloud-sun'></i> Dashboard</a></div>
+                <div class='dropDownLinksDiv'><a class='dropDownLinks' href="../"><i class='fas fa-cloud-sun'></i> Dashboard</a></div>
                 <div class='dropDownLinksDiv'><a class='dropDownLinks' href="/myAccount"><i class='fas fa-user-tie'></i> My Account</a></div>
                 <div class='dropDownLinksDiv'><a class='dropDownLinks' href="#"><i class='fas fa-wrench'></i> Setting</a></div>
                 <div class='dropDownLinksDiv logOutLink'><a class='dropDownLinks logOutLink' href="?logOut=true">Log out <i class='bx bx-log-out' ></i> </a></div> 
