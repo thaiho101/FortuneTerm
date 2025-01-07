@@ -1,0 +1,175 @@
+/* General Reset for Margins and Padding */
+body, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+	display: block;
+}
+
+#navigation {
+    /* background-color: silver; */
+    /* background-image: url("navBarSilver.jpeg"); */
+    color: rgb(115, 115, 115);
+    padding: 10px;
+    text-align: left;
+    font-size: 1.5em;
+    /* background-image: linear-gradient(white, lightblue, white); */
+    /* background-color:#6199c7; */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+}
+
+#webTitle {
+    /* align-items: center; */
+    text-align: left;
+}
+
+#webTitle a {
+    /* font-family: "poppins", sans-serif; */
+    text-decoration: none;
+    font-size: 40px;
+    color: #5580a3;
+
+    font-family: "Lilita One", serif;
+        /* font-weight: 50; */
+        font-style: normal;
+
+        -webkit-text-stroke: 1.3px rgb(34, 254, 254);
+}
+
+#navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-bottom: 10px; */
+}
+
+.greeting {
+    font-size: 18px;
+}
+
+.userName {
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Drop-Down-Button -->Header*/
+.dropDownSection {
+    display: inline-block;
+    position: relative;
+}
+
+#dropDownButton {
+    /* border-radius: 5px;
+    border: solid 1px silver; */
+    color: black;
+        align-content: center;
+        border-radius: 4px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 4px 2px 5px gray;
+        cursor: pointer;
+        padding: 6px;
+}
+
+#dropDownButton:hover {
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+}
+
+.dropDownOptions {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    border-radius: 8px;
+    background-color: white;
+    border: solid 2px rgb(78, 176, 209);
+    border: solid 2px silver;
+}
+
+.dropDownSection:hover {
+    .dropDownOptions {
+        display: block;
+        z-index: 10;
+        width: 400%;
+        right: 5%;
+        
+    }
+
+    .dropDownLinks {
+        text-decoration: none;
+        color: black
+
+    }
+
+    .dropDownLinksDiv:hover {
+        /* width: 150px; */
+        background-color: rgb(156, 244, 244);
+        background-image: linear-gradient(white, cyan, white);
+
+    }
+}
+
+.dropDownOptions .dropDownLinks:hover {
+    /* background-color: yellow; */
+    color: black
+}
+
+.dropDownLinksDiv {
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    align-items: center;
+    /* border-bottom: solid 0.2px silver; */
+    border-top: solid 0.2px silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.dropDownLinks {
+    font-size: 15px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    display: block;
+}
+
+.logOutLink {
+    background-image: linear-gradient(white, orange, white);
+}
+
+.dropDownOptions:hover .logOutLink {
+    background-image: linear-gradient(white, orange, white);
+}
+
+/* Drop-Down-Button -->Bottom*/
+
+
+
+/* Bottom Container */
+#bottom {
+    color: black;
+	display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(237, 235, 235);
+}
+
+#global-nav {
+    /* display: flex; */
+    background-color: yellow;
+    width: 15%;
+}
+
+#content {
+    background-color: green;
+    width: 85%;
+}
+
+#global-nav-setting {
+    background-color: red;
+}

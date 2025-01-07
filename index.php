@@ -35,7 +35,7 @@ $result = $stmt->get_result();
 if ($row = $result->fetch_assoc()) {
     $firstName = $row['first_name'];
 } else {
-    $firstName = "Guest"; // Default value if not found
+    $firstName = "Guest";
 }
 $stmt->close();
 
@@ -61,34 +61,7 @@ $stmt->close();
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="navigation">
-        <div id='webTitle'><a href='index.php' id='homeLink'>Market Cost</a></div>
-        <div id='navBar'>
-            <div class='greeting'>Welcome, <?php echo $firstName;?>!</div>
-            <div class="dropDownSection">
-                <button id='dropDownButton'><i class="fas fa-bars"></i></button>
-                <div class="dropDownOptions">
-                    <div class='dropDownLinksDiv'><a class='dropDownLinks' href="#">My Profile</a></div>
-                    <div class='dropDownLinksDiv'><a class='dropDownLinks' href="#">Setting</a></div>
-                    <div class='dropDownLinksDiv logOutLink'><a class='dropDownLinks logOutLink' href="?logOut=true">Log out <i class='bx bx-log-out' ></i> </a></div> 
-                </div>
-            </div>
-            <div class='hidden'>
-                <form id='logOutForm' action="" method='get'>
-                    <button type='submit' name='logOut'  class='logOutButton'><i class='bx bx-log-out' ></i></button>
-                </form>
-            </div>
-                    <?php
-                        if (isset($_GET['logOut'])) {
-                            // session_start();
-                            $_SESSION = []; // Clear all session data
-                            session_destroy(); // End the session
-                            header("Location: ../secure");
-                            exit();
-                        }                    
-                    ?>
-        </div>
-    </div>
+    <?php require_once("./Components/navBar.php"); ?>
 
     <div id="bottom">
         <div id="dataChange">
