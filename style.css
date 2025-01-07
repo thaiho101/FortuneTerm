@@ -737,6 +737,8 @@ table {
     background-image: linear-gradient(white, orange, white);
 }
 
+
+
 /* Drop-Down-Button -->Bottom*/
 
 
@@ -771,8 +773,129 @@ table {
     color: rgb(94, 93, 93);
     font-size: 15px;
 }
-
 /* Scroll-To-Top -->Bottom*/
+
+
+
+/* //// My Account //////////////////////-->Header*/
+#accountBottom {
+    display: flex;
+}
+
+#global-nav-myAccount {
+    /* display: flex; */
+    /* background-color: rgb(1, 235, 235); */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    width: 15%;
+    height: 100vh;
+}
+
+#myProfileNav {
+    width: 100%;
+    color: #5580a3;
+    /* font-weight: bold; */
+    font-size: 18px;
+    background-color: transparent;
+    /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    border-bottom-color: white;
+}
+
+#changePasswordNav {
+    width: 100%;
+    color: #5580a3;
+    /* font-weight: bold; */
+    font-size: 18px;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+}
+
+#myProfileNav:hover, #changePasswordNav:hover {
+    background-color: rgb(175, 243, 251);
+}
+
+#myProfileNav:active, #changePasswordNav:active {
+    background-color: yellow;
+}
+
+.selectedNavMyProfile {
+    color: white !important;
+    background-color: white !important;
+    border-right-color: white !important;
+    background-image: linear-gradient(white, #00f2fe, white);
+}
+
+.selectedNavChangePassword {
+    color: white !important;
+    background-color: white !important;
+    border-right-color: white !important;
+    background-image: linear-gradient(white, #00f2fe, white);
+}
+
+#myProfileContent {
+    /* background-color: green; */
+    width: 85%;
+}
+
+#global-nav-changePassword {
+    /* background-color: red; */
+}
+
+#userPicture, #firstLastNameSection, #firstNameSection, #lastNameSection, #emailSection {
+    display: flex;
+    padding-left: 30px;
+    
+}
+
+#userPicture {
+    padding-left: 50px;
+    width: 200px;
+    height: 200px;
+}
+
+#firstLastNameSection {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#firstNameSection {
+    padding-right: 150px;
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#lastNameSection {
+    padding-right: 150px;
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#emailSection {
+    /* padding-left: 60px;
+    /* padding-right: 150px; */
+    padding-left: 40px;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tdWidth {
+    width: 200px;
+}
+
+.tdWidthEmail {
+    width: 100px;
+}
+/* //// My Account //////////////////////-->Bottom*/
+
+
 
 
 
@@ -1046,6 +1169,113 @@ table {
         /* font-family: "Lilita One", serif; */
         font-weight: bold;
     }
+
+
+
+
+    /* //// My Account //////////////////////-->Header*/
+#accountBottom {
+    display: flex;
+}
+
+#global-nav-myAccount {
+    /* display: flex; */
+    /* background-color: rgb(1, 235, 235); */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    width: 25%;
+    height: 100vh;
+}
+
+#myProfileNav {
+    width: 100%;
+    color: #5580a3;
+    /* color: white; */
+    /* font-weight: bold; */
+    font-size: 12px;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    border-bottom-color: white;
+}
+
+#changePasswordNav {
+    width: 100%;
+    color: #5580a3;
+    /* color: white; */
+    /* font-weight: bold; */
+    font-size: 12px;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+}
+
+#myProfileNav:hover, #changePasswordNav:hover {
+    background-color: rgb(175, 243, 251);
+}
+
+#myProfileNav:active, #changePasswordNav:active {
+    background-color: red;
+}
+
+#myProfileContent {
+    /* background-color: green; */
+    width: 75%;
+}
+
+#global-nav-changePassword {
+    /* background-color: red; */
+}
+
+#userPicture, #firstLastNameSection, #firstNameSection, #lastNameSection, #emailSection {
+    display: flex;
+    padding-left: 10px;
+}
+
+#userPicture {
+    padding-left: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+#firstLastNameSection {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#firstNameSection {
+    padding-right: 20px;
+    /* width: 100px; */
+}
+
+#lastNameSection {
+    padding-right: 0px;
+    /* padding-right: 150px; */
+    /* max-width: 400px; */
+}
+
+.tdWidth {
+    width: 80px;
+}
+
+.tdWidthEmail {
+    width: 200px;
+}
+
+#emailSection {
+    width: 100%;
+    padding-left: 20px;
+    /* padding-right: 500px; */
+    right: 50px;
+    /* width: 30%; */
+}
+
+#firstName {
+
+}
+/* //// My Account //////////////////////-->Bottom*/
+
 }
 
 

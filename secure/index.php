@@ -89,6 +89,36 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $_SESSION['user_id'] = $row['user_id'];
                 $_SESSION['first_name'] = $row['first_name'];
 
+                ///////////// IP Collective -->Header ////////////
+                function getUserIP() {
+                        // Check if the user is accessing through a proxy
+                        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+                        // IP from shared internet
+                        $ip = $_SERVER['HTTP_CLIENT_IP'];
+                        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                        // IP passed from a proxy
+                        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+                        } else {
+                        // Regular IP from remote address
+                        $ip = $_SERVER['REMOTE_ADDR'];
+                        }
+                        return $ip;
+                }
+                
+                // Get the user's IP address
+                $user_ip = getUserIP();
+
+                $insertQuery = "INSERT INTO ip_log (user_id, ip_address) 
+                        VALUES (?, ?)";
+                        $statement = $conn->prepare($insertQuery);
+                        $statement->bind_param('is', $row['user_id'], $user_ip);
+                        $statement->execute();
+                        $statement->close();
+                
+                // Output the IP address
+                //     echo "User's IP Address: " . $user_ip;
+                //////////// IP Collective -->Bottom ////////////
+
                 // Redirect to the homepage
                 header("Location: ../");
                 exit();
