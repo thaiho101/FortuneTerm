@@ -67,35 +67,38 @@ require_once('../config.php');
             <!-- ////// Global nav bars --Bottom-->
         </div>
         <!-- ////// myProfile Content --Header-->
-        <div id='myProfileContent' class="<?php echo $myProfileHiddenClass; ?>">
-            <div id='userPicture'><img src="/myAccount/userPicture.jpg" alt="Avatar"></div>
-            <div id='firstLastNameSection'>
-                <div id='firstNameSection'>
-                    <div id='firstName'>First Name: </div>
-                    <div>
-                        <table border='1' id='tableok'><tr id='firstNameTR'><td class='tdWidth'><?php echo $firstName;?></td></tr></table>
+        <div id='navContent'>
+            <div id='myProfileContent' class="<?php echo $myProfileHiddenClass; ?>">
+                <div id='userPicture'><img src="/myAccount/userPicture.jpg" alt="Avatar"></div>
+                <div id='firstLastNameSection'>
+                    <div id='firstNameSection'>
+                        <div id='firstName'>First Name: </div>
+                        <div>
+                            <table border='1' id='tableok'><tr id='firstNameTR'><td class='tdWidth'><?php echo $firstName;?></td></tr></table>
+                        </div>
+                    </div>
+                    <div id='lastNameSection'>
+                        <div>Last Name: </div>
+                        <div>
+                            <table border='1'><tr class='a'><td class='tdWidth'><?php echo $lastName;?></td></tr></table>
+                        </div>
                     </div>
                 </div>
-                <div id='lastNameSection'>
-                    <div>Last Name: </div>
+                <div id='emailSection'>
+                    <div>Email: </div>
                     <div>
-                        <table border='1'><tr class='a'><td class='tdWidth'><?php echo $lastName;?></td></tr></table>
+                        <table border='1'><td class='tdWidthEmail'><?php echo $email;?></td></table>
                     </div>
                 </div>
             </div>
-            <div id='emailSection'>
-                <div>Email: </div>
-                <div>
-                    <table border='1'><td class='tdWidthEmail'><?php echo $email;?></td></table>
-                </div>
-            </div>
-        </div>
+        
         <!-- ////// myProfile Content --Bottom-->
 
         <!-- ////// changePassword Content --Header-->
         <div id='changePasswordContent' class="<?php echo $changePasswordHiddenClass; ?>">We apologize for the inconvenience. The system is currently under maintenance, and the feature will be released soon.</div>
         <!-- ////// changePassword Content --Bottom-->
         
+        </div>
     </div>
 </body>
 
