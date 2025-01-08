@@ -34,9 +34,8 @@ require_once('../config.php');
     <?php require_once("../Components/navBar.php");?>
     <div id='accountBottom'>
         <div id='global-nav-myAccount'>
-            <div id='global-nav-myProfile'>
                 <?php 
-                    $selectedNavMyProfile = '';
+                    $selectedNavMyProfile = 'selectedNavMyProfile';
                     $myProfileHiddenClass = '';
                     $changePasswordHiddenClass = 'hidden';
                     if(($_SERVER['REQUEST_METHOD'] == 'GET') && (isset($_GET['myProfile'])))
@@ -45,26 +44,27 @@ require_once('../config.php');
                         $selectedNavMyProfile = 'selectedNavMyProfile';
                         $changePasswordHiddenClass = 'hidden';
                     }
-                ?>
-                <form method='get'>
-                    <button type='submit' id='myProfileNav' class='<?php echo $selectedNavMyProfile;?>' name='myProfile'>My Profile</button>
-                </form>
-                
-            </div>
-            <div id='global-nav-changePassword'>
-                <?php 
                     $selectedNavChangePassword = '';
                     if(($_SERVER['REQUEST_METHOD'] == 'GET') && (isset($_GET['changePassword'])))
                     {
                         $changePasswordHiddenClass = '';
                         $myProfileHiddenClass = 'hidden';
                         $selectedNavChangePassword = 'selectedNavChangePassword';
+                        $selectedNavMyProfile = '';
                     }
                 ?>
+            <!-- ////// Global nav bars --Header-->
+            <div id='global-nav-myProfile'>
+                <form method='get'>
+                    <button type='submit' id='myProfileNav' class='<?php echo $selectedNavMyProfile;?>' name='myProfile'>My Profile</button>
+                </form>          
+            </div>
+            <div id='global-nav-changePassword'>
                 <form method='get'>
                     <button type='submit' id='changePasswordNav' class='<?php echo $selectedNavChangePassword;?>' name='changePassword'>Change Password</button>
                 </form>
             </div>
+            <!-- ////// Global nav bars --Bottom-->
         </div>
         <!-- ////// myProfile Content --Header-->
         <div id='myProfileContent' class="<?php echo $myProfileHiddenClass; ?>">
@@ -93,7 +93,7 @@ require_once('../config.php');
         <!-- ////// myProfile Content --Bottom-->
 
         <!-- ////// changePassword Content --Header-->
-        <div id='changePasswordContent' class="<?php echo $changePasswordHiddenClass; ?>">Hello</div>
+        <div id='changePasswordContent' class="<?php echo $changePasswordHiddenClass; ?>">We apologize for the inconvenience. The system is currently under maintenance, and the feature will be released soon.</div>
         <!-- ////// changePassword Content --Bottom-->
         
     </div>
