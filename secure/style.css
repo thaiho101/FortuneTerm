@@ -142,16 +142,19 @@ form {
     font-family: "poppins", sans-serif;
     width: 40%;
     border-radius: 30px;
-    background-color: white;
+    /* background-color: white; */
+    background-image: linear-gradient(white, goldenrod, rgb(225, 224, 224));
     border: solid 1px white;
     color: black;
     font-weight: bold;
+    border: outset 1px silver;
     cursor: pointer;
 }
 
 .loginButton:hover {
     background-color: lightblue;
-    background-image: linear-gradient(white, goldenrod, white);
+    background-image: linear-gradient(rgb(244, 228, 190),goldenrod, rgb(255, 255, 255));
+    border: inset 1px silver;
 }
 
 .registerSection {
@@ -299,16 +302,19 @@ form {
         font-family: "poppins", sans-serif;
         width: 40%;
         border-radius: 30px;
-        background-color: white;
+        /* background-color: white; */
+        background-image: linear-gradient(white, goldenrod, rgb(225, 224, 224));
         border: solid 1px white;
         color: black;
         font-weight: bold;
+        border: outset 1px silver;
         cursor: pointer;
     }
     
     .loginButton:hover {
         background-color: lightblue;
-        background-image: linear-gradient(white, goldenrod, white);
+        background-image: linear-gradient(rgb(244, 228, 190),goldenrod, rgb(255, 255, 255));
+        border: inset 1px silver;
     }
     
     .registerSection {
