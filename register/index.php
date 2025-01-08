@@ -21,7 +21,7 @@
             <div id='registerLabel'>Sign Up</div>
             <div id='firstNameSection'>
                 <div class='spaceBetween'><label for='firstName' class='nameLabel'>First Name</label></div>
-                <div><input type='text' name='firstName' id='firstName' placeholder="Enter your first name" class='inputBox' required></div>
+                <div><input type='text' name='firstName' id='firstName' placeholder="Enter your first name" class='inputBox' autofocus required></div>
             </div>
             <div id='lastNameSection'>
                 <div class='spaceBetween'>
