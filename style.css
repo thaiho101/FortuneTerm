@@ -411,6 +411,32 @@ table {
     overflow-y: auto;
 }
 
+/* ------Scrollbar of content----->Header */
+/* Style the scrollbar */
+.content::-webkit-scrollbar {
+    width: 4px; /* Narrow width for a floating look */
+    position: absolute; /* This is implied for scrollbars; cannot use `fixed` */
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: rgb(167, 167, 167); /* Semi-transparent red */
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+    border: 1px solid transparent; /* Padding inside the thumb */
+     /* Prevent the border from covering the thumb */
+}
+
+.content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0); /* Fully transparent track */
+}
+
+/* Optional: Hover effect */
+.content::-webkit-scrollbar-thumb:hover {
+    background: rgb(86, 86, 86); /* Darker red on hover */
+}
+/* ------Scrollbar of content----->Bottom */
+
+
+
 .actionStyle {
     width: 100px;
 }
@@ -1077,6 +1103,30 @@ table {
         max-height: 400px;
         overflow-y: auto;
     }
+
+    /* ------Scrollbar of content----->Header */
+/* Style the scrollbar */
+.content::-webkit-scrollbar {
+    width: 4px; /* Narrow width for a floating look */
+    position: absolute; /* This is implied for scrollbars; cannot use `fixed` */
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: rgb(167, 167, 167); /* Semi-transparent red */
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+    border: 1px solid transparent; /* Padding inside the thumb */
+     /* Prevent the border from covering the thumb */
+}
+
+.content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0); /* Fully transparent track */
+}
+
+/* Optional: Hover effect */
+.content::-webkit-scrollbar-thumb:hover {
+    background: rgb(86, 86, 86); /* Darker red on hover */
+}
+/* ------Scrollbar of content----->Bottom */
 
     /* Buttons: Center-align and adjust margins */
     .insertButtonDiv {

@@ -34,7 +34,7 @@ require_once('../config.php');
                                                 <i class='bx bx-user'></i>
                                         </label>
                                 </div>
-                                <input type="text" id='emailNav' name='email' placeholder='Email' class='emailInputBox' required>
+                                <input type="text" id='emailNav' name='email' placeholder='Email' class='emailInputBox' autofocus required>
                         </div>
 
                         <div class='passwordSection'>
@@ -137,24 +137,27 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 
                 // Input IP address
                 $ip_address = $user_ip; // Replace with dynamic input if needed
+                $ip_part = "192.168.";
                 
-                // Call the function and get location data
-                $result = getCountryByIP($ip_address);
-                $country = $result['country'];
-                $city = $result['city'];
-                $region = $result['region'];
-                $zip = $result['zip'];
-                $timeZone = $result['timezone'];
-                $organize = $result['org'];
-                /////////////// Get data from IP-API -->Bottom ///////////
+                if (!(($ip_address == "127.0.0.1") || str_contains($ip_address, $ip_part)))
+                {
+                        // Call the function and get location data
+                        $result = getCountryByIP($ip_address);
+                        $country = $result['country'];
+                        $city = $result['city'];
+                        $region = $result['region'];
+                        $zip = $result['zip'];
+                        $timeZone = $result['timezone'];
+                        $organize = $result['org'];
+                        /////////////// Get data from IP-API -->Bottom ///////////
 
-                $insertQuery = "INSERT INTO ip_log (user_id, ip_address, country, city, region, zip, timezone, organize) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-                        $statement = $conn->prepare($insertQuery);
-                        $statement->bind_param('isssssss', $row['user_id'], $user_ip, $country, $city, $region, $zip, $timeZone, $organize);
-                        $statement->execute();
-                        $statement->close();
-                
+                        $insertQuery = "INSERT INTO ip_log (user_id, ip_address, country, city, region, zip, timezone, organize) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                                $statement = $conn->prepare($insertQuery);
+                                $statement->bind_param('isssssss', $row['user_id'], $user_ip, $country, $city, $region, $zip, $timeZone, $organize);
+                                $statement->execute();
+                                $statement->close();
+                }
                 // Output the IP address
                 //     echo "User's IP Address: " . $user_ip;
 ///////////////////////// IP Collective -->Bottom ///////////////////////////////////////////////////
