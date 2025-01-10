@@ -1,3 +1,13 @@
+function togglePasswordVisibility(inputId, toggleButton) {
+    const input = document.getElementById(inputId);
+    if (input.type === "password") {
+        input.type = "text";
+        toggleButton.textContent = "🙈"; // Đổi biểu tượng
+    } else {
+        input.type = "password";
+        toggleButton.textContent = "👁️"; // Đổi lại biểu tượng
+    }
+}
 
 function focusOnDate() {
     const inputElement = document.getElementById('date');

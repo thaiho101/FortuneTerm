@@ -12,12 +12,10 @@
 }
 
 #navBar {
-    /* align-items: center; */
     text-align: left;
 }
 
 #navBar a {
-    /* font-family: "poppins", sans-serif; */
     text-decoration: none;
     font-size: 40px;
     color: white;
@@ -40,10 +38,8 @@
 #registerPanel {
     font-family: "poppins", sans-serif;
     display: block;
-    /* color: red; */
-    max-width: 350px;
-    width: 50%;
-    min-height: 420px;
+    width: 25%;
+    height: 60%;
     border: solid .2px white;
     border-radius: 16px;
     backdrop-filter: blur(25px);
@@ -69,16 +65,14 @@
     transition: 0.5s transform ease-in-out, 0.5s backdrop-filter ease-in-out;
 }
 
-form {
-    /* display: block; */
+#registerForm {
+    width: 100%;
+    height: 100%;
 }
 
 #registerLabel {
-    /* padding: 15px; */
     padding-top: 35px;
     padding-bottom: 30px;
-
-    /* justify-content: center; */
     text-align: center;
 
     font-size: 30px;
@@ -86,45 +80,23 @@ form {
     font-weight: bold;
 }
 
-#firstNameSection, #lastNameSection, #emailSection, #passwordSection, #signUpSection {
-    /* display: flex; */
-    /* margin-left: 10%; */
-    /* padding-bottom: 25px; */
-    /* justify-content: center; */
-    /* align-items: center; */
+#firstNameSection, #lastNameSection, #emailSection, #passwordSection, #confirmPasswordSection {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 75%;
+    padding-left: 10%;
+    padding-bottom: 4%;
     align-items: center;
-    padding-bottom: 5px;
 }
 
-#firstNameSection div input {
-    /* padding-left: 20px; */
-}
-
-.spaceBetween {
-    padding-right: 40px;
+#signUpSection {
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
 }
 
 .nameLabel {
     font-weight: bold;
-    color: white;
-}
-
-.emailLabel {
-    padding-right: 75px;
-}
-
-.inputBox {
-    border-radius: 16px;
-    border: solid 1px silver;
-    padding: 10px;
-    width: 95%;
-    background-color: transparent;
-    color: white;
-}
-
-.inputBox::placeholder {
     color: white;
 }
 
@@ -135,49 +107,58 @@ form {
     border-radius: 50px;
     padding: 10px;
     width: 50%;
-    border: solid 1px silver;
-    background-color: white;
+    border: outset 1.5px silver;
+    /* background-color: white; */
+    background-image: linear-gradient(white, rgb(251, 122, 67), rgb(197, 196, 196));
     cursor: pointer;
     color: black;
+    font-weight: bold;
 }
 
 #signUpButton:hover {
-    background-image: linear-gradient(transparent, silver, transparent);
+    border: inset 1.5px silver;
+    background-image: linear-gradient(rgb(224, 221, 221), rgb(253, 161, 122), rgb(249, 248, 248));
 }
 
-#confirmPasswordSection {
+/* //// Toggle Password ///// -->Header*/
+.password-wrapper {
     display: flex;
-    width: 60wh;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-
 }
 
-.emailLabelPadRight {
-    padding-right: 3px;
+.password-wrapper-section {
+    padding-right: 5px;
 }
 
-.passwordLabelPadRight {
-    padding-right: 4px;
+.passwordInput, .inputBox {
+    flex: 1;
+    background-color: transparent;
+    border-radius: 16px;
+    border-color: white;
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 15%;
+    border: inset 2px white;
 }
 
-.confirmLabelPadRight {
-    padding-right: 20px;
+.visiblePasswordButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -30px;
+    z-index: 1;
 }
 
-/* .unmatchedPassword {
-    background-color: white;
-    color: red;
-} */
 
+.visiblePasswordButton:active {
+    background: none;
+}
 
-
-
-
-
-
-
+.passwordInput::placeholder ,.inputBox::placeholder {
+    color: silver;
+}
+/* //// Toggle Password ///// -->Bottom*/
 
 
 
@@ -194,159 +175,84 @@ form {
 
 @media (max-width: 768px) {
 
-    #wholePage {
+    #registerPanel {
         font-family: "poppins", sans-serif;
         display: block;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 90vh;
-        background-image: url("registerBackground1.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        width: 75%; /* Increased width for better visibility on mobile */
+        height: auto; /* Adjust height automatically based on content */
+        border: solid 0.2px white;
+        border-radius: 16px;
+        backdrop-filter: blur(20px); /* Slightly reduce blur for clarity */
+        border-left-width: 2px;
+        border-left-color: gray;
+        border-bottom-width: 3px;
+        border-bottom-color: gray;
+        border-right-width: 1px;
+        border-right-color: silver;
+        padding: 10px; /* Add padding for better spacing inside */
     }
 
-#navBar {
-    text-align: left;
-    /* padding-bottom: -20px; */
-}
+    #registerForm {
+        width: 100%; /* Ensure form fills container */
+        height: auto; /* Let form height adjust dynamically */
+    }
 
-#navBar a {
-    font-family: "poppins", sans-serif;
-    text-decoration: none;
-    font-size: 35px;
-    color: white;
-    
-    font-family: "Lilita One", serif;
-    font-weight: 50;
-    font-style: normal;
+    #firstNameSection, 
+    #lastNameSection, 
+    #emailSection, 
+    #passwordSection, 
+    #confirmPasswordSection {
+        width: 90%; /* Full width for input sections */
+        justify-content: space-between; /* Align content to the left for better flow */
+        margin-bottom: 6px; /* Add spacing between sections */
+        padding-left: 15px;
+    }
 
-    -webkit-text-stroke: 1.3px brown;
-}
+    .nameLabel {
+        font-size: 14px; /* Reduce label font size for smaller screens */
+        color: white;
+         /* Add spacing between label and input */
+    }
 
-#registerParent {
-    margin-top: -20%;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .passwordInput, .inputBox {
+        flex: 1;
+        background-color: transparent;
+        border-radius: 16px;
+        border-color: white;
+        color: white;
+        padding: 10px; /* Adjust padding for better touch targets */
+        font-size: 14px; /* Reduce font size for inputs */
+        border: inset 2px white;
+    }
 
-#registerPanel {
-    font-family: "poppins", sans-serif;
-    display: block;
-    /* color: red; */
-    max-width: 300px;
-    width: 60%;
-    min-height: 380px;
-    height: 40%;
-    border: solid .2px white;
-    border-radius: 16px;
-    backdrop-filter: blur(25px);
+    #signUpSection {
+        padding-top: 20px;
+        justify-content: center;
+    }
 
-    border-left-width: 3px;
-    border-left-color: gray;
+    #signUpButton {
+        border-radius: 50px;
+        padding: 10px;
+        width: 70%; /* Increase width for better usability */
+        font-size: 16px; /* Adjust font size for readability */
+        border: outset 1.5px silver;
+        /* background-color: white; */
+        background-image: linear-gradient(white, rgb(251, 122, 67), white);
+        cursor: pointer;
+        color: black;
+    }
 
-    border-bottom-width: 4px;
-    border-bottom-color: gray;
+    #signUpButton:hover {
+        border: inset 1.5px silver;
+        background-image: linear-gradient(rgb(224, 221, 221), rgb(253, 161, 122), rgb(249, 248, 248));
+    }
 
-    border-right-width: 1px;
-    border-right-color: silver;
-}
+    #navBar a {
+        font-size: 30px; /* Reduce font size of navigation links */
+    }
 
-#registerPanel:hover {
-    backdrop-filter: blur(5px);
-    transform: scale(1.1);
-}
-
-#registerPanel {
-    transform: scale(1);
-    backdrop-filter: 0;
-    transition: 0.5s transform ease-in-out, 0.5s backdrop-filter ease-in-out;
-}
-
-form {
-    /* display: block; */
-}
-
-#registerLabel {
-    /* padding: 15px; */
-    padding-top: 25px;
-    padding-bottom: 20px;
-
-    /* justify-content: center; */
-    text-align: center;
-
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-}
-
-#firstNameSection, #lastNameSection, #emailSection, #passwordSection, #signUpSection {
-    /* display: flex; */
-    /* margin-left: 10%; */
-    /* padding-bottom: 25px; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 5px;
-    /* width: 150px; */
-}
-
-#firstNameSection div input {
-    /* padding-left: 20px; */
-}
-
-.spaceBetween {
-    padding-right: 20px;
-}
-
-.nameLabel {
-    font-weight: bold;
-    color: white;
-    font-size: 12px;
-}
-
-.emailLabel {
-    padding-right: 45px;
-}
-
-.inputBox {
-    border-radius: 16px;
-    border: solid 1px silver;
-    padding: 10px;
-    width: 85%;
-    background-color: transparent;
-    color: white;
-}
-
-.inputBox::placeholder {
-    color: white;
-}
-
-#signUpSection {
-    padding-top: 30px;
-}
-#signUpButton {
-    border-radius: 50px;
-    padding: 10px;
-    width: 50%;
-    border: solid 1px silver;
-    background-color: white;
-    cursor: pointer;
-    color: black;
-}
-
-#signUpButton:hover {
-    background-image: linear-gradient(transparent, silver, transparent);
-}
-
-.confirmLabelPadRight {
-    padding-right: 12px;
-}
-
+    .passwordInput {
+        margin-left: 25px;
+        border: inset 2px white;
+    }
 }
