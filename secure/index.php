@@ -43,7 +43,10 @@ require_once('../config.php');
                                                 <i class='bx bxs-lock-alt ' ></i>
                                         </label>
                                 </div>
-                                <input type="password" id='passwordNav' name='password' placeholder="Password" class='passwordInputBox' required>
+                                <div class="password-wrapper">
+                                        <input type="password" id='passwordNav' name='password' placeholder="Password" class='passwordInputBox' required>
+                                        <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('passwordNav', this)">👁️</button>
+                                </div>
                         </div>
 
                         <div class='loginSection'>
@@ -56,6 +59,7 @@ require_once('../config.php');
                         </div> 
                 </form>
         </div></div>
+        <script src="../script.js"></script>
 </body>
 
 <?php
