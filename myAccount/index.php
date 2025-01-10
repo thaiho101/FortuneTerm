@@ -56,18 +56,19 @@ require_once('../config.php');
             <!-- ////// Global nav bars --Header-->
             <div id='global-nav-myProfile'>
                 <form method='get'>
-                    <button type='submit' id='myProfileNav' class='<?php echo $selectedNavMyProfile;?>' name='myProfile'>My Profile</button>
+                    <button type='submit' id='myProfileNav' class='<?php echo $selectedNavMyProfile;?>' name='myProfile'><i class='fas fa-id-badge'></i> My Profile</button>
                 </form>          
             </div>
             <div id='global-nav-changePassword'>
                 <form method='get'>
-                    <button type='submit' id='changePasswordNav' class='<?php echo $selectedNavChangePassword;?>' name='changePassword'>Change Password</button>
+                    <button type='submit' id='changePasswordNav' class='<?php echo $selectedNavChangePassword;?>' name='changePassword'> <i class='fas fa-shield-alt'></i> Change Password</button>
                 </form>
             </div>
             <!-- ////// Global nav bars --Bottom-->
         </div>
-        <!-- ////// myProfile Content --Header-->
+        
         <div id='navContent'>
+            <!-- ////// myProfile Content --Header-->
             <div id='myProfileContent' class="<?php echo $myProfileHiddenClass; ?>">
                 <div id='userPicture'><img src="/myAccount/userPicture.jpg" alt="Avatar"></div>
                 <div id='firstLastNameSection'>
@@ -91,15 +92,86 @@ require_once('../config.php');
                     </div>
                 </div>
             </div>
-        
-        <!-- ////// myProfile Content --Bottom-->
+            <!-- ////// myProfile Content --Bottom-->
 
-        <!-- ////// changePassword Content --Header-->
-        <div id='changePasswordContent' class="<?php echo $changePasswordHiddenClass; ?>">We apologize for the inconvenience. The system is currently under maintenance, and the feature will be released soon.</div>
-        <!-- ////// changePassword Content --Bottom-->
+            <!-- ////// changePassword Content --Header-->
+            <div id='changePasswordContent' class="<?php echo $changePasswordHiddenClass; ?>">
+                <div id='changePasswordTitle'><i class='fas fa-shield-alt'></i> Change Password</div>
+                <div id='changePasswordNotice'>This password must be at least 6 characters long.</div>
+                <form method='post' id='changePasswordForm'>  
+                    <div id='emailChangePasswordSection'>
+                        <label for='email'>Email</label>
+                        <div class='emailDataDiv'><?php echo $email;?></div>
+                    </div>
+                    <div id='currentChangePassword'>
+                        <label for='currentPassword'>Current Password</label>
+                        <div class="password-wrapper">
+                            <input type='password' id='currentPassword' class='passwordInput' name='currentPassword' minlength="6" required></input>
+                            <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('currentPassword', this)">👁️</button>
+                        </div>
+                    </div>
+                    <div id='newChangePassword'>
+                        <label for='newPassword'>New Password</label>
+                        <div class="password-wrapper">
+                            <input type='password' id='newPassword' class='passwordInput' name='newPassword' minlength="6" required></input>
+                            <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('newPassword', this)">👁️</button>
+                        </div>
+                    </div>
+                    <div id='confirmChangePassword'>
+                        <label>Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input type='password' id='confirmPassword' class='passwordInput' name='confirmPassword' minlength="6" required></input>
+                            <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('confirmPassword', this)">👁️</button>
+                        </div>
+                    </div>
+                    <div id='changePasswordSubmit'>
+                        <button type="submit" name='changePasswordButton' id='changeButton'>Change</button>
+                    </div>
+                </form>
+                <?php 
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['changePasswordButton'])) {
+                    $currentPassword = $_POST['currentPassword'];
+                    $newPassword = $_POST['newPassword'];
+                    $confirmPassword = $_POST['confirmPassword'];
+
+                    // Retrieve the original password
+                    $stmt = $conn->prepare("SELECT password FROM users WHERE user_id = ? AND deleted = 'N'");
+                    $stmt->bind_param('i', $userId);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+
+                    if ($row = $result->fetch_assoc()) {
+                        $originPassword = $row['password'];
+                        if (password_verify($currentPassword, $originPassword)) {
+                            if ($newPassword === $confirmPassword) {
+                                $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+                                $updateStmt = $conn->prepare("UPDATE users SET password = ? WHERE user_id = ? AND deleted = 'N'");
+                                $updateStmt->bind_param('si', $hashedPassword, $userId);
+                                if ($updateStmt->execute()) {
+                                    echo "<div class='success'>Password successfully updated!</div>";
+                                } else {
+                                    echo "<div class='error'>Error updating password: " . htmlspecialchars($conn->error) . "</div>";
+                                }
+                                $updateStmt->close();
+                            } else {
+                                //Need to be fixed with direct link!!!!!!!!!!!!!!
+                                echo "<div class='error'>New passwords or Confirm password do not match!</div>";
+                            }
+                        } else {
+                            echo "<div class='error'>Incorrect current password!</div>";
+                        }
+                    } else {
+                        echo "<div class='error'>User not found!</div>";
+                    }
+                    $stmt->close();
+                }
+                ?>
+            </div>
+            <!-- ////// changePassword Content --Bottom-->
         
         </div>
     </div>
+    <script src="../script.js"></script>
 </body>
 
 </html>

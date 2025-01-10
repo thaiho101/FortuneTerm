@@ -803,6 +803,8 @@ table {
 
 
 /* //// My Account //////////////////////-->Header*/
+
+        /* //// My Profile ///// -->Header*/
 #accountBottom {
     display: flex;
 }
@@ -857,6 +859,8 @@ table {
     background-color: white !important;
     border-right-color: white !important;
     background-image: linear-gradient(white, #00f2fe, white);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .selectedNavChangePassword {
@@ -864,6 +868,8 @@ table {
     background-color: white !important;
     border-right-color: white !important;
     background-image: linear-gradient(white, #00f2fe, white);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 #global-nav-changePassword {
@@ -917,6 +923,99 @@ table {
 .tdWidthEmail {
     width: 100px;
 }
+        /* //// My Profile ///// -->Bottom*/
+
+        /* //// Change Password ///// -->Header*/
+#changePasswordTitle {
+    font-size: 18px;
+    font-weight: bold;
+    /* padding-left: 2.5%; */
+    border-bottom: solid 1px silver;
+    width: 50%;
+    justify-content: right;
+    align-items: right;
+    align-content: right;
+    padding-left: 2.5%;
+    padding-top: 1.5%;
+    padding-bottom: .5%;
+}
+
+#changePasswordNotice {
+    padding-left: 3%;
+    padding-top: .5%;
+    padding-bottom: 1%;
+}
+
+#changePasswordForm {
+    width: 40%;
+    padding-left: 7%;
+}
+
+#emailChangePasswordSection {
+    display: flex;
+    padding-top: 2.5%;
+    padding-bottom: 3%;
+    justify-content: space-between;
+}
+
+.emailDataDiv {
+    /* padding-left: 42%; */
+}
+
+#currentPassword, #newPassword, #confirmPassword {
+    width: 250px;
+}
+
+#currentChangePassword, #newChangePassword, #confirmChangePassword {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+#changePasswordSubmit {
+    text-align: right;
+}
+
+#changeButton {
+    margin-left: 70%;
+    border-radius: 8px;
+    border-color: silver;
+    background-image: linear-gradient(white, rgb(219, 219, 219), white);
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+}
+
+#changeButton:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(white, white, white);
+    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+}
+
+            /* //// Toggle Password ///// -->Header*/
+.password-wrapper {
+    display: flex;
+}
+
+.passwordInput {
+    flex: 1;
+}
+
+.visiblePasswordButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -30px;
+    z-index: 1;
+}
+
+
+.visiblePasswordButton:active {
+    background: none;
+}
+            /* //// Toggle Password ///// -->Bottom*/
+
+        /* //// Change Password ///// -->Bottom*/
 /* //// My Account //////////////////////-->Bottom*/
 
 
@@ -1231,6 +1330,8 @@ table {
 
 
     /* //// My Account //////////////////////-->Header*/
+
+        /* //// My Profile ///// -->Header*/
 #accountBottom {
     display: flex;
 }
@@ -1335,6 +1436,100 @@ table {
 #firstName {
 
 }
+        /* //// My Profile ///// -->Bottom*/
+
+        /* //// Change Password ///// -->Header*/
+#changePasswordTitle {
+    font-size: 16px;
+    font-weight: bold;
+    /* padding-left: 2.5%; */
+    border-bottom: solid 1px silver;
+    width: 95%;
+    justify-content: right;
+    align-items: right;
+    align-content: right;
+    padding-left: 2.5%;
+    padding-top: 3.5%;
+    padding-bottom: 1.5%;
+}
+
+#changePasswordNotice {
+    padding-left: 3%;
+    padding-top: 1.5%;
+    padding-bottom: 5%;
+}
+
+#changePasswordForm {
+    width: 95%;
+    padding-left: 10px;
+}
+
+#emailChangePasswordSection {
+    display: flex;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    justify-content: space-between;
+}
+
+.emailDataDiv {
+    /* padding-left: 33%; */
+}
+
+#currentPassword, #newPassword, #confirmPassword {
+    width: 50%;
+}
+
+#currentChangePassword, #newChangePassword, #confirmChangePassword {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+#changePasswordSubmit {
+    padding-top: 30px;
+    text-align: right;
+}
+
+#changeButton {
+    color: black;
+    height: 20px;
+    margin-left: 70%;
+    border-radius: 8px;
+    border-color: silver;
+    background-image: linear-gradient(white, rgb(219, 219, 219), white);
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+}
+
+#changeButton:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(white, white, white);
+    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+}
+
+.password-wrapper {
+    display: flex;
+}
+
+.passwordInput {
+    flex: 1;
+    /* padding-right: 30px; */
+}
+
+.visiblePasswordButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -30px;
+    z-index: 1;
+}
+
+.visiblePasswordButton:active {
+    background: red;
+    background-color: none;
+}
+        /* //// Change Password ///// -->Bottom*/
 /* //// My Account //////////////////////-->Bottom*/
 
 }

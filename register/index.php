@@ -17,7 +17,7 @@
 <body id='wholePage'>
     <div id='navBar'><a href='../' id='homeLink'>Market Cost</a></div>
     <div id='registerParent'><div id='registerPanel'>
-        <form action="" method='post'>
+        <form action="" method='post' id='registerForm'>
             <div id='registerLabel'>Sign Up</div>
             <div id='firstNameSection'>
                 <div class='spaceBetween'><label for='firstName' class='nameLabel'>First Name</label></div>
@@ -44,16 +44,22 @@
                 <div class='spaceBetween'>
                     <label for='password' class='nameLabel passwordLabelPadRight'>Password</label>
                 </div>
-                <div>
-                    <input type='password' name='password' id='password' placeholder="Enter your password" class='inputBox' minlength="6" required>
+                <div class='password-wrapper-section'>
+                    <div class="password-wrapper">
+                        <input type='password' name='password' id='password' class='passwordInput' placeholder="Enter your password" class='inputBox' minlength="6" required>
+                        <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('password', this)">👁️</button>
+                    </div>
                 </div>
             </div>
             <div id='confirmPasswordSection'>
                 <div class='spaceBetween'>
                     <label for='password' class='nameLabel confirmLabelPadRight'>Confirm</label>
                 </div>
-                <div>
-                    <input type='password' name='confirmPassword' id='confirmPassword' placeholder="Reenter the password" class='inputBox' minlength="6" required>
+                <div class='password-wrapper-section'>
+                    <div class="password-wrapper">
+                        <input type='password' name='confirmPassword' id='confirmPassword' placeholder="Reenter the password" class='passwordInput' minlength="6" required>
+                        <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('confirmPassword', this)">👁️</button>
+                    </div>                
                 </div>
             </div>
             <div id='signUpSection'>
@@ -153,6 +159,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
+<script src="../script.js"></script>
 </body>
 </html>
