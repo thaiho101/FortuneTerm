@@ -172,6 +172,50 @@ form {
     padding-left: 10px;
 }
 
+/* //// Toggle Password ///// -->Header*/
+.password-wrapper {
+    display: flex;
+}
+
+.password-wrapper-section {
+    padding-right: 5px;
+}
+
+.emailInputBox, .passwordInputBox {
+    /* flex: 1;
+    background-color: transparent;
+    border-radius: 16px;
+    border-color: white;
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 15%;
+    border: inset 2px white; */
+}
+
+.passwordInputBox {
+    width: 235px;
+}
+
+.visiblePasswordButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 6px;
+    z-index: 1;
+    font-size: 1.2em;
+}
+
+
+.visiblePasswordButton:active {
+    background: none;
+}
+
+.passwordInputBox::placeholder ,.emailInputBox::placeholder {
+    color: rgb(221, 219, 219);
+}
+/* //// Toggle Password ///// -->Bottom*/
 
 
 
@@ -257,7 +301,7 @@ form {
 
     .emailSection, .passwordSection {
         display: flex;
-        margin-left: 10%;
+        margin-left: 5%;
         padding-bottom: 15px;
     }
     
@@ -339,5 +383,19 @@ form {
         transform: scale(1);
         backdrop-filter: 0;
         transition: 0.5s transform ease-in-out, 0.5s backdrop-filter ease-in-out;
+    }
+
+
+    .passwordInputBox {
+        width: 170px;
+    }
+    
+    .visiblePasswordButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: -6px;
+        font-size: .7em;
+        z-index: 1;
     }
 }
