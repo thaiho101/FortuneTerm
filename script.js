@@ -1,3 +1,5 @@
+
+
 function togglePasswordVisibility(inputId, toggleButton) {
     const input = document.getElementById(inputId);
     if (input.type === "password") {

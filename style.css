@@ -195,19 +195,25 @@ body, div {
 
 
 .insertButton {
-    margin-left: 70%;
+    margin-left: 55%;
+    margin-top: 10%;
     border-radius: 8px;
     border-color: silver;
     background-image: linear-gradient(white, rgb(219, 219, 219), white);
     border-width: 2px 1px 3px 1px;
     box-shadow: 2px 2px 5px gray;
+    border: outset 2px silver;
+    width: 70px;
     cursor: pointer;
 }
 
 .insertButton:hover {
     border-width: 2px 1px 3px 1px;
     background-image: linear-gradient(white, white, white);
-    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+    /* box-shadow: 4px 2px 8px rgb(228, 227, 227); */
+
+    box-shadow: 1px 1px 1px gray;
+    border: inset 1.5px silver;
 }
 
 .budget {
@@ -293,8 +299,13 @@ body, div {
     border-left-color: rgb(213, 213, 213);
     border-left-width: 2px;
     border-bottom-width: 3px;
-
+    border: outset 2px white;
     cursor: pointer;
+}
+
+.setBudgetButton:hover , .showBudgetButton:hover {
+    box-shadow: 1px 1px 1px gray;
+    border: inset 1px silver;
 }
 
 /* Data Analyze Section */
@@ -833,6 +844,7 @@ table {
     padding-bottom: 20px;
     border: solid 1px transparent;
     border-bottom-color: white;
+    cursor: pointer;
 }
 
 #changePasswordNav {
@@ -844,6 +856,7 @@ table {
     padding-top: 20px;
     padding-bottom: 20px;
     border: solid 1px transparent;
+    cursor: pointer;
 }
 
 #myProfileNav:hover, #changePasswordNav:hover {
