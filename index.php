@@ -70,7 +70,7 @@ $stmt->close();
                     <a class='newTransactionStyle'  onclick="focusOnDate()">New Transaction</a>
                 </div>
                 
-                <form method='post'>
+                <form method='post' id='insertionForm'>
                     <div class='form-row'>
                         <button for='date' class='insertLabel dateLabel' >Date</button>
                         <input type='date' name='date' id='date' class='insertBox inserBoxDate' required>
