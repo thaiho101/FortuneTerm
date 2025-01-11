@@ -196,8 +196,12 @@ form {
     border: inset 2px white; */
 }
 
+.emailInputBox {
+    width: 255px;
+}
+
 .passwordInputBox {
-    width: 235px;
+    width: 226px;
 }
 
 .visiblePasswordButton {
@@ -371,6 +375,7 @@ form {
         font-weight: bold;
         border: outset 1px silver;
         cursor: pointer;
+        padding-bottom: 10px;
     }
     
     .loginButton:hover {
