@@ -45,7 +45,7 @@ require_once('../config.php');
                                 </div>
                                 <div class="password-wrapper">
                                         <input type="password" id='passwordNav' name='password' placeholder="Password" class='passwordInputBox' required>
-                                        <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('passwordNav', this)">👁️</button>
+                                        <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('passwordNav', this)">👁️</button>
                                 </div>
                         </div>
 
