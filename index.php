@@ -609,13 +609,17 @@ $statement->close();
 
         // Set Options
         const options = {
-        title:'Market Cost Distribution',
-        is3D:true,
-        titleTextStyle: {
-            fontSize: 15, // Set the font size (example: 24px)
-            bold: true,   // Optional: make the title bold
-            color: '#004C99' // Optional: set the title color
-        }
+            title:'Market Cost Distribution',
+            is3D:true,
+            titleTextStyle: {
+                fontSize: 15, // Set the font size (example: 24px)
+                bold: true,   // Optional: make the title bold
+                color: '#004C99' // Optional: set the title color
+            },
+            slices: {
+                0: { color: 'crimson' },
+                1: { color: '#0000CD' }
+            }
         };
 
         // Fetch data from PHP
@@ -633,6 +637,28 @@ $statement->close();
                 fontSize: 15, // Set the font size (example: 24px)
                 bold: true,   // Optional: make the title bold
                 color: '#004C99' // Optional: set the title color
+            },
+            slices: {
+                0: { color: '#FF6906' }, // Orange
+                1: { color: '#1E90FF' }, // Doger Blue
+                2: { color: '#01AEAE' }, // Teal
+                3: { color: '#00FFFF' }, // Cyan
+                4: { color: '32CD32' }, // Green
+                5: { color: '#00FF00' }, // Lime
+                6: { color: '#DA70D6' }, // Dark Violet
+                7: { color: '#FF69B4' }, // Violet
+                8: { color: '#FFC0CB' }, // Pink
+                9: { color: '#FF00FF' }, // Magenta
+                10: { color: '#A52A2A' }, // Brown
+                11: { color: '#F5F5DC' }, // Beige
+                12: { color: '#FFD700' }, // Gold
+                13: { color: '#C0C0C0' }, // Silver
+                14: { color: '#808080' }, // Gray
+                15: { color: '#808000' }, // Olive
+                16: { color: '#FF7F50' }, // Coral
+                17: { color: '#40E0D0' }, // Turquoise
+                18: { color: '#FFFFF0' }, // Ivory
+                19: { color: '#F0E68C' }  // Khaki
             }
         };
 
