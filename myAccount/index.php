@@ -52,6 +52,15 @@ require_once('../config.php');
                         $selectedNavChangePassword = 'selectedNavChangePassword';
                         $selectedNavMyProfile = '';
                     }
+                    ////// Change password button --Header-->
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['changePasswordButton']))
+                    {
+                        $changePasswordHiddenClass = '';
+                        $myProfileHiddenClass = 'hidden';
+                        $selectedNavChangePassword = 'selectedNavChangePassword';
+                        $selectedNavMyProfile = '';
+                    }
+                    ////// Change password button --Bottom-->
                 ?>
             <!-- ////// Global nav bars --Header-->
             <div id='global-nav-myProfile'>
@@ -107,21 +116,21 @@ require_once('../config.php');
                         <label for='currentPassword'>Current Password</label>
                         <div class="password-wrapper">
                             <input type='password' id='currentPassword' class='passwordInput' name='currentPassword' minlength="6" required></input>
-                            <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('currentPassword', this)">👁️</button>
+                            <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('currentPassword', this)">👁️</button>
                         </div>
                     </div>
                     <div id='newChangePassword'>
                         <label for='newPassword'>New Password</label>
                         <div class="password-wrapper">
                             <input type='password' id='newPassword' class='passwordInput' name='newPassword' minlength="6" required></input>
-                            <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('newPassword', this)">👁️</button>
+                            <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('newPassword', this)">👁️</button>
                         </div>
                     </div>
                     <div id='confirmChangePassword'>
                         <label>Confirm Password</label>
                         <div class="password-wrapper">
                             <input type='password' id='confirmPassword' class='passwordInput' name='confirmPassword' minlength="6" required></input>
-                            <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('confirmPassword', this)">👁️</button>
+                            <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('confirmPassword', this)">👁️</button>
                         </div>
                     </div>
                     <div id='changePasswordSubmit'>

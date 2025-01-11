@@ -47,7 +47,7 @@
                 <div class='password-wrapper-section'>
                     <div class="password-wrapper">
                         <input type='password' name='password' id='password' class='passwordInput' placeholder="Enter your password" class='inputBox' minlength="6" required>
-                        <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('password', this)">👁️</button>
+                        <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('password', this)">👁️</button>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 <div class='password-wrapper-section'>
                     <div class="password-wrapper">
                         <input type='password' name='confirmPassword' id='confirmPassword' placeholder="Reenter the password" class='passwordInput' minlength="6" required>
-                        <button type="button" class='visiblePasswordButton' onclick="togglePasswordVisibility('confirmPassword', this)">👁️</button>
+                        <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('confirmPassword', this)">👁️</button>
                     </div>                
                 </div>
             </div>
