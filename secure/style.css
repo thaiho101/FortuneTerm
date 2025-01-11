@@ -113,7 +113,7 @@ form {
     text-align: right;
     background-color: transparent;
     color: white;
-    border: solid 1px white;
+    border: inset 2px white;
     font-size: 15px;
 }
 
@@ -175,6 +175,7 @@ form {
 /* //// Toggle Password ///// -->Header*/
 .password-wrapper {
     display: flex;
+    align-items: center;
 }
 
 .password-wrapper-section {
@@ -205,6 +206,23 @@ form {
     margin-left: 6px;
     z-index: 1;
     font-size: 1.2em;
+
+    background: linear-gradient(135deg, rgb(251, 201, 109), rgb(252, 143, 46));
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: outset 1px white;
+    border-width: 2px;
+    box-shadow: 3px 1px 1.5px 1px rgb(131, 131, 131);
+}
+
+.visiblePasswordButton:hover {
+    border: inset 1px white;
+    border-width: 1.5px;
+    box-shadow: 1px 1px 1px 1px rgb(131, 131, 131);
 }
 
 
@@ -317,7 +335,7 @@ form {
         text-align: right;
         background-color: transparent;
         color: white;
-        border: solid 1px white;
+        border: inset 2px white;
         font-size: 15px;
     }
     
@@ -385,17 +403,48 @@ form {
         transition: 0.5s transform ease-in-out, 0.5s backdrop-filter ease-in-out;
     }
 
+    .emailInputBox {
+        width: 190px;
+    }
 
     .passwordInputBox {
-        width: 170px;
+        width: 160px;
+        height: 25px;
     }
     
+    /* //// Toggle Password ///// -->Header*/
+    .password-wrapper {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        /* height: 50px; */
+    }
+
     .visiblePasswordButton {
         background: none;
         border: none;
         cursor: pointer;
-        margin-left: -6px;
+        margin-left: 5px;
         font-size: .7em;
         z-index: 1;
+
+        /* background-color: rgb(251, 206, 109); */
+        background: linear-gradient(135deg, rgb(251, 201, 109), rgb(252, 143, 46));
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border: outset 1px white;
+        border-width: 2px;
+        box-shadow: 3px 1px 1.5px 1px rgb(131, 131, 131);
     }
+
+    .visiblePasswordButton:hover {
+        border: inset 1px white;
+        border-width: 1.5px;
+        box-shadow: 1px 1px 1px 1px rgb(131, 131, 131);
+    }
+    /* //// Toggle Password ///// -->Bottom*/
 }
