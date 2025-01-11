@@ -97,7 +97,7 @@ form {
 
 .emailSection, .passwordSection {
     display: flex;
-    margin-left: 10%;
+    margin-left: 8%;
     padding-bottom: 25px;
 }
 
@@ -115,6 +115,7 @@ form {
     color: white;
     border: inset 2px white;
     font-size: 15px;
+    height: 25px;
 }
 
 .emailInputBox::placeholder, .passwordInputBox::placeholder {
@@ -205,11 +206,10 @@ form {
     cursor: pointer;
     margin-left: 6px;
     z-index: 1;
-    font-size: 1.2em;
-
+    font-size: 1em;
     background: linear-gradient(135deg, rgb(251, 201, 109), rgb(252, 143, 46));
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -310,7 +310,7 @@ form {
     }
 
     .loginLabel {
-        font-size: 20px;
+        font-size: 25px;
         padding-top: 20px;
         padding-bottom: 20px;
     }
@@ -404,6 +404,7 @@ form {
     }
 
     .emailInputBox {
+        height: 25px;
         width: 190px;
     }
 
@@ -430,8 +431,8 @@ form {
 
         /* background-color: rgb(251, 206, 109); */
         background: linear-gradient(135deg, rgb(251, 201, 109), rgb(252, 143, 46));
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         border-radius: 50%;
         justify-content: center;
         align-items: center;
