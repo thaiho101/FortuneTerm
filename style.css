@@ -125,6 +125,10 @@ body, div {
     border-radius: 8px;
 }
 
+#insertionForm {
+    margin-left: 3%;
+}
+
 .form-row {
     display: flex; /* Makes each row a flex container */
     /* justify-content: space-between; */
