@@ -13,17 +13,6 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 $userId = $_SESSION['user_id'];
 
 
-
-// function formatCurrency($number, $currencyType) 
-// {
-//     if ($currencyType === 'USD') {
-//         return number_format($number,2);
-//     } else if ($currencyType === 'VND') {
-//         return 'VND' . number_format($number, 0, '', '.');
-//     }
-// }
-
-
 // Set Cache-Control to no-cache, no-store, must-revalidate
 header("Cache-Control: no-cache, no-store, must-revalidate");
 // Set Pragma to no-cache (for HTTP/1.0 backward compatibility)
@@ -39,7 +28,8 @@ if ($conn->connect_error)
         die("Connect failed: " . $conn->connect_error);
 }
 
-//// Currency Type
+////[Currency Type]/////////-->Header
+//Update currency selected into users database
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['currencyType']))
 {
     $currencyType = $_POST['currencyType'];
@@ -53,6 +43,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['currencyType']))
     $stmt->close();
 }
 
+//Invoke the preferred currency from users database
 $sql = "SELECT preferred_currency FROM users
         WHERE user_id = ? ";
 $stmt = $conn->prepare($sql);
@@ -68,12 +59,14 @@ if ($row = $result->fetch_assoc())
 $stmt->close();
 
 $currencyType = $_SESSION['currencyType']; //Set the current currency activated from data
+//Set currency Symbol
 if ($currencyType === 'USD') {
     $currencySymbol = "$";
 } else if ($currencyType === 'VND') {
     $currencySymbol = "VND";
 }
-//Currency format
+
+//Currency function
 class CurrencyFormatter {
     public static function format($number, $currencyType) {
         switch ($currencyType) {
@@ -86,7 +79,7 @@ class CurrencyFormatter {
         }
     }
 }
-//// Currency Type
+////[Currency Type]/////////-->Bottom
 
 $stmt = $conn->prepare("SELECT first_name, last_name FROM users WHERE user_id = ?");
 $stmt->bind_param('i', $userId);
