@@ -323,19 +323,37 @@ body, div {
 }
 
 #filter {
-    justify-content: space-between;
-}
-
-.filter {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    align-content: center;
     /* background-color: transparent; */
     padding: 10px;
     margin: 5px 0;
-    justify-content: right;
+    /* justify-content: right; */
     flex: 1;
     max-height: 40px;
+}
 
+#currencyForm {
+    /* background-color: red;
+    border-radius: 8px; */
+}
+
+#currencyType {
+    background-image: linear-gradient(white, orange, rgb(252, 199, 100));
+    border-radius: 4px;
+    border: outset 1.5px silver;
+    /* font-weight: 50rem; */
+    color: rgb(26, 26, 26);
+    text-align: center;
+    cursor: pointer;
+    /* font-size: 12px; */
+}
+
+#currencyType:hover {
+    background-image: linear-gradient(white, rgb(249, 191, 84), rgb(252, 233, 196));
+    border: inset 1px silver;
 }
 
 .yearMonthFilterStyle {
@@ -353,14 +371,16 @@ body, div {
 	color: black;
 	background-image: linear-gradient(white, rgb(222, 220, 220), white);
 	border-radius: 4px;
-	border: silver solid 2px;
+	border: outset 2px silver;
     border-width: 1px;
+    border: outset 1.5px silver;
+    text-align: center;
     cursor: pointer;
-/*	background-image: linear-gradient(white, yellow, white);*/
 }
 
 .yearOptionStyle:hover, .monthOptionStyle:hover {
     background-image: linear-gradient(white, lightblue, white);
+    border: inset 1px silver;
 }
 
 .filterButton {
@@ -369,11 +389,13 @@ body, div {
     border-radius: 50%;
     border-color: silver;
     background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
     cursor: pointer;
 }
 
 .filterButton:hover {
-    background-image: linear-gradient(white, white, white);
+    background-image: linear-gradient(white, rgb(224, 223, 223), white);
+    border: inset 1px silver;
 }
 
 .header {
@@ -954,9 +976,10 @@ table {
     justify-content: right;
     align-items: right;
     align-content: right;
-    padding-left: 2.5%;
+    /* padding-left: 2.5%; */
     padding-top: 1.5%;
     padding-bottom: .5%;
+    margin-left: 3%;
 }
 
 #changePasswordNotice {
@@ -1052,7 +1075,81 @@ table {
         /* //// Change Password ///// -->Bottom*/
 /* //// My Account //////////////////////-->Bottom*/
 
+/* //// Setting //////////////////////-->Header*/
+#settingBottom {
+    display: flex;
+}
 
+#global-nav-setting {
+    /* display: flex; */
+    /* background-color: rgb(1, 235, 235); */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    width: 15%;
+    height: 100vh;
+}
+
+#navContent {
+    display: block;
+    width: 85%;
+}
+
+#settingNav {
+    width: 100%;
+    color: #5580a3;
+    /* font-weight: bold; */
+    font-size: 24px;
+    background-color: transparent;
+    /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    border-bottom-color: white;
+    cursor: pointer;
+}
+
+#settingNav {
+    color: white !important;
+    background-color: white !important;
+    border-right-color: white !important;
+    background-image: linear-gradient(white, #00f2fe, white);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#languageSettingSection{
+    padding-top: 1.5%;
+}
+
+#languageSettingSection, #currencySettingSection {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 4%;
+    border-bottom: dashed 1px silver;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#languageType {
+    background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#languageType:hover {
+    background-image: linear-gradient(white, rgb(222, 221, 221), white);
+    border: inset 1px silver;
+    border-radius: 4px;
+}
+
+/* //// Setting //////////////////////-->Bottom*/
 
 
 
@@ -1583,6 +1680,84 @@ table {
 }
         /* //// Change Password ///// -->Bottom*/
 /* //// My Account //////////////////////-->Bottom*/
+
+/* //// Setting //////////////////////-->Header*/
+#settingBottom {
+    display: flex;
+}
+
+#global-nav-setting {
+    /* display: flex; */
+    /* background-color: rgb(1, 235, 235); */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    width: 25%;
+    height: 100vh;
+}
+
+#navContent {
+    display: block;
+    width: 75%;
+}
+
+#settingNav {
+    width: 100%;
+    color: #5580a3;
+    /* font-weight: bold; */
+    font-size: 18px;
+    background-color: transparent;
+    /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    border-bottom-color: white;
+    cursor: pointer;
+}
+
+#settingNav {
+    color: white !important;
+    background-color: white !important;
+    border-right-color: white !important;
+    background-image: linear-gradient(white, #00f2fe, white);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+
+
+#languageSettingSection{
+    padding-top: 1.5%;
+}
+
+#languageSettingSection, #currencySettingSection {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+    border-bottom: dashed 1px silver;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#languageType {
+    background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#languageType:hover {
+    background-image: linear-gradient(white, rgb(222, 221, 221), white);
+    border: inset 1px silver;
+    border-radius: 4px;
+}
+
+/* //// Setting //////////////////////-->Bottom*/
 
 }
 

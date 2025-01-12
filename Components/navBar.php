@@ -32,7 +32,7 @@ $stmt->close();
             <div class="dropDownOptions">
                 <div class='dropDownLinksDiv'><a class='dropDownLinks' href="../"><i class='fas fa-cloud-sun'></i> Dashboard</a></div>
                 <div class='dropDownLinksDiv'><a class='dropDownLinks' href="/myAccount"><i class='fas fa-user-tie'></i> My Account</a></div>
-                <div class='dropDownLinksDiv'><a class='dropDownLinks' href="#"><i class='fas fa-wrench'></i> Setting</a></div>
+                <div class='dropDownLinksDiv'><a class='dropDownLinks' href="/setting"><i class='fas fa-wrench'></i> Setting</a></div>
                 <div class='dropDownLinksDiv logOutLink'><a class='dropDownLinks logOutLink' href="?logOut=true">Log out <i class='bx bx-log-out' ></i> </a></div> 
             </div>
         </div>
