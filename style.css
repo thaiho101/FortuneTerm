@@ -1030,6 +1030,21 @@ table {
 .visiblePasswordButton:active {
     background: none;
 }
+
+.success, .error {
+    margin-left: 10%;
+    padding-top: 5%;
+    font-size: 18px;
+}
+
+.error {
+    color: red;
+}
+
+.fa-exclamation-triangle {
+    border: none;
+    color: darkorange;
+}
             /* //// Toggle Password ///// -->Bottom*/
 
         /* //// Change Password ///// -->Bottom*/
@@ -1548,6 +1563,21 @@ table {
 .visiblePasswordButton:active {
     background: red;
     background-color: none;
+}
+
+.success, .error {
+    margin-left: 2%;
+    padding-top: 15%;
+    font-size: 18px;
+}
+
+.error {
+    color: red;
+}
+
+.fa-exclamation-triangle {
+    border: none;
+    color: darkorange;
 }
         /* //// Change Password ///// -->Bottom*/
 /* //// My Account //////////////////////-->Bottom*/

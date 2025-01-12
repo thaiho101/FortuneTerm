@@ -157,17 +157,16 @@ require_once('../config.php');
                                 $updateStmt = $conn->prepare("UPDATE users SET password = ? WHERE user_id = ? AND deleted = 'N'");
                                 $updateStmt->bind_param('si', $hashedPassword, $userId);
                                 if ($updateStmt->execute()) {
-                                    echo "<div class='success'>Password successfully updated!</div>";
+                                    echo "<div class='success'>&#9989; Password successfully updated!</div>";
                                 } else {
                                     echo "<div class='error'>Error updating password: " . htmlspecialchars($conn->error) . "</div>";
                                 }
                                 $updateStmt->close();
                             } else {
-                                //Need to be fixed with direct link!!!!!!!!!!!!!!
-                                echo "<div class='error'>New passwords or Confirm password do not match!</div>";
+                                echo "<div class='error'><i class='fas fa-exclamation-triangle'></i>New passwords or Confirm password do not match!</div>";
                             }
                         } else {
-                            echo "<div class='error'>Incorrect current password!</div>";
+                            echo "<div class='error'><i class='fas fa-exclamation-triangle'></i>Incorrect current password!</div>";
                         }
                     } else {
                         echo "<div class='error'>User not found!</div>";
