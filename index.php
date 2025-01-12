@@ -12,6 +12,18 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 // require_once("index.php"); 
 $userId = $_SESSION['user_id'];
 
+
+
+// function formatCurrency($number, $currencyType) 
+// {
+//     if ($currencyType === 'USD') {
+//         return number_format($number,2);
+//     } else if ($currencyType === 'VND') {
+//         return 'VND' . number_format($number, 0, '', '.');
+//     }
+// }
+
+
 // Set Cache-Control to no-cache, no-store, must-revalidate
 header("Cache-Control: no-cache, no-store, must-revalidate");
 // Set Pragma to no-cache (for HTTP/1.0 backward compatibility)
@@ -26,6 +38,55 @@ if ($conn->connect_error)
 {
         die("Connect failed: " . $conn->connect_error);
 }
+
+//// Currency Type
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['currencyType']))
+{
+    $currencyType = $_POST['currencyType'];
+    $_SESSION['currencyType'] = $currencyType; // Save in session for persistence
+
+    $sql = "UPDATE users SET preferred_currency = ? 
+            WHERE user_id = ? ";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('si', $currencyType, $userId);
+    $stmt->execute();
+    $stmt->close();
+}
+
+$sql = "SELECT preferred_currency FROM users
+        WHERE user_id = ? ";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('i', $userId);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($row = $result->fetch_assoc())
+{
+    $_SESSION['currencyType'] = $row['preferred_currency'];
+} else {
+    $_SESSION['currencyType'] = 'USD'; //Default currency
+}
+$stmt->close();
+
+$currencyType = $_SESSION['currencyType']; //Set the current currency activated from data
+if ($currencyType === 'USD') {
+    $currencySymbol = "$";
+} else if ($currencyType === 'VND') {
+    $currencySymbol = "VND";
+}
+//Currency format
+class CurrencyFormatter {
+    public static function format($number, $currencyType) {
+        switch ($currencyType) {
+            case 'USD':
+                return '' . number_format($number, 2);
+            case 'VND':
+                return '' . number_format($number, 0, '', '.');
+            default:
+                return number_format($number, 2);
+        }
+    }
+}
+//// Currency Type
 
 $stmt = $conn->prepare("SELECT first_name, last_name FROM users WHERE user_id = ?");
 $stmt->bind_param('i', $userId);
@@ -212,7 +273,7 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : $latestTransactionMont
                             {
                                 $row = $result->fetch_assoc();
                                 $currentBudget = $row['amount'];
-                                echo "You have set the budget for this month is: " . "<div id='currentBudgetSetSection'><div class='currentSetBudgetColor'>$" . $currentBudget . " &#9989;</div>
+                                echo "You have set the budget for this month is: " . "<div id='currentBudgetSetSection'><div class='currentSetBudgetColor'>" . $currencySymbol . " " . CurrencyFormatter::format($currentBudget, $currencyType) . " &#9989;</div>
                                                                                         </div>";
                             } else {
                                 echo "You have not set the budget for this month!";
@@ -282,7 +343,7 @@ if($yearSelected == '' || $monthSelected == '')
                                     echo "<tr class='budgetSummaryAlign'>
                                     <td class='budgetSymmaryWidth'>" . $row['year'] . "</td>
                                     <td class='budgetSymmaryWidth monthWidth'>" . $monthBudget . "</td>
-                                    <td class='budgetSymmaryWidth blueBudgetSet'>" . $row['amount'] . " &#9989</td>
+                                    <td class='budgetSymmaryWidth blueBudgetSet'>" . $currencySymbol . " " . CurrencyFormatter::format($row['amount'], $currencyType) . " &#9989</td>
                                     </tr>";
                                     $totalBudget += $row['amount'];
                                 } else {
@@ -295,7 +356,7 @@ if($yearSelected == '' || $monthSelected == '')
                             }
                             echo "<tr class='budgetSummaryAlign titleBackgroundShowBudget'><td>{$row['year']}</td>
                                     <td class='titleBackgroundShowBudget'>Total Budget</td>
-                                    <td class='blueBudgetSet titleBackgroundShowBudget'>" . number_format($totalBudget,2) . "</td></tr>";
+                                    <td class='blueBudgetSet titleBackgroundShowBudget'>" . $currencySymbol . " " . CurrencyFormatter::format($totalBudget, $currencyType) . "</td></tr>";
                             echo "</table>";
                         }
 ?>
@@ -310,6 +371,13 @@ if($yearSelected == '' || $monthSelected == '')
 
         <div id="dataAnalyze">
             <div id='filter' class="filter">
+                <form id='currencyForm' method='post'>
+                    <label for="currencyType"> </label>
+                    <select name="currencyType" id="currencyType" onchange='document.getElementById("currencyForm").submit()'>
+                        <option name='USD' value="USD" <?php echo ($_SESSION['currencyType'] === "USD") ? 'selected' : '' ?>>USD</option>
+                        <option name='VND' value="VND" <?php echo ($_SESSION['currencyType'] === "VND") ? 'selected' : '' ?>>VND</option>
+                    </select>
+                </form>
                 <form method='get' class='yearMonthDiv'>
                     <label for="year" class='yearMonthFilterStyle'><i class="fa fa-cog fa-spin"></i> Year:  </label>
                         <select name="year" class='yearOptionStyle'id='year'>
@@ -437,8 +505,8 @@ if($result->num_rows > 0)
                     <td class='expand tdLength'>" . $row['DayOfWeek'] . "</td>
                     <td class='expand tdLength'>" . $row['ShoppingDate'] . "</td>
                     <td class='expand tdLength'>" . $row['market_name'] . "</td>
-                    <td class='expand tdLength totalCostStyle " . $numFBColor . "'>" . number_format($row['food_bev_cost'],2). "</td>
-                    <td class='expand tdLength totalCostStyle " . $numOtherColor . "'>" . number_format($row['other_cost'],2). "</td>
+                    <td class='expand tdLength totalCostStyle " . $numFBColor . "'>" . CurrencyFormatter::format($row['food_bev_cost'], $currencyType). "</td>
+                    <td class='expand tdLength totalCostStyle " . $numOtherColor . "'>" . CurrencyFormatter::format($row['other_cost'], $currencyType). "</td>
                     <td class='gridTableColor dataEditStyle'>
                             <button id=" ."edit_". $row['mcID'] . " onclick='editClick(".$row['mcID'].", event)' name='edit' class='editSubmitStyle'><i class='fas fa-pen'></i></button>
                     </td>
@@ -501,8 +569,8 @@ $resultTotal = $statement->get_result();
             echo "<tr class='fontStyle'>
                 <td class='gridTableColor redundantCol'></td> 
                 <td class='gridTableColor totalCostLabel totalCostColor' colspan='2'>Total Cost</td> 
-                <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor'>$" . number_format($row['totalFBCost'],2) . "</td> 
-                <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor'>$" . number_format($row['totalOtherCost'],2) . "</td> 
+                <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor'>" . $currencySymbol . " " . CurrencyFormatter::format($row['totalFBCost'], $currencyType) . "</td> 
+                <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor'>" . $currencySymbol . " " . CurrencyFormatter::format($row['totalOtherCost'], $currencyType) . "</td> 
                 <td class='gridTableColor redundantIdStyle dataEditStyle'></td>
                 <td class='gridTableColor redundantIdStyle dataDeleteStyle'></td>";
         }
@@ -520,14 +588,14 @@ $resultTotal = $statement->get_result();
     echo "<tr class='fontStyle'>
     <td class='gridTableColor redundantCol'></td> 
     <td class='gridTableColor totalCostLabel totalBudgetColor' colspan='2'>Total Budget</td> 
-    <td class='gridTableColor budgetStyle totalCostStyle totalCostTextStyle totalBudgetColor $totalHidden'>$" . number_format($budget,2) . "</td>
+    <td class='gridTableColor budgetStyle totalCostStyle totalCostTextStyle totalBudgetColor $totalHidden'>" . $currencySymbol . " " . CurrencyFormatter::format($budget, $currencyType) . "</td>
     <td class='gridTableColor redundantIdStyle dataEditStyle' colspan='3'></td>
     </tr>";
 
     echo "<tr class='fontStyle'>
     <td class='gridTableColor redundantCol'></td> 
     <td class='gridTableColor totalCostLabel totalBalanceColor' colspan='2'>Balance for Shopping</td> 
-    <td class='gridTableColor balanceStyle totalCostStyle totalCostTextStyle totalBalanceColor $totalHidden'>$" . number_format($balanceForShopping,2) . "</td>
+    <td class='gridTableColor balanceStyle totalCostStyle totalCostTextStyle totalBalanceColor $totalHidden'>" . $currencySymbol . " " . CurrencyFormatter::format($balanceForShopping, $currencyType) . "</td>
     <td class='gridTableColor redundantIdStyle dataEditStyle' colspan='3'></td>
     </tr></tfoot>";      
 
@@ -639,13 +707,13 @@ $statement->close();
                 color: '#004C99' // Optional: set the title color
             },
             slices: {
-                0: { color: '#CD3903' }, // Dark Olive Green
-                1: { color: '#01AEAE' }, // Orange
-                2: { color: 'darkslateblue' }, // Teal
+                0: { color: '#CD3903' }, // Dark Orange fixed
+                1: { color: '#01AEAE' }, // Teal
+                2: { color: 'darkslateblue' }, // blue
                 3: { color: '#00FFFF' }, // Cyan
                 4: { color: '32CD32' }, // Green
                 5: { color: '#00FF00' }, // Lime
-                6: { color: '#F0E68C' }, // Dark Violet
+                6: { color: '#F0E68C' }, // beige
                 7: { color: '#FF69B4' }, // Violet
                 8: { color: '#FFC0CB' }, // Pink
                 9: { color: '#FF00FF' }, // Magenta

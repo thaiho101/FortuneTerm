@@ -322,7 +322,9 @@ body, div {
     flex-direction: column;
 }
 
-
+#filter {
+    justify-content: space-between;
+}
 
 .filter {
     display: flex;
