@@ -639,13 +639,13 @@ $statement->close();
                 color: '#004C99' // Optional: set the title color
             },
             slices: {
-                0: { color: '#FF6906' }, // Orange
-                1: { color: '#1E90FF' }, // Doger Blue
-                2: { color: '#01AEAE' }, // Teal
+                0: { color: '#CD3903' }, // Dark Olive Green
+                1: { color: '#01AEAE' }, // Orange
+                2: { color: 'darkslateblue' }, // Teal
                 3: { color: '#00FFFF' }, // Cyan
                 4: { color: '32CD32' }, // Green
                 5: { color: '#00FF00' }, // Lime
-                6: { color: '#DA70D6' }, // Dark Violet
+                6: { color: '#F0E68C' }, // Dark Violet
                 7: { color: '#FF69B4' }, // Violet
                 8: { color: '#FFC0CB' }, // Pink
                 9: { color: '#FF00FF' }, // Magenta

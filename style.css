@@ -1097,7 +1097,10 @@ table {
         padding-bottom: 20px;
     }
 
-
+    #insertionForm {
+        margin-left: 2%;
+        width: 96%;
+    }
 
     .form-row {
         display: flex; /* Makes each row a flex container */
