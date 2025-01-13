@@ -10,6 +10,8 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
         exit();
 }
 require_once('../config.php');
+require_once("../Components/language.php"); //Call function to activate the languageForm id
+require_once("../Components/currency.php"); //Call function to activate the currencyForm id
 
 ?>
 
@@ -46,16 +48,22 @@ require_once('../config.php');
             <div id='languageSettingSection'>
                 <label for="">Language: </label>
                 <form id='languageForm' method='post'>
-                    <label for="languageType"> </label>
+                    <label for="languageType" > </label>
                     <select name="languageType" id="languageType" onchange='document.getElementById("languageForm").submit()'>
-                        <option name='USD' value="English" <?php echo ($_SESSION['languageType'] === "English") ? 'selected' : '' ?>>English</option>
-                        <option name='VND' value="Vietnam" <?php echo ($_SESSION['languageType'] === "Vietnam") ? 'selected' : '' ?>>Vietnam</option>
+                        <option name='English' value="English" <?php echo ($_SESSION['languageType'] === "English") ? 'selected' : '' ?>>English</option>
+                        <option name='Vietnamese' value="Vietnamese" <?php echo ($_SESSION['languageType'] === "Vietnamese") ? 'selected' : '' ?>>Vietnamese</option>
                     </select>
                 </form>
             </div>
             <div id='currencySettingSection'>
                 <label for="">Currency: </label>
-                <?php require_once("../Components/currency.php");?>
+                <form id='currencyForm' method='post'>
+                    <label for="currencyType"> </label>
+                    <select name="currencyType" id="currencyType" onchange='document.getElementById("currencyForm").submit()'>
+                        <option name='USD' value="USD" <?php echo ($_SESSION['currencyType'] === "USD") ? 'selected' : '' ?>>USD</option>
+                        <option name='VND' value="VND" <?php echo ($_SESSION['currencyType'] === "VND") ? 'selected' : '' ?>>VND</option>
+                    </select>
+                </form>
             </div>
         </div>
     </div>
