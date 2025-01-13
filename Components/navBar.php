@@ -22,10 +22,10 @@ if ($row = $result->fetch_assoc()) {
 }
 $stmt->close();
 
-if ($_SESSION['currencyType'] == 'USD')
+if ($_SESSION['languageType'] == 'English')
 {
     $greeting = "Welcome, ";
-} else if ($_SESSION['currencyType'] == 'VND') {
+} else if ($_SESSION['languageType'] == 'Vietnamese') {
     $greeting = "Xin chào, ";
 }
 

@@ -24,6 +24,9 @@ function focusOnHomeLink() {
 async function editClick(id, event) {
     event.preventDefault();
     const row = document.getElementById(id);
+    const currencyType = document.getElementById("currencyType");
+    // Get the selected option's value
+    const selectedValue = currencyType.value;
 
     if (row) {
         const cells = row.children;
@@ -31,7 +34,7 @@ async function editClick(id, event) {
         // Chuyển cột thành input field
         const dateCell = cells[1];
         const dateObject = new Date(dateCell.textContent);
-	console.log(dateCell.textContent);
+	    console.log(dateCell.textContent);
         console.log(dateObject.toISOString())
         const convertedDate = dateObject.toISOString().split("T")[0];
         dateCell.innerHTML = `<input type="date" value="${convertedDate}" />`;
@@ -40,11 +43,21 @@ async function editClick(id, event) {
         marketCell.innerHTML = `<input type="text" value="${marketCell.textContent}" />`;
 
         const fbCostCell = cells[3];
-        fbCostCell.innerHTML = `<input type="number" step="0.01" value="${fbCostCell.textContent.replace(",", "")}" />`;
+
 
         const otherCostCell = cells[4];
-        otherCostCell.innerHTML = `<input type="number" step="0.01" value="${otherCostCell.textContent.replace(",", "")}" />`;
 
+
+        if (selectedValue === "VND")
+        {
+            fbCostCell.innerHTML = `<input type="number" step="0.01" value="${fbCostCell.textContent.replace(",", "").replace(".", "")}" />`;
+            otherCostCell.innerHTML = `<input type="number" step="0.01" value="${otherCostCell.textContent.replace(",", "").replace(".", "")}" />`;
+        } else {
+            fbCostCell.innerHTML = `<input type="number" step="0.01" value="${fbCostCell.textContent.replace(",", "")}" />`;
+            otherCostCell.innerHTML = `<input type="number" step="0.01" value="${otherCostCell.textContent.replace(",", "")}" />`;
+        }
+
+        console.log(fbCostCell.innerHTML);
         // Cập nhật nút thành Apply
         const editButton = cells[5].querySelector("button");
         editButton.setAttribute("onclick", `applyClick(${id}, event)`);
