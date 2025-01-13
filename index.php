@@ -81,6 +81,61 @@ class CurrencyFormatter {
 }
 ////[Currency Type]/////////-->Bottom
 
+////[Translation]/////////-->Header
+if ($_SESSION['currencyType'] == 'USD')
+{
+    $greeting = "Welcome, ";
+    $newTransaction = "New Transaction";
+    $dateTranslate = "Date";
+    $marketTranslate = "Market";
+    $foodAndBeverageCostTranslate = "Food & Beverage Cost";
+    $otherCostTranslate = "Other Cost";
+    $insertTranslate = "Insert";
+    $haveSetButtonNotificationTranslate = "You have set the budget for this month is: ";
+    $haveNotSetBudgetTranslate = "You have not set the budget for this month! ";
+    $setBudgetTranslate = "Set Budget";
+    $showBudgetTranslate = "Show Budget";
+    $yourBudgetSummaryTranslate = "Your Budget Summary";
+    $yearTranslate = "Year";
+    $monthTranslate = "Month";
+    $budgetTranslate = "Budget";
+    $totalBudgetTranslate = "Total Budget";
+    $closeTranslate = "Close";
+    $dayOfWeekTranslate = "Day of Week";
+    $totalCostTranslate = "Total Cost";
+    $balanceForShoppingTranslate = "Balance for Shopping";
+    $mostVisitedMarkets = "Most Visited Markets";
+    $marketCostDistribution = "Market Cost Distribution";
+    $foodAndBeverageTranslate = "Food & Beverage";
+    $otherTranslate = "Other";
+} else if ($_SESSION['currencyType'] == 'VND') {
+    $greeting = "Xin chào, ";
+    $newTransaction = "Giao Dịch Mới";
+    $dateTranslate = "Ngày";
+    $marketTranslate = "Chợ";
+    $foodAndBeverageCostTranslate = "Chi phí Đồ ăn & Thức Uống";
+    $otherCostTranslate = "Chi phí khác";
+    $insertTranslate = "Thêm";
+    $haveSetButtonNotificationTranslate = "Ngân sách bạn đã thiết lập cho tháng này là: ";
+    $haveNotSetBudgetTranslate = "Bạn chưa thiết lập ngân sách cho tháng này! ";
+    $setBudgetTranslate = "Đặt ngân sách";
+    $showBudgetTranslate = "Hiển thị ngân sách";
+    $yourBudgetSummaryTranslate = "Tổng quan ngân sách của bạn";
+    $yearTranslate = "Năm";
+    $monthTranslate = "Tháng";
+    $budgetTranslate = "Ngân sách";
+    $totalBudgetTranslate = "Tổng Ngân sách";
+    $closeTranslate = "Đóng";
+    $dayOfWeekTranslate = "Thứ";
+    $totalCostTranslate = "Tổng Chi Phí";
+    $balanceForShoppingTranslate = "Số Tiền Mua Sắm Còn Lại";
+    $mostVisitedMarkets = "Các Chợ Được Ghé Thăm Nhiều Nhất";
+    $marketCostDistribution = "Phân Bổ Chi Phí";
+    $foodAndBeverageTranslate = "Đồ ăn & Thức uống";
+    $otherTranslate = "Khác";
+}
+////[Translation]/////////-->Bottom
+
 $stmt = $conn->prepare("SELECT first_name, last_name FROM users WHERE user_id = ?");
 $stmt->bind_param('i', $userId);
 $stmt->execute();
@@ -121,17 +176,17 @@ $stmt->close();
         <div id="dataChange">
             <div class="insert">
                 <div class='newTransactionLabel'>
-                    <a class='newTransactionStyle'  onclick="focusOnDate()">New Transaction</a>
+                    <a class='newTransactionStyle'  onclick="focusOnDate()"><?php echo $newTransaction;?></a>
                 </div>
                 
                 <form method='post' id='insertionForm'>
                     <div class='form-row'>
-                        <button for='date' class='insertLabel dateLabel' >Date</button>
+                        <button for='date' class='insertLabel dateLabel' ><?php echo $dateTranslate;?></button>
                         <input type='date' name='date' id='date' class='insertBox inserBoxDate' required>
                     </div>
 
                     <div class='form-row'>
-                        <button for='store' class='insertLabel interface'><i class="fas fa-store"></i> Market</button>
+                        <button for='store' class='insertLabel interface'><i class="fas fa-store"></i><?php echo " " . $marketTranslate;?></button>
 
                         <input list="store" name='store' class='insertBox' required>
                         <datalist id="store">
@@ -161,17 +216,17 @@ $stmt->close();
                     </div>
 
                     <div class='form-row'>
-                        <button for='fbCost' class='insertLabel '>Food & Beverage Cost</button>
-                        <input type='number' name='fbCost' id='fbCost' placeholder="$" class='insertBox insertBoxFBCost' step="0.01">
+                        <button for='fbCost' class='insertLabel '><?php echo $foodAndBeverageCostTranslate;?></button>
+                        <input type='number' name='fbCost' id='fbCost' placeholder="<?php echo $currencySymbol;?>" class='insertBox insertBoxFBCost' step="0.01">
                     </div>
 
                     <div class='form-row'>
-                        <button for='otherCost' class='insertLabel'>Other Cost</button>
-                        <input type='number' name='otherCost' id='otherCost' placeholder="$" class='insertBox insertBoxOtherCost' step="0.01">
+                        <button for='otherCost' class='insertLabel'><?php echo $otherCostTranslate;?></button>
+                        <input type='number' name='otherCost' id='otherCost' placeholder="<?php echo $currencySymbol;?>" class='insertBox insertBoxOtherCost' step="0.01">
                     </div>
 
                     <div class='insertButtonDiv'>
-                        <button type='submit' name='insert' class='insertButton'>Insert</button>
+                        <button type='submit' name='insert' class='insertButton'><?php echo $insertTranslate;?></button>
                     </div>
                 </form>
             </div>
@@ -266,10 +321,10 @@ $monthSelected = isset($_GET['month']) ? $_GET['month'] : $latestTransactionMont
                             {
                                 $row = $result->fetch_assoc();
                                 $currentBudget = $row['amount'];
-                                echo "You have set the budget for this month is: " . "<div id='currentBudgetSetSection'><div class='currentSetBudgetColor'>" . $currencySymbol . " " . CurrencyFormatter::format($currentBudget, $currencyType) . " &#9989;</div>
+                                echo $haveSetButtonNotificationTranslate . "<div id='currentBudgetSetSection'><div class='currentSetBudgetColor'>" . $currencySymbol . " " . CurrencyFormatter::format($currentBudget, $currencyType) . " &#9989;</div>
                                                                                         </div>";
                             } else {
-                                echo "You have not set the budget for this month!";
+                                echo $haveNotSetBudgetTranslate;
                                 echo "<div id='messageReminder'><i class='fas fa-exclamation-triangle'></i></div>";
                             }
 
@@ -287,16 +342,16 @@ if($yearSelected == '' || $monthSelected == '')
 {
     $hiddenClass = 'hidden';
 }
-                echo "<button class='setBudgetButton $hiddenClass' onclick='setBudget()'>Set Budget</button>"
+                echo "<button class='setBudgetButton $hiddenClass' onclick='setBudget()'>" . $setBudgetTranslate . "</button>"
 ?>
                     <!-- <button class='setBudgetButton' onclick="setBudget()">Set Budget</button> -->
                 </div>
                 <div class='newTransactionLabel'>
                     <form method='post'>
-                        <button id='openModal' type='button' name='showBudget' class='showBudgetButton' onclick="document.getElementById('showBudgetModal').showModal()">Show Budget</button>
+                        <button id='openModal' type='button' name='showBudget' class='showBudgetButton' onclick="document.getElementById('showBudgetModal').showModal()"><?php echo $showBudgetTranslate;?></button>
                     </form>
                     <dialog id='showBudgetModal'>
-                            <h2 id='budgetSummaryTitle'>Your Budget Summary</h2>
+                            <h2 id='budgetSummaryTitle'><?php echo $yourBudgetSummaryTranslate;?></h2>
                             <div id='showBudgetContent'>
 <?php
                         if ($yearSelected == '')
@@ -316,9 +371,9 @@ if($yearSelected == '' || $monthSelected == '')
                         if($result->num_rows > 0)
                         {
                             echo "<table border='1'>";
-                            echo "<th class='titleBackgroundShowBudget yearWidth'>Year</th>
-                                    <th class='titleBackgroundShowBudget monthWidth'>Month</th>
-                                    <th class='titleBackgroundShowBudget'>Budget</th>";
+                            echo "<th class='titleBackgroundShowBudget yearWidth'>" . $yearTranslate . "</th>
+                                    <th class='titleBackgroundShowBudget monthWidth'>" . $monthTranslate . "</th>
+                                    <th class='titleBackgroundShowBudget'>" . $budgetTranslate . "</th>";
                             
                             $dataLoop = [];
 
@@ -348,14 +403,14 @@ if($yearSelected == '' || $monthSelected == '')
                                 }
                             }
                             echo "<tr class='budgetSummaryAlign titleBackgroundShowBudget'><td>{$row['year']}</td>
-                                    <td class='titleBackgroundShowBudget'>Total Budget</td>
+                                    <td class='titleBackgroundShowBudget'>" . $totalBudgetTranslate . "</td>
                                     <td class='blueBudgetSet titleBackgroundShowBudget'>" . $currencySymbol . " " . CurrencyFormatter::format($totalBudget, $currencyType) . "</td></tr>";
                             echo "</table>";
                         }
 ?>
 </div>
                             <div id='closeButtonShowBudgetSection'>
-                                <button id='closeButtonShowBudget' onclick="document.getElementById('showBudgetModal').close()">Close</button>
+                                <button id='closeButtonShowBudget' onclick="document.getElementById('showBudgetModal').close()"><?php echo $closeTranslate;?></button>
                             </div>
                     </dialog>
                 </div>
@@ -372,7 +427,7 @@ if($yearSelected == '' || $monthSelected == '')
                     </select>
                 </form>
                 <form method='get' class='yearMonthDiv'>
-                    <label for="year" class='yearMonthFilterStyle'><i class="fa fa-cog fa-spin"></i> Year:  </label>
+                    <label for="year" class='yearMonthFilterStyle'><i class="fa fa-cog fa-spin"></i> <?php echo $yearTranslate;?>:  </label>
                         <select name="year" class='yearOptionStyle'id='year'>
                     <?php
                         $sql = "SELECT distinct DATE_FORMAT(visit_date, '%Y') AS year
@@ -404,7 +459,7 @@ if($yearSelected == '' || $monthSelected == '')
 ////[Year Selected]/////////-->Bottom
                     ?>
                         </select>
-                    <label for="month" class='yearMonthFilterStyle'><i class="fa fa-cog fa-spin"></i> Month: </label>
+                    <label for="month" class='yearMonthFilterStyle'><i class="fa fa-cog fa-spin"></i> <?php echo $monthTranslate;?>: </label>
                         <select name="month" class='monthOptionStyle' id='month'>
                             <?php
 ////[Month Selected]/////////-->Header
@@ -443,11 +498,11 @@ if($yearSelected == '' || $monthSelected == '')
                 <table class='headerTable'>
                     <thead id='contentHeader'>
                         <tr class='headerRow'>
-                            <th class='fontStyle expand wrapText tdLength'>Day of Week</th>
-                            <th class='fontStyle expand tdLength'>Date</th>
-                            <th class='fontStyle expand tdLength'>Store</th>
-                            <th class='fontStyle expand wrapText tdLength'>Food & Beverage Cost</th>
-                            <th class='fontStyle expand wrapText tdLength'>Other Cost</th>
+                            <th class='fontStyle expand wrapText tdLength'><?php echo $dayOfWeekTranslate;?></th>
+                            <th class='fontStyle expand tdLength'><?php echo $dateTranslate;?></th>
+                            <th class='fontStyle expand tdLength'><?php echo $marketTranslate;?></th>
+                            <th class='fontStyle expand wrapText tdLength'><?php echo $foodAndBeverageCostTranslate;?></th>
+                            <th class='fontStyle expand wrapText tdLength'><?php echo $otherCostTranslate;?></th>
                             <th class='fontStyle expand tdLength actionStyle' colspan='2'><i class='fa fa-cog fa-spin'></i></th>
                         </tr>
                     </thead>
@@ -561,7 +616,7 @@ $resultTotal = $statement->get_result();
             $totalOtherCost = $row['totalOtherCost'];
             echo "<tr class='fontStyle'>
                 <td class='gridTableColor redundantCol'></td> 
-                <td class='gridTableColor totalCostLabel totalCostColor' colspan='2'>Total Cost</td> 
+                <td class='gridTableColor totalCostLabel totalCostColor' colspan='2'>" . $totalCostTranslate . "</td> 
                 <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor'>" . $currencySymbol . " " . CurrencyFormatter::format($row['totalFBCost'], $currencyType) . "</td> 
                 <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor'>" . $currencySymbol . " " . CurrencyFormatter::format($row['totalOtherCost'], $currencyType) . "</td> 
                 <td class='gridTableColor redundantIdStyle dataEditStyle'></td>
@@ -580,14 +635,14 @@ $resultTotal = $statement->get_result();
     }
     echo "<tr class='fontStyle'>
     <td class='gridTableColor redundantCol'></td> 
-    <td class='gridTableColor totalCostLabel totalBudgetColor' colspan='2'>Total Budget</td> 
+    <td class='gridTableColor totalCostLabel totalBudgetColor' colspan='2'>" . $totalBudgetTranslate . "</td> 
     <td class='gridTableColor budgetStyle totalCostStyle totalCostTextStyle totalBudgetColor $totalHidden'>" . $currencySymbol . " " . CurrencyFormatter::format($budget, $currencyType) . "</td>
     <td class='gridTableColor redundantIdStyle dataEditStyle' colspan='3'></td>
     </tr>";
 
     echo "<tr class='fontStyle'>
     <td class='gridTableColor redundantCol'></td> 
-    <td class='gridTableColor totalCostLabel totalBalanceColor' colspan='2'>Balance for Shopping</td> 
+    <td class='gridTableColor totalCostLabel totalBalanceColor' colspan='2'>" . $balanceForShoppingTranslate . "</td> 
     <td class='gridTableColor balanceStyle totalCostStyle totalCostTextStyle totalBalanceColor $totalHidden'>" . $currencySymbol . " " . CurrencyFormatter::format($balanceForShopping, $currencyType) . "</td>
     <td class='gridTableColor redundantIdStyle dataEditStyle' colspan='3'></td>
     </tr></tfoot>";      
@@ -664,13 +719,13 @@ $statement->close();
         // Set Data
         const data = google.visualization.arrayToDataTable([
         ['Cost', 'Mhl'],
-        ['Food & Beverage', <?php echo $totalFBCost ?>],
-        ['Other', <?php echo $totalOtherCost ?>],
+        ['<?php echo $foodAndBeverageTranslate;?>', <?php echo $totalFBCost ?>],
+        ['<?php echo $otherTranslate;?>', <?php echo $totalOtherCost ?>],
         ]);
 
         // Set Options
         const options = {
-            title:'Market Cost Distribution',
+            title:'<?php echo $marketCostDistribution;?>',
             is3D:true,
             titleTextStyle: {
                 fontSize: 15, // Set the font size (example: 24px)
@@ -691,7 +746,7 @@ $statement->close();
         const dataVisited = google.visualization.arrayToDataTable(chartData);
 
         const optionVisited = {
-            title: 'Most Visited Markets',
+            title: '<?php echo $mostVisitedMarkets;?>',
             is3D: true,
             pieHole: 0.4,
             titleTextStyle: {

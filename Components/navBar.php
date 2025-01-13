@@ -22,11 +22,18 @@ if ($row = $result->fetch_assoc()) {
 }
 $stmt->close();
 
+if ($_SESSION['currencyType'] == 'USD')
+{
+    $greeting = "Welcome, ";
+} else if ($_SESSION['currencyType'] == 'VND') {
+    $greeting = "Xin chào, ";
+}
+
 ?>
 <div id="navigation">
     <div id='webTitle'><a href='../' id='homeLink'>Market Cost</a></div>
     <div id='navBar'>
-        <div class='greeting'>Welcome, <?php echo $firstName;?>!</div>
+        <div class='greeting'><?php echo $greeting . $firstName;?>!</div>
         <div class="dropDownSection">
             <button id='dropDownButton'><i class="fas fa-bars"></i></button>
             <div class="dropDownOptions">
