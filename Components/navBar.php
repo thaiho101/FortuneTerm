@@ -24,7 +24,7 @@ $stmt->close();
 ////[Translation]/////////-->Header
 if ($_SESSION['languageType'] == 'English') {
     $greeting = "Welcome, ";
-    $dashboardTranslate = "Dash Board";
+    $dashboardTranslate = "Dashboard";
     $myAccountTranslate = "My Account";
     $settingTranslate = "Setting";
     $logOutTranslate = "Log out";
@@ -73,7 +73,7 @@ if ($_SESSION['languageType'] == 'English') {
 } else {
     // Default to English
     $greeting = "Welcome, ";
-    $dashboardTranslate = "Dash Board";
+    $dashboardTranslate = "Dashboard";
     $myAccountTranslate = "My Account";
     $settingTranslate = "Setting";
     $logOutTranslate = "Log out";

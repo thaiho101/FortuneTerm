@@ -1794,7 +1794,7 @@ table {
 
 
 
-/* Responsive Layout for Small Mobile Screens (iPhone 13) */
+/* Responsive Layout for Small Mobile Screens (iPhone 13) -->Header*/
 @media (max-width: 390px) {
     #filter {
         display: block;
@@ -1826,7 +1826,7 @@ table {
         cursor: pointer;
     }
 }
-
+/* Responsive Layout for Small Mobile Screens (iPhone 13) -->Bottom*/
 
 
 
