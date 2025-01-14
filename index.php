@@ -136,6 +136,7 @@ require_once("./Components/currency.php");
 //     $otherTranslate = "Khác";
 // }
 ////[Translation]/////////-->Bottom
+// $cancelTranslate = "HelloMen";
 
 $stmt = $conn->prepare("SELECT first_name, last_name FROM users WHERE user_id = ?");
 $stmt->bind_param('i', $userId);
@@ -550,8 +551,35 @@ if($result->num_rows > 0)
         {
             $numFBColor = $row['food_bev_cost'] == 0 ? 'silverNumber' : 'blueNumber';
             $numOtherColor = $row['other_cost'] == 0 ? 'silverNumber' : 'blueNumber';
+            ////[Translation]/////////-->Header
+            $dayOfWeek = $row['DayOfWeek'];
+            if ($_SESSION['languageType'] == 'Vietnamese') {
+                $dayOfWeekTranslations = [
+                    "Monday" => "Thứ Hai",
+                    "Tuesday" => "Thứ Ba",
+                    "Wednesday" => "Thứ Tư",
+                    "Thursday" => "Thứ Năm",
+                    "Friday" => "Thứ Sáu",
+                    "Saturday" => "Thứ Bảy",
+                    "Sunday" => "Chủ Nhật"
+                ];
+                $dayOfWeek = $dayOfWeekTranslations[$row['DayOfWeek']] ?? $row['DayOfWeek'];
+            } else if ($_SESSION['languageType'] == 'Spanish') {
+                $dayOfWeekTranslations = [
+                    "Monday" => "Lunes",
+                    "Tuesday" => "Martes",
+                    "Wednesday" => "Miércoles",
+                    "Thursday" => "Jueves",
+                    "Friday" => "Viernes",
+                    "Saturday" => "Sábado",
+                    "Sunday" => "Domingo"
+                ];
+                $dayOfWeek = $dayOfWeekTranslations[$row['DayOfWeek']] ?? $row['DayOfWeek'];
+            }
+            ////[Translation]/////////-->Bottom
+            
             echo "<tr class='rowHighLight fontStyle' id= " . $row['mcID'] . ">
-                    <td class='expand tdLength'>" . $row['DayOfWeek'] . "</td>
+                    <td class='expand tdLength'>" . $dayOfWeek . "</td>
                     <td class='expand tdLength'>" . $row['ShoppingDate'] . "</td>
                     <td class='expand tdLength'>" . $row['market_name'] . "</td>
                     <td class='expand tdLength totalCostStyle " . $numFBColor . "'>" . CurrencyFormatter::format($row['food_bev_cost'], $currencyType). "</td>
