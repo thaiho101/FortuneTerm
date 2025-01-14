@@ -40,7 +40,45 @@ if ($_SESSION['languageType'] == 'English') {
     $myAccountTranslate = "Mi Cuenta";
     $settingTranslate = "Configuración";
     $logOutTranslate = "Cerrar sesión";
+} else if ($_SESSION['languageType'] == 'German') {
+    $greeting = "Willkommen, ";
+    $dashboardTranslate = "Instrumententafel";
+    $myAccountTranslate = "Mein Konto";
+    $settingTranslate = "Einstellungen";
+    $logOutTranslate = "Abmelden";
+} else if ($_SESSION['languageType'] == 'French') {
+    $greeting = "Bienvenue, ";
+    $dashboardTranslate = "Tableau de Bord";
+    $myAccountTranslate = "Mon Compte";
+    $settingTranslate = "Paramètres";
+    $logOutTranslate = "Se déconnecter";
+} else if ($_SESSION['languageType'] == 'Korean') {
+    $greeting = "환영합니다, ";
+    $dashboardTranslate = "대시보드";
+    $myAccountTranslate = "내 계정";
+    $settingTranslate = "설정";
+    $logOutTranslate = "로그아웃";
+} else if ($_SESSION['languageType'] == 'Chinese') {
+    $greeting = "欢迎, ";
+    $dashboardTranslate = "仪表板";
+    $myAccountTranslate = "我的账户";
+    $settingTranslate = "设置";
+    $logOutTranslate = "登出";
+} else if ($_SESSION['languageType'] == 'Japanese') {
+    $greeting = "ようこそ, ";
+    $dashboardTranslate = "ダッシュボード";
+    $myAccountTranslate = "マイアカウント";
+    $settingTranslate = "設定";
+    $logOutTranslate = "ログアウト";
+} else {
+    // Default to English
+    $greeting = "Welcome, ";
+    $dashboardTranslate = "Dash Board";
+    $myAccountTranslate = "My Account";
+    $settingTranslate = "Setting";
+    $logOutTranslate = "Log out";
 }
+
 ////[Translation]/////////-->Bottom
 
 ?>

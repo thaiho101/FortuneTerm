@@ -47,7 +47,81 @@ if ($_SESSION['languageType'] == 'English') {
     $confirmPasswordTranslate = "Confirmar Contraseña";
 
     $changeTranslate = "Cambiar";
+} else if ($_SESSION['languageType'] == 'German') {
+    $myProfileTranslate = "Mein Profil";
+    $firstNameTranslate = "Vorname";
+    $lastNameTranslate = "Nachname";
+
+    $changePasswordTranslate = "Passwort ändern";
+    $regulationChangePasswordTranslate = "Dieses Passwort muss mindestens 6 Zeichen lang sein.";
+    $currentPasswordTranslate = "Aktuelles Passwort";
+    $newPasswordTranslate = "Neues Passwort";
+    $confirmPasswordTranslate = "Passwort bestätigen";
+
+    $changeTranslate = "Ändern";
+} else if ($_SESSION['languageType'] == 'French') {
+    $myProfileTranslate = "Mon Profil";
+    $firstNameTranslate = "Prénom";
+    $lastNameTranslate = "Nom";
+
+    $changePasswordTranslate = "Changer le mot de passe";
+    $regulationChangePasswordTranslate = "Ce mot de passe doit comporter au moins 6 caractères.";
+    $currentPasswordTranslate = "Mot de passe actuel";
+    $newPasswordTranslate = "Nouveau mot de passe";
+    $confirmPasswordTranslate = "Confirmer le mot de passe";
+
+    $changeTranslate = "Changer";
+} else if ($_SESSION['languageType'] == 'Korean') {
+    $myProfileTranslate = "내 프로필";
+    $firstNameTranslate = "이름";
+    $lastNameTranslate = "성";
+
+    $changePasswordTranslate = "비밀번호 변경";
+    $regulationChangePasswordTranslate = "비밀번호는 최소 6자 이상이어야 합니다.";
+    $currentPasswordTranslate = "현재 비밀번호";
+    $newPasswordTranslate = "새 비밀번호";
+    $confirmPasswordTranslate = "비밀번호 확인";
+
+    $changeTranslate = "변경";
+} else if ($_SESSION['languageType'] == 'Chinese') {
+    $myProfileTranslate = "我的资料";
+    $firstNameTranslate = "名字";
+    $lastNameTranslate = "姓";
+
+    $changePasswordTranslate = "更改密码";
+    $regulationChangePasswordTranslate = "密码至少需要6个字符。";
+    $currentPasswordTranslate = "当前密码";
+    $newPasswordTranslate = "新密码";
+    $confirmPasswordTranslate = "确认密码";
+
+    $changeTranslate = "更改";
+} else if ($_SESSION['languageType'] == 'Japanese') {
+    $myProfileTranslate = "マイプロフィール";
+    $firstNameTranslate = "名";
+    $lastNameTranslate = "姓";
+
+    $changePasswordTranslate = "パスワードを変更する";
+    $regulationChangePasswordTranslate = "パスワードは6文字以上である必要があります。";
+    $currentPasswordTranslate = "現在のパスワード";
+    $newPasswordTranslate = "新しいパスワード";
+    $confirmPasswordTranslate = "パスワードを確認する";
+
+    $changeTranslate = "変更";
+} else {
+    // Default to English
+    $myProfileTranslate = "My Profile";
+    $firstNameTranslate = "First Name";
+    $lastNameTranslate = "Last Name";
+
+    $changePasswordTranslate = "Change Password";
+    $regulationChangePasswordTranslate = "This password must be at least 6 characters long.";
+    $currentPasswordTranslate = "Current Password";
+    $newPasswordTranslate = "New Password";
+    $confirmPasswordTranslate = "Confirm Password";
+
+    $changeTranslate = "Change";
 }
+
 ////[Translation]/////////-->Bottom
 
 ?>
