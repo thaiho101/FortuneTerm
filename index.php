@@ -183,12 +183,12 @@ $stmt->close();
                 
                 <form method='post' id='insertionForm'>
                     <div class='form-row'>
-                        <button for='date' class='insertLabel dateLabel' ><?php echo $dateTranslate;?></button>
+                        <button for='date' class='insertLabel dateLabel' tabindex="-1"><?php echo $dateTranslate;?></button>
                         <input type='date' name='date' id='date' class='insertBox inserBoxDate' required>
                     </div>
 
                     <div class='form-row'>
-                        <button for='store' class='insertLabel interface'><i class="fas fa-store"></i><?php echo " " . $marketTranslate;?></button>
+                        <button for='store' class='insertLabel interface' tabindex="-1"><i class="fas fa-store"></i><?php echo " " . $marketTranslate;?></button>
 
                         <input list="store" name='store' class='insertBox' required>
                         <datalist id="store">
@@ -218,12 +218,12 @@ $stmt->close();
                     </div>
 
                     <div class='form-row'>
-                        <button for='fbCost' class='insertLabel '><?php echo $foodAndBeverageCostTranslate;?></button>
+                        <button for='fbCost' class='insertLabel ' tabindex="-1"><?php echo $foodAndBeverageCostTranslate;?></button>
                         <input type='number' name='fbCost' id='fbCost' placeholder="<?php echo $currencySymbol;?>" class='insertBox insertBoxFBCost' step="0.01">
                     </div>
 
                     <div class='form-row'>
-                        <button for='otherCost' class='insertLabel'><?php echo $otherCostTranslate;?></button>
+                        <button for='otherCost' class='insertLabel' tabindex="-1"><?php echo $otherCostTranslate;?></button>
                         <input type='number' name='otherCost' id='otherCost' placeholder="<?php echo $currencySymbol;?>" class='insertBox insertBoxOtherCost' step="0.01">
                     </div>
 
