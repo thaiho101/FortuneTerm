@@ -454,3 +454,43 @@ form {
     }
     /* //// Toggle Password ///// -->Bottom*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Layout for Small Mobile Screens (iPhone 13) */
+@media (max-width: 390px) {
+    #loginPanel {
+        /* max-width: 350px;
+        width: 50%;*/
+        min-height: 330px; 
+  
+    }
+
+    .emailInputBox, .passwordInputBox {
+        border-radius: 50px;
+        width: 70%;
+        text-align: right;
+        background-color: transparent;
+        color: white;
+        border: inset 2px white;
+        font-size: 15px;
+        height: 25px;
+    }
+
+    .emailInputBox {
+        width: 75%;
+    }
+}

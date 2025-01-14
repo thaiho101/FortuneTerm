@@ -1703,7 +1703,7 @@ table {
     width: 100%;
     color: #5580a3;
     /* font-weight: bold; */
-    font-size: 18px;
+    font-size: 13px;
     background-color: transparent;
     /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
     
@@ -1721,6 +1721,7 @@ table {
     background-image: linear-gradient(white, #00f2fe, white);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+
 }
 
 
@@ -1760,6 +1761,72 @@ table {
 /* //// Setting //////////////////////-->Bottom*/
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Layout for Small Mobile Screens (iPhone 13) */
+@media (max-width: 390px) {
+    #filter {
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        /* background-color: transparent; */
+        padding: 1px;
+        padding-bottom: 60px;
+        margin: 5px 0;
+        /* justify-content: right; */
+        flex: 1;
+        max-height: 40px;
+    }
+
+    #settingNav {
+        width: 100%;
+        color: #5580a3;
+        /* font-weight: bold; */
+        font-size: 11px;
+        background-color: transparent;
+        /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
+        
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border: solid 1px transparent;
+        border-bottom-color: white;
+        cursor: pointer;
+    }
+}
+
 
 
 
