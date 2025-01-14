@@ -48,7 +48,33 @@ require_once("../Components/currency.php"); //Call function to activate the curr
             $settingTranslate = "Configuración";
             $languageTranslate = "Idioma";
             $currencyTranslate = "Moneda";
+        } else if ($_SESSION['languageType'] == 'German') {
+            $settingTranslate = "Einstellungen";
+            $languageTranslate = "Sprache";
+            $currencyTranslate = "Währung";
+        } else if ($_SESSION['languageType'] == 'French') {
+            $settingTranslate = "Paramètres";
+            $languageTranslate = "Langue";
+            $currencyTranslate = "Devise";
+        } else if ($_SESSION['languageType'] == 'Korean') {
+            $settingTranslate = "설정";
+            $languageTranslate = "언어";
+            $currencyTranslate = "통화";
+        } else if ($_SESSION['languageType'] == 'Chinese') {
+            $settingTranslate = "设置";
+            $languageTranslate = "语言";
+            $currencyTranslate = "货币";
+        } else if ($_SESSION['languageType'] == 'Japanese') {
+            $settingTranslate = "設定";
+            $languageTranslate = "言語";
+            $currencyTranslate = "通貨";
+        } else {
+            // Default to English if no match
+            $settingTranslate = "Setting";
+            $languageTranslate = "Language";
+            $currencyTranslate = "Currency";
         }
+        
         ////[Translation]/////////-->Bottom
     ?>
     <div id='settingBottom'>
@@ -70,6 +96,11 @@ require_once("../Components/currency.php"); //Call function to activate the curr
                     <select name="languageType" id="languageType" onchange='document.getElementById("languageForm").submit()'>
                         <option name='English' value="English" <?php echo ($_SESSION['languageType'] === "English") ? 'selected' : '' ?>>English</option>
                         <option name='Spanish' value="Spanish" <?php echo ($_SESSION['languageType'] === "Spanish") ? 'selected' : '' ?>>Spanish</option>
+                        <option name='German' value="German" <?php echo ($_SESSION['languageType'] === "German") ? 'selected' : '' ?>>German</option>
+                        <option name='French' value="French" <?php echo ($_SESSION['languageType'] === "French") ? 'selected' : '' ?>>French</option>
+                        <option name='Korean' value="Korean" <?php echo ($_SESSION['languageType'] === "Korean") ? 'selected' : '' ?>>Korean</option>
+                        <option name='Chinese' value="Chinese" <?php echo ($_SESSION['languageType'] === "Chinese") ? 'selected' : '' ?>>Chinese</option>
+                        <option name='Japanese' value="Japanese" <?php echo ($_SESSION['languageType'] === "Japanese") ? 'selected' : '' ?>>Japanese</option>
                         <option name='Vietnamese' value="Vietnamese" <?php echo ($_SESSION['languageType'] === "Vietnamese") ? 'selected' : '' ?>>Vietnamese</option>
                     </select>
                 </form>

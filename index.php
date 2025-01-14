@@ -575,9 +575,68 @@ if($result->num_rows > 0)
                     "Sunday" => "Domingo"
                 ];
                 $dayOfWeek = $dayOfWeekTranslations[$row['DayOfWeek']] ?? $row['DayOfWeek'];
+            } else if ($_SESSION['languageType'] == 'German') {
+                $dayOfWeekTranslations = [
+                    "Monday" => "Montag",
+                    "Tuesday" => "Dienstag",
+                    "Wednesday" => "Mittwoch",
+                    "Thursday" => "Donnerstag",
+                    "Friday" => "Freitag",
+                    "Saturday" => "Samstag",
+                    "Sunday" => "Sonntag"
+                ];
+                $dayOfWeek = $dayOfWeekTranslations[$row['DayOfWeek']] ?? $row['DayOfWeek'];
+            } else if ($_SESSION['languageType'] == 'French') {
+                $dayOfWeekTranslations = [
+                    "Monday" => "Lundi",
+                    "Tuesday" => "Mardi",
+                    "Wednesday" => "Mercredi",
+                    "Thursday" => "Jeudi",
+                    "Friday" => "Vendredi",
+                    "Saturday" => "Samedi",
+                    "Sunday" => "Dimanche"
+                ];
+                $dayOfWeek = $dayOfWeekTranslations[$row['DayOfWeek']] ?? $row['DayOfWeek'];
+            } else if ($_SESSION['languageType'] == 'Korean') {
+                $dayOfWeekTranslations = [
+                    "Monday" => "월요일",
+                    "Tuesday" => "화요일",
+                    "Wednesday" => "수요일",
+                    "Thursday" => "목요일",
+                    "Friday" => "금요일",
+                    "Saturday" => "토요일",
+                    "Sunday" => "일요일"
+                ];
+                $dayOfWeek = $dayOfWeekTranslations[$row['DayOfWeek']] ?? $row['DayOfWeek'];
+            } else if ($_SESSION['languageType'] == 'Chinese') {
+                $dayOfWeekTranslations = [
+                    "Monday" => "星期一",
+                    "Tuesday" => "星期二",
+                    "Wednesday" => "星期三",
+                    "Thursday" => "星期四",
+                    "Friday" => "星期五",
+                    "Saturday" => "星期六",
+                    "Sunday" => "星期日"
+                ];
+                $dayOfWeek = $dayOfWeekTranslations[$row['DayOfWeek']] ?? $row['DayOfWeek'];
+            } else if ($_SESSION['languageType'] == 'Japanese') {
+                $dayOfWeekTranslations = [
+                    "Monday" => "月曜日",
+                    "Tuesday" => "火曜日",
+                    "Wednesday" => "水曜日",
+                    "Thursday" => "木曜日",
+                    "Friday" => "金曜日",
+                    "Saturday" => "土曜日",
+                    "Sunday" => "日曜日"
+                ];
+                $dayOfWeek = $dayOfWeekTranslations[$row['DayOfWeek']] ?? $row['DayOfWeek'];
+            } else {
+                // Default to English
+                $dayOfWeek = $row['DayOfWeek'];
             }
-            ////[Translation]/////////-->Bottom
             
+            ////[Translation]/////////-->Bottom
+
             echo "<tr class='rowHighLight fontStyle' id= " . $row['mcID'] . ">
                     <td class='expand tdLength'>" . $dayOfWeek . "</td>
                     <td class='expand tdLength'>" . $row['ShoppingDate'] . "</td>

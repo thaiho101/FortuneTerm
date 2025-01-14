@@ -39,7 +39,6 @@ $stmt->close();
 
 ////[Translation]/////////-->Header
 if ($_SESSION['languageType'] == 'English') {
-    // $greeting = "Welcome, ";         Set up in the navBar.php page
     $newTransaction = "New Transaction";
     $dateTranslate = "Date";
     $marketTranslate = "Market";
@@ -64,9 +63,7 @@ if ($_SESSION['languageType'] == 'English') {
     $foodAndBeverageTranslate = "Food & Beverage";
     $otherTranslate = "Other";
     $cancelTranslate = "Cancel";
-    // $settingTranslate = "Setting";      Set up in the Setting page
 } else if ($_SESSION['languageType'] == 'Vietnamese') {
-    // $greeting = "Xin chào, ";            Set up in the navBar.php page
     $newTransaction = "Giao Dịch Mới";
     $dateTranslate = "Ngày";
     $marketTranslate = "Chợ";
@@ -90,9 +87,8 @@ if ($_SESSION['languageType'] == 'English') {
     $marketCostDistribution = "Phân Bổ Chi Phí";
     $foodAndBeverageTranslate = "Đồ ăn & Thức uống";
     $otherTranslate = "Khác";
-    // $settingTranslate = "Cài Đặt";           Set up in the Setting page
+    $cancelTranslate = "Hủy";
 } else if ($_SESSION['languageType'] == 'Spanish') {
-    // $greeting = "Bienvenido, ";         Set up in the navBar.php page
     $newTransaction = "Nueva Transacción";
     $dateTranslate = "Fecha";
     $marketTranslate = "Mercado";
@@ -117,8 +113,160 @@ if ($_SESSION['languageType'] == 'English') {
     $foodAndBeverageTranslate = "Comida y Bebidas";
     $otherTranslate = "Otros";
     $cancelTranslate = "Cancelar";
-    // $settingTranslate = "Configuración";      Set up in the Setting page
+} else if ($_SESSION['languageType'] == 'German') {
+    $newTransaction = "Neue Transaktion";
+    $dateTranslate = "Datum";
+    $marketTranslate = "Markt";
+    $foodAndBeverageCostTranslate = "Kosten für Essen und Trinken";
+    $otherCostTranslate = "Andere Kosten";
+    $insertTranslate = "Einfügen";
+    $haveSetButtonNotificationTranslate = "Das für diesen Monat festgelegte Budget beträgt: ";
+    $haveNotSetBudgetTranslate = "Sie haben das Budget für diesen Monat nicht festgelegt!";
+    $setBudgetTranslate = "Budget festlegen";
+    $showBudgetTranslate = "Budget anzeigen";
+    $yourBudgetSummaryTranslate = "Ihre Budgetübersicht";
+    $yearTranslate = "Jahr";
+    $monthTranslate = "Monat";
+    $budgetTranslate = "Budget";
+    $totalBudgetTranslate = "Gesamtbudget";
+    $closeTranslate = "Schließen";
+    $dayOfWeekTranslate = "Wochentag";
+    $totalCostTranslate = "Gesamtkosten";
+    $balanceForShoppingTranslate = "Verfügbares Guthaben";
+    $mostVisitedMarkets = "Meistbesuchte Märkte";
+    $marketCostDistribution = "Marktkostenverteilung";
+    $foodAndBeverageTranslate = "Essen & Trinken";
+    $otherTranslate = "Andere";
+    $cancelTranslate = "Abbrechen";
+} else if ($_SESSION['languageType'] == 'French') {
+    $newTransaction = "Nouvelle Transaction";
+    $dateTranslate = "Date";
+    $marketTranslate = "Marché";
+    $foodAndBeverageCostTranslate = "Coût Nourriture et Boissons";
+    $otherCostTranslate = "Autres Coûts";
+    $insertTranslate = "Insérer";
+    $haveSetButtonNotificationTranslate = "Le budget établi pour ce mois est : ";
+    $haveNotSetBudgetTranslate = "Vous n'avez pas défini de budget pour ce mois !";
+    $setBudgetTranslate = "Définir le Budget";
+    $showBudgetTranslate = "Afficher le Budget";
+    $yourBudgetSummaryTranslate = "Résumé de votre Budget";
+    $yearTranslate = "Année";
+    $monthTranslate = "Mois";
+    $budgetTranslate = "Budget";
+    $totalBudgetTranslate = "Budget Total";
+    $closeTranslate = "Fermer";
+    $dayOfWeekTranslate = "Jour de la Semaine";
+    $totalCostTranslate = "Coût Total";
+    $balanceForShoppingTranslate = "Solde pour les Achats";
+    $mostVisitedMarkets = "Marchés les Plus Visités";
+    $marketCostDistribution = "Répartition des Coûts du Marché";
+    $foodAndBeverageTranslate = "Nourriture et Boissons";
+    $otherTranslate = "Autres";
+    $cancelTranslate = "Annuler";
+} else if ($_SESSION['languageType'] == 'Korean') {
+    $newTransaction = "새 거래";
+    $dateTranslate = "날짜";
+    $marketTranslate = "시장";
+    $foodAndBeverageCostTranslate = "음식 및 음료 비용";
+    $otherCostTranslate = "기타 비용";
+    $insertTranslate = "삽입";
+    $haveSetButtonNotificationTranslate = "이번 달에 설정된 예산은 다음과 같습니다: ";
+    $haveNotSetBudgetTranslate = "이번 달 예산을 설정하지 않았습니다!";
+    $setBudgetTranslate = "예산 설정";
+    $showBudgetTranslate = "예산 표시";
+    $yourBudgetSummaryTranslate = "예산 요약";
+    $yearTranslate = "년";
+    $monthTranslate = "월";
+    $budgetTranslate = "예산";
+    $totalBudgetTranslate = "총 예산";
+    $closeTranslate = "닫기";
+    $dayOfWeekTranslate = "요일";
+    $totalCostTranslate = "총 비용";
+    $balanceForShoppingTranslate = "쇼핑 잔액";
+    $mostVisitedMarkets = "가장 많이 방문한 시장";
+    $marketCostDistribution = "시장 비용 분포";
+    $foodAndBeverageTranslate = "음식 및 음료";
+    $otherTranslate = "기타";
+    $cancelTranslate = "취소";
+} else if ($_SESSION['languageType'] == 'Chinese') {
+    $newTransaction = "新交易";
+    $dateTranslate = "日期";
+    $marketTranslate = "市场";
+    $foodAndBeverageCostTranslate = "餐饮费用";
+    $otherCostTranslate = "其他费用";
+    $insertTranslate = "插入";
+    $haveSetButtonNotificationTranslate = "您本月设定的预算是：";
+    $haveNotSetBudgetTranslate = "您尚未设定本月的预算！";
+    $setBudgetTranslate = "设定预算";
+    $showBudgetTranslate = "显示预算";
+    $yourBudgetSummaryTranslate = "您的预算摘要";
+    $yearTranslate = "年";
+    $monthTranslate = "月";
+    $budgetTranslate = "预算";
+    $totalBudgetTranslate = "总预算";
+    $closeTranslate = "关闭";
+    $dayOfWeekTranslate = "星期几";
+    $totalCostTranslate = "总费用";
+    $balanceForShoppingTranslate = "可用购物余额";
+    $mostVisitedMarkets = "访问最多的市场";
+    $marketCostDistribution = "市场成本分布";
+    $foodAndBeverageTranslate = "餐饮";
+    $otherTranslate = "其他";
+    $cancelTranslate = "取消";
+} else if ($_SESSION['languageType'] == 'Japanese') {
+    $newTransaction = "新しい取引";
+    $dateTranslate = "日付";
+    $marketTranslate = "市場";
+    $foodAndBeverageCostTranslate = "食べ物と飲み物の費用";
+    $otherCostTranslate = "その他の費用";
+    $insertTranslate = "挿入";
+    $haveSetButtonNotificationTranslate = "今月の設定された予算は次のとおりです: ";
+    $haveNotSetBudgetTranslate = "今月の予算が設定されていません!";
+    $setBudgetTranslate = "予算を設定する";
+    $showBudgetTranslate = "予算を表示する";
+    $yourBudgetSummaryTranslate = "予算概要";
+    $yearTranslate = "年";
+    $monthTranslate = "月";
+    $budgetTranslate = "予算";
+    $totalBudgetTranslate = "総予算";
+    $closeTranslate = "閉じる";
+    $dayOfWeekTranslate = "曜日";
+    $totalCostTranslate = "合計費用";
+    $balanceForShoppingTranslate = "買い物の残高";
+    $mostVisitedMarkets = "最も訪問された市場";
+    $marketCostDistribution = "市場コスト分布";
+    $foodAndBeverageTranslate = "食べ物と飲み物";
+    $otherTranslate = "その他";
+    $cancelTranslate = "キャンセル";
+} else {
+    // Default to English if no language matches
+    $newTransaction = "New Transaction";
+    $dateTranslate = "Date";
+    $marketTranslate = "Market";
+    $foodAndBeverageCostTranslate = "Food & Beverage Cost";
+    $otherCostTranslate = "Other Cost";
+    $insertTranslate = "Insert";
+    $haveSetButtonNotificationTranslate = "You have set the budget for this month is: ";
+    $haveNotSetBudgetTranslate = "You have not set the budget for this month! ";
+    $setBudgetTranslate = "Set Budget";
+    $showBudgetTranslate = "Show Budget";
+    $yourBudgetSummaryTranslate = "Your Budget Summary";
+    $yearTranslate = "Year";
+    $monthTranslate = "Month";
+    $budgetTranslate = "Budget";
+    $totalBudgetTranslate = "Total Budget";
+    $closeTranslate = "Close";
+    $dayOfWeekTranslate = "Day of Week";
+    $totalCostTranslate = "Total Cost";
+    $balanceForShoppingTranslate = "Balance for Shopping";
+    $mostVisitedMarkets = "Most Visited Markets";
+    $marketCostDistribution = "Market Cost Distribution";
+    $foodAndBeverageTranslate = "Food & Beverage";
+    $otherTranslate = "Other";
+    $cancelTranslate = "Cancel";
 }
+
+
 ////[Translation]/////////-->Bottom
 
 ?>
