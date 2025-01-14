@@ -40,7 +40,7 @@ $stmt->close();
 ////[Translation]/////////-->Header
 if ($_SESSION['languageType'] == 'English')
 {
-    $greeting = "Welcome, ";
+    // $greeting = "Welcome, ";         Set up in the navBar.php page
     $newTransaction = "New Transaction";
     $dateTranslate = "Date";
     $marketTranslate = "Market";
@@ -64,8 +64,9 @@ if ($_SESSION['languageType'] == 'English')
     $marketCostDistribution = "Market Cost Distribution";
     $foodAndBeverageTranslate = "Food & Beverage";
     $otherTranslate = "Other";
+    // $settingTranslate = "Setting";      Set up in the Setting page
 } else if ($_SESSION['languageType'] == 'Vietnamese') {
-    $greeting = "Xin chào, ";
+    // $greeting = "Xin chào, ";            Set up in the navBar.php page
     $newTransaction = "Giao Dịch Mới";
     $dateTranslate = "Ngày";
     $marketTranslate = "Chợ";
@@ -89,5 +90,6 @@ if ($_SESSION['languageType'] == 'English')
     $marketCostDistribution = "Phân Bổ Chi Phí";
     $foodAndBeverageTranslate = "Đồ ăn & Thức uống";
     $otherTranslate = "Khác";
+    // $settingTranslate = "Cài Đặt";           Set up in the Setting page
 }
 ?>

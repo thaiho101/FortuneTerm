@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 if(session_status() == PHP_SESSION_NONE)
 {
@@ -10,10 +9,36 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
         exit();
 }
 require_once('../config.php');
+require_once("../Components/language.php"); //Call function to activate the languageForm id
+//Translation
+if ($_SESSION['languageType'] == 'English')
+        {
+            $myProfileTranslate = "My Profile";
+            $firstNameTranslate = "First Name";
+            $lastNameTranslate = "Last Name";
 
+            $changePasswordTranslate = "Change Password";
+            $regulationChangePasswordTranslate = "This password must be at least 6 characters long.";
+            $currentPasswordTranslate = "Current Password";
+            $newPasswordTranslate = "New Password";
+            $confirmPasswordTranslate = "Confirm Password";
+
+            $changeTranslate = "Change";
+        } else if ($_SESSION['languageType'] == 'Vietnamese') {
+            $myProfileTranslate = "Tài khoản của tôi";
+            $firstNameTranslate = "Tên";
+            $lastNameTranslate = "Họ";
+
+            $changePasswordTranslate = "Đổi Mật Khẩu";
+            $regulationChangePasswordTranslate = "Mật khẩu của bạn phải có tối thiểu 6 ký tự.";
+            $currentPasswordTranslate = "Mật khẩu đang sử dụng";
+            $newPasswordTranslate = "Mật khẩu mới";
+            $confirmPasswordTranslate = "Xác nhận mật khẩu";
+
+            $changeTranslate = "Thay đổi";
+        }
 ?>
-
-
+<!DOCTYPE html>
 <html lang='en'>
 <head>
         <meta charset="UTF-8">
@@ -65,12 +90,12 @@ require_once('../config.php');
             <!-- ////// Global nav bars --Header-->
             <div id='global-nav-myProfile'>
                 <form method='get'>
-                    <button type='submit' id='myProfileNav' class='<?php echo $selectedNavMyProfile;?>' name='myProfile'><i class='fas fa-id-badge'></i> My Profile</button>
+                    <button type='submit' id='myProfileNav' class='<?php echo $selectedNavMyProfile;?>' name='myProfile'><i class='fas fa-id-badge'></i> <?php echo $myProfileTranslate;?></button>
                 </form>          
             </div>
             <div id='global-nav-changePassword'>
                 <form method='get'>
-                    <button type='submit' id='changePasswordNav' class='<?php echo $selectedNavChangePassword;?>' name='changePassword'> <i class='fas fa-shield-alt'></i> Change Password</button>
+                    <button type='submit' id='changePasswordNav' class='<?php echo $selectedNavChangePassword;?>' name='changePassword'> <i class='fas fa-shield-alt'></i> <?php echo $changePasswordTranslate;?></button>
                 </form>
             </div>
             <!-- ////// Global nav bars --Bottom-->
@@ -82,13 +107,13 @@ require_once('../config.php');
                 <div id='userPicture'><img src="/myAccount/userPicture.jpg" alt="Avatar"></div>
                 <div id='firstLastNameSection'>
                     <div id='firstNameSection'>
-                        <div id='firstName'>First Name: </div>
+                        <div id='firstName'><?php echo $firstNameTranslate;?>: </div>
                         <div>
                             <table border='1' id='tableok'><tr id='firstNameTR'><td class='tdWidth'><?php echo $firstName;?></td></tr></table>
                         </div>
                     </div>
                     <div id='lastNameSection'>
-                        <div>Last Name: </div>
+                        <div><?php echo $lastNameTranslate;?>: </div>
                         <div>
                             <table border='1'><tr class='a'><td class='tdWidth'><?php echo $lastName;?></td></tr></table>
                         </div>
@@ -105,36 +130,36 @@ require_once('../config.php');
 
             <!-- ////// changePassword Content --Header-->
             <div id='changePasswordContent' class="<?php echo $changePasswordHiddenClass; ?>">
-                <div id='changePasswordTitle'><i class='fas fa-shield-alt'></i> Change Password</div>
-                <div id='changePasswordNotice'>This password must be at least 6 characters long.</div>
+                <div id='changePasswordTitle'><i class='fas fa-shield-alt'></i> <?php echo $changePasswordTranslate;?></div>
+                <div id='changePasswordNotice'><?php echo $regulationChangePasswordTranslate;?></div>
                 <form method='post' id='changePasswordForm'>  
                     <div id='emailChangePasswordSection'>
                         <label for='email'>Email</label>
                         <div class='emailDataDiv'><?php echo $email;?></div>
                     </div>
                     <div id='currentChangePassword'>
-                        <label for='currentPassword'>Current Password</label>
+                        <label for='currentPassword'><?php echo $currentPasswordTranslate;?></label>
                         <div class="password-wrapper">
                             <input type='password' id='currentPassword' class='passwordInput' name='currentPassword' minlength="6" required></input>
                             <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('currentPassword', this)">👁️</button>
                         </div>
                     </div>
                     <div id='newChangePassword'>
-                        <label for='newPassword'>New Password</label>
+                        <label for='newPassword'><?php echo $newPasswordTranslate;?></label>
                         <div class="password-wrapper">
                             <input type='password' id='newPassword' class='passwordInput' name='newPassword' minlength="6" required></input>
                             <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('newPassword', this)">👁️</button>
                         </div>
                     </div>
                     <div id='confirmChangePassword'>
-                        <label>Confirm Password</label>
+                        <label><?php echo $confirmPasswordTranslate;?></label>
                         <div class="password-wrapper">
                             <input type='password' id='confirmPassword' class='passwordInput' name='confirmPassword' minlength="6" required></input>
                             <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('confirmPassword', this)">👁️</button>
                         </div>
                     </div>
                     <div id='changePasswordSubmit'>
-                        <button type="submit" name='changePasswordButton' id='changeButton'>Change</button>
+                        <button type="submit" name='changePasswordButton' id='changeButton'><?php echo $changeTranslate;?></button>
                     </div>
                 </form>
                 <?php 

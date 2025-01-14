@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 if(session_status() == PHP_SESSION_NONE)
 {
@@ -14,6 +13,8 @@ require_once("../Components/language.php"); //Call function to activate the lang
 require_once("../Components/currency.php"); //Call function to activate the currencyForm id
 
 ?>
+<!DOCTYPE html>
+
 
 
 <html lang='en'>
@@ -32,13 +33,25 @@ require_once("../Components/currency.php"); //Call function to activate the curr
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php require_once("../Components/navBar.php");?>
+    <?php 
+        require_once("../Components/navBar.php");
+        if ($_SESSION['languageType'] == 'English')
+        {
+            $settingTranslate = "Setting";
+            $languageTranslate = "Language";
+            $currencyTranslate = "Currency";
+        } else if ($_SESSION['languageType'] == 'Vietnamese') {
+            $settingTranslate = "Cài đặt";
+            $languageTranslate = "Ngôn ngữ";
+            $currencyTranslate = "Tiền tệ";
+        }
+    ?>
     <div id='settingBottom'>
         <div id='global-nav-setting'>
             <!-- ////// Global nav bars --Header-->
             <div id='global-nav-settingBar'>
                 <form method='get' id='settingNavForm'>
-                    <button type='submit' id='settingNav' class='' name='setting'><i class="fa fa-cog fa-spin"></i> Setting</button>
+                    <button type='submit' id='settingNav' class='' name='setting'><i class="fa fa-cog fa-spin"></i> <?php echo $settingTranslate;?></button>
                 </form>          
             </div>
             <!-- ////// Global nav bars --Bottom-->
@@ -46,7 +59,7 @@ require_once("../Components/currency.php"); //Call function to activate the curr
         
         <div id='navContent'>
             <div id='languageSettingSection'>
-                <label for="">Language: </label>
+                <label for=""><?php echo $languageTranslate;?>: </label>
                 <form id='languageForm' method='post'>
                     <label for="languageType" > </label>
                     <select name="languageType" id="languageType" onchange='document.getElementById("languageForm").submit()'>
@@ -56,7 +69,7 @@ require_once("../Components/currency.php"); //Call function to activate the curr
                 </form>
             </div>
             <div id='currencySettingSection'>
-                <label for="">Currency: </label>
+                <label for=""><?php echo $currencyTranslate;?>: </label>
                 <form id='currencyForm' method='post'>
                     <label for="currencyType"> </label>
                     <select name="currencyType" id="currencyType" onchange='document.getElementById("currencyForm").submit()'>
