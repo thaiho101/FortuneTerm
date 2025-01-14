@@ -10,33 +10,46 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 }
 require_once('../config.php');
 require_once("../Components/language.php"); //Call function to activate the languageForm id
-//Translation
-if ($_SESSION['languageType'] == 'English')
-        {
-            $myProfileTranslate = "My Profile";
-            $firstNameTranslate = "First Name";
-            $lastNameTranslate = "Last Name";
+////[Translation]/////////-->Header
+if ($_SESSION['languageType'] == 'English') {
+    $myProfileTranslate = "My Profile";
+    $firstNameTranslate = "First Name";
+    $lastNameTranslate = "Last Name";
 
-            $changePasswordTranslate = "Change Password";
-            $regulationChangePasswordTranslate = "This password must be at least 6 characters long.";
-            $currentPasswordTranslate = "Current Password";
-            $newPasswordTranslate = "New Password";
-            $confirmPasswordTranslate = "Confirm Password";
+    $changePasswordTranslate = "Change Password";
+    $regulationChangePasswordTranslate = "This password must be at least 6 characters long.";
+    $currentPasswordTranslate = "Current Password";
+    $newPasswordTranslate = "New Password";
+    $confirmPasswordTranslate = "Confirm Password";
 
-            $changeTranslate = "Change";
-        } else if ($_SESSION['languageType'] == 'Vietnamese') {
-            $myProfileTranslate = "Tài khoản của tôi";
-            $firstNameTranslate = "Tên";
-            $lastNameTranslate = "Họ";
+    $changeTranslate = "Change";
+} else if ($_SESSION['languageType'] == 'Vietnamese') {
+    $myProfileTranslate = "Tài khoản của tôi";
+    $firstNameTranslate = "Tên";
+    $lastNameTranslate = "Họ";
 
-            $changePasswordTranslate = "Đổi Mật Khẩu";
-            $regulationChangePasswordTranslate = "Mật khẩu của bạn phải có tối thiểu 6 ký tự.";
-            $currentPasswordTranslate = "Mật khẩu đang sử dụng";
-            $newPasswordTranslate = "Mật khẩu mới";
-            $confirmPasswordTranslate = "Xác nhận mật khẩu";
+    $changePasswordTranslate = "Đổi Mật Khẩu";
+    $regulationChangePasswordTranslate = "Mật khẩu của bạn phải có tối thiểu 6 ký tự.";
+    $currentPasswordTranslate = "Mật khẩu đang sử dụng";
+    $newPasswordTranslate = "Mật khẩu mới";
+    $confirmPasswordTranslate = "Xác nhận mật khẩu";
 
-            $changeTranslate = "Thay đổi";
-        }
+    $changeTranslate = "Thay đổi";
+} else if ($_SESSION['languageType'] == 'Spanish') {
+    $myProfileTranslate = "Mi Perfil";
+    $firstNameTranslate = "Nombre";
+    $lastNameTranslate = "Apellido";
+
+    $changePasswordTranslate = "Cambiar Contraseña";
+    $regulationChangePasswordTranslate = "La contraseña debe tener al menos 6 caracteres.";
+    $currentPasswordTranslate = "Contraseña Actual";
+    $newPasswordTranslate = "Nueva Contraseña";
+    $confirmPasswordTranslate = "Confirmar Contraseña";
+
+    $changeTranslate = "Cambiar";
+}
+////[Translation]/////////-->Bottom
+
 ?>
 <!DOCTYPE html>
 <html lang='en'>

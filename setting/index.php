@@ -35,8 +35,8 @@ require_once("../Components/currency.php"); //Call function to activate the curr
 <body>
     <?php 
         require_once("../Components/navBar.php");
-        if ($_SESSION['languageType'] == 'English')
-        {
+        ////[Translation]/////////-->Header
+        if ($_SESSION['languageType'] == 'English') {
             $settingTranslate = "Setting";
             $languageTranslate = "Language";
             $currencyTranslate = "Currency";
@@ -44,7 +44,12 @@ require_once("../Components/currency.php"); //Call function to activate the curr
             $settingTranslate = "Cài đặt";
             $languageTranslate = "Ngôn ngữ";
             $currencyTranslate = "Tiền tệ";
+        } else if ($_SESSION['languageType'] == 'Spanish') {
+            $settingTranslate = "Configuración";
+            $languageTranslate = "Idioma";
+            $currencyTranslate = "Moneda";
         }
+        ////[Translation]/////////-->Bottom
     ?>
     <div id='settingBottom'>
         <div id='global-nav-setting'>
@@ -64,6 +69,7 @@ require_once("../Components/currency.php"); //Call function to activate the curr
                     <label for="languageType" > </label>
                     <select name="languageType" id="languageType" onchange='document.getElementById("languageForm").submit()'>
                         <option name='English' value="English" <?php echo ($_SESSION['languageType'] === "English") ? 'selected' : '' ?>>English</option>
+                        <option name='Spanish' value="Spanish" <?php echo ($_SESSION['languageType'] === "Spanish") ? 'selected' : '' ?>>Spanish</option>
                         <option name='Vietnamese' value="Vietnamese" <?php echo ($_SESSION['languageType'] === "Vietnamese") ? 'selected' : '' ?>>Vietnamese</option>
                     </select>
                 </form>

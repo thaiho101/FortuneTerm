@@ -38,8 +38,7 @@ if ($row = $result->fetch_assoc())
 $stmt->close();
 
 ////[Translation]/////////-->Header
-if ($_SESSION['languageType'] == 'English')
-{
+if ($_SESSION['languageType'] == 'English') {
     // $greeting = "Welcome, ";         Set up in the navBar.php page
     $newTransaction = "New Transaction";
     $dateTranslate = "Date";
@@ -64,6 +63,7 @@ if ($_SESSION['languageType'] == 'English')
     $marketCostDistribution = "Market Cost Distribution";
     $foodAndBeverageTranslate = "Food & Beverage";
     $otherTranslate = "Other";
+    $cancelTranslate = "Cancel";
     // $settingTranslate = "Setting";      Set up in the Setting page
 } else if ($_SESSION['languageType'] == 'Vietnamese') {
     // $greeting = "Xin chào, ";            Set up in the navBar.php page
@@ -91,5 +91,34 @@ if ($_SESSION['languageType'] == 'English')
     $foodAndBeverageTranslate = "Đồ ăn & Thức uống";
     $otherTranslate = "Khác";
     // $settingTranslate = "Cài Đặt";           Set up in the Setting page
+} else if ($_SESSION['languageType'] == 'Spanish') {
+    // $greeting = "Bienvenido, ";         Set up in the navBar.php page
+    $newTransaction = "Nueva Transacción";
+    $dateTranslate = "Fecha";
+    $marketTranslate = "Mercado";
+    $foodAndBeverageCostTranslate = "Costo de Comida y Bebidas";
+    $otherCostTranslate = "Otros Costos";
+    $insertTranslate = "Insertar";
+    $haveSetButtonNotificationTranslate = "El presupuesto establecido para este mes es: ";
+    $haveNotSetBudgetTranslate = "¡No ha establecido el presupuesto para este mes!";
+    $setBudgetTranslate = "Establecer Presupuesto";
+    $showBudgetTranslate = "Mostrar Presupuesto";
+    $yourBudgetSummaryTranslate = "Resumen de su Presupuesto";
+    $yearTranslate = "Año";
+    $monthTranslate = "Mes";
+    $budgetTranslate = "Presupuesto";
+    $totalBudgetTranslate = "Presupuesto Total";
+    $closeTranslate = "Cerrar";
+    $dayOfWeekTranslate = "Día de la Semana";
+    $totalCostTranslate = "Costo Total";
+    $balanceForShoppingTranslate = "Saldo para Compras";
+    $mostVisitedMarkets = "Mercados Más Visitados";
+    $marketCostDistribution = "Distribución de Costos de Mercado";
+    $foodAndBeverageTranslate = "Comida y Bebidas";
+    $otherTranslate = "Otros";
+    $cancelTranslate = "Cancelar";
+    // $settingTranslate = "Configuración";      Set up in the Setting page
 }
+////[Translation]/////////-->Bottom
+
 ?>

@@ -21,9 +21,8 @@ if ($row = $result->fetch_assoc()) {
     $firstName = "Guest"; // Default value if not found
 }
 $stmt->close();
-
-if ($_SESSION['languageType'] == 'English')
-{
+////[Translation]/////////-->Header
+if ($_SESSION['languageType'] == 'English') {
     $greeting = "Welcome, ";
     $dashboardTranslate = "Dash Board";
     $myAccountTranslate = "My Account";
@@ -35,7 +34,14 @@ if ($_SESSION['languageType'] == 'English')
     $myAccountTranslate = "Tài khoản của tôi";
     $settingTranslate = "Cài đặt";
     $logOutTranslate = "Đăng xuất";
+} else if ($_SESSION['languageType'] == 'Spanish') {
+    $greeting = "Bienvenido, ";
+    $dashboardTranslate = "Tablero";
+    $myAccountTranslate = "Mi Cuenta";
+    $settingTranslate = "Configuración";
+    $logOutTranslate = "Cerrar sesión";
 }
+////[Translation]/////////-->Bottom
 
 ?>
 <div id="navigation">

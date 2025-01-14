@@ -150,6 +150,7 @@ deleteButtons.forEach((deleteButton) => {
 
 function setBudget()
 {
+    
     const modal = document.createElement("div");
     modal.id = "budgetModal";
     modal.style.position = "fixed";
