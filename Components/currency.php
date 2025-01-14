@@ -60,11 +60,3 @@ class CurrencyFormatter {
 }
 ////[Currency Type]/////////-->Bottom
 ?>
-
-<!-- <form id='currencyForm' method='post'>
-    <label for="currencyType"> </label>
-    <select name="currencyType" id="currencyType" onchange='document.getElementById("currencyForm").submit()'>
-        <option name='USD' value="USD" <?php echo ($_SESSION['currencyType'] === "USD") ? 'selected' : '' ?>>USD</option>
-        <option name='VND' value="VND" <?php echo ($_SESSION['currencyType'] === "VND") ? 'selected' : '' ?>>VND</option>
-    </select>
-</form> -->
