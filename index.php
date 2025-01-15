@@ -29,114 +29,6 @@ if ($conn->connect_error)
 }
 require_once("./Components/language.php");
 require_once("./Components/currency.php");
-// ////[Currency Type]/////////-->Header
-// //Update currency selected into users database
-// if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['currencyType']))
-// {
-//     $currencyType = $_POST['currencyType'];
-//     $_SESSION['currencyType'] = $currencyType; // Save in session for persistence
-
-//     $sql = "UPDATE users SET preferred_currency = ? 
-//             WHERE user_id = ? ";
-//     $stmt = $conn->prepare($sql);
-//     $stmt->bind_param('si', $currencyType, $userId);
-//     $stmt->execute();
-//     $stmt->close();
-// }
-
-// //Invoke the preferred currency from users database
-// $sql = "SELECT preferred_currency FROM users
-//         WHERE user_id = ? ";
-// $stmt = $conn->prepare($sql);
-// $stmt->bind_param('i', $userId);
-// $stmt->execute();
-// $result = $stmt->get_result();
-// if ($row = $result->fetch_assoc())
-// {
-//     $_SESSION['currencyType'] = $row['preferred_currency'];
-// } else {
-//     $_SESSION['currencyType'] = 'USD'; //Default currency
-// }
-// $stmt->close();
-
-// $currencyType = $_SESSION['currencyType']; //Set the current currency activated from data
-// //Set currency Symbol
-// if ($currencyType === 'USD') {
-//     $currencySymbol = "$";
-// } else if ($currencyType === 'VND') {
-//     $currencySymbol = "VND";
-// }
-
-// //Currency function
-// class CurrencyFormatter {
-//     public static function format($number, $currencyType) {
-//         switch ($currencyType) {
-//             case 'USD':
-//                 return '' . number_format($number, 2);
-//             case 'VND':
-//                 return '' . number_format($number, 0, '', '.');
-//             default:
-//                 return number_format($number, 2);
-//         }
-//     }
-// }
-// ////[Currency Type]/////////-->Bottom
-
-// ////[Translation]/////////-->Header
-// if ($_SESSION['languageType'] == 'English')
-// {
-//     $greeting = "Welcome, ";
-//     $newTransaction = "New Transaction";
-//     $dateTranslate = "Date";
-//     $marketTranslate = "Market";
-//     $foodAndBeverageCostTranslate = "Food & Beverage Cost";
-//     $otherCostTranslate = "Other Cost";
-//     $insertTranslate = "Insert";
-//     $haveSetButtonNotificationTranslate = "You have set the budget for this month is: ";
-//     $haveNotSetBudgetTranslate = "You have not set the budget for this month! ";
-//     $setBudgetTranslate = "Set Budget";
-//     $showBudgetTranslate = "Show Budget";
-//     $yourBudgetSummaryTranslate = "Your Budget Summary";
-//     $yearTranslate = "Year";
-//     $monthTranslate = "Month";
-//     $budgetTranslate = "Budget";
-//     $totalBudgetTranslate = "Total Budget";
-//     $closeTranslate = "Close";
-//     $dayOfWeekTranslate = "Day of Week";
-//     $totalCostTranslate = "Total Cost";
-//     $balanceForShoppingTranslate = "Balance for Shopping";
-//     $mostVisitedMarkets = "Most Visited Markets";
-//     $marketCostDistribution = "Market Cost Distribution";
-//     $foodAndBeverageTranslate = "Food & Beverage";
-//     $otherTranslate = "Other";
-// } else if ($_SESSION['languageType'] == 'Vietnamese') {
-//     $greeting = "Xin chào, ";
-//     $newTransaction = "Giao Dịch Mới";
-//     $dateTranslate = "Ngày";
-//     $marketTranslate = "Chợ";
-//     $foodAndBeverageCostTranslate = "Chi phí Đồ ăn & Thức Uống";
-//     $otherCostTranslate = "Chi phí khác";
-//     $insertTranslate = "Thêm";
-//     $haveSetButtonNotificationTranslate = "Ngân sách bạn đã thiết lập cho tháng này là: ";
-//     $haveNotSetBudgetTranslate = "Bạn chưa thiết lập ngân sách cho tháng này! ";
-//     $setBudgetTranslate = "Đặt ngân sách";
-//     $showBudgetTranslate = "Hiển thị ngân sách";
-//     $yourBudgetSummaryTranslate = "Tổng quan ngân sách của bạn";
-//     $yearTranslate = "Năm";
-//     $monthTranslate = "Tháng";
-//     $budgetTranslate = "Ngân sách";
-//     $totalBudgetTranslate = "Tổng Ngân sách";
-//     $closeTranslate = "Đóng";
-//     $dayOfWeekTranslate = "Thứ";
-//     $totalCostTranslate = "Tổng Chi Phí";
-//     $balanceForShoppingTranslate = "Số Tiền Mua Sắm Còn Lại";
-//     $mostVisitedMarkets = "Các Chợ Được Ghé Thăm Nhiều Nhất";
-//     $marketCostDistribution = "Phân Bổ Chi Phí";
-//     $foodAndBeverageTranslate = "Đồ ăn & Thức uống";
-//     $otherTranslate = "Khác";
-// }
-////[Translation]/////////-->Bottom
-// $cancelTranslate = "HelloMen";
 
 $stmt = $conn->prepare("SELECT first_name, last_name FROM users WHERE user_id = ?");
 $stmt->bind_param('i', $userId);
@@ -348,6 +240,14 @@ if($yearSelected == '' || $monthSelected == '')
 ?>
                     <!-- <button class='setBudgetButton' onclick="setBudget()">Set Budget</button> -->
                 </div>
+
+                <div id="budgetModal">
+                    <h2><?php echo $setYourBudgetTranslate;?></h2>
+                    <input type="number" value="" id="budgetInput" required placeholder="<?php echo $enterYourBudgetTranslate?>" style="width: 100%; margin-bottom: 10px;">
+                    <button id="saveBudget" onclick="applyBudget()" ><?php echo $applyTranslate;?></button>
+                    <button id="cancelBudget" onclick="cancelBudget()"><?php echo $cancelTranslate;?></button>
+                </div>
+
                 <div class='newTransactionLabel'>
                     <form method='post'>
                         <button id='openModal' type='button' name='showBudget' class='showBudgetButton' onclick="document.getElementById('showBudgetModal').showModal()"><?php echo $showBudgetTranslate;?></button>

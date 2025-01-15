@@ -150,35 +150,14 @@ deleteButtons.forEach((deleteButton) => {
 
 function setBudget()
 {
-    
-    const modal = document.createElement("div");
-    modal.id = "budgetModal";
-    modal.style.position = "fixed";
-    modal.style.top = "50%";
-    modal.style.left = "50%";
-    modal.style.transform = "translate(-50%, -50%)";
-    modal.style.backgroundColor = "white";
-    modal.style.padding = "20px";
-    modal.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
-    modal.style.borderRadius = "8px";
-    modal.style.zIndex = "1000";
-
-    modal.innerHTML = `
-        <h2>Set Your Budget</h2>
-        <input type="number" value="0" id="budgetInput" required placeholder="Enter your budget" style="width: 100%; margin-bottom: 10px;">
-        <button id="saveBudget" onclick="applyBudget()" >Save</button>
-        <button id="cancelBudget" onclick="cancelBudget()">Cancel</button>
-    `;
-
-    // Append modal to body
-    document.body.appendChild(modal);
-    console.log("set budget");
+    document.getElementById('budgetModal').style.display = 'block';
 }
+
 function cancelBudget() {
     // Remove the modal from the DOM
     const modal = document.getElementById("budgetModal");
     if (modal) {
-        modal.remove();
+        document.getElementById('budgetModal').style.display = 'none';
     }
     console.log("cancel budget");
 }

@@ -197,6 +197,18 @@ body, div {
     height: 20px;
 }
 
+#budgetModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+}
 
 .insertButton {
     margin-left: 55%;
@@ -1436,6 +1448,7 @@ table {
         width: 320px;
         border-radius: 16px;
     }
+    
 
     .yearWidth {
         width: 80px;

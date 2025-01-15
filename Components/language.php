@@ -48,6 +48,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "You have set the budget for this month is: ";
     $haveNotSetBudgetTranslate = "You have not set the budget for this month! ";
     $setBudgetTranslate = "Set Budget";
+    $setYourBudgetTranslate = "Set Your Budget";
+    $enterYourBudgetTranslate = "Enter Your Budget";
+    $applyTranslate = "Apply";
     $showBudgetTranslate = "Show Budget";
     $yourBudgetSummaryTranslate = "Your Budget Summary";
     $yearTranslate = "Year";
@@ -73,6 +76,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "Ngân sách bạn đã thiết lập cho tháng này là: ";
     $haveNotSetBudgetTranslate = "Bạn chưa thiết lập ngân sách cho tháng này! ";
     $setBudgetTranslate = "Đặt ngân sách";
+    $setYourBudgetTranslate = "Đặt ngân sách của bạn";
+    $enterYourBudgetTranslate = "Nhập ngân sách của bạn";
+    $applyTranslate = "Áp dụng";
     $showBudgetTranslate = "Hiển thị ngân sách";
     $yourBudgetSummaryTranslate = "Tổng quan ngân sách của bạn";
     $yearTranslate = "Năm";
@@ -98,6 +104,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "El presupuesto establecido para este mes es: ";
     $haveNotSetBudgetTranslate = "¡No ha establecido el presupuesto para este mes!";
     $setBudgetTranslate = "Establecer Presupuesto";
+    $setYourBudgetTranslate = "Establezca su Presupuesto";
+    $enterYourBudgetTranslate = "Ingrese su Presupuesto";
+    $applyTranslate = "Aplicar";
     $showBudgetTranslate = "Mostrar Presupuesto";
     $yourBudgetSummaryTranslate = "Resumen de su Presupuesto";
     $yearTranslate = "Año";
@@ -123,6 +132,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "Das für diesen Monat festgelegte Budget beträgt: ";
     $haveNotSetBudgetTranslate = "Sie haben das Budget für diesen Monat nicht festgelegt!";
     $setBudgetTranslate = "Budget festlegen";
+    $setYourBudgetTranslate = "Ihr Budget festlegen";
+    $enterYourBudgetTranslate = "Geben Sie Ihr Budget ein";
+    $applyTranslate = "Anwenden";
     $showBudgetTranslate = "Budget anzeigen";
     $yourBudgetSummaryTranslate = "Ihre Budgetübersicht";
     $yearTranslate = "Jahr";
@@ -148,6 +160,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "Le budget établi pour ce mois est : ";
     $haveNotSetBudgetTranslate = "Vous n'avez pas défini de budget pour ce mois !";
     $setBudgetTranslate = "Définir le Budget";
+    $setYourBudgetTranslate = "Définissez votre Budget";
+    $enterYourBudgetTranslate = "Entrez votre Budget";
+    $applyTranslate = "Appliquer";
     $showBudgetTranslate = "Afficher le Budget";
     $yourBudgetSummaryTranslate = "Résumé de votre Budget";
     $yearTranslate = "Année";
@@ -173,6 +188,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "이번 달에 설정된 예산은 다음과 같습니다: ";
     $haveNotSetBudgetTranslate = "이번 달 예산을 설정하지 않았습니다!";
     $setBudgetTranslate = "예산 설정";
+    $setYourBudgetTranslate = "예산 설정";
+    $enterYourBudgetTranslate = "예산을 입력하세요";
+    $applyTranslate = "적용";
     $showBudgetTranslate = "예산 표시";
     $yourBudgetSummaryTranslate = "예산 요약";
     $yearTranslate = "년";
@@ -198,6 +216,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "您本月设定的预算是：";
     $haveNotSetBudgetTranslate = "您尚未设定本月的预算！";
     $setBudgetTranslate = "设定预算";
+    $setYourBudgetTranslate = "设定您的预算";
+    $enterYourBudgetTranslate = "输入您的预算";
+    $applyTranslate = "应用";
     $showBudgetTranslate = "显示预算";
     $yourBudgetSummaryTranslate = "您的预算摘要";
     $yearTranslate = "年";
@@ -223,6 +244,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "今月の設定された予算は次のとおりです: ";
     $haveNotSetBudgetTranslate = "今月の予算が設定されていません!";
     $setBudgetTranslate = "予算を設定する";
+    $setYourBudgetTranslate = "予算を設定する";
+    $enterYourBudgetTranslate = "予算を入力する";
+    $applyTranslate = "適用する";
     $showBudgetTranslate = "予算を表示する";
     $yourBudgetSummaryTranslate = "予算概要";
     $yearTranslate = "年";
@@ -249,6 +273,9 @@ if ($_SESSION['languageType'] == 'English') {
     $haveSetButtonNotificationTranslate = "You have set the budget for this month is: ";
     $haveNotSetBudgetTranslate = "You have not set the budget for this month! ";
     $setBudgetTranslate = "Set Budget";
+    $setYourBudgetTranslate = "Set Your Budget";
+    $enterYourBudgetTranslate = "Enter Your Budget";
+    $applyTranslate = "Apply";
     $showBudgetTranslate = "Show Budget";
     $yourBudgetSummaryTranslate = "Your Budget Summary";
     $yearTranslate = "Year";
