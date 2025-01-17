@@ -1,3 +1,12 @@
+const shoppingCart = document.getElementById('shoppingCartAnimation');
+
+document.getElementById('navigation').addEventListener('mouseover', () => {
+    shoppingCart.style.animation = 'moveCart 15s linear infinite';
+});
+
+document.getElementById('navigation').addEventListener('mouseleave', () => {
+    shoppingCart.style.animation = 'none'; // Stop animation when mouse leaves
+});
 
 
 function togglePasswordVisibility(inputId, toggleButton) {

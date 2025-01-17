@@ -1,3 +1,33 @@
+/* Position and Style the Shopping Cart */
+#shoppingCartAnimation {
+    position: absolute;
+    top: 10%; /* Adjust vertical position */
+    left: -50px; /* Start off-screen to the left */
+    transform: translateY(-50%);
+    font-size: 24px; /* Adjust icon size */
+
+    /* Gradient background */
+    background: linear-gradient(180deg, black, rgb(201, 200, 200), rgb(248, 194, 93), rgb(249, 201, 111), rgb(251, 185, 63), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+    /* animation: moveCart 5s linear infinite; */
+}
+
+
+/* Keyframes for Left-to-Right Animation */
+@keyframes moveCart {
+    0% {
+        left: 150px; /* Start off-screen */
+    }
+    50% {
+        left: calc(100% - 55px); /* Move to the right edge */
+    }
+    100% {
+        left: 150px; /* Return to the start */
+    }
+}
+
+
 /* General Reset for Margins and Padding */
 body, div {
     margin: 0;
@@ -1281,6 +1311,22 @@ table {
 /* Media reponsive on Mobile */
 /* Responsive Layout for Mobile Devices */
 @media (max-width: 768px) {
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+        top: 10%; /* Adjust vertical position */
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(201, 200, 200), rgb(248, 194, 93), rgb(249, 201, 111), rgb(251, 185, 63), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 5s linear infinite; /* Animation: name, duration, repeat */
+    }
+
     /* Bottom container: stack children vertically */
     #bottom {
         flex-direction: column;
