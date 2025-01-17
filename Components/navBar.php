@@ -95,6 +95,9 @@ if ($_SESSION['languageType'] == 'English') {
                 <div class='dropDownLinksDiv logOutLink'><a class='dropDownLinks logOutLink' href="?logOut=true"><?php echo $logOutTranslate?><i class='bx bx-log-out' ></i> </a></div> 
             </div>
         </div>
+        <div id="shoppingCartAnimation">
+            <i class="fas fa-shopping-cart"></i>
+        </div>
         <div class='hidden'>
             <form id='logOutForm' action="" method='get'>
                 <button type='submit' name='logOut'  class='logOutButton'><i class='bx bx-log-out' ></i></button>
