@@ -302,13 +302,15 @@ body, div {
 }
 
 #applyBudget, #cancelBudget {
-        border-radius: 8px;
+        border-radius: 14px;
         border-color: silver;
         background-image: linear-gradient(white, rgb(219, 219, 219), white);
         border-width: 2px 1px 3px 1px;
         box-shadow: 2px 2px 5px gray;
         border: outset 2px silver;
         width: 70px;
+        padding: 3px;
+        padding-bottom: 5px;
         cursor: pointer;
 }
 
@@ -383,8 +385,7 @@ body, div {
     color: black;
         width: 100px;
         align-content: center;
-        /* margin-left: 70%; */
-        border-radius: 6px;
+        border-radius: 14px;
         border-color: silver;
         background-image: linear-gradient(white, rgb(219, 219, 219), white);
         border-width: 2px 1px 3px 1px;
@@ -396,6 +397,7 @@ body, div {
 #closeButtonShowBudget:hover {
     border-width: 2px 1px 3px 1px;
     background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
+    box-shadow: 2px 1px 2px gray;
 }
 
 
