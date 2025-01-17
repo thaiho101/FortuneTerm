@@ -197,18 +197,175 @@ body, div {
     height: 20px;
 }
 
+#setYoudBudgetLabel {
+    justify-content: center;
+    text-align: center;
+    color: #025dad;
+}
+
 #budgetModal {
     display: none;
     position: fixed;
-    top: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(121, 120, 120, 0.5); /* Semi-transparent black background */
+    z-index: 1000;
+}
+
+#budgetModalChild {
+    width: 20%;
+    height: 25%;
+    position: absolute;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    border-radius: 12px;
+    border: outset 2px rgb(0, 174, 174);
+
+    background: linear-gradient(135deg, rgb(253, 253, 216), white, #00f2fe, #4facfe, #00f2fe);
+    z-index: 1001; 
+}
+
+#budgetModal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px); 
     z-index: 1000;
 }
+
+#budgetInput {
+    border-radius: 6px;
+    /* background-color: silver; */
+    /* backdrop-filter: blur(5px); */
+    border: outset 2px rgb(84, 250, 250);
+    background-color: rgb(246, 245, 245);
+    padding: 5px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: -4px;
+}
+
+#budgetInput:hover {
+    border: inset 2px cyan;
+    background-color: white;
+}
+
+#setBudgetButtonDiv {
+    padding-top: 5%;
+    text-align: right;
+}
+
+#applyBudget, #cancelBudget {
+        border-radius: 8px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 2px 2px 5px gray;
+        border: outset 2px silver;
+        width: 70px;
+        cursor: pointer;
+}
+
+#applyBudget:hover, #cancelBudget:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(white, white, white);
+    /* box-shadow: 4px 2px 8px rgb(228, 227, 227); */
+
+    box-shadow: 1px 1px 1px gray;
+    border: inset 1.5px silver;
+}
+
+/* Show Budget -->Header*/
+#showBudgetModal {
+    width: 350px;
+    border-radius: 8px;
+    color: #5580a3;
+    border: solid 3px silver;
+}
+
+#budgetSummaryTitle {
+    text-align: center;
+    color: #1f6196;
+    /* font-family: "Lilita One", serif; */
+    font-weight: bold;
+}
+
+.titleBackgroundShowBudget {
+    /* background-color: rgb(236, 234, 234); */
+    background: linear-gradient(white, #acf7fb, white);
+    font-weight: bold;
+    color: #1f6196;
+}
+
+#showBudgetModal.modal-active #budgetSummary {
+    filter: blur(50px);
+}
+
+#showBudgetContent {
+    transition: filter 10s ease;
+}
+
+.budgetSummaryAlign {
+    text-align: center;
+}
+
+.yearWidth {
+    width: 80px;
+}
+.monthWidth {
+    width: 70px;
+}
+
+.blueBudgetSet {
+    color: blue;
+}
+
+.awaitingInput {
+    color: crimson;
+}
+
+.vCheckColor {
+    color: green;
+}
+
+#closeButtonShowBudgetSection {
+    padding-top: 20px;
+    text-align: right;
+}
+
+#closeButtonShowBudget {
+    color: black;
+        width: 100px;
+        align-content: center;
+        /* margin-left: 70%; */
+        border-radius: 6px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 4px 2px 5px gray;
+        cursor: pointer;
+        padding: 5px;
+}
+
+#closeButtonShowBudget:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
+}
+
+
+/* Show Budget -->Bottom*/
 
 .insertButton {
     margin-left: 55%;
@@ -643,86 +800,6 @@ table {
 #marketVisitedChart, #costDistributionChart {
     border: solid 1px silver;
 }
-
-#showBudgetModal {
-    width: 350px;
-    border-radius: 8px;
-    color: #5580a3;
-    border: solid 3px silver;
-
-    /* font-family: "Lilita One", serif; */
-}
-
-#budgetSummaryTitle {
-    text-align: center;
-    color: #1f6196;
-    /* font-family: "Lilita One", serif; */
-    font-weight: bold;
-}
-
-.titleBackgroundShowBudget {
-    /* background-color: rgb(236, 234, 234); */
-    background: linear-gradient(white, #acf7fb, white);
-    font-weight: bold;
-    color: #1f6196;
-}
-
-#showBudgetModal.modal-active #budgetSummary {
-    filter: blur(50px);
-}
-
-#showBudgetContent {
-    transition: filter 10s ease;
-}
-
-.budgetSummaryAlign {
-    text-align: center;
-}
-
-.yearWidth {
-    width: 80px;
-}
-.monthWidth {
-    width: 70px;
-}
-
-.blueBudgetSet {
-    color: blue;
-}
-
-.awaitingInput {
-    color: crimson;
-}
-
-.vCheckColor {
-    color: green;
-}
-
-#closeButtonShowBudgetSection {
-    padding-top: 20px;
-    text-align: right;
-}
-
-#closeButtonShowBudget {
-    color: black;
-        width: 100px;
-        align-content: center;
-        /* margin-left: 70%; */
-        border-radius: 6px;
-        border-color: silver;
-        background-image: linear-gradient(white, rgb(219, 219, 219), white);
-        border-width: 2px 1px 3px 1px;
-        box-shadow: 4px 2px 5px gray;
-        cursor: pointer;
-        padding: 5px;
-}
-
-#closeButtonShowBudget:hover {
-    border-width: 2px 1px 3px 1px;
-    background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
-}
-
-
 
 /* dropDownOptions -->Header*/
 .dropDownSection {
@@ -1444,6 +1521,10 @@ table {
         color: black;
     }
 
+    #budgetModalChild {
+        width: 60%;
+    }
+
     #showBudgetModal {
         width: 320px;
         border-radius: 16px;
@@ -1837,6 +1918,11 @@ table {
         border: solid 1px transparent;
         border-bottom-color: white;
         cursor: pointer;
+    }
+
+    #budgetModalChild {
+        width: 60%;
+        height: 30%;
     }
 }
 /* Responsive Layout for Small Mobile Screens (iPhone 13) -->Bottom*/
