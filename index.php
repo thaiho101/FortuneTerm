@@ -242,10 +242,14 @@ if($yearSelected == '' || $monthSelected == '')
                 </div>
 
                 <div id="budgetModal">
-                    <h2><?php echo $setYourBudgetTranslate;?></h2>
-                    <input type="number" value="" id="budgetInput" required placeholder="<?php echo $enterYourBudgetTranslate?>" style="width: 100%; margin-bottom: 10px;">
-                    <button id="saveBudget" onclick="applyBudget()" ><?php echo $applyTranslate;?></button>
-                    <button id="cancelBudget" onclick="cancelBudget()"><?php echo $cancelTranslate;?></button>
+                    <div id='budgetModalChild'>
+                        <h2 id='setYoudBudgetLabel'><?php echo $setYourBudgetTranslate;?></h2>
+                        <input type="number" value="" id="budgetInput" required placeholder="<?php echo $enterYourBudgetTranslate?> $" style="width: 100%; margin-bottom: 10px;">
+                        <div id="setBudgetButtonDiv">
+                            <button id="applyBudget" onclick="applyBudget()" ><?php echo $applyTranslate;?></button>
+                            <button id="cancelBudget" onclick="cancelBudget()"><?php echo $cancelTranslate;?></button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class='newTransactionLabel'>
@@ -253,9 +257,10 @@ if($yearSelected == '' || $monthSelected == '')
                         <button id='openModal' type='button' name='showBudget' class='showBudgetButton' onclick="document.getElementById('showBudgetModal').showModal()"><?php echo $showBudgetTranslate;?></button>
                     </form>
                     <dialog id='showBudgetModal'>
+                        <div id='showBudgetModalChild'>
                             <h2 id='budgetSummaryTitle'><?php echo $yourBudgetSummaryTranslate;?></h2>
                             <div id='showBudgetContent'>
-<?php
+                    <?php
                         if ($yearSelected == '')
                         {
                             echo "The [Year] filter must be specified.";
@@ -309,11 +314,12 @@ if($yearSelected == '' || $monthSelected == '')
                                     <td class='blueBudgetSet titleBackgroundShowBudget'>" . $currencySymbol . " " . CurrencyFormatter::format($totalBudget, $currencyType) . "</td></tr>";
                             echo "</table>";
                         }
-?>
-</div>
+                    ?>
+                            </div>
                             <div id='closeButtonShowBudgetSection'>
                                 <button id='closeButtonShowBudget' onclick="document.getElementById('showBudgetModal').close()"><?php echo $closeTranslate;?></button>
                             </div>
+                        </div>
                     </dialog>
                 </div>
             </div>
