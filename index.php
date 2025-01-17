@@ -426,23 +426,23 @@ $sql = "SELECT market_cost_id as mcID, DATE_FORMAT(visit_date, '%W') AS DayOfWee
 
 if ($yearSelected == '' && $monthSelected == '')
 {
-    $sql .= "ORDER BY visit_date DESC";
+    $sql .= "ORDER BY visit_date DESC, created_at DESC";
     $statement = $conn->prepare($sql);
     $statement->bind_param('i', $userId);
 } else if ($yearSelected && $monthSelected) {
             $sql .= "AND DATE_FORMAT(visit_date, '%Y') = ?
                     AND DATE_FORMAT(visit_date, '%m') = ?
-                    ORDER BY visit_date DESC";
+                    ORDER BY visit_date DESC, created_at DESC";
             $statement = $conn->prepare($sql);
             $statement->bind_param('iss', $userId, $yearSelected, $monthSelected);
         } else if ($yearSelected && $monthSelected == '') {
                     $sql .= "AND DATE_FORMAT(visit_date, '%Y') = ?
-                            ORDER BY visit_date DESC";
+                            ORDER BY visit_date DESC, created_at DESC";
                     $statement = $conn->prepare($sql);
                     $statement->bind_param('is', $userId, $yearSelected);
                 } else if ($yearSelected == '' && $monthSelected) {
                             $sql .= "AND DATE_FORMAT(visit_date, '%m') = ?
-                                    ORDER BY visit_date DESC";
+                                    ORDER BY visit_date DESC, created_at DESC";
                             $statement = $conn->prepare($sql);
                             $statement->bind_param('is', $userId, $monthSelected);
                         }
