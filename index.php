@@ -244,7 +244,7 @@ if($yearSelected == '' || $monthSelected == '')
                 <div id="budgetModal">
                     <div id='budgetModalChild'>
                         <h2 id='setYoudBudgetLabel'><?php echo $setYourBudgetTranslate;?></h2>
-                        <input type="number" value="" id="budgetInput" required placeholder="<?php echo $enterYourBudgetTranslate?> $" style="width: 100%; margin-bottom: 10px;">
+                        <input type="number" value="" id="budgetInput" required placeholder="<?php echo $enterYourBudgetTranslate?> $" style="width: 100%; margin-bottom: 10px;" atufocus>
                         <div id="setBudgetButtonDiv">
                             <button id="applyBudget" onclick="applyBudget()" ><?php echo $applyTranslate;?></button>
                             <button id="cancelBudget" onclick="cancelBudget()"><?php echo $cancelTranslate;?></button>

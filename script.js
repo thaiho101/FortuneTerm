@@ -21,6 +21,19 @@ function focusOnHomeLink() {
     homeLink.focus();
 }
 
+/////////Enable the Enter key to trigger the Insert button functionality --> Header/////
+document.getElementById("insertionForm").addEventListener("keydown", function (event) {
+    if (event.key === "Enter")
+    {
+        event.preventDefault();
+        const submitButton = document.querySelector(".insertButton");
+        if (submitButton) {
+            submitButton.click();
+        }
+    }
+});
+///////Enable the Enter key to trigger the Insert button functionality --> Bottom/////
+
 async function editClick(id, event) {
     event.preventDefault();
     const row = document.getElementById(id);
@@ -151,6 +164,8 @@ deleteButtons.forEach((deleteButton) => {
 function setBudget()
 {
     document.getElementById('budgetModal').style.display = 'block';
+    const budgetInput = document.getElementById("budgetInput");
+    budgetInput.focus();
 }
 
 function cancelBudget() {
@@ -192,3 +207,20 @@ async function applyBudget()
 
 }
 
+//Enable the Enter key to trigger the Apply button functionality when pressed while the input field is focused.
+document.getElementById("budgetInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter")
+    {
+        applyBudget();
+    }
+});
+
+//Enable the ESC key to trigger the cancel button functionality when pressed while the input field is focused.
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        const modal = document.getElementById("budgetModal");
+        if (modal.style.display === "block") {
+            cancelBudget();
+        }
+    }
+});
