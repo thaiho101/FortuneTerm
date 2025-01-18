@@ -1333,6 +1333,19 @@ table {
         animation: moveCart 5s linear infinite; /* Animation: name, duration, repeat */
     }
 
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+
     /* Bottom container: stack children vertically */
     #bottom {
         flex-direction: column;
@@ -1956,6 +1969,19 @@ table {
         -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
         
         animation: moveCart 5s linear infinite; /* Animation: name, duration, repeat */
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
     }
 
     #filter {
