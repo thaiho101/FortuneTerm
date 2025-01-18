@@ -1,7 +1,7 @@
 /* Position and Style the Shopping Cart */
 #shoppingCartAnimation {
     position: absolute;
-    top: 10%; /* Adjust vertical position */
+    top: 11%; /* Adjust vertical position */
     left: -50px; /* Start off-screen to the left */
     transform: translateY(-50%);
     font-size: 24px; /* Adjust icon size */
@@ -1320,7 +1320,7 @@ table {
     /* Position and Style the Shopping Cart */
     #shoppingCartAnimation {
         position: absolute;
-        top: 10%; /* Adjust vertical position */
+        top: 12.1%; /* Adjust vertical position */
         left: -50px; /* Start off-screen to the left */
         transform: translateY(-50%);
         font-size: 24px; /* Adjust icon size */
@@ -1942,6 +1942,22 @@ table {
 
 /* Responsive Layout for Small Mobile Screens (iPhone 13) -->Header*/
 @media (max-width: 390px) {
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+        top: 13.3%; /* Adjust vertical position */
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 5s linear infinite; /* Animation: name, duration, repeat */
+    }
+
     #filter {
         display: block;
         justify-content: space-between;
