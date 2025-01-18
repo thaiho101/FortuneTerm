@@ -1,10 +1,10 @@
 /* Position and Style the Shopping Cart */
 #shoppingCartAnimation {
     position: absolute;
-    top: 11%; /* Adjust vertical position */
+    top: 10.2%; /* Adjust vertical position */
     left: -50px; /* Start off-screen to the left */
     transform: translateY(-50%);
-    font-size: 24px; /* Adjust icon size */
+    font-size: 40px; /* Adjust icon size */
 
     /* Gradient background */
     background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
@@ -13,7 +13,7 @@
     /* animation: moveCart 5s linear infinite; */
     
     /* Shadow for the cart */
-    text-shadow: 15px 6px 15px rgba(0, 0, 0, 0.5);
+    text-shadow: 20px 10px 25px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -24,7 +24,7 @@
         left: 150px; /* Start off-screen */
     }
     50% {
-        left: calc(100% - 55px); /* Move to the right edge */
+        left: calc(100% - 80px); /* Move to the right edge */
     }
     100% {
         left: 150px; /* Return to the start */
