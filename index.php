@@ -76,13 +76,13 @@ $stmt->close();
                 <form method='post' id='insertionForm'>
                     <div class='form-row'>
                         <button for='date' class='insertLabel dateLabel' tabindex="-1"><?php echo $dateTranslate;?></button>
-                        <input type='date' name='date' id='date' class='insertBox inserBoxDate' required>
+                        <input type='date' name='date' id='date' class='insertBox insertBoxDate' required>
                     </div>
 
                     <div class='form-row'>
                         <button for='store' class='insertLabel interface' tabindex="-1"><i class="fas fa-store"></i><?php echo " " . $marketTranslate;?></button>
 
-                        <input list="store" name='store' class='insertBox' required>
+                        <input list="store" name='store' class='insertBox insertBoxMarket' required>
                         <datalist id="store">
 <?php
     $sql = "SELECT distinct market_name

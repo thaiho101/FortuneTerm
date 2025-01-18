@@ -1,10 +1,10 @@
 /* Position and Style the Shopping Cart */
 #shoppingCartAnimation {
     position: absolute;
-    top: 10.2%; /* Adjust vertical position */
+    top: 10.8%; /* Adjust vertical position */
     left: -50px; /* Start off-screen to the left */
     transform: translateY(-50%);
-    font-size: 40px; /* Adjust icon size */
+    font-size: 30px; /* Adjust icon size */
 
     /* Gradient background */
     background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
@@ -13,7 +13,7 @@
     /* animation: moveCart 5s linear infinite; */
     
     /* Shadow for the cart */
-    text-shadow: 20px 10px 25px rgba(0, 0, 0, 0.5);
+    text-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -24,7 +24,7 @@
         left: 150px; /* Start off-screen */
     }
     50% {
-        left: calc(100% - 80px); /* Move to the right edge */
+        left: calc(100% - 70px); /* Move to the right edge */
     }
     100% {
         left: 150px; /* Return to the start */
@@ -221,6 +221,8 @@ body, div {
 
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
+    border: outset 1.5px white;
+    box-shadow: 5px 2px 9px rgb(149, 149, 149);
 }
 
 .insertBoxFBCost {
@@ -235,6 +237,10 @@ body, div {
     justify-content: center;
     text-align: center;
     color: #025dad;
+}
+
+.insertBoxDate:hover, .insertBoxMarket:hover, .insertBoxFBCost:hover, .insertBoxOtherCost:hover {
+    background-image: linear-gradient(white, rgb(252, 220, 144), white);
 }
 
 #budgetModal {
@@ -746,7 +752,7 @@ table {
 
 .rowHighLight:hover {
     background-color: lightblue;
-    background-image: linear-gradient(white, lightblue, white);
+    background-image: linear-gradient(white, rgb(252, 220, 144), white);
 }
 
 .gridTableColor {
@@ -1331,6 +1337,8 @@ table {
         -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
         
         animation: moveCart 5s linear infinite; /* Animation: name, duration, repeat */
+            /* Shadow for the cart */
+        text-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
     }
 
     /* Keyframes for Left-to-Right Animation */
@@ -1434,9 +1442,17 @@ table {
     .insertBox {
         width: 100%; /* Input fields take full width */
         height: 27px;
+        padding-top: 5px;
         background-image: linear-gradient(white, rgb(184, 223, 236), white);
         border-top-right-radius: 12px;
         border-bottom-right-radius: 12px;
+        border: outset 1.5px white;
+        box-shadow: 5px 2px 10px rgb(149, 149, 149);
+    }
+
+    .insertBoxDate {
+        height: 30px;
+        padding: 10px;
     }
 
     .insertBoxFBCost {
@@ -1547,15 +1563,6 @@ table {
     .insertButton:hover {
         border-width: 2px 1px 3px 1px;
         background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
-    }
-
-    .insertBox {
-        padding-top: 5px;
-        /* padding-bottom: 2.5px; */
-    }
-
-    .inserBoxDate {
-        padding: 10px;
     }
 
     .budgetNotice {
@@ -2023,4 +2030,124 @@ table {
 
 
 
+
+
+
+
+
+/* Responsive Layout for iPad -->Header*/
+@media (min-width: 769px) and (max-width: 1079px) and (orientation: portrait) {
+    /* Styles for iPads in portrait mode */
+
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+        top: 8.3%; /* Adjust vertical position */
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 10s linear infinite; /* Animation: name, duration, repeat */
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+    
+
+    .headerRow th:nth-child(1) {
+        display: none;
+    }
+
+    .content table tr td:nth-child(1) {
+        display: none;
+    }
+
+    body {
+        display: block;
+    }
+
+  }
+
+
+  @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    /* Styles for iPads in portrait mode */
+
+  }
+
+  @media (min-width: 1080px) and (max-width: 1200px) {
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+        top: 12.6%; /* Adjust vertical position */
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 10s linear infinite; /* Animation: name, duration, repeat */
+            /* Shadow for the cart */
+        text-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+
+    .insertButton {
+        color: black;
+    }
+
+    .insertBox {
+        width: 45%;
+        /* padding-bottom: 20px; */
+    }
+
+    .insertBoxDate {
+        height: 21px;
+    }
+
+    .insertBoxMarket {
+        height: 20px;
+    }
+
+    .insertBoxFBCost {
+        height: 55px;
+    }
+
+    .insertBoxOtherCost {
+        height: 38px;
+    }
+
+  }
+
+/* Responsive Layout for iPad -->Bottom*/
+  
 
