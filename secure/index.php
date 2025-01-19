@@ -143,8 +143,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $ip_address = $user_ip; // Replace with dynamic input if needed
                 $ip_part = "192.168.";
 
-                // if (!(($ip_address == "127.0.0.1") || str_contains($ip_address, $ip_part)))
-                // {
+                if (!(($ip_address == "127.0.0.1") || str_contains($ip_address, $ip_part)))
+                {
                         // Call the function and get location data
                         $result = getCountryByIP($ip_address);
                         $country = $result['country'];
@@ -161,7 +161,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                                 $statement->bind_param('isssssss', $row['user_id'], $user_ip, $country, $city, $region, $zip, $timeZone, $organize);
                                 $statement->execute();
                                 $statement->close();
-                // }
+                }
+                echo $ip_address;
                 
                 // Output the IP address
                 //     echo "User's IP Address: " . $user_ip;
