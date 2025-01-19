@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         return [
                                 'country' => $data['country'], // Full country name
                                 'city' => $data['city'], // City
-                                'region' => $data['regionName'], // Region name
+                                'regionName' => $data['regionName'], // Region name
                                 'zip' => $data['zip'], // Zip
                                 'timezone' => $data['timezone'], // Timezone
                                 'org' => $data['org'], // Org
@@ -150,16 +150,16 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         $result = getCountryByIP($ip_address);
                         $country = $result['country'];
                         $city = $result['city'];
-                        $region = $result['region'];
+                        $regionName = $result['regionName'];
                         $zip = $result['zip'];
                         $timeZone = $result['timezone'];
                         $organize = $result['org'];
                         /////////////// Get data from IP-API -->Bottom ///////////
 
-                        $insertQuery = "INSERT INTO ip_log (user_id, ip_address, country, city, region, zip, timezone, organize) 
+                        $insertQuery = "INSERT INTO ip_log (user_id, ip_address, country, city, regionName, zip, timezone, organize) 
                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                                 $statement = $conn->prepare($insertQuery);
-                                $statement->bind_param('isssssss', $row['user_id'], $user_ip, $country, $city, $region, $zip, $timeZone, $organize);
+                                $statement->bind_param('isssssss', $row['user_id'], $user_ip, $country, $city, $regionName, $zip, $timeZone, $organize);
                                 $statement->execute();
                                 $statement->close();
                 }
