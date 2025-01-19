@@ -112,6 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 // Get the user's IP address
                 $user_ip = getUserIP();
                 // echo $user_ip;
+                
                 /////////////// Get data from IP-API -->Header ///////////
                 // Function to get location data from ip-api
                 function getCountryByIP($ip_address) {
