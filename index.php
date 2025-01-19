@@ -62,8 +62,11 @@ $stmt->close();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
+    
     <?php require_once("./Components/navBar.php"); ?>
 
     <div id="bottom">
@@ -649,7 +652,7 @@ $resultTotal = $statement->get_result();
 
         <div id="graph">
             <div id="marketVisitedChart" style="width: 100%; height: 300px;"></div>
-            <div id="costDistributionChart" style="width:100%; max-width:600px; height:250px;"></div>
+            <div id="costDistributionChart" style="width:100%; height:300px;"></div>
         </div>
     </div>
 <?php
