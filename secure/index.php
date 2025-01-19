@@ -113,71 +113,54 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $user_ip = getUserIP();
                 /////////////// Get data from IP-API -->Header ///////////
                 // Function to get location data from ip-api
-                // function getCountryByIP($ip_address) {
-                //         // API URL with the provided IP address
-                //         $url = "http://ip-api.com/json/{$ip_address}";
+                function getCountryByIP($ip_address) {
+                        // API URL with the provided IP address
+                        $url = "http://ip-api.com/json/{$ip_address}";
                 
-                //         // Use file_get_contents to send GET request
-                //         $response = file_get_contents($url);
+                        // Use file_get_contents to send GET request
+                        $response = file_get_contents($url);
                 
-                //         // Decode the JSON response
-                //         $data = json_decode($response, true);
+                        // Decode the JSON response
+                        $data = json_decode($response, true);
                 
-                //         // Check for a valid response
-                //         if ($data && $data['status'] === 'success') {
-                //         return [
-                //                 'country' => $data['country'], // Full country name
-                //                 'city' => $data['city'], // City
-                //                 'region' => $data['regionName'], // Region name
-                //                 'zip' => $data['zip'], // Zip
-                //                 'timezone' => $data['timezone'], // Timezone
-                //                 'org' => $data['org'], // Org
-                //         ];
-                //         }
+                        // Check for a valid response
+                        if ($data && $data['status'] === 'success') {
+                        return [
+                                'country' => $data['country'], // Full country name
+                                'city' => $data['city'], // City
+                                'region' => $data['regionName'], // Region name
+                                'zip' => $data['zip'], // Zip
+                                'timezone' => $data['timezone'], // Timezone
+                                'org' => $data['org'], // Org
+                        ];
+                        }
                 
-                //         // Return error if API fails
-                //         return ['error' => 'Unable to fetch data'];
-                // }
+                        // Return error if API fails
+                        return ['error' => 'Unable to fetch data'];
+                }
                 
-                // // Input IP address
-                // $ip_address = $user_ip; // Replace with dynamic input if needed
-                // $ip_part = "192.168.";
+                // Input IP address
+                $ip_address = $user_ip; // Replace with dynamic input if needed
+                $ip_part = "192.168.";
 
                 // if (!(($ip_address == "127.0.0.1") || str_contains($ip_address, $ip_part)))
                 // {
-                //         // Call the function and get location data
-                //         $result = getCountryByIP($ip_address);
-                //         $country = $result['country'];
-                //         $city = $result['city'];
-                //         $region = $result['region'];
-                //         $zip = $result['zip'];
-                //         $timeZone = $result['timezone'];
-                //         $organize = $result['org'];
-                //         /////////////// Get data from IP-API -->Bottom ///////////
+                        // Call the function and get location data
+                        $result = getCountryByIP($ip_address);
+                        $country = $result['country'];
+                        $city = $result['city'];
+                        $region = $result['region'];
+                        $zip = $result['zip'];
+                        $timeZone = $result['timezone'];
+                        $organize = $result['org'];
+                        /////////////// Get data from IP-API -->Bottom ///////////
 
-                //         $insertQuery = "INSERT INTO ip_log (user_id, ip_address, country, city, region, zip, timezone, organize) 
-                //                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-                //                 $statement = $conn->prepare($insertQuery);
-                //                 $statement->bind_param('isssssss', $row['user_id'], $user_ip, $country, $city, $region, $zip, $timeZone, $organize);
-                //                 $statement->execute();
-                //                 $statement->close();
-                // } else {
-                //         // Call the function and get location data
-                //         // $result = getCountryByIP($ip_address);
-                //         $country = "N/A";
-                //         $city = "N/A";
-                //         $region = "N/A";
-                //         $zip = "N/A";
-                //         $timeZone = "N/A";
-                //         $organize = "N/A";
-                //         /////////////// Get data from IP-API -->Bottom ///////////
-
-                //         $insertQuery = "INSERT INTO ip_log (user_id, ip_address, country, city, region, zip, timezone, organize) 
-                //                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-                //                 $statement = $conn->prepare($insertQuery);
-                //                 $statement->bind_param('isssssss', $row['user_id'], $user_ip, $country, $city, $region, $zip, $timeZone, $organize);
-                //                 $statement->execute();
-                //                 $statement->close();
+                        $insertQuery = "INSERT INTO ip_log (user_id, ip_address, country, city, region, zip, timezone, organize) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                                $statement = $conn->prepare($insertQuery);
+                                $statement->bind_param('isssssss', $row['user_id'], $user_ip, $country, $city, $region, $zip, $timeZone, $organize);
+                                $statement->execute();
+                                $statement->close();
                 // }
                 
                 // Output the IP address
