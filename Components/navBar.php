@@ -96,7 +96,10 @@ if ($_SESSION['languageType'] == 'English') {
                 loop: true // Repeat animation indefinitely
             });
         </script>
-    <div id="theCloud"><i class="fa fa-cloud"></i> <i class="fa fa-cloud"></i></div>
+    <div id="theCloud1"><i class="fa fa-cloud"></i></div>
+    <div id="theCloud2"><i class="fa fa-cloud"></i></div>
+    <div id="theCloud3"><i class="fa fa-cloud"></i> </div>
+    <div id="theCloud4"><i class="fa fa-cloud"></i> </div>
     <div id='webTitle'><a href='../' id='homeLink'>Market Cost</a></div>
     <div id='navBar'>
         <div class='greeting'><?php echo $greeting . $firstName;?>!</div>
