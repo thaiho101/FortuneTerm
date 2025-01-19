@@ -1,7 +1,23 @@
+#theSun {
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(360deg, rgb(254, 254, 236), orange, rgb(250, 182, 55), rgb(245, 215, 159));
+    border: solid 1px rgb(250, 229, 160);
+    border-radius: 90%;
+    box-shadow: 1px 5px 25px rgb(246, 226, 190);
+    /* box-shadow: 1px 10px 25px red; */
+    /* text-shadow: 15px 5px 15px red; */
+    position: absolute;
+    top: 2px;
+    left: 60%;
+    z-index: 100;
+}
+
 /* Position and Style the Shopping Cart */
 #shoppingCartAnimation {
     position: absolute;
-    top: 10.8%; /* Adjust vertical position */
+    /* top: 10.8%; */
+    top: 88px;
     left: -50px; /* Start off-screen to the left */
     transform: translateY(-50%);
     font-size: 30px; /* Adjust icon size */
@@ -28,6 +44,39 @@
     }
     100% {
         left: 150px; /* Return to the start */
+    }
+}
+
+#theCloud {
+    position: absolute;
+    top: 30px;
+    /* right: 500px; */
+    left: 50px; /* Start off-screen to the left */
+    transform: translateY(-50%);
+    font-size: 30px; /* Adjust icon size */
+
+    background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+    /* background-color: red; */
+    color: white;
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent;
+
+    animation: moveCloud 30s linear infinite;
+    
+    text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+    z-index: 101;
+}
+
+/* Keyframes for Left-to-Right Animation */
+@keyframes moveCloud {
+    0% {
+        left: 300px; /* Start off-screen */
+    }
+    50% {
+        left: calc(100% - 100px); /* Move to the right edge */
+    }
+    100% {
+        left: 300px; /* Return to the start */
     }
 }
 
@@ -474,6 +523,10 @@ body, div {
     font-size: 18px;
 }
 
+.fa-filter {
+    color: #1f6196;
+}
+
 .checkIcon {
     font-size: 24px; /* Adjust size */
     color: green; /* Set color */
@@ -567,6 +620,11 @@ body, div {
     border: inset 1px silver;
 }
 
+/* .yearMonthDiv {
+    width: 400px;
+    text-align: right;
+} */
+
 .yearMonthFilterStyle {
     color: black;
 	font-weight: bold;
@@ -574,7 +632,7 @@ body, div {
     padding: 5px;
 }
 
-.fa, .fa-cog, .fa-spin {
+.fa-cog, .fa-spin {
     color: #5580a3;
 }
 
@@ -839,7 +897,15 @@ table {
     display: none;
 }
 
+#graph {
+    text-align: left; /* Align content inside the container to the left */
+    margin: 0 auto; /* Ensure it's centered if needed */
+    width: 80%; /* Adjust the width as required */
+}
+
 #marketVisitedChart, #costDistributionChart {
+    display: block; /* Ensure block layout */
+    margin: 0 auto 10px; /* Adjust the spacing if needed */
     border: solid 1px silver;
 }
 
@@ -1282,6 +1348,12 @@ table {
 
 /* //// Setting //////////////////////-->Bottom*/
 
+#marketVisitedChart {
+    text-align: right;
+}
+
+
+
 
 
 
@@ -1326,7 +1398,7 @@ table {
     /* Position and Style the Shopping Cart */
     #shoppingCartAnimation {
         position: absolute;
-        top: 12.1%; /* Adjust vertical position */
+
         left: -50px; /* Start off-screen to the left */
         transform: translateY(-50%);
         font-size: 24px; /* Adjust icon size */
@@ -1353,6 +1425,41 @@ table {
             left: 150px; /* Return to the start */
         }
     }
+
+    /* The cloud moving -->Header*/
+    #theCloud {
+        position: absolute;
+        top: 30px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud 8s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud {
+        0% {
+            right: 10px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 100px); /* Move to the right edge */
+        }
+        100% {
+            right: 10px; /* Return to the start */
+        }
+    }
+    /* The cloud moving -->Bottom*/
 
     /* Bottom container: stack children vertically */
     #bottom {
@@ -1962,10 +2069,46 @@ table {
 
 /* Responsive Layout for Small Mobile Screens (iPhone 13) -->Header*/
 @media (max-width: 390px) {
+    /* The cloud moving -->Header*/
+    #theCloud {
+        position: absolute;
+        top: 30px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud 8s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud {
+        0% {
+            right: 10px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 100px); /* Move to the right edge */
+        }
+        100% {
+            right: 10px; /* Return to the start */
+        }
+    }
+    /* The cloud moving -->Bottom*/
+
+    /* The shopping cart moving -->Header*/
     /* Position and Style the Shopping Cart */
     #shoppingCartAnimation {
         position: absolute;
-        top: 13.3%; /* Adjust vertical position */
+
         left: -50px; /* Start off-screen to the left */
         transform: translateY(-50%);
         font-size: 24px; /* Adjust icon size */
@@ -1990,6 +2133,7 @@ table {
             left: 150px; /* Return to the start */
         }
     }
+    /* The shopping cart moving -->Bottom*/
 
     #filter {
         display: block;
@@ -2089,7 +2233,109 @@ table {
 
   }
 
+  @media (min-width: 768px) and (max-width: 1024px) {
+    /* The cloud moving -->Header*/
+    #theCloud {
+        position: absolute;
+        top: 30px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud 12s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud {
+        0% {
+            left: 300px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 100px); /* Move to the right edge */
+        }
+        100% {
+            left: 300px; /* Return to the start */
+        }
+    }
+    /* The cloud moving -->Bottom*/
+
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 12s linear infinite; /* Animation: name, duration, repeat */
+            /* Shadow for the cart */
+        text-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+  }
+
   @media (min-width: 1080px) and (max-width: 1200px) {
+    /* The cloud moving -->Header*/
+    #theCloud {
+        position: absolute;
+        top: 30px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud 10s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud {
+        0% {
+            right: 10px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 100px); /* Move to the right edge */
+        }
+        100% {
+            right: 10px; /* Return to the start */
+        }
+    }
+    /* The cloud moving -->Bottom*/
+
     /* Position and Style the Shopping Cart */
     #shoppingCartAnimation {
         position: absolute;

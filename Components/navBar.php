@@ -83,6 +83,20 @@ if ($_SESSION['languageType'] == 'English') {
 
 ?>
 <div id="navigation">
+    <div id="theSun"></div> 
+        <script>
+            // Animation using Anime.js
+            anime({
+                targets: '#theSun',
+
+                scale: [
+                    { value: 1.5, duration: 1000, easing: 'easeInOutQuad' }, // Ease in and out
+                    { value: 1, duration: 1000, easing: 'easeOutInQuad' }   // Ease out and in
+                ],
+                loop: true // Repeat animation indefinitely
+            });
+        </script>
+    <div id="theCloud"><i class="fa fa-cloud"></i> <i class="fa fa-cloud"></i></div>
     <div id='webTitle'><a href='../' id='homeLink'>Market Cost</a></div>
     <div id='navBar'>
         <div class='greeting'><?php echo $greeting . $firstName;?>!</div>
