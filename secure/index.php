@@ -111,6 +111,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 
                 // Get the user's IP address
                 $user_ip = getUserIP();
+                // echo $user_ip;
+                
                 /////////////// Get data from IP-API -->Header ///////////
                 // Function to get location data from ip-api
                 function getCountryByIP($ip_address) {
@@ -142,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 // Input IP address
                 $ip_address = $user_ip; // Replace with dynamic input if needed
                 $ip_part = "192.168.";
-                
+
                 if (!(($ip_address == "127.0.0.1") || str_contains($ip_address, $ip_part)))
                 {
                         // Call the function and get location data
@@ -162,6 +164,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                                 $statement->execute();
                                 $statement->close();
                 }
+
+                
                 // Output the IP address
                 //     echo "User's IP Address: " . $user_ip;
 ///////////////////////// IP Collective -->Bottom ///////////////////////////////////////////////////
