@@ -13,6 +13,7 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 header("Content-Type: application/json");
 require_once("config.php");
 
+$userId = $_SESSION['user_id'];
 // Kết nối cơ sở dữ liệu
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($conn->connect_error) {
@@ -36,9 +37,11 @@ if ($action === 'edit') {
         $fbCost = $_POST['fbCost'];
         $otherCost = $_POST['otherCost'];
 
-        $updateQuery = "UPDATE market_cost SET visit_date = ?, market_name = ?, food_bev_cost = ?, other_cost = ? WHERE market_cost_id = ?";
+        $updateQuery = "UPDATE market_cost SET visit_date = ?, market_name = ?, food_bev_cost = ?, other_cost = ? 
+                        WHERE market_cost_id = ?
+                        AND user_id = ?";
         $stmt = $conn->prepare($updateQuery);
-        $stmt->bind_param("ssdsi", $date, $market, $fbCost, $otherCost, $id);
+        $stmt->bind_param("ssdsii", $date, $market, $fbCost, $otherCost, $id, $userId);
 
         if ($stmt->execute()) {
             echo json_encode(["success" => true, "message" => "Record updated successfully."]);
@@ -54,9 +57,11 @@ if ($action === 'edit') {
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
 
-        $deleteQuery = "UPDATE market_cost SET deleted = 'Y' WHERE market_cost_id = ?";
+        $deleteQuery = "UPDATE market_cost SET deleted = 'Y' 
+                        WHERE market_cost_id = ?
+                        AND user_id = ?";
         $stmt = $conn->prepare($deleteQuery);
-        $stmt->bind_param("i", $id);
+        $stmt->bind_param("ii", $id, $userId);
 
         if ($stmt->execute()) {
             echo json_encode(["success" => true, "message" => "Record deleted successfully."]);
@@ -70,8 +75,8 @@ if ($action === 'edit') {
 } 
 
 elseif ($action === 'setBudget') {
-    if (isset($_POST['user_id'], $_POST['year'], $_POST['month'], $_POST['amount'])) {
-        $userId = $_POST['user_id'];
+    if (isset($_POST['year'], $_POST['month'], $_POST['amount'])) {
+        // $userId = $_SESSION['user_id'];
         $budgetYear = $_POST['year'];
         $budgetMonth = $_POST['month'];
         $budgetAmount = $_POST['amount'];

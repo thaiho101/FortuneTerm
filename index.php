@@ -157,12 +157,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $statement->execute();
             $statement->close();
 
-            header("Location: " . $_SERVER['PHP_SELF']);
-            exit(); 
-        } else {
-            header("Location: " . "/warning");
-            exit(); 
+            // header("Location: " . $_SERVER['PHP_SELF']);
+            // exit(); 
         }
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit(); 
     }
 }
 ?>
