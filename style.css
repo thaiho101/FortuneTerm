@@ -1542,7 +1542,7 @@ table {
 
     #theCloud2 {
         position: absolute;
-        top: 25px;
+        top: 20px;
         /* right: 500px; */
         left: 50px; /* Start off-screen to the left */
         transform: translateY(-50%);
