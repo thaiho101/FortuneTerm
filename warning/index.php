@@ -220,7 +220,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	if(isset($_POST['refreshButton']))
 	{
-		header("Location: " . "../FortuneTerm");
+		header("Location: " . "../");
 	}
 }
 ?>
