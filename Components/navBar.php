@@ -90,8 +90,8 @@ if ($_SESSION['languageType'] == 'English') {
                 targets: '#theSun',
 
                 scale: [
-                    { value: 1.5, duration: 1000, easing: 'easeInOutQuad' }, // Ease in and out
-                    { value: 1, duration: 1000, easing: 'easeOutInQuad' }   // Ease out and in
+                    { value: 1.5, duration: 3000, easing: 'easeInOutQuad' }, // Ease in and out
+                    { value: 1, duration: 3000, easing: 'easeOutInQuad' }   // Ease out and in
                 ],
                 loop: true // Repeat animation indefinitely
             });
