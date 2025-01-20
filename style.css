@@ -28,7 +28,7 @@
     -webkit-background-clip: text; /* Clip gradient to text */
     -webkit-text-fill-color: transparent;
 
-    animation: moveCloud1 25s linear infinite;
+    animation: moveCloud1 40s linear infinite;
     
     text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
     font-size: 15px;
@@ -41,7 +41,7 @@
         left: 950px; /* Start off-screen */
     }
     50% {
-        left: calc(100% - 60px); /* Move to the right edge */
+        left: calc(100% - 250px); /* Move to the right edge */
     }
     100% {
         left: 950px; /* Return to the start */
@@ -50,7 +50,7 @@
 
 #theCloud2 {
     position: absolute;
-    top: 25px;
+    top: 20px;
     /* right: 500px; */
     left: 50px; /* Start off-screen to the left */
     transform: translateY(-50%);
@@ -62,7 +62,7 @@
     -webkit-background-clip: text; /* Clip gradient to text */
     -webkit-text-fill-color: transparent;
 
-    animation: moveCloud2 23s linear infinite;
+    animation: moveCloud2 40s linear infinite;
     
     text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
     font-size: 25px;
@@ -75,7 +75,7 @@
         left: 700px; /* Start off-screen */
     }
     50% {
-        left: calc(100% - 100px); /* Move to the right edge */
+        left: calc(100% - 300px); /* Move to the right edge */
     }
     100% {
         left: 700px; /* Return to the start */
@@ -96,7 +96,7 @@
     -webkit-background-clip: text; /* Clip gradient to text */
     -webkit-text-fill-color: transparent;
 
-    animation: moveCloud3 24s linear infinite;
+    animation: moveCloud3 40s linear infinite;
     
     text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
     font-size: 25px;
@@ -106,13 +106,13 @@
 /* Keyframes for Left-to-Right Animation */
 @keyframes moveCloud3 {
     0% {
-        left: 600px; /* Start off-screen */
+        left: 800px; /* Start off-screen */
     }
     50% {
-        left: calc(100% - 70px); /* Move to the right edge */
+        left: calc(100% - 280px); /* Move to the right edge */
     }
     100% {
-        left: 600px; /* Return to the start */
+        left: 800px; /* Return to the start */
     }
 }
 
@@ -130,22 +130,23 @@
     -webkit-background-clip: text; /* Clip gradient to text */
     -webkit-text-fill-color: transparent;
 
-    animation: moveCloud4 24s linear infinite;
+    animation: moveCloud4 40s linear infinite;
     
     text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+    font-size: 30px;
     z-index: 101;
 }
 
 /* Keyframes for Left-to-Right Animation */
 @keyframes moveCloud4 {
     0% {
-        left: 560px; /* Start off-screen */
+        left: 640px; /* Start off-screen */
     }
     50% {
-        left: calc(100% - 100px); /* Move to the right edge */
+        left: calc(100% - 300px); /* Move to the right edge */
     }
     100% {
-        left: 560px; /* Return to the start */
+        left: 640px; /* Return to the start */
     }
 }
 
@@ -1503,7 +1504,146 @@ table {
 /* Media reponsive on Mobile */
 /* Responsive Layout for Mobile Devices */
 @media (max-width: 768px) {
-    /* Position and Style the Shopping Cart */
+
+    /* The cloud moving -->Header*/
+    #theCloud1 {
+        position: absolute;
+        top: 15px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud1 15s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 15px;
+        z-index: 99;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud1 {
+        0% {
+            left: 300px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 300px; /* Return to the start */
+        }
+    }
+
+    #theCloud2 {
+        position: absolute;
+        top: 20px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud2 15s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 18px;
+        z-index: 99;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud2 {
+        0% {
+            left: 220px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 150px); /* Move to the right edge */
+        }
+        100% {
+            left: 220px; /* Return to the start */
+        }
+    }
+
+    #theCloud3 {
+        position: absolute;
+        top: 30px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud3 15s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 25px;
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud3 {
+        0% {
+            left: 240px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 70px); /* Move to the right edge */
+        }
+        100% {
+            left: 240px; /* Return to the start */
+        }
+    }
+
+    #theCloud4 {
+        position: absolute;
+        top: 28px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud4 15s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 20px;
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud4 {
+        0% {
+            left: 260px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 100px); /* Move to the right edge */
+        }
+        100% {
+            left: 260px; /* Return to the start */
+        }
+    }
+    /* The cloud moving -->Bottom*/
+
+    /* The shopping cart moving -->Header*/
     #shoppingCartAnimation {
         position: absolute;
 
@@ -1533,145 +1673,8 @@ table {
             left: 150px; /* Return to the start */
         }
     }
+    /* The shopping cart moving -->Bottom*/
 
-    /* The cloud moving -->Header*/
-    #theCloud1 {
-        position: absolute;
-        top: 15px;
-        /* right: 500px; */
-        left: 50px; /* Start off-screen to the left */
-        transform: translateY(-50%);
-        font-size: 30px; /* Adjust icon size */
-
-        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
-        /* background-color: red; */
-        color: white;
-        -webkit-background-clip: text; /* Clip gradient to text */
-        -webkit-text-fill-color: transparent;
-
-        animation: moveCloud1 16s linear infinite;
-        
-        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
-        font-size: 15px;
-        z-index: 99;
-    }
-
-    /* Keyframes for Left-to-Right Animation */
-    @keyframes moveCloud1 {
-        0% {
-            left: 300px; /* Start off-screen */
-        }
-        50% {
-            left: calc(100% - 60px); /* Move to the right edge */
-        }
-        100% {
-            left: 300px; /* Return to the start */
-        }
-    }
-
-    #theCloud2 {
-        position: absolute;
-        top: 25px;
-        /* right: 500px; */
-        left: 50px; /* Start off-screen to the left */
-        transform: translateY(-50%);
-        font-size: 30px; /* Adjust icon size */
-
-        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
-        /* background-color: red; */
-        color: white;
-        -webkit-background-clip: text; /* Clip gradient to text */
-        -webkit-text-fill-color: transparent;
-
-        animation: moveCloud2 14s linear infinite;
-        
-        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
-        font-size: 25px;
-        z-index: 99;
-    }
-
-    /* Keyframes for Left-to-Right Animation */
-    @keyframes moveCloud2 {
-        0% {
-            left: 200px; /* Start off-screen */
-        }
-        50% {
-            left: calc(100% - 100px); /* Move to the right edge */
-        }
-        100% {
-            left: 200px; /* Return to the start */
-        }
-    }
-
-    #theCloud3 {
-        position: absolute;
-        top: 30px;
-        /* right: 500px; */
-        left: 50px; /* Start off-screen to the left */
-        transform: translateY(-50%);
-        font-size: 30px; /* Adjust icon size */
-
-        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
-        /* background-color: red; */
-        color: white;
-        -webkit-background-clip: text; /* Clip gradient to text */
-        -webkit-text-fill-color: transparent;
-
-        animation: moveCloud3 15s linear infinite;
-        
-        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
-        font-size: 25px;
-        z-index: 101;
-    }
-
-    /* Keyframes for Left-to-Right Animation */
-    @keyframes moveCloud3 {
-        0% {
-            left: 30px; /* Start off-screen */
-        }
-        50% {
-            left: calc(100% - 70px); /* Move to the right edge */
-        }
-        100% {
-            left: 30px; /* Return to the start */
-        }
-    }
-
-    #theCloud4 {
-        position: absolute;
-        top: 28px;
-        /* right: 500px; */
-        left: 50px; /* Start off-screen to the left */
-        transform: translateY(-50%);
-        font-size: 30px; /* Adjust icon size */
-
-        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
-        /* background-color: red; */
-        color: white;
-        -webkit-background-clip: text; /* Clip gradient to text */
-        -webkit-text-fill-color: transparent;
-
-        animation: moveCloud4 15s linear infinite;
-        
-        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
-        z-index: 101;
-    }
-
-    /* Keyframes for Left-to-Right Animation */
-    @keyframes moveCloud4 {
-        0% {
-            left: 80px; /* Start off-screen */
-        }
-        50% {
-            left: calc(100% - 100px); /* Move to the right edge */
-        }
-        100% {
-            left: 80px; /* Return to the start */
-        }
-    }
-
-
-    /* The cloud moving -->Bottom*/
 
     /* Bottom container: stack children vertically */
     #bottom {
@@ -2281,144 +2284,144 @@ table {
 
 /* Responsive Layout for Small Mobile Screens (iPhone 13) -->Header*/
 @media (max-width: 390px) {
-    /* The cloud moving -->Header*/
-    #theCloud1 {
-        position: absolute;
-        top: 15px;
-        /* right: 500px; */
-        left: 50px; /* Start off-screen to the left */
-        transform: translateY(-50%);
-        font-size: 30px; /* Adjust icon size */
 
-        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
-        /* background-color: red; */
-        color: white;
-        -webkit-background-clip: text; /* Clip gradient to text */
-        -webkit-text-fill-color: transparent;
-
-        animation: moveCloud1 16s linear infinite;
-        
-        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
-        font-size: 15px;
-        z-index: 99;
-    }
-
-    /* Keyframes for Left-to-Right Animation */
-    @keyframes moveCloud1 {
-        0% {
-            left: 300px; /* Start off-screen */
+        /* The cloud moving -->Header*/
+        #theCloud1 {
+            position: absolute;
+            top: 15px;
+            /* right: 500px; */
+            left: 50px; /* Start off-screen to the left */
+            transform: translateY(-50%);
+            font-size: 30px; /* Adjust icon size */
+    
+            background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+            /* background-color: red; */
+            color: white;
+            -webkit-background-clip: text; /* Clip gradient to text */
+            -webkit-text-fill-color: transparent;
+    
+            animation: moveCloud1 15s linear infinite;
+            
+            text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+            font-size: 15px;
+            z-index: 99;
         }
-        50% {
-            left: calc(100% - 60px); /* Move to the right edge */
+    
+        /* Keyframes for Left-to-Right Animation */
+        @keyframes moveCloud1 {
+            0% {
+                left: 300px; /* Start off-screen */
+            }
+            50% {
+                left: calc(100% - 60px); /* Move to the right edge */
+            }
+            100% {
+                left: 300px; /* Return to the start */
+            }
         }
-        100% {
-            left: 300px; /* Return to the start */
+    
+        #theCloud2 {
+            position: absolute;
+            top: 20px;
+            /* right: 500px; */
+            left: 50px; /* Start off-screen to the left */
+            transform: translateY(-50%);
+            font-size: 30px; /* Adjust icon size */
+    
+            background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+            /* background-color: red; */
+            color: white;
+            -webkit-background-clip: text; /* Clip gradient to text */
+            -webkit-text-fill-color: transparent;
+    
+            animation: moveCloud2 15s linear infinite;
+            
+            text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+            font-size: 18px;
+            z-index: 99;
         }
-    }
-
-    #theCloud2 {
-        position: absolute;
-        top: 25px;
-        /* right: 500px; */
-        left: 50px; /* Start off-screen to the left */
-        transform: translateY(-50%);
-        font-size: 30px; /* Adjust icon size */
-
-        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
-        /* background-color: red; */
-        color: white;
-        -webkit-background-clip: text; /* Clip gradient to text */
-        -webkit-text-fill-color: transparent;
-
-        animation: moveCloud2 14s linear infinite;
-        
-        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
-        font-size: 25px;
-        z-index: 99;
-    }
-
-    /* Keyframes for Left-to-Right Animation */
-    @keyframes moveCloud2 {
-        0% {
-            left: 200px; /* Start off-screen */
+    
+        /* Keyframes for Left-to-Right Animation */
+        @keyframes moveCloud2 {
+            0% {
+                left: 200px; /* Start off-screen */
+            }
+            50% {
+                left: calc(100% - 150px); /* Move to the right edge */
+            }
+            100% {
+                left: 200px; /* Return to the start */
+            }
         }
-        50% {
-            left: calc(100% - 100px); /* Move to the right edge */
+    
+        #theCloud3 {
+            position: absolute;
+            top: 30px;
+            /* right: 500px; */
+            left: 50px; /* Start off-screen to the left */
+            transform: translateY(-50%);
+            font-size: 30px; /* Adjust icon size */
+    
+            background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+            /* background-color: red; */
+            color: white;
+            -webkit-background-clip: text; /* Clip gradient to text */
+            -webkit-text-fill-color: transparent;
+    
+            animation: moveCloud3 15s linear infinite;
+            
+            text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+            font-size: 25px;
+            z-index: 101;
         }
-        100% {
-            left: 200px; /* Return to the start */
+    
+        /* Keyframes for Left-to-Right Animation */
+        @keyframes moveCloud3 {
+            0% {
+                left: 200px; /* Start off-screen */
+            }
+            50% {
+                left: calc(100% - 100px); /* Move to the right edge */
+            }
+            100% {
+                left: 200px; /* Return to the start */
+            }
         }
-    }
-
-    #theCloud3 {
-        position: absolute;
-        top: 30px;
-        /* right: 500px; */
-        left: 50px; /* Start off-screen to the left */
-        transform: translateY(-50%);
-        font-size: 30px; /* Adjust icon size */
-
-        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
-        /* background-color: red; */
-        color: white;
-        -webkit-background-clip: text; /* Clip gradient to text */
-        -webkit-text-fill-color: transparent;
-
-        animation: moveCloud3 15s linear infinite;
-        
-        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
-        font-size: 25px;
-        z-index: 101;
-    }
-
-    /* Keyframes for Left-to-Right Animation */
-    @keyframes moveCloud3 {
-        0% {
-            left: 30px; /* Start off-screen */
+    
+        #theCloud4 {
+            position: absolute;
+            top: 28px;
+            /* right: 500px; */
+            left: 50px; /* Start off-screen to the left */
+            transform: translateY(-50%);
+            font-size: 30px; /* Adjust icon size */
+    
+            background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+            /* background-color: red; */
+            color: white;
+            -webkit-background-clip: text; /* Clip gradient to text */
+            -webkit-text-fill-color: transparent;
+    
+            animation: moveCloud4 15s linear infinite;
+            
+            text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+            font-size: 20px;
+            z-index: 101;
         }
-        50% {
-            left: calc(100% - 70px); /* Move to the right edge */
+    
+        /* Keyframes for Left-to-Right Animation */
+        @keyframes moveCloud4 {
+            0% {
+                left: 260px; /* Start off-screen */
+            }
+            50% {
+                left: calc(100% - 100px); /* Move to the right edge */
+            }
+            100% {
+                left: 260px; /* Return to the start */
+            }
         }
-        100% {
-            left: 30px; /* Return to the start */
-        }
-    }
-
-    #theCloud4 {
-        position: absolute;
-        top: 28px;
-        /* right: 500px; */
-        left: 50px; /* Start off-screen to the left */
-        transform: translateY(-50%);
-        font-size: 30px; /* Adjust icon size */
-
-        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
-        /* background-color: red; */
-        color: white;
-        -webkit-background-clip: text; /* Clip gradient to text */
-        -webkit-text-fill-color: transparent;
-
-        animation: moveCloud4 15s linear infinite;
-        
-        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
-        z-index: 101;
-    }
-
-    /* Keyframes for Left-to-Right Animation */
-    @keyframes moveCloud4 {
-        0% {
-            left: 80px; /* Start off-screen */
-        }
-        50% {
-            left: calc(100% - 100px); /* Move to the right edge */
-        }
-        100% {
-            left: 80px; /* Return to the start */
-        }
-    }
-
-
-    /* The cloud moving -->Bottom*/
+        /* The cloud moving -->Bottom*/
 
     /* The shopping cart moving -->Header*/
     /* Position and Style the Shopping Cart */
@@ -2599,7 +2602,7 @@ table {
         -webkit-background-clip: text; /* Clip gradient to text */
         -webkit-text-fill-color: transparent;
 
-        animation: moveCloud1 16s linear infinite;
+        animation: moveCloud1 40s linear infinite;
         
         text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
         font-size: 15px;
@@ -2609,13 +2612,13 @@ table {
     /* Keyframes for Left-to-Right Animation */
     @keyframes moveCloud1 {
         0% {
-            left: 300px; /* Start off-screen */
+            left: 550px; /* Start off-screen */
         }
         50% {
             left: calc(100% - 60px); /* Move to the right edge */
         }
         100% {
-            left: 300px; /* Return to the start */
+            left: 550px; /* Return to the start */
         }
     }
 
@@ -2633,7 +2636,7 @@ table {
         -webkit-background-clip: text; /* Clip gradient to text */
         -webkit-text-fill-color: transparent;
 
-        animation: moveCloud2 14s linear infinite;
+        animation: moveCloud2 40s linear infinite;
         
         text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
         font-size: 25px;
@@ -2643,13 +2646,13 @@ table {
     /* Keyframes for Left-to-Right Animation */
     @keyframes moveCloud2 {
         0% {
-            left: 200px; /* Start off-screen */
+            left: 400px; /* Start off-screen */
         }
         50% {
             left: calc(100% - 100px); /* Move to the right edge */
         }
         100% {
-            left: 200px; /* Return to the start */
+            left: 400px; /* Return to the start */
         }
     }
 
@@ -2667,7 +2670,7 @@ table {
         -webkit-background-clip: text; /* Clip gradient to text */
         -webkit-text-fill-color: transparent;
 
-        animation: moveCloud3 15s linear infinite;
+        animation: moveCloud3 40s linear infinite;
         
         text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
         font-size: 25px;
@@ -2677,13 +2680,13 @@ table {
     /* Keyframes for Left-to-Right Animation */
     @keyframes moveCloud3 {
         0% {
-            left: 30px; /* Start off-screen */
+            left: 500px; /* Start off-screen */
         }
         50% {
             left: calc(100% - 70px); /* Move to the right edge */
         }
         100% {
-            left: 30px; /* Return to the start */
+            left: 500px; /* Return to the start */
         }
     }
 
@@ -2701,7 +2704,7 @@ table {
         -webkit-background-clip: text; /* Clip gradient to text */
         -webkit-text-fill-color: transparent;
 
-        animation: moveCloud4 15s linear infinite;
+        animation: moveCloud4 43s linear infinite;
         
         text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
         z-index: 101;
@@ -2710,13 +2713,13 @@ table {
     /* Keyframes for Left-to-Right Animation */
     @keyframes moveCloud4 {
         0% {
-            left: 80px; /* Start off-screen */
+            left: 300px; /* Start off-screen */
         }
         50% {
-            left: calc(100% - 100px); /* Move to the right edge */
+            left: calc(100% - 200px); /* Move to the right edge */
         }
         100% {
-            left: 80px; /* Return to the start */
+            left: 300px; /* Return to the start */
         }
     }
 
