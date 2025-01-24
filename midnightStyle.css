@@ -7,10 +7,11 @@
 
 .starClass {
     position: absolute;
-    color: yellow;
+    color: white;
+    -webkit-text-stroke: .1px yellow;
     width: 4px;
     height: 4px;
-    box-shadow: 1px 5px 25px rgb(246, 226, 190);
+    box-shadow: 1px 1px 12px rgb(250, 230, 165);
     z-index: 500;
 }
 
@@ -74,6 +75,7 @@
     top: 10px;
     right: 30px;
 }
+
 
 
 #theSun {
