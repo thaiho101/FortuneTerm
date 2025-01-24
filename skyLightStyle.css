@@ -1,0 +1,2890 @@
+#theSun {
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(360deg, rgb(254, 254, 236), orange, rgb(250, 182, 55), rgb(245, 215, 159));
+    border: solid 1px rgb(250, 229, 160);
+    border-radius: 90%;
+    box-shadow: 1px 5px 25px rgb(246, 226, 190);
+    /* box-shadow: 1px 10px 25px red; */
+    /* text-shadow: 15px 5px 15px red; */
+    position: absolute;
+    top: 2px;
+    left: 60%;
+    z-index: 100;
+}
+
+/* The cloud moving -->Header*/
+#theCloud1 {
+    position: absolute;
+    top: 15px;
+    /* right: 500px; */
+    left: 50px; /* Start off-screen to the left */
+    transform: translateY(-50%);
+    font-size: 30px; /* Adjust icon size */
+
+    background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+    /* background-color: red; */
+    color: white;
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent;
+
+    animation: moveCloud1 40s linear infinite;
+    
+    text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+    font-size: 15px;
+    z-index: 99;
+}
+
+/* Keyframes for Left-to-Right Animation */
+@keyframes moveCloud1 {
+    0% {
+        left: 950px; /* Start off-screen */
+    }
+    50% {
+        left: calc(100% - 250px); /* Move to the right edge */
+    }
+    100% {
+        left: 950px; /* Return to the start */
+    }
+}
+
+#theCloud2 {
+    position: absolute;
+    top: 20px;
+    /* right: 500px; */
+    left: 50px; /* Start off-screen to the left */
+    transform: translateY(-50%);
+    font-size: 30px; /* Adjust icon size */
+
+    background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+    /* background-color: red; */
+    color: white;
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent;
+
+    animation: moveCloud2 40s linear infinite;
+    
+    text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+    font-size: 25px;
+    z-index: 99;
+}
+
+/* Keyframes for Left-to-Right Animation */
+@keyframes moveCloud2 {
+    0% {
+        left: 700px; /* Start off-screen */
+    }
+    50% {
+        left: calc(100% - 300px); /* Move to the right edge */
+    }
+    100% {
+        left: 700px; /* Return to the start */
+    }
+}
+
+#theCloud3 {
+    position: absolute;
+    top: 30px;
+    /* right: 500px; */
+    left: 50px; /* Start off-screen to the left */
+    transform: translateY(-50%);
+    font-size: 30px; /* Adjust icon size */
+
+    background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+    /* background-color: red; */
+    color: white;
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent;
+
+    animation: moveCloud3 40s linear infinite;
+    
+    text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+    font-size: 25px;
+    z-index: 101;
+}
+
+/* Keyframes for Left-to-Right Animation */
+@keyframes moveCloud3 {
+    0% {
+        left: 800px; /* Start off-screen */
+    }
+    50% {
+        left: calc(100% - 280px); /* Move to the right edge */
+    }
+    100% {
+        left: 800px; /* Return to the start */
+    }
+}
+
+#theCloud4 {
+    position: absolute;
+    top: 28px;
+    /* right: 500px; */
+    left: 50px; /* Start off-screen to the left */
+    transform: translateY(-50%);
+    font-size: 30px; /* Adjust icon size */
+
+    background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+    /* background-color: red; */
+    color: white;
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent;
+
+    animation: moveCloud4 40s linear infinite;
+    
+    text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+    font-size: 30px;
+    z-index: 101;
+}
+
+/* Keyframes for Left-to-Right Animation */
+@keyframes moveCloud4 {
+    0% {
+        left: 640px; /* Start off-screen */
+    }
+    50% {
+        left: calc(100% - 300px); /* Move to the right edge */
+    }
+    100% {
+        left: 640px; /* Return to the start */
+    }
+}
+
+
+/* The cloud moving -->Bottom*/
+
+/* Position and Style the Shopping Cart */
+#shoppingCartAnimation {
+    position: absolute;
+    /* top: 10.8%; */
+    top: 88px;
+    left: -50px; /* Start off-screen to the left */
+    transform: translateY(-50%);
+    font-size: 30px; /* Adjust icon size */
+
+    /* Gradient background */
+    background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+    /* animation: moveCart 5s linear infinite; */
+    
+    /* Shadow for the cart */
+    text-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* Keyframes for Left-to-Right Animation */
+@keyframes moveCart {
+    0% {
+        left: 150px; /* Start off-screen */
+    }
+    50% {
+        left: calc(100% - 70px); /* Move to the right edge */
+    }
+    100% {
+        left: 150px; /* Return to the start */
+    }
+}
+
+
+
+
+/* General Reset for Margins and Padding */
+body, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+	display: block;
+}
+
+/* Navigation Bar */
+#navigation {
+    /* background-color: silver; */
+    /* background-image: url("navBarSilver.jpeg"); */
+    color: rgb(115, 115, 115);
+    padding: 10px;
+    text-align: left;
+    font-size: 1.5em;
+    /* background-image: linear-gradient(white, lightblue, white); */
+    /* background-color:#6199c7; */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+}
+
+#webTitle {
+    /* align-items: center; */
+    text-align: left;
+}
+
+#webTitle a {
+    /* font-family: "poppins", sans-serif; */
+    text-decoration: none;
+    font-size: 40px;
+    color: #5580a3;
+
+    font-family: "Lilita One", serif;
+        /* font-weight: 50; */
+        font-style: normal;
+
+        -webkit-text-stroke: 1.3px rgb(34, 254, 254);
+}
+
+/* .webTitle {
+    font-size: 35px;
+    font-weight: bold;
+    color: #5580a3;
+    font-family: "Lilita One", serif;
+    font-style: normal;
+
+    
+} */
+
+.greeting {
+    font-size: 18px;
+}
+
+.userName {
+    text-align: right;
+}
+
+/* Bottom Container */
+#bottom {
+    color: black;
+	display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Data Change Section */
+#dataChange {
+    background-color: transparent; /* Yellow */
+    flex: 1; /* Responsive width */
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.newTransactionLabel{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.newTransactionStyle {
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 14px;
+    font-weight: bold;
+    
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); */
+    box-shadow: 4px 3px 5px gray;
+    border-width: 2px 1px 4px 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: rgb(231, 231, 231);
+    /* background-image: linear-gradient(white, lightblue, white); */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 160px;
+    color: white;
+    /* background-color:#4682B4; */
+    /* background-color:#6199c7; */
+    /* background-color: rgb(205, 94, 116); */
+    background-color: rgb(170, 53, 53);
+    border-top-color: white;
+    border-left-color: rgb(213, 213, 213);
+    border-left-width: 2px;
+    border-bottom-width: 3px;
+    text-decoration: none;
+}
+
+.insert {
+    background-color: transparent;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    flex: 1;
+    border: solid silver;
+    border-radius: 8px;
+}
+
+#insertionForm {
+    margin-left: 3%;
+}
+
+.form-row {
+    display: flex; /* Makes each row a flex container */
+    /* justify-content: space-between; */
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Label Styling */
+.insertLabel {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    width: 100px;
+    text-align: left;
+    display: inline-block;
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); */
+    box-shadow: 4px 3px 5px gray;
+    border-width: 2px 1px 4px 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 0;
+    border-color: white;
+    /* background-image: linear-gradient(white, white, white); */
+    border-top-color: white;
+        /* border-bottom-color: silver; */
+    border-right-width: 1px;
+
+}
+
+.interface {
+    /* background-image: linear-gradient(to #4682B4, #4682B4, #4682B4); */
+    color: white;
+    /* background-color:#4682B4; */
+    background-color: rgb(170, 53, 53);
+}
+
+/* Input Field Styling */
+.insertBox {
+    /* background-color: rgb(244, 243, 243); */
+    /* background-image: linear-gradient(white, #E0E0E0, white); */
+    background-image: linear-gradient(white, rgb(184, 223, 236), white);
+    text-align: right;
+    border-radius: 4px;
+    width: 50%;
+    max-width: 100%; /* Đảm bảo không vượt quá khung */
+    box-sizing: border-box; /* Tính cả padding và border vào tổng width */
+    /* border: 2px; */
+    border-color: silver;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top: 9px;
+    border-left-color: white;
+    border-left-width: 0px;
+
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: outset 1.5px white;
+    box-shadow: 5px 2px 9px rgb(149, 149, 149);
+}
+
+.insertBoxFBCost {
+    height: 51px;
+}
+
+.insertBoxOtherCost {
+    height: 20px;
+}
+
+#setYoudBudgetLabel {
+    justify-content: center;
+    text-align: center;
+    color: #025dad;
+}
+
+.insertBoxDate:hover, .insertBoxMarket:hover, .insertBoxFBCost:hover, .insertBoxOtherCost:hover {
+    background-image: linear-gradient(white, rgb(252, 220, 144), white);
+}
+
+#budgetModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(121, 120, 120, 0.5); /* Semi-transparent black background */
+    z-index: 1000;
+}
+
+#budgetModalChild {
+    width: 20%;
+    height: 25%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: outset 2px rgb(0, 174, 174);
+
+    background: linear-gradient(135deg, rgb(253, 253, 216), white, #00f2fe, #4facfe, #00f2fe);
+    z-index: 1001; 
+}
+
+#budgetModal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px); 
+    z-index: 1000;
+}
+
+#budgetInput {
+    border-radius: 6px;
+    /* background-color: silver; */
+    /* backdrop-filter: blur(5px); */
+    border: outset 2px rgb(84, 250, 250);
+    background-color: rgb(246, 245, 245);
+    padding: 5px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: -4px;
+}
+
+#budgetInput:hover {
+    border: inset 2px cyan;
+    background-color: white;
+}
+
+#setBudgetButtonDiv {
+    padding-top: 5%;
+    text-align: right;
+}
+
+#applyBudget, #cancelBudget {
+        border-radius: 14px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 2px 2px 5px gray;
+        border: outset 2px silver;
+        width: 70px;
+        padding: 3px;
+        padding-bottom: 5px;
+        cursor: pointer;
+}
+
+#applyBudget:hover, #cancelBudget:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(white, white, white);
+    /* box-shadow: 4px 2px 8px rgb(228, 227, 227); */
+
+    box-shadow: 1px 1px 1px gray;
+    border: inset 1.5px silver;
+}
+
+/* Show Budget -->Header*/
+#showBudgetModal {
+    width: 350px;
+    border-radius: 8px;
+    color: #5580a3;
+    border: solid 3px silver;
+}
+
+#budgetSummaryTitle {
+    text-align: center;
+    color: #1f6196;
+    /* font-family: "Lilita One", serif; */
+    font-weight: bold;
+}
+
+.titleBackgroundShowBudget {
+    /* background-color: rgb(236, 234, 234); */
+    background: linear-gradient(white, #acf7fb, white);
+    font-weight: bold;
+    color: #1f6196;
+}
+
+#showBudgetModal.modal-active #budgetSummary {
+    filter: blur(50px);
+}
+
+#showBudgetContent {
+    transition: filter 10s ease;
+}
+
+.budgetSummaryAlign {
+    text-align: center;
+}
+
+.yearWidth {
+    width: 80px;
+}
+.monthWidth {
+    width: 70px;
+}
+
+.blueBudgetSet {
+    color: blue;
+}
+
+.awaitingInput {
+    color: crimson;
+}
+
+.vCheckColor {
+    color: green;
+}
+
+#closeButtonShowBudgetSection {
+    padding-top: 20px;
+    text-align: right;
+}
+
+#closeButtonShowBudget {
+    color: black;
+        width: 100px;
+        align-content: center;
+        border-radius: 14px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 4px 2px 5px gray;
+        cursor: pointer;
+        padding: 5px;
+}
+
+#closeButtonShowBudget:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
+    box-shadow: 2px 1px 2px gray;
+}
+
+
+/* Show Budget -->Bottom*/
+
+.insertButton {
+    margin-left: 55%;
+    margin-top: 10%;
+    border-radius: 8px;
+    border-color: silver;
+    background-image: linear-gradient(white, rgb(219, 219, 219), white);
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 2px 2px 5px gray;
+    border: outset 2px silver;
+    width: 70px;
+    cursor: pointer;
+}
+
+.insertButton:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(white, white, white);
+    /* box-shadow: 4px 2px 8px rgb(228, 227, 227); */
+
+    box-shadow: 1px 1px 1px gray;
+    border: inset 1.5px silver;
+}
+
+.budget {
+    background-color: transparent; /* Light Green */
+    flex: 3;
+    border-radius: 8px;
+    border-color: solid black;
+
+}
+
+.budgetNotice {
+    display: flex;
+    text-align: center;
+    padding-bottom: 25px;
+    justify-content: center;
+    padding-top: 25px;
+    width: 100%;
+}
+
+.budgetNotification {
+    width: 175px;
+}
+
+#currentBudgetSetSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-exclamation-triangle {
+    border: 1px solid black; /* Đường viền đen dày 2px */
+    padding: 5px; /* Khoảng cách giữa biểu tượng và đường viền */
+    border-radius: 5px; /* Tùy chọn: Bo tròn góc đường viền */
+    display: inline-block; /* Đảm bảo viền bao quanh sát biểu tượng */
+    box-sizing: border-box; /* Bao gồm padding và border trong kích thước */
+}
+
+.currentSetBudgetColor {
+    color: green;
+}
+
+.fa-check {
+    font-size: 18px;
+}
+
+.fa-filter {
+    color: #1f6196;
+}
+
+.checkIcon {
+    font-size: 24px; /* Adjust size */
+    color: green; /* Set color */
+    font-weight: bold; /* Make it bold */
+}
+
+#messageReminder {
+    color: orange;
+    /* background-color: red; */
+}
+
+.setBudgetButton, .showBudgetButton {
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 14px;
+    font-weight: bold;
+    
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); */
+    box-shadow: 4px 3px 5px gray;
+    border-width: 2px 1px 4px 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: rgb(231, 231, 231);
+    /* background-image: linear-gradient(white, lightblue, white); */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 160px;
+    color: white;
+    background-color:#5580a3;
+    border-top-color: white;
+    border-left-color: rgb(213, 213, 213);
+    border-left-width: 2px;
+    border-bottom-width: 3px;
+    border: outset 2px white;
+    cursor: pointer;
+}
+
+.setBudgetButton:hover , .showBudgetButton:hover {
+    box-shadow: 1px 1px 1px gray;
+    border: inset 1px silver;
+}
+
+/* Data Analyze Section */
+#dataAnalyze {
+    /* background-color: #BBDEFB; */
+    padding: 10px;
+    flex: 4;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    /* background-color: transparent; */
+    padding: 10px;
+    margin: 5px 0;
+    /* justify-content: right; */
+    flex: 1;
+    max-height: 40px;
+}
+
+#currencyForm {
+    /* background-color: red;
+    border-radius: 8px; */
+}
+
+#currencyType {
+    background-image: linear-gradient(white, orange, rgb(252, 199, 100));
+    border-radius: 4px;
+    border: outset 1.5px silver;
+    /* font-weight: 50rem; */
+    color: rgb(26, 26, 26);
+    text-align: center;
+    cursor: pointer;
+    /* font-size: 12px; */
+}
+
+#currencyType:hover {
+    background-image: linear-gradient(white, rgb(249, 191, 84), rgb(252, 233, 196));
+    border: inset 1px silver;
+}
+
+/* .yearMonthDiv {
+    width: 400px;
+    text-align: right;
+} */
+
+.yearMonthFilterStyle {
+    color: black;
+	font-weight: bold;
+	border-radius: 8px;
+    padding: 5px;
+}
+
+.fa-cog, .fa-spin {
+    color: #5580a3;
+}
+
+.yearOptionStyle, .monthOptionStyle {
+	color: black;
+	background-image: linear-gradient(white, rgb(222, 220, 220), white);
+	border-radius: 4px;
+	border: outset 2px silver;
+    border-width: 1px;
+    border: outset 1.5px silver;
+    text-align: center;
+    cursor: pointer;
+}
+
+.yearOptionStyle:hover, .monthOptionStyle:hover {
+    background-image: linear-gradient(white, lightblue, white);
+    border: inset 1px silver;
+}
+
+.filterButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-color: silver;
+    background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
+    cursor: pointer;
+}
+
+.filterButton:hover {
+    background-image: linear-gradient(white, rgb(224, 223, 223), white);
+    border: inset 1px silver;
+}
+
+.header {
+    /* background-color: #FFE0B2; */
+    flex: 1;
+    max-height: 59.5px;
+}
+
+.headerTable {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.headerRow {
+    /* background-color: silver; */
+    color: black;
+    font-size: 15px;
+    background-color: white;
+}
+
+.headerRow th:nth-child(1), th:nth-child(5) {
+    /* background-color: orange; */
+    padding: 0 30px;
+
+}
+table {
+    width: 100%; /* Ensure the table spans the full container width */
+    table-layout: fixed; /* Enforce equal column widths */
+    border-collapse: collapse; /* Merge borders for cleaner look */
+}
+.expand {
+    text-align: center; /* Center-align text */
+    color: black; /* Set text color to orange */
+    white-space: normal; /* Allow text wrapping */
+    word-wrap: break-word; /* Ensure long words wrap */
+    border: 1px solid silver; /* Add a border for clarity */
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.wrapText {
+
+}
+
+.content {
+    /* background-color: #B3E5FC; */
+    flex: 3;
+    max-height: 381.9px;
+    /* max-height: 200px; */
+    overflow-y: auto;
+}
+
+/* ------Scrollbar of content----->Header */
+/* Style the scrollbar */
+.content::-webkit-scrollbar {
+    width: 4px; /* Narrow width for a floating look */
+    position: absolute; /* This is implied for scrollbars; cannot use `fixed` */
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: rgb(167, 167, 167); /* Semi-transparent red */
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+    border: 1px solid transparent; /* Padding inside the thumb */
+     /* Prevent the border from covering the thumb */
+}
+
+.content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0); /* Fully transparent track */
+}
+
+/* Optional: Hover effect */
+.content::-webkit-scrollbar-thumb:hover {
+    background: rgb(86, 86, 86); /* Darker red on hover */
+}
+/* ------Scrollbar of content----->Bottom */
+
+
+
+.actionStyle {
+    width: 100px;
+}
+
+.dataEditStyle {
+    text-align: center;
+    width: 48px;
+}
+
+.dataDeleteStyle {
+    text-align: center;
+    width: 48px;
+}
+
+.editSubmitStyle {
+	color: white;
+	border: none;
+	border-radius: 8px;
+	border: white outset 1px;
+	background-color: darkorange;
+    cursor: pointer;
+}
+
+.editSubmitStyle:hover {
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 8px;
+/*	background-color: gold;*/
+	border: white inset 1px;
+	background-image: linear-gradient(white, darkorange, white);
+}
+
+.deleteSubmitStyle {
+	color: white;
+	border: none;
+	border-radius: 8px;
+	border: white outset 1px;
+	background-color: crimson;
+    cursor: pointer;
+}
+
+.deleteSubmitStyle:hover {
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 8px;
+/*	background-color: gold;*/
+	border: white inset 1px;
+	background-image: linear-gradient(white, red, white);
+}
+
+.totalSummary {
+    /* background-color: #D7CCC8; */
+    /* padding: 10px; */
+    /* margin: 5px 0; */
+    flex: 2;
+}
+
+.fontStyle {
+    font-family: 'Roboto', sans-serif;
+}
+
+.rowHighLight:hover {
+    background-color: lightblue;
+    background-image: linear-gradient(white, rgb(252, 220, 144), white);
+}
+
+.gridTableColor {
+    border: 1px solid silver;
+}
+
+.redundantCol {
+    border: transparent;
+}
+
+.totalCostLabel {
+    text-align: center;
+    font-weight: bold;
+}
+
+.totalBudgetColor {
+    color: green;
+}
+
+.totalBalanceColor {
+    color: #5580a3;
+}
+
+.blueNumber {
+    color: blue;
+}
+
+.silverNumber {
+    color: rgb(167, 167, 167);
+}
+
+/* .numColor {
+    color: blue;
+} */
+
+.totalCostColor {
+    color: red;
+}
+
+.totalCostStyle {
+    /* font-size: 15px; */
+    text-align: right;
+    /* color: blue; */
+}
+
+.totalCostTextStyle {
+    font-size: 16px;
+    font-weight: bold;
+    /* color: blue; */
+} 
+
+/* Graph Section */
+#graph {
+    /* background-color: #F8BBD0; */
+    padding: 10px;
+    text-align: center;
+    flex: 2; /* Responsive width */
+    border: 1px solid #ccc;
+    width: 20%;
+}
+
+#navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-bottom: 10px; */
+}
+
+.logOutButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-color: silver;
+    background-image: linear-gradient(white, silver, white);
+    cursor: pointer;
+    color: black;
+}
+
+.logOutButton:hover {
+    background-image: linear-gradient(white, white, white);
+}
+
+.hidden {
+    display: none;
+}
+
+#graph {
+    text-align: left; /* Align content inside the container to the left */
+    margin: 0 auto; /* Ensure it's centered if needed */
+    width: 80%; /* Adjust the width as required */
+}
+
+#marketVisitedChart, #costDistributionChart {
+    display: block; /* Ensure block layout */
+    margin: 0 auto 10px; /* Adjust the spacing if needed */
+    border: solid 1px silver;
+}
+
+/* dropDownOptions -->Header*/
+.dropDownSection {
+    display: inline-block;
+    position: relative;
+}
+
+#dropDownButton {
+    /* border-radius: 5px;
+    border: solid 1px silver; */
+    color: black;
+        align-content: center;
+        border-radius: 4px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 4px 2px 5px gray;
+        cursor: pointer;
+        padding: 6px;
+}
+
+#dropDownButton:hover {
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+}
+
+.dropDownOptions {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    border-radius: 8px;
+    background-color: white;
+    border: solid 2px rgb(78, 176, 209);
+    border: solid 2px silver;
+}
+
+.dropDownSection:hover {
+    .dropDownOptions {
+        display: block;
+        z-index: 10;
+        width: 450%;
+        right: 5%; 
+    }
+
+    .dropDownLinks {
+        text-decoration: none;
+        color: black
+
+    }
+
+    .dropDownLinksDiv:hover {
+        /* width: 150px; */
+        background-color: rgb(156, 244, 244);
+        background-image: linear-gradient(white, cyan, white);
+
+    }
+}
+
+.dropDownOptions .dropDownLinks:hover {
+    /* background-color: yellow; */
+    color: black
+}
+
+.dropDownLinksDiv {
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    align-items: center;
+    /* border-bottom: solid 0.2px silver; */
+    border-top: solid 0.2px silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.dropDownLinks {
+    font-size: 15px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    display: block;
+}
+
+.logOutLink {
+    background-image: linear-gradient(white, orange, white);
+}
+
+.dropDownOptions:hover .logOutLink {
+    background-image: linear-gradient(white, orange, white);
+}
+
+
+
+/* Drop-Down-Button -->Bottom*/
+
+
+
+
+/* Scroll-To-Top -->Header*/
+#contentHeader:focus {
+
+}
+
+#scrollToHomeLink {
+    position: fixed;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+    border-color: silver;
+    background-image: linear-gradient(white, silver, white);
+    box-shadow: 4px 4px 5px rgb(161, 161, 161);
+    z-index: 1000;
+}
+
+#scrollToHomeLink:hover {
+    /* background-color: #0066cc; */
+    background-image: linear-gradient(white, rgb(228, 218, 218), white);
+
+    box-shadow: 4px 2px 5px rgb(229, 229, 229);
+}
+
+.fa-arrow-up {
+    color: rgb(94, 93, 93);
+    font-size: 15px;
+}
+/* Scroll-To-Top -->Bottom*/
+
+
+
+/* //// My Account //////////////////////-->Header*/
+
+        /* //// My Profile ///// -->Header*/
+#accountBottom {
+    display: flex;
+}
+
+#global-nav-myAccount {
+    /* display: flex; */
+    /* background-color: rgb(1, 235, 235); */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    width: 15%;
+    height: 100vh;
+}
+
+#navContent {
+    width: 85%;
+}
+
+#myProfileNav {
+    width: 100%;
+    color: #5580a3;
+    /* font-weight: bold; */
+    font-size: 18px;
+    background-color: transparent;
+    /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    border-bottom-color: transparent;
+    cursor: pointer;
+}
+
+#changePasswordNav {
+    width: 100%;
+    color: #5580a3;
+    /* font-weight: bold; */
+    font-size: 18px;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    cursor: pointer;
+}
+
+#myProfileNav:hover, #changePasswordNav:hover {
+    background-color: rgb(175, 243, 251);
+}
+
+#myProfileNav:active, #changePasswordNav:active {
+    background-color: yellow;
+}
+
+.selectedNavMyProfile {
+    color: white !important;
+    background-color: white !important;
+    border-right-color: white !important;
+    background-image: linear-gradient(white, #00f2fe, white);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.selectedNavChangePassword {
+    color: white !important;
+    background-color: white !important;
+    border-right-color: white !important;
+    background-image: linear-gradient(white, #00f2fe, white);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#global-nav-changePassword {
+    /* background-color: red; */
+}
+
+#userPicture, #firstLastNameSection, #firstNameSection, #lastNameSection, #emailSection {
+    display: flex;
+    padding-left: 30px;
+    
+}
+
+#userPicture {
+    padding-left: 50px;
+    width: 200px;
+    height: 200px;
+}
+
+#firstLastNameSection {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#firstNameSection {
+    padding-right: 150px;
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#lastNameSection {
+    padding-right: 150px;
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#emailSection {
+    /* padding-left: 60px;
+    /* padding-right: 150px; */
+    padding-left: 40px;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tdWidth {
+    width: 200px;
+}
+
+.tdWidthEmail {
+    width: 100px;
+}
+        /* //// My Profile ///// -->Bottom*/
+
+        /* //// Change Password ///// -->Header*/
+#changePasswordTitle {
+    font-size: 18px;
+    font-weight: bold;
+    /* padding-left: 2.5%; */
+    border-bottom: solid 1px silver;
+    width: 50%;
+    justify-content: right;
+    align-items: right;
+    align-content: right;
+    /* padding-left: 2.5%; */
+    padding-top: 1.5%;
+    padding-bottom: .5%;
+    margin-left: 3%;
+}
+
+#changePasswordNotice {
+    padding-left: 3%;
+    padding-top: .5%;
+    padding-bottom: 1%;
+}
+
+#changePasswordForm {
+    width: 40%;
+    padding-left: 7%;
+}
+
+#emailChangePasswordSection {
+    display: flex;
+    padding-top: 2.5%;
+    padding-bottom: 3%;
+    justify-content: space-between;
+}
+
+.emailDataDiv {
+    /* padding-left: 42%; */
+}
+
+#currentPassword, #newPassword, #confirmPassword {
+    width: 250px;
+}
+
+#currentChangePassword, #newChangePassword, #confirmChangePassword {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+#changePasswordSubmit {
+    text-align: right;
+}
+
+#changeButton {
+    margin-left: 70%;
+    border-radius: 8px;
+    border-color: silver;
+    background-image: linear-gradient(white, rgb(219, 219, 219), white);
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+}
+
+#changeButton:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(white, white, white);
+    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+}
+
+            /* //// Toggle Password ///// -->Header*/
+.password-wrapper {
+    display: flex;
+}
+
+.passwordInput {
+    flex: 1;
+}
+
+.visiblePasswordButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -30px;
+    z-index: 1;
+}
+
+
+.visiblePasswordButton:active {
+    background: none;
+}
+
+.success, .error {
+    margin-left: 10%;
+    padding-top: 5%;
+    font-size: 18px;
+}
+
+.error {
+    color: red;
+}
+
+.fa-exclamation-triangle {
+    border: none;
+    color: darkorange;
+}
+            /* //// Toggle Password ///// -->Bottom*/
+
+        /* //// Change Password ///// -->Bottom*/
+/* //// My Account //////////////////////-->Bottom*/
+
+/* //// Setting //////////////////////-->Header*/
+#settingBottom {
+    display: flex;
+}
+
+#global-nav-setting {
+    /* display: flex; */
+    /* background-color: rgb(1, 235, 235); */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    width: 15%;
+    height: 100vh;
+}
+
+#navContent {
+    display: block;
+    width: 85%;
+}
+
+#settingNav {
+    width: 100%;
+    color: #5580a3;
+    /* font-weight: bold; */
+    font-size: 24px;
+    background-color: transparent;
+    /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    border-bottom-color: white;
+    cursor: pointer;
+}
+
+#settingNav {
+    color: white !important;
+    background-color: white !important;
+    border-right-color: white !important;
+    background-image: linear-gradient(white, #00f2fe, white);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#languageSettingSection{
+    padding-top: 1.5%;
+}
+
+#languageSettingSection, #currencySettingSection, #themeSection {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 4%;
+    border-bottom: dashed 1px silver;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#languageType {
+    background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#languageType:hover {
+    background-image: linear-gradient(white, rgb(222, 221, 221), white);
+    border: inset 1px silver;
+    border-radius: 4px;
+}
+
+#themeType {
+    background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#themeType:hover {
+    background-image: linear-gradient(white, rgb(222, 221, 221), white);
+    border: inset 1px silver;
+    border-radius: 4px;
+}
+
+/* //// Setting //////////////////////-->Bottom*/
+
+#marketVisitedChart {
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media reponsive on Mobile */
+/* Responsive Layout for Mobile Devices */
+@media (max-width: 768px) {
+
+    /* The cloud moving -->Header*/
+    #theCloud1 {
+        position: absolute;
+        top: 15px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud1 15s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 15px;
+        z-index: 99;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud1 {
+        0% {
+            left: 300px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 300px; /* Return to the start */
+        }
+    }
+
+    #theCloud2 {
+        position: absolute;
+        top: 20px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud2 15s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 18px;
+        z-index: 99;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud2 {
+        0% {
+            left: 220px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 150px); /* Move to the right edge */
+        }
+        100% {
+            left: 220px; /* Return to the start */
+        }
+    }
+
+    #theCloud3 {
+        position: absolute;
+        top: 30px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud3 15s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 25px;
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud3 {
+        0% {
+            left: 240px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 70px); /* Move to the right edge */
+        }
+        100% {
+            left: 240px; /* Return to the start */
+        }
+    }
+
+    #theCloud4 {
+        position: absolute;
+        top: 28px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud4 15s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 20px;
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud4 {
+        0% {
+            left: 260px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 100px); /* Move to the right edge */
+        }
+        100% {
+            left: 260px; /* Return to the start */
+        }
+    }
+    /* The cloud moving -->Bottom*/
+
+    /* The shopping cart moving -->Header*/
+    #shoppingCartAnimation {
+        position: absolute;
+
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 5s linear infinite; /* Animation: name, duration, repeat */
+            /* Shadow for the cart */
+        text-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+    /* The shopping cart moving -->Bottom*/
+
+
+    /* Bottom container: stack children vertically */
+    #bottom {
+        flex-direction: column;
+        height: auto; /* Adjust height */
+    }
+
+    /* Make each section take full width */
+    #dataChange, #dataAnalyze, #graph {
+        flex: none; /* Override flex property */
+        width: 100%; /* Full width */
+        max-height: none; /* Allow content to expand */
+    }
+
+    /* Adjust .insert and form row spacing */
+    .insert {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #insertionForm {
+        margin-left: 2%;
+        width: 96%;
+    }
+
+    .form-row {
+        display: flex; /* Makes each row a flex container */
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+
+    .newTransactionStyle {
+        font-size: 17px;
+        border-top-color: white;
+        border-left-color: silver;
+        border-bottom-color: silver;
+        border-top-left-radius: 8px;
+        border-left-width: 2px;
+        color: white;
+        width: 300px;
+    }
+
+    .insertLabel {
+        width: 100%; /* Full width for labels */
+        margin-bottom: 5px; /* Add spacing below label */
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        width: 100px;
+        text-align: left;
+        display: inline-block;
+        /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); */
+        box-shadow: 4px 3px 5px gray;
+        border-width: 2px 1px 4px 1px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 0;
+        border-top-color: white;
+        border-bottom-color: silver;
+        width: 200px;
+        padding-right: 100px;
+    }
+
+    /* .dateLabel {
+        width: 240px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    } */
+
+    .insertLabel {
+        width: 240px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .interface {
+        /* background-image: linear-gradient(to #4682B4, #4682B4, #4682B4); */
+        color: white;
+        /* background-color:#4682B4; */
+        width: 240px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .insertBox {
+        width: 100%; /* Input fields take full width */
+        height: 27px;
+        padding-top: 5px;
+        background-image: linear-gradient(white, rgb(184, 223, 236), white);
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border: outset 1.5px white;
+        box-shadow: 5px 2px 10px rgb(149, 149, 149);
+    }
+
+    .insertBoxDate {
+        height: 30px;
+        padding: 10px;
+    }
+
+    .insertBoxFBCost {
+        height: 62px;
+    }
+
+    .insertBoxOtherCost {
+        height: 45px;
+    }
+
+    .budgetNotice {
+        display: block;
+        text-align: center;
+        padding-bottom: 25px;
+        justify-content: center;
+        padding-top: 25px;
+    }
+
+ 
+
+    .hidden {
+        display: none;
+    }
+
+    .header {
+        max-height: 127px;
+    }
+
+    /* Adjust table header for smaller screens */
+    .headerRow th {
+        font-size: 12px; /* Smaller font size */
+        padding: 0; /* Reduce padding */
+        
+    }
+
+    .headerRow th:nth-child(1) {
+        display: none;
+    }
+
+    .content table tr td:nth-child(1) {
+        display: none;
+    }
+
+    .content table tr td {
+        font-size: 12px;
+    }
+
+    /* Content Section: Allow scrolling */
+    .content {
+        /* min-height: 0; */
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    /* ------Scrollbar of content----->Header */
+/* Style the scrollbar */
+.content::-webkit-scrollbar {
+    width: 4px; /* Narrow width for a floating look */
+    position: absolute; /* This is implied for scrollbars; cannot use `fixed` */
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: rgb(167, 167, 167); /* Semi-transparent red */
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+    border: 1px solid transparent; /* Padding inside the thumb */
+     /* Prevent the border from covering the thumb */
+}
+
+.content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0); /* Fully transparent track */
+}
+
+/* Optional: Hover effect */
+.content::-webkit-scrollbar-thumb:hover {
+    background: rgb(86, 86, 86); /* Darker red on hover */
+}
+/* ------Scrollbar of content----->Bottom */
+
+    /* Buttons: Center-align and adjust margins */
+    .insertButtonDiv {
+        /* padding-top: 10px; */
+        /* display: flex; */
+        /* justify-items: center; */
+        /* padding-right: 50px; */
+        display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if needed) */
+    height: 100%; /* Optional: adjust height to align vertically */
+    }
+    .insertButton {
+        /* margin-left: 0; */
+        /* width: 100%; */
+            /* margin-left: 70%; */
+            /* padding-top: 10px; */
+        color: black;
+        width: 100px;
+        align-content: center;
+        /* margin-left: 70%; */
+        border-radius: 6px;
+        border-color: silver;
+        background-image: linear-gradient(white, rgb(219, 219, 219), white);
+        border-width: 2px 1px 3px 1px;
+        box-shadow: 4px 2px 5px gray;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .insertButton:hover {
+        border-width: 2px 1px 3px 1px;
+        background-image: linear-gradient(rgb(236, 234, 234), white, rgb(240, 239, 239));
+    }
+
+    .budgetNotice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .redundantCol {
+        display: none;
+    }
+
+    .totalCostLabel {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .totalCostTextStyle {
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .confirmation-popup {
+        border: 1px solid red;
+        background-color: blue;
+    }
+
+    .logOutButton {
+        color: black;
+    }
+
+    #budgetModalChild {
+        width: 60%;
+    }
+
+    #showBudgetModal {
+        width: 320px;
+        border-radius: 16px;
+    }
+    
+
+    .yearWidth {
+        width: 80px;
+    }
+    .monthWidth {
+        width: 70px;
+    }
+
+    #budgetSummaryTitle {
+        text-align: center;
+        color: #1f6196;
+        /* font-family: "Lilita One", serif; */
+        font-weight: bold;
+    }
+
+
+    .dropDownSection:hover {
+        .dropDownOptions {
+            display: block;
+            z-index: 10;
+            width: 500%;
+            right: 5%; 
+        }
+    }
+
+
+
+    /* //// My Account //////////////////////-->Header*/
+
+        /* //// My Profile ///// -->Header*/
+#accountBottom {
+    display: flex;
+}
+
+#global-nav-myAccount {
+    /* display: flex; */
+    /* background-color: rgb(1, 235, 235); */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    width: 25%;
+    height: 100vh;
+}
+
+#navContent {
+    width: 75%;
+}
+
+#myProfileNav {
+    width: 100%;
+    color: #5580a3;
+    /* color: white; */
+    /* font-weight: bold; */
+    font-size: 12px;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    border-bottom-color: transparent;
+}
+
+#changePasswordNav {
+    width: 100%;
+    color: #5580a3;
+    /* color: white; */
+    /* font-weight: bold; */
+    font-size: 12px;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+}
+
+#myProfileNav:hover, #changePasswordNav:hover {
+    background-color: rgb(175, 243, 251);
+}
+
+#myProfileNav:active, #changePasswordNav:active {
+    background-color: red;
+}
+
+#myProfileContent {
+    /* background-color: green; */
+    width: 75%;
+}
+
+#global-nav-changePassword {
+    /* background-color: red; */
+}
+
+#userPicture, #firstLastNameSection, #firstNameSection, #lastNameSection, #emailSection {
+    display: flex;
+    padding-left: 10px;
+}
+
+#userPicture {
+    padding-left: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+#firstLastNameSection {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#firstNameSection {
+    padding-right: 20px;
+    /* width: 100px; */
+}
+
+#lastNameSection {
+    padding-right: 0px;
+    /* padding-right: 150px; */
+    /* max-width: 400px; */
+}
+
+.tdWidth {
+    width: 80px;
+}
+
+.tdWidthEmail {
+    width: 200px;
+}
+
+#emailSection {
+    width: 100%;
+    padding-left: 50px;
+    /* padding-right: 500px; */
+    right: 50px;
+    /* width: 30%; */
+}
+
+#firstName {
+
+}
+        /* //// My Profile ///// -->Bottom*/
+
+        /* //// Change Password ///// -->Header*/
+#changePasswordTitle {
+    font-size: 16px;
+    font-weight: bold;
+    /* padding-left: 2.5%; */
+    border-bottom: solid 1px silver;
+    width: 95%;
+    justify-content: right;
+    align-items: right;
+    align-content: right;
+    padding-left: 2.5%;
+    padding-top: 3.5%;
+    padding-bottom: 1.5%;
+}
+
+#changePasswordNotice {
+    padding-left: 3%;
+    padding-top: 1.5%;
+    padding-bottom: 5%;
+}
+
+#changePasswordForm {
+    width: 95%;
+    padding-left: 10px;
+}
+
+#emailChangePasswordSection {
+    display: flex;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    justify-content: space-between;
+}
+
+.emailDataDiv {
+    /* padding-left: 33%; */
+}
+
+#currentPassword, #newPassword, #confirmPassword {
+    width: 50%;
+}
+
+#currentChangePassword, #newChangePassword, #confirmChangePassword {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+#changePasswordSubmit {
+    padding-top: 30px;
+    text-align: right;
+}
+
+#changeButton {
+    color: black;
+    height: 20px;
+    margin-left: 70%;
+    border-radius: 8px;
+    border-color: silver;
+    background-image: linear-gradient(white, rgb(219, 219, 219), white);
+    border-width: 2px 1px 3px 1px;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+}
+
+#changeButton:hover {
+    border-width: 2px 1px 3px 1px;
+    background-image: linear-gradient(white, white, white);
+    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+}
+
+.password-wrapper {
+    display: flex;
+}
+
+.passwordInput {
+    flex: 1;
+    /* padding-right: 30px; */
+}
+
+.visiblePasswordButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -30px;
+    z-index: 1;
+}
+
+.visiblePasswordButton:active {
+    background: red;
+    background-color: none;
+}
+
+.success, .error {
+    margin-left: 2%;
+    padding-top: 15%;
+    font-size: 18px;
+}
+
+.error {
+    color: red;
+}
+
+.fa-exclamation-triangle {
+    border: none;
+    color: darkorange;
+}
+        /* //// Change Password ///// -->Bottom*/
+/* //// My Account //////////////////////-->Bottom*/
+
+/* //// Setting //////////////////////-->Header*/
+#settingBottom {
+    display: flex;
+}
+
+#global-nav-setting {
+    /* display: flex; */
+    /* background-color: rgb(1, 235, 235); */
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    width: 25%;
+    height: 100vh;
+}
+
+#navContent {
+    display: block;
+    width: 75%;
+}
+
+#settingNav {
+    width: 100%;
+    color: #5580a3;
+    /* font-weight: bold; */
+    font-size: 13px;
+    background-color: transparent;
+    /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 1px transparent;
+    border-bottom-color: white;
+    cursor: pointer;
+}
+
+#settingNav {
+    color: white !important;
+    background-color: white !important;
+    border-right-color: white !important;
+    background-image: linear-gradient(white, #00f2fe, white);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+}
+
+
+
+#languageSettingSection{
+    padding-top: 1.5%;
+}
+
+#languageSettingSection, #currencySettingSection, #themeSection {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+    border-bottom: dashed 1px silver;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#languageType {
+    background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#languageType:hover {
+    background-image: linear-gradient(white, rgb(222, 221, 221), white);
+    border: inset 1px silver;
+    border-radius: 4px;
+}
+
+#themeType {
+    background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#themeType:hover {
+    background-image: linear-gradient(white, rgb(222, 221, 221), white);
+    border: inset 1px silver;
+    border-radius: 4px;
+}
+
+/* //// Setting //////////////////////-->Bottom*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Layout for Small Mobile Screens (iPhone 13) -->Header*/
+@media (max-width: 390px) {
+
+        /* The cloud moving -->Header*/
+        #theCloud1 {
+            position: absolute;
+            top: 15px;
+            /* right: 500px; */
+            left: 50px; /* Start off-screen to the left */
+            transform: translateY(-50%);
+            font-size: 30px; /* Adjust icon size */
+    
+            background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+            /* background-color: red; */
+            color: white;
+            -webkit-background-clip: text; /* Clip gradient to text */
+            -webkit-text-fill-color: transparent;
+    
+            animation: moveCloud1 15s linear infinite;
+            
+            text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+            font-size: 15px;
+            z-index: 99;
+        }
+    
+        /* Keyframes for Left-to-Right Animation */
+        @keyframes moveCloud1 {
+            0% {
+                left: 300px; /* Start off-screen */
+            }
+            50% {
+                left: calc(100% - 60px); /* Move to the right edge */
+            }
+            100% {
+                left: 300px; /* Return to the start */
+            }
+        }
+    
+        #theCloud2 {
+            position: absolute;
+            top: 20px;
+            /* right: 500px; */
+            left: 50px; /* Start off-screen to the left */
+            transform: translateY(-50%);
+            font-size: 30px; /* Adjust icon size */
+    
+            background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+            /* background-color: red; */
+            color: white;
+            -webkit-background-clip: text; /* Clip gradient to text */
+            -webkit-text-fill-color: transparent;
+    
+            animation: moveCloud2 15s linear infinite;
+            
+            text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+            font-size: 18px;
+            z-index: 99;
+        }
+    
+        /* Keyframes for Left-to-Right Animation */
+        @keyframes moveCloud2 {
+            0% {
+                left: 200px; /* Start off-screen */
+            }
+            50% {
+                left: calc(100% - 150px); /* Move to the right edge */
+            }
+            100% {
+                left: 200px; /* Return to the start */
+            }
+        }
+    
+        #theCloud3 {
+            position: absolute;
+            top: 30px;
+            /* right: 500px; */
+            left: 50px; /* Start off-screen to the left */
+            transform: translateY(-50%);
+            font-size: 30px; /* Adjust icon size */
+    
+            background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+            /* background-color: red; */
+            color: white;
+            -webkit-background-clip: text; /* Clip gradient to text */
+            -webkit-text-fill-color: transparent;
+    
+            animation: moveCloud3 15s linear infinite;
+            
+            text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+            font-size: 25px;
+            z-index: 101;
+        }
+    
+        /* Keyframes for Left-to-Right Animation */
+        @keyframes moveCloud3 {
+            0% {
+                left: 200px; /* Start off-screen */
+            }
+            50% {
+                left: calc(100% - 100px); /* Move to the right edge */
+            }
+            100% {
+                left: 200px; /* Return to the start */
+            }
+        }
+    
+        #theCloud4 {
+            position: absolute;
+            top: 28px;
+            /* right: 500px; */
+            left: 50px; /* Start off-screen to the left */
+            transform: translateY(-50%);
+            font-size: 30px; /* Adjust icon size */
+    
+            background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+            /* background-color: red; */
+            color: white;
+            -webkit-background-clip: text; /* Clip gradient to text */
+            -webkit-text-fill-color: transparent;
+    
+            animation: moveCloud4 15s linear infinite;
+            
+            text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+            font-size: 20px;
+            z-index: 101;
+        }
+    
+        /* Keyframes for Left-to-Right Animation */
+        @keyframes moveCloud4 {
+            0% {
+                left: 260px; /* Start off-screen */
+            }
+            50% {
+                left: calc(100% - 100px); /* Move to the right edge */
+            }
+            100% {
+                left: 260px; /* Return to the start */
+            }
+        }
+        /* The cloud moving -->Bottom*/
+
+    /* The shopping cart moving -->Header*/
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 5s linear infinite; /* Animation: name, duration, repeat */
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+    /* The shopping cart moving -->Bottom*/
+
+    #filter {
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        /* background-color: transparent; */
+        padding: 1px;
+        padding-bottom: 60px;
+        margin: 5px 0;
+        /* justify-content: right; */
+        flex: 1;
+        max-height: 40px;
+    }
+
+    #settingNav {
+        width: 100%;
+        color: #5580a3;
+        /* font-weight: bold; */
+        font-size: 11px;
+        background-color: transparent;
+        /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
+        
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border: solid 1px transparent;
+        border-bottom-color: white;
+        cursor: pointer;
+    }
+
+    #budgetModalChild {
+        width: 60%;
+        height: 30%;
+    }
+}
+/* Responsive Layout for Small Mobile Screens (iPhone 13) -->Bottom*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Layout for iPad -->Header*/
+@media (min-width: 769px) and (max-width: 1079px) and (orientation: portrait) {
+    /* Styles for iPads in portrait mode */
+
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+        top: 8.3%; /* Adjust vertical position */
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 10s linear infinite; /* Animation: name, duration, repeat */
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+    
+
+    .headerRow th:nth-child(1) {
+        display: none;
+    }
+
+    .content table tr td:nth-child(1) {
+        display: none;
+    }
+
+    body {
+        display: block;
+    }
+
+  }
+
+
+  @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    /* Styles for iPads in portrait mode */
+
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    /* The cloud moving -->Header*/
+    #theCloud1 {
+        position: absolute;
+        top: 15px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud1 40s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 15px;
+        z-index: 99;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud1 {
+        0% {
+            left: 550px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 550px; /* Return to the start */
+        }
+    }
+
+    #theCloud2 {
+        position: absolute;
+        top: 25px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud2 40s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 25px;
+        z-index: 99;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud2 {
+        0% {
+            left: 400px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 100px); /* Move to the right edge */
+        }
+        100% {
+            left: 400px; /* Return to the start */
+        }
+    }
+
+    #theCloud3 {
+        position: absolute;
+        top: 30px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud3 40s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        font-size: 25px;
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud3 {
+        0% {
+            left: 500px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 70px); /* Move to the right edge */
+        }
+        100% {
+            left: 500px; /* Return to the start */
+        }
+    }
+
+    #theCloud4 {
+        position: absolute;
+        top: 28px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud4 43s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud4 {
+        0% {
+            left: 300px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 200px); /* Move to the right edge */
+        }
+        100% {
+            left: 300px; /* Return to the start */
+        }
+    }
+
+
+    /* The cloud moving -->Bottom*/
+
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 12s linear infinite; /* Animation: name, duration, repeat */
+            /* Shadow for the cart */
+        text-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+  }
+
+  @media (min-width: 1080px) and (max-width: 1200px) {
+    /* The cloud moving -->Header*/
+    #theCloud {
+        position: absolute;
+        top: 30px;
+        /* right: 500px; */
+        left: 50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 30px; /* Adjust icon size */
+
+        background: linear-gradient(180deg, white, white, rgb(241, 241, 241));
+        /* background-color: red; */
+        color: white;
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent;
+
+        animation: moveCloud 10s linear infinite;
+        
+        text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
+        z-index: 101;
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCloud {
+        0% {
+            right: 10px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 100px); /* Move to the right edge */
+        }
+        100% {
+            right: 10px; /* Return to the start */
+        }
+    }
+    /* The cloud moving -->Bottom*/
+
+    /* Position and Style the Shopping Cart */
+    #shoppingCartAnimation {
+        position: absolute;
+        top: 12.6%; /* Adjust vertical position */
+        left: -50px; /* Start off-screen to the left */
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+
+        /* Gradient background */
+        background: linear-gradient(180deg, black, rgb(222, 222, 222), rgb(250, 186, 66), rgb(250, 175, 34), rgb(251, 164, 3), rgb(251, 248, 243), rgb(75, 75, 75), rgb(93, 93, 93));
+        -webkit-background-clip: text; /* Clip gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
+        
+        animation: moveCart 10s linear infinite; /* Animation: name, duration, repeat */
+            /* Shadow for the cart */
+        text-shadow: 15px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Keyframes for Left-to-Right Animation */
+    @keyframes moveCart {
+        0% {
+            left: 150px; /* Start off-screen */
+        }
+        50% {
+            left: calc(100% - 60px); /* Move to the right edge */
+        }
+        100% {
+            left: 150px; /* Return to the start */
+        }
+    }
+
+    .insertButton {
+        color: black;
+    }
+
+    .insertBox {
+        width: 45%;
+        /* padding-bottom: 20px; */
+    }
+
+    .insertBoxDate {
+        height: 21px;
+    }
+
+    .insertBoxMarket {
+        height: 20px;
+    }
+
+    .insertBoxFBCost {
+        height: 55px;
+    }
+
+    .insertBoxOtherCost {
+        height: 38px;
+    }
+
+  }
+
+/* Responsive Layout for iPad -->Bottom*/
+  
+

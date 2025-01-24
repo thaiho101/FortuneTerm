@@ -187,7 +187,13 @@
     }
 }
 
+body {
+    background-color: #fcf1ec;
+}
 
+tr {
+    background-color: white;
+}
 
 
 /* General Reset for Margins and Padding */
@@ -209,7 +215,7 @@ body, div {
     font-size: 1.5em;
     /* background-image: linear-gradient(white, lightblue, white); */
     /* background-color:#6199c7; */
-    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    background: linear-gradient(235deg, rgb(248, 182, 158), #fba3b3, #febb8c, #fcaac1, #feadc3, #febb8c);
 }
 
 #webTitle {
@@ -221,13 +227,13 @@ body, div {
     /* font-family: "poppins", sans-serif; */
     text-decoration: none;
     font-size: 40px;
-    color: #5580a3;
+    color: white;
 
     font-family: "Lilita One", serif;
         /* font-weight: 50; */
         font-style: normal;
 
-        -webkit-text-stroke: 1.3px rgb(34, 254, 254);
+        -webkit-text-stroke: 1.3px rgb(254, 111, 34);
 }
 
 /* .webTitle {
@@ -242,6 +248,7 @@ body, div {
 
 .greeting {
     font-size: 18px;
+    color: white;
 }
 
 .userName {
@@ -299,7 +306,7 @@ body, div {
     /* background-color:#4682B4; */
     /* background-color:#6199c7; */
     /* background-color: rgb(205, 94, 116); */
-    background-color: rgb(170, 53, 53);
+    background-color: rgb(251, 101, 67);
     border-top-color: white;
     border-left-color: rgb(213, 213, 213);
     border-left-width: 2px;
@@ -356,14 +363,14 @@ body, div {
     /* background-image: linear-gradient(to #4682B4, #4682B4, #4682B4); */
     color: white;
     /* background-color:#4682B4; */
-    background-color: rgb(170, 53, 53);
+    background-color: rgb(251, 101, 67);
 }
 
 /* Input Field Styling */
 .insertBox {
     /* background-color: rgb(244, 243, 243); */
     /* background-image: linear-gradient(white, #E0E0E0, white); */
-    background-image: linear-gradient(white, rgb(184, 223, 236), white);
+    background-image: linear-gradient(white, rgb(253, 211, 218), white);
     text-align: right;
     border-radius: 4px;
     width: 50%;
@@ -394,7 +401,8 @@ body, div {
 #setYoudBudgetLabel {
     justify-content: center;
     text-align: center;
-    color: #025dad;
+    color: white;
+    -webkit-text-stroke: 1px rgb(251, 26, 221);
 }
 
 .insertBoxDate:hover, .insertBoxMarket:hover, .insertBoxFBCost:hover, .insertBoxOtherCost:hover {
@@ -423,9 +431,9 @@ body, div {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
-    border: outset 2px rgb(0, 174, 174);
+    border: outset 2px rgb(251, 111, 135);
 
-    background: linear-gradient(135deg, rgb(253, 253, 216), white, #00f2fe, #4facfe, #00f2fe);
+    background: linear-gradient(135deg, rgb(253, 216, 241), rgb(255, 249, 253), rgb(253, 206, 214), pink, rgb(252, 206, 213));
     z-index: 1001; 
 }
 
@@ -444,7 +452,7 @@ body, div {
     border-radius: 6px;
     /* background-color: silver; */
     /* backdrop-filter: blur(5px); */
-    border: outset 2px rgb(84, 250, 250);
+    border: outset 2px rgb(251, 111, 135);
     background-color: rgb(246, 245, 245);
     padding: 5px;
     border-radius: 16px;
@@ -504,7 +512,7 @@ body, div {
 
 .titleBackgroundShowBudget {
     /* background-color: rgb(236, 234, 234); */
-    background: linear-gradient(white, #acf7fb, white);
+    background: linear-gradient(white, rgb(254, 209, 216), white);
     font-weight: bold;
     color: #1f6196;
 }
@@ -671,7 +679,7 @@ body, div {
     padding-bottom: 5px;
     width: 160px;
     color: white;
-    background-color:#5580a3;
+    background-color:rgb(251, 67, 101);
     border-top-color: white;
     border-left-color: rgb(213, 213, 213);
     border-left-width: 2px;
@@ -757,7 +765,7 @@ body, div {
 }
 
 .yearOptionStyle:hover, .monthOptionStyle:hover {
-    background-image: linear-gradient(white, lightblue, white);
+    background-image: linear-gradient(white, rgb(252, 210, 217), white);
     border: inset 1px silver;
 }
 
@@ -772,7 +780,7 @@ body, div {
 }
 
 .filterButton:hover {
-    background-image: linear-gradient(white, rgb(224, 223, 223), white);
+    background-image: linear-gradient(white, rgb(252, 210, 217), white);
     border: inset 1px silver;
 }
 
@@ -1070,7 +1078,7 @@ table {
     .dropDownLinksDiv:hover {
         /* width: 150px; */
         background-color: rgb(156, 244, 244);
-        background-image: linear-gradient(white, cyan, white);
+        background-image: linear-gradient(white, pink, white);
 
     }
 }
@@ -1157,7 +1165,7 @@ table {
 #global-nav-myAccount {
     /* display: flex; */
     /* background-color: rgb(1, 235, 235); */
-    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    background: linear-gradient(235deg, rgb(248, 182, 158), #fba3b3, #febb8c, #fcaad7, #feadd9, #fba3d3);
     width: 15%;
     height: 100vh;
 }
@@ -1177,7 +1185,7 @@ table {
     padding-top: 20px;
     padding-bottom: 20px;
     border: solid 1px transparent;
-    border-bottom-color: white;
+    border-bottom-color: transparent;
     cursor: pointer;
 }
 
@@ -1194,7 +1202,7 @@ table {
 }
 
 #myProfileNav:hover, #changePasswordNav:hover {
-    background-color: rgb(175, 243, 251);
+    background-color: pink;
 }
 
 #myProfileNav:active, #changePasswordNav:active {
@@ -1205,7 +1213,7 @@ table {
     color: white !important;
     background-color: white !important;
     border-right-color: white !important;
-    background-image: linear-gradient(white, #00f2fe, white);
+    background-image: linear-gradient(white, pink, white);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -1214,7 +1222,7 @@ table {
     color: white !important;
     background-color: white !important;
     border-right-color: white !important;
-    background-image: linear-gradient(white, #00f2fe, white);
+    background-image: linear-gradient(white, pink, white);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -1389,7 +1397,7 @@ table {
 #global-nav-setting {
     /* display: flex; */
     /* background-color: rgb(1, 235, 235); */
-    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    background: linear-gradient(235deg, rgb(248, 182, 158), #fba3b3, #febb8c, #fcaad7, #feadd9, #fba3d3);
     width: 15%;
     height: 100vh;
 }
@@ -1401,7 +1409,7 @@ table {
 
 #settingNav {
     width: 100%;
-    color: #5580a3;
+    color: pink;
     /* font-weight: bold; */
     font-size: 24px;
     background-color: transparent;
@@ -1418,7 +1426,7 @@ table {
     color: white !important;
     background-color: white !important;
     border-right-color: white !important;
-    background-image: linear-gradient(white, #00f2fe, white);
+    background-image: linear-gradient(white, pink, white);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -1427,7 +1435,7 @@ table {
     padding-top: 1.5%;
 }
 
-#languageSettingSection, #currencySettingSection {
+#languageSettingSection, #currencySettingSection, #themeSection {
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1450,6 +1458,23 @@ table {
 }
 
 #languageType:hover {
+    background-image: linear-gradient(white, rgb(222, 221, 221), white);
+    border: inset 1px silver;
+    border-radius: 4px;
+}
+
+#themeType {
+    background-image: linear-gradient(white, silver, white);
+    border: outset 1.5px silver;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+#themeType:hover {
     background-image: linear-gradient(white, rgb(222, 221, 221), white);
     border: inset 1px silver;
     border-radius: 4px;
@@ -1765,7 +1790,7 @@ table {
         width: 100%; /* Input fields take full width */
         height: 27px;
         padding-top: 5px;
-        background-image: linear-gradient(white, rgb(184, 223, 236), white);
+        /* background-image: linear-gradient(white, rgb(184, 223, 236), white); */
         border-top-right-radius: 12px;
         border-bottom-right-radius: 12px;
         border: outset 1.5px white;
@@ -1961,7 +1986,7 @@ table {
 #global-nav-myAccount {
     /* display: flex; */
     /* background-color: rgb(1, 235, 235); */
-    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
     width: 25%;
     height: 100vh;
 }
@@ -1980,7 +2005,7 @@ table {
     padding-top: 20px;
     padding-bottom: 20px;
     border: solid 1px transparent;
-    border-bottom-color: white;
+    border-bottom-color: transparent;
 }
 
 #changePasswordNav {
@@ -1996,7 +2021,9 @@ table {
 }
 
 #myProfileNav:hover, #changePasswordNav:hover {
-    background-color: rgb(175, 243, 251);
+    background-color: rgb(252, 217, 223);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 #myProfileNav:active, #changePasswordNav:active {
@@ -2177,7 +2204,7 @@ table {
 #global-nav-setting {
     /* display: flex; */
     /* background-color: rgb(1, 235, 235); */
-    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+    /* background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe); */
     width: 25%;
     height: 100vh;
 }
@@ -2206,7 +2233,7 @@ table {
     color: white !important;
     background-color: white !important;
     border-right-color: white !important;
-    background-image: linear-gradient(white, #00f2fe, white);
+    /* background-image: linear-gradient(white, #00f2fe, white); */
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 
@@ -2218,7 +2245,7 @@ table {
     padding-top: 1.5%;
 }
 
-#languageSettingSection, #currencySettingSection {
+#languageSettingSection, #currencySettingSection, #themeSection {
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;

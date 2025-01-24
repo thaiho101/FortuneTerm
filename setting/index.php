@@ -11,6 +11,7 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 require_once('../config.php');
 require_once("../Components/language.php"); //Call function to activate the languageForm id
 require_once("../Components/currency.php"); //Call function to activate the currencyForm id
+require_once("../Components/theme.php"); //Call function to activate the themeForm id
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,11 @@ require_once("../Components/currency.php"); //Call function to activate the curr
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Market Cost</title>
-        <link rel="stylesheet" href="../style.css">
+
+        <link rel="stylesheet" href="<?php echo "../" . $theme . ".css"?>">
+
+
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <!-- <link rel="icon" type="image/x-icon" href="/Icon/Moneybag.png"> -->
@@ -40,6 +45,7 @@ require_once("../Components/currency.php"); //Call function to activate the curr
             $settingTranslate = "Setting";
             $languageTranslate = "Language";
             $currencyTranslate = "Currency";
+            $themeTranslate = "Theme";
         } else if ($_SESSION['languageType'] == 'Vietnamese') {
             $settingTranslate = "Cài đặt";
             $languageTranslate = "Ngôn ngữ";
@@ -112,6 +118,17 @@ require_once("../Components/currency.php"); //Call function to activate the curr
                     <select name="currencyType" id="currencyType" onchange='document.getElementById("currencyForm").submit()'>
                         <option name='USD' value="USD" <?php echo ($_SESSION['currencyType'] === "USD") ? 'selected' : '' ?>>USD</option>
                         <option name='VND' value="VND" <?php echo ($_SESSION['currencyType'] === "VND") ? 'selected' : '' ?>>VND</option>
+                    </select>
+                </form>
+            </div>
+            <div id='themeSection'>
+                <label for=""><?php echo "Theme";?>: </label>
+                <form id='themeForm' method='post'>
+                    <label for="themeType"> </label>
+                    <select name="themeType" id="themeType" onchange='document.getElementById("themeForm").submit()'>
+                        <option name='SkyLight' value="SkyLight" <?php echo ($_SESSION['themeType'] === "SkyLight") ? 'selected' : '' ?>>Sky Light (Default)</option>
+                        <option name='PinkCharm' value="PinkCharm" <?php echo ($_SESSION['themeType'] === "PinkCharm") ? 'selected' : '' ?>>Pink Charm</option>
+                        <option name='Midnight' value="Midnight" <?php echo ($_SESSION['themeType'] === "Midnight") ? 'selected' : '' ?>>Midnight</option>
                     </select>
                 </form>
             </div>

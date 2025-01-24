@@ -10,6 +10,7 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 }
 require_once('../config.php');
 require_once("../Components/language.php"); //Call function to activate the languageForm id
+require_once("../Components/theme.php"); //Call function to activate the themeForm id
 ////[Translation]/////////-->Header
 if ($_SESSION['languageType'] == 'English') {
     $myProfileTranslate = "My Profile";
@@ -131,11 +132,10 @@ if ($_SESSION['languageType'] == 'English') {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Market Cost</title>
-        <link rel="stylesheet" href="../style.css">
-        <!-- <link rel="stylesheet" href="/myProfile/style1.css"> -->
+        <link rel="stylesheet" href="<?php echo "../" . $theme . ".css"?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-        <!-- <link rel="icon" type="image/x-icon" href="/Icon/Moneybag.png"> -->
+
         <link rel="icon" type="image/x-icon" href="/secure/shoppingCart2.png">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,7 +164,7 @@ if ($_SESSION['languageType'] == 'English') {
                         $selectedNavChangePassword = 'selectedNavChangePassword';
                         $selectedNavMyProfile = '';
                     }
-                    ////// Change password button --Header-->
+
                     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['changePasswordButton']))
                     {
                         $changePasswordHiddenClass = '';
@@ -172,9 +172,9 @@ if ($_SESSION['languageType'] == 'English') {
                         $selectedNavChangePassword = 'selectedNavChangePassword';
                         $selectedNavMyProfile = '';
                     }
-                    ////// Change password button --Bottom-->
+
                 ?>
-            <!-- ////// Global nav bars --Header-->
+
             <div id='global-nav-myProfile'>
                 <form method='get'>
                     <button type='submit' id='myProfileNav' class='<?php echo $selectedNavMyProfile;?>' name='myProfile'><i class='fas fa-id-badge'></i> <?php echo $myProfileTranslate;?></button>
@@ -185,7 +185,7 @@ if ($_SESSION['languageType'] == 'English') {
                     <button type='submit' id='changePasswordNav' class='<?php echo $selectedNavChangePassword;?>' name='changePassword'> <i class='fas fa-shield-alt'></i> <?php echo $changePasswordTranslate;?></button>
                 </form>
             </div>
-            <!-- ////// Global nav bars --Bottom-->
+
         </div>
         
         <div id='navContent'>
