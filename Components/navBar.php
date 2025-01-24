@@ -83,6 +83,22 @@ if ($_SESSION['languageType'] == 'English') {
 
 ?>
 <div id="navigation">
+    <?php 
+        if ($theme == 'midnightStyle') {
+            echo "<div id='starrySky1' class='starClass'>*</div>
+                    <div id='starrySky2' class='starClass'>*</div>
+                    <div id='starrySky3' class='starClass'>*</div>
+                    <div id='starrySky4' class='starClass'>*</div>
+                    <div id='starrySky5' class='starClass'>*</div>
+                    <div id='starrySky6' class='starClass'>*</div>
+                    <div id='starrySky7' class='starClass'>*</div>
+                    <div id='starrySky8' class='starClass'>*</div>
+                    <div id='starrySky9' class='starClass'>*</div>
+                    <div id='starrySky10' class='starClass'>*</div>";
+        }
+    ?>
+
+
     <div id="theSun"></div> 
         <script>
             // Animation using Anime.js
