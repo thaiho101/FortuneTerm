@@ -270,7 +270,8 @@
 
 body {
     /* background-color: #1c1c25; */
-    background-color: rgb(218, 218, 218);
+    /* background-color: rgb(218, 218, 218); */
+    background: linear-gradient(235deg, #1E1E2C, rgb(62, 62, 67), #262634, #1E1E2C, gray);;
 }
 
 tr {
@@ -388,7 +389,7 @@ body, div {
     /* background-color:#4682B4; */
     /* background-color:#6199c7; */
     /* background-color: rgb(205, 94, 116); */
-    background-color: rgb(158, 131, 98);
+    background-color: rgb(148, 106, 94);
     border-top-color: white;
     border-left-color: rgb(213, 213, 213);
     border-left-width: 2px;
@@ -402,7 +403,8 @@ body, div {
     padding-top: 30px;
     padding-bottom: 40px;
     flex: 1;
-    border: solid silver;
+    border: solid rgb(255, 247, 208);
+    border-bottom-right-radius: 0px;
     border-radius: 8px;
 }
 
@@ -445,7 +447,7 @@ body, div {
     /* background-image: linear-gradient(to #4682B4, #4682B4, #4682B4); */
     color: white;
     /* background-color:#4682B4; */
-    background-color: rgb(158, 131, 98);
+    background-color: rgb(148, 106, 94);
 }
 
 /* Input Field Styling */
@@ -700,6 +702,7 @@ body, div {
 
 .budgetNotification {
     width: 175px;
+    color: rgb(251, 217, 131);
 }
 
 #currentBudgetSetSection {
@@ -717,7 +720,7 @@ body, div {
 }
 
 .currentSetBudgetColor {
-    color: green;
+    color: lime;
 }
 
 .fa-check {
@@ -827,7 +830,7 @@ body, div {
 } */
 
 .yearMonthFilterStyle {
-    color: black;
+    color: rgb(253, 238, 197);
 	font-weight: bold;
 	border-radius: 8px;
     padding: 5px;
@@ -1242,6 +1245,9 @@ table {
 
 
 /* //// My Account //////////////////////-->Header*/
+.myAccountLabelColor {
+    color: rgb(253, 226, 172);
+}
 
         /* //// My Profile ///// -->Header*/
 #accountBottom {
@@ -1478,6 +1484,10 @@ table {
 /* //// My Account //////////////////////-->Bottom*/
 
 /* //// Setting //////////////////////-->Header*/
+.settingLabelCorlor {
+    color: rgb(253, 226, 172);
+}
+
 #settingBottom {
     display: flex;
 }
@@ -1897,6 +1907,8 @@ table {
     .insertBoxOtherCost {
         height: 45px;
     }
+
+
 
     .budgetNotice {
         display: block;
