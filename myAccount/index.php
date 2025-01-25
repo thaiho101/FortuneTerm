@@ -194,20 +194,20 @@ if ($_SESSION['languageType'] == 'English') {
                 <div id='userPicture'><img src="/myAccount/userPicture.jpg" alt="Avatar"></div>
                 <div id='firstLastNameSection'>
                     <div id='firstNameSection'>
-                        <div id='firstName' class='myAccountLabelColor'><?php echo $firstNameTranslate;?>: </div>
+                        <div id='firstName'><?php echo $firstNameTranslate;?>: </div>
                         <div>
                             <table border='1' id='tableok'><tr id='firstNameTR'><td class='tdWidth'><?php echo $firstName;?></td></tr></table>
                         </div>
                     </div>
                     <div id='lastNameSection'>
-                        <div class='myAccountLabelColor'><?php echo $lastNameTranslate;?>: </div>
+                        <div><?php echo $lastNameTranslate;?>: </div>
                         <div>
                             <table border='1'><tr class='a'><td class='tdWidth'><?php echo $lastName;?></td></tr></table>
                         </div>
                     </div>
                 </div>
                 <div id='emailSection'>
-                    <div class='myAccountLabelColor'>Email: </div>
+                    <div>Email: </div>
                     <div>
                         <table border='1'><td class='tdWidthEmail'><?php echo $email;?></td></table>
                     </div>
@@ -216,30 +216,30 @@ if ($_SESSION['languageType'] == 'English') {
             <!-- ////// myProfile Content --Bottom-->
 
             <!-- ////// changePassword Content --Header-->
-            <div id='changePasswordContent' class="<?php echo $changePasswordHiddenClass; ?> myAccountLabelColor">
-                <div id='changePasswordTitle' class='myAccountLabelColor'><i class='fas fa-shield-alt'></i> <?php echo $changePasswordTranslate;?></div>
-                <div id='changePasswordNotice' class='myAccountLabelColor'><?php echo $regulationChangePasswordTranslate;?></div>
+            <div id='changePasswordContent' class="<?php echo $changePasswordHiddenClass; ?>">
+                <div id='changePasswordTitle'><i class='fas fa-shield-alt'></i> <?php echo $changePasswordTranslate;?></div>
+                <div id='changePasswordNotice'><?php echo $regulationChangePasswordTranslate;?></div>
                 <form method='post' id='changePasswordForm'>  
                     <div id='emailChangePasswordSection'>
-                        <label for='email' class='myAccountLabelColor'>Email</label>
+                        <label for='email'>Email</label>
                         <div class='emailDataDiv'><?php echo $email;?></div>
                     </div>
                     <div id='currentChangePassword'>
-                        <label for='currentPassword' class='myAccountLabelColor'><?php echo $currentPasswordTranslate;?></label>
+                        <label for='currentPassword'><?php echo $currentPasswordTranslate;?></label>
                         <div class="password-wrapper">
                             <input type='password' id='currentPassword' class='passwordInput' name='currentPassword' minlength="6" required></input>
                             <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('currentPassword', this)">👁️</button>
                         </div>
                     </div>
                     <div id='newChangePassword'>
-                        <label for='newPassword' class='myAccountLabelColor'><?php echo $newPasswordTranslate;?></label>
+                        <label for='newPassword'><?php echo $newPasswordTranslate;?></label>
                         <div class="password-wrapper">
                             <input type='password' id='newPassword' class='passwordInput' name='newPassword' minlength="6" required></input>
                             <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('newPassword', this)">👁️</button>
                         </div>
                     </div>
                     <div id='confirmChangePassword'>
-                        <label class='myAccountLabelColor'><?php echo $confirmPasswordTranslate;?></label>
+                        <label><?php echo $confirmPasswordTranslate;?></label>
                         <div class="password-wrapper">
                             <input type='password' id='confirmPassword' class='passwordInput' name='confirmPassword' minlength="6" required></input>
                             <button type="button" class='visiblePasswordButton' tabindex="-1" onclick="togglePasswordVisibility('confirmPassword', this)">👁️</button>

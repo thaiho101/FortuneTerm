@@ -96,7 +96,7 @@ require_once("../Components/theme.php"); //Call function to activate the themeFo
         
         <div id='navContent'>
             <div id='languageSettingSection'>
-                <label for="" class='settingLabelCorlor'><?php echo $languageTranslate;?>: </label>
+                <label for=""><?php echo $languageTranslate;?>: </label>
                 <form id='languageForm' method='post'>
                     <label for="languageType" > </label>
                     <select name="languageType" id="languageType" onchange='document.getElementById("languageForm").submit()'>
@@ -112,7 +112,7 @@ require_once("../Components/theme.php"); //Call function to activate the themeFo
                 </form>
             </div>
             <div id='currencySettingSection'>
-                <label for="" class='settingLabelCorlor'><?php echo $currencyTranslate;?>: </label>
+                <label for=""><?php echo $currencyTranslate;?>: </label>
                 <form id='currencyForm' method='post'>
                     <label for="currencyType"> </label>
                     <select name="currencyType" id="currencyType" onchange='document.getElementById("currencyForm").submit()'>
@@ -122,7 +122,7 @@ require_once("../Components/theme.php"); //Call function to activate the themeFo
                 </form>
             </div>
             <div id='themeSection'>
-                <label for="" class='settingLabelCorlor'><?php echo "Theme";?>: </label>
+                <label for=""><?php echo "Theme";?>: </label>
                 <form id='themeForm' method='post'>
                     <label for="themeType"> </label>
                     <select name="themeType" id="themeType" onchange='document.getElementById("themeForm").submit()'>
