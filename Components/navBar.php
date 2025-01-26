@@ -97,7 +97,18 @@ if ($_SESSION['languageType'] == 'English') {
                     <div id='starrySky10' class='starClass'>*</div>";
         }
     ?>
+<script>
+            // Animation using Anime.js
+            anime({
+                targets: '#starrySky1',
 
+                scale: [
+                    { value: 1.5, duration: 3000, easing: 'easeInOutQuad' }, // Ease in and out
+                    { value: 1, duration: 3000, easing: 'easeOutInQuad' }   // Ease out and in
+                ],
+                loop: true // Repeat animation indefinitely
+            });
+        </script>
 
     <div id="theSun"></div> 
         <script>

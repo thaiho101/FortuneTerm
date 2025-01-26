@@ -1545,7 +1545,7 @@ table {
         -webkit-background-clip: text; /* Clip gradient to text */
         -webkit-text-fill-color: transparent;
 
-        animation: moveCloud1 15s linear infinite;
+        animation: moveCloud1 20s linear infinite;
         
         text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
         font-size: 15px;
@@ -1579,7 +1579,7 @@ table {
         -webkit-background-clip: text; /* Clip gradient to text */
         -webkit-text-fill-color: transparent;
 
-        animation: moveCloud2 15s linear infinite;
+        animation: moveCloud2 20s linear infinite;
         
         text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
         font-size: 18px;
@@ -1613,7 +1613,7 @@ table {
         -webkit-background-clip: text; /* Clip gradient to text */
         -webkit-text-fill-color: transparent;
 
-        animation: moveCloud3 15s linear infinite;
+        animation: moveCloud3 20s linear infinite;
         
         text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
         font-size: 25px;
@@ -1647,7 +1647,7 @@ table {
         -webkit-background-clip: text; /* Clip gradient to text */
         -webkit-text-fill-color: transparent;
 
-        animation: moveCloud4 15s linear infinite;
+        animation: moveCloud4 20s linear infinite;
         
         text-shadow: 20px 20px 15px rgba(51, 51, 51, 0.5);
         font-size: 20px;
