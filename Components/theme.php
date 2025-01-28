@@ -40,11 +40,11 @@ $stmt->close();
 $theme = $_SESSION['themeType'];
 if ($theme == 'SkyLight')
 {
-    $theme = "skyLightStyle";
+    $theme = "skyLightStyle.css";
 } else if ($theme == 'PinkCharm') {
-    $theme = "pinkCharmStyle";
+    $theme = "pinkCharmStyle.css";
 } else if ($theme == 'Midnight') {
-    $theme = "midnightStyle";
+    $theme = "midnightStyle.css";
 }
 
 ////[Theme Type]/////////-->Bottom
