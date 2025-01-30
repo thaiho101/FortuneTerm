@@ -42,6 +42,20 @@ if(isset($_SESSION['activeMenu']))
     // exit();
 }
 
+// if ($_SERVER['REQUEST_METHOD'] === "POST") {
+//     if (isset($_POST["dashboard"])) {
+//         $_SESSION['activeMenu'] = "dashboard";
+//         header("Location: /"); // Redirect to the main dashboard
+//     } elseif (isset($_POST["myAccount"])) {
+//         $_SESSION['activeMenu'] = "myAccount";
+//         header("Location: /myAccount"); // Redirect to the myAccount page
+//     } elseif (isset($_POST["setting"])) {
+//         $_SESSION['activeMenu'] = "setting";
+//         header("Location: /setting"); // Redirect to the settings page
+//     }
+//     exit();
+// }
+
 
 
 
