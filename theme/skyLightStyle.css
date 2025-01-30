@@ -1113,7 +1113,6 @@ table {
 
 
 
-
 /* Scroll-To-Top -->Header*/
 #contentHeader:focus {
 
@@ -2281,6 +2280,121 @@ table {
 }
 
 /* //// Setting //////////////////////-->Bottom*/
+
+/* Menu Navigation -->Header*/
+#menuNavigationDiv {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    bottom: 0%;
+    justify-content: center;
+}
+
+#menuNav {
+    display: flex;
+    gap: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 1%;
+    border-bottom-right-radius: 1%;
+    background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
+
+}
+
+.buttonLinks {
+    font-size: 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    height: 40px;
+    width: 90px;
+    color: white;
+}
+
+.buttonLabelLinks {
+    font-size: 10px;
+    padding-top: 5px;
+}
+
+.buttonIconLinks {
+    text-decoration: none;
+    color: white;
+}
+
+.iconMenu {
+    font-size: 20px;
+}
+
+.menuButtonGap {
+    row-gap: 50px;
+}
+
+.unSelected {
+    font-weight: normal;
+    color: white;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.menuButtonSelected {
+    font-weight: bold;
+    background-color: white;
+    color: rgb(16, 16, 53);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+
+    .iconMenu {
+        position: fixed;
+        color: rgb(1, 37, 90);
+        border: solid 3px white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        bottom: 20px;
+        background-image: linear-gradient(white, rgb(255, 216, 100), white);
+        animation: menuEffection 2s infinite;
+    }
+}
+
+@keyframes menuEffection {
+    0% {
+
+        box-shadow: 0px 2px 2px rgb(254, 254, 78); /* Light shadow */
+    }
+    50% {
+
+        box-shadow: 0px 7px 25px rgb(247, 247, 114); /* Stronger shadow */
+        transition-timing-function: ease-in-out;
+    }
+    100% {
+
+        box-shadow: 0px 2px 2px rgb(249, 249, 137); /* Back to light shadow */
+        transition-timing-function: ease-out-in;
+    }
+}
+
+.smallDevicesHidden {
+    display: none;
+}
+/* Menu Navigation -->Bottom*/
 
 }
 

@@ -293,6 +293,10 @@ if ($_SESSION['languageType'] == 'English') {
         </div>
     </div>
     <script src="../script.js"></script>
+<?php 
+//Add div of Menu Navigation
+require_once('../Components/menuNav.php');
+?>
 </body>
 
 </html>

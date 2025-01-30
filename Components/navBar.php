@@ -134,8 +134,8 @@ if ($_SESSION['languageType'] == 'English') {
             <button id='dropDownButton'><i class="fas fa-bars"></i></button>
             <div class="dropDownOptions">
                 <div class='dropDownLinksDiv'><a class='dropDownLinks' href="../"><i class='fas fa-cloud-sun'></i> <?php echo $dashboardTranslate?></a></div>
-                <div class='dropDownLinksDiv'><a class='dropDownLinks' href="/myAccount"><i class='fas fa-user-tie'></i> <?php echo $myAccountTranslate?></a></div>
-                <div class='dropDownLinksDiv'><a class='dropDownLinks' href="/setting"><i class='fas fa-wrench'></i> <?php echo $settingTranslate?></a></div>
+                <div class='dropDownLinksDiv smallDevicesHidden'><a class='dropDownLinks' href="/myAccount"><i class='fas fa-user-tie'></i> <?php echo $myAccountTranslate?></a></div>
+                <div class='dropDownLinksDiv smallDevicesHidden'><a class='dropDownLinks' href="/setting"><i class='fas fa-wrench'></i> <?php echo $settingTranslate?></a></div>
                 <div class='dropDownLinksDiv logOutLink'><a class='dropDownLinks logOutLink' href="?logOut=true"><?php echo $logOutTranslate?><i class='bx bx-log-out' ></i> </a></div> 
             </div>
         </div>
