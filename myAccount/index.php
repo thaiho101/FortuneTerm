@@ -2,6 +2,7 @@
 if(session_status() == PHP_SESSION_NONE)
 {
         session_start();
+        $_SESSION['activeMenu'] = "myAccount";
 }
 if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 {
