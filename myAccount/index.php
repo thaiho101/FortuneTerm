@@ -126,6 +126,18 @@ if ($_SESSION['languageType'] == 'English') {
 ////[Translation]/////////-->Bottom
 
 ?>
+
+<?php
+// session_start();
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    if (isset($_POST["myAccount"])) {
+        $_SESSION['activeMenu'] = "myAccount";
+    } elseif (isset($_POST["setting"])) {
+        $_SESSION['activeMenu'] = "setting";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
