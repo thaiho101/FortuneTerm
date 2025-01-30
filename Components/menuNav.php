@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["dashboard"])) {
 } 
 
 
-echo $_SESSION['activeMenu'];
+// echo $_SESSION['activeMenu'];
 
 //Default class
 // $menuButtonSelected = 'unSelected';
