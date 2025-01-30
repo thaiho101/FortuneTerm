@@ -2,6 +2,7 @@
 if(session_status() == PHP_SESSION_NONE)
 {
         session_start();
+        $_SESSION['activeMenu'] = "setting";
 }
 if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 {
@@ -137,8 +138,6 @@ require_once("../Components/theme.php"); //Call function to activate the themeFo
 <?php 
 //Add div of Menu Navigation
 require_once('../Components/menuNav.php');
-$menu = $_SESSION['activeMenu'];
-echo $menu;
 ?>
 </body>
 </html>
