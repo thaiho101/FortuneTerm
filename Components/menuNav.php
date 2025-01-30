@@ -1,41 +1,37 @@
 <?php
-session_start(); // Start session before using $_SESSION
-if ($_SERVER['REQUEST_URI'] === "/" || strpos($_SERVER['REQUEST_URI'], "index.php") !== false) {
+session_start(); // Always start session
+
+$currentPage = basename($_SERVER['REQUEST_URI']); // Get current file name
+
+// Ensure Dashboard is always selected on first load
+if (!isset($_SESSION['activeMenu']) || $currentPage === "" || strtolower($currentPage) === "index.php" || strtolower($currentPage) === "index.html") {
     $_SESSION['activeMenu'] = "dashboard";
 }
 
-//default selected for the dashboard at the begining of first loading page
-if(!isset($_SESSION['activeMenu'])) {
-    $_SESSION['activeMenu'] = "dashboard";
-}
-
-// Set active menu on SESSION
-if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["dashboard"])) {
-    $_SESSION['activeMenu'] = "dashboard";
-} else if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["myAccount"])) {
-    $_SESSION['activeMenu'] = "myAccount";
-} else if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["setting"])) {
-    $_SESSION['activeMenu'] = "setting";
-} 
-
-//Default class
-$menuButtonSelected = 'unSelected';
-
-//Configure selected class
-if(isset($_SESSION['activeMenu']))
-{
-    if($_SESSION['activeMenu'] === "dashboard") {
-        $menuDashboardSelected = "menuButtonSelected";
-    } elseif ($_SESSION['activeMenu'] === "myAccount") {
-        $menuDashboardDefault = 'unSelected';
-        $menuMyaccountSelected = "menuButtonSelected";
-    } elseif ($_SESSION['activeMenu'] === "setting") {
-        $menuDashboardDefault = 'unSelected';
-        $menuSettingSelected = "menuButtonSelected";
+// Set active menu on session based on POST request
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    if (isset($_POST["dashboard"])) {
+        $_SESSION['activeMenu'] = "dashboard";
+    } elseif (isset($_POST["myAccount"])) {
+        $_SESSION['activeMenu'] = "myAccount";
+    } elseif (isset($_POST["setting"])) {
+        $_SESSION['activeMenu'] = "setting";
     }
 }
 
+// Default class
+$menuDashboardSelected = 'unSelected';
+$menuMyaccountSelected = 'unSelected';
+$menuSettingSelected = 'unSelected';
 
+// Apply selected class based on session
+if ($_SESSION['activeMenu'] === "dashboard") {
+    $menuDashboardSelected = "menuButtonSelected";
+} elseif ($_SESSION['activeMenu'] === "myAccount") {
+    $menuMyaccountSelected = "menuButtonSelected";
+} elseif ($_SESSION['activeMenu'] === "setting") {
+    $menuSettingSelected = "menuButtonSelected";
+}
 ?>
 <div id='menuNavigationDiv'>
     <div id='menuNav'>
