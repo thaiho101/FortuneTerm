@@ -17,21 +17,24 @@ if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["dashboard"])) {
 } else if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["setting"])) {
     $_SESSION['activeMenu'] = "setting";
 } 
+echo $_SESSION['activeMenu'];
 
 //Default class
-$menuButtonSelected = 'unSelected';
-
+// $menuButtonSelected = 'unSelected';
+$menuDashboardSelected = 'unSelected';
+$menuMyaccountSelected = 'unSelected';
+$menuSettingSelected = 'unSelected';
 //Configure selected class
 if(isset($_SESSION['activeMenu']))
 {
     if($_SESSION['activeMenu'] === "dashboard") {
         $menuDashboardSelected = "menuButtonSelected";
     } elseif ($_SESSION['activeMenu'] === "myAccount") {
-        $menuDashboardDefault = 'unSelected';
         $menuMyaccountSelected = "menuButtonSelected";
+        // $menuDashboardDefault = 'unSelected';
     } elseif ($_SESSION['activeMenu'] === "setting") {
-        $menuDashboardDefault = 'unSelected';
         $menuSettingSelected = "menuButtonSelected";
+        // $menuDashboardDefault = 'unSelected';
     }
 }
 
@@ -47,7 +50,7 @@ if(isset($_SESSION['activeMenu']))
     <div id='menuNav'>
         <div class='buttonLinks'>
             <form method='post' action="../">
-                <button type='submit' name='dashboard' class='unSelected <?php echo $menuDashboardSelected . " " . $menuDashboardDefault;?>'>
+                <button type='submit' name='dashboard' class='<?php echo $menuDashboardSelected . " " . $menuDashboardDefault;?>'>
                     <div class='menuButtonGap'>
                         <i class='fas fa-cloud-sun iconMenu'></i>
                         <div class='buttonLabelLinks'>Dashboard</div>
@@ -57,7 +60,7 @@ if(isset($_SESSION['activeMenu']))
         </div>
         <div class='buttonLinks'>
             <form method='post' action="/myAccount">
-                <button type='submit' name='myAccount' class='unSelected <?php echo $menuMyaccountSelected;?>'>
+                <button type='submit' name='myAccount' class='<?php echo $menuMyaccountSelected;?>'>
                     <i class='fas fa-user-tie iconMenu'></i>
                     <div class='buttonLabelLinks'>My Account</div>
                 </button>
@@ -65,7 +68,7 @@ if(isset($_SESSION['activeMenu']))
         </div>
         <div class='buttonLinks'>
             <form method='post' action="/setting">
-                <button type='submit' name='setting' class='unSelected <?php echo $menuSettingSelected;?>'>
+                <button type='submit' name='setting' class='<?php echo $menuSettingSelected;?>'>
                         <i class='fas fa-wrench iconMenu'></i>
                         <div class='buttonLabelLinks'>Setting</div>
                 </button>
