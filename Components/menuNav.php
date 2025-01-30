@@ -1,7 +1,8 @@
 <?php
-// if ($_SERVER['REQUEST_URI'] === "/" || strpos($_SERVER['REQUEST_URI'], "index.php") !== false) {
-//     $_SESSION['activeMenu'] = "dashboard";
-// }
+session_start(); // Start session before using $_SESSION
+if ($_SERVER['REQUEST_URI'] === "/" || strpos($_SERVER['REQUEST_URI'], "index.php") !== false) {
+    $_SESSION['activeMenu'] = "dashboard";
+}
 
 //default selected for the dashboard at the begining of first loading page
 if(!isset($_SESSION['activeMenu'])) {
@@ -33,6 +34,8 @@ if(isset($_SESSION['activeMenu']))
         $menuSettingSelected = "menuButtonSelected";
     }
 }
+
+
 ?>
 <div id='menuNavigationDiv'>
     <div id='menuNav'>
