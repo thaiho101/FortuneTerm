@@ -17,6 +17,8 @@ if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["dashboard"])) {
 } else if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["setting"])) {
     $_SESSION['activeMenu'] = "setting";
 } 
+
+
 echo $_SESSION['activeMenu'];
 
 //Default class
@@ -36,6 +38,8 @@ if(isset($_SESSION['activeMenu']))
         $menuSettingSelected = "menuButtonSelected";
         // $menuDashboardDefault = 'unSelected';
     }
+    // header("Location: " . $_SERVER['PHP_SELF']); // Prevent resubmission
+    // exit();
 }
 
 

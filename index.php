@@ -790,6 +790,8 @@ $statement->close();
 <?php 
 //Add div of Menu Navigation
 require_once('./Components/menuNav.php');
+$menu = $_SESSION['activeMenu'];
+echo $menu;
 ?>
     <button id="scrollToHomeLink" onclick="focusOnHomeLink()"><i class='fas fa-arrow-up'></i></button>
 </body>

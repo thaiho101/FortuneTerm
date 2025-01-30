@@ -8,13 +8,7 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
         header("Location: ../secure");
         exit();
 }
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    if (isset($_POST["myAccount"])) {
-        $_SESSION['activeMenu'] = "myAccount";
-    } elseif (isset($_POST["setting"])) {
-        $_SESSION['activeMenu'] = "setting";
-    }
-}
+
 require_once('../config.php');
 require_once("../Components/language.php"); //Call function to activate the languageForm id
 require_once("../Components/theme.php"); //Call function to activate the themeForm id
@@ -304,6 +298,8 @@ if ($_SESSION['languageType'] == 'English') {
 <?php 
 //Add div of Menu Navigation
 require_once('../Components/menuNav.php');
+$menu = $_SESSION['activeMenu'];
+echo $menu;
 ?>
 </body>
 
