@@ -2,6 +2,7 @@
 if(session_status() == PHP_SESSION_NONE)
 {
         session_start();
+        $_SESSION['activeMenu'] = "setting";
 }
 if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 {
@@ -13,7 +14,10 @@ require_once("../Components/language.php"); //Call function to activate the lang
 require_once("../Components/currency.php"); //Call function to activate the currencyForm id
 require_once("../Components/theme.php"); //Call function to activate the themeForm id
 
+
+
 ?>
+
 <!DOCTYPE html>
 
 
@@ -131,5 +135,9 @@ require_once("../Components/theme.php"); //Call function to activate the themeFo
         </div>
     </div>
     <script src="../script.js"></script>
+<?php 
+//Add div of Menu Navigation
+require_once('../Components/menuNav.php');
+?>
 </body>
 </html>

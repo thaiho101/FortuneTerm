@@ -2,12 +2,14 @@
 if(session_status() == PHP_SESSION_NONE)
 {
         session_start();
+        $_SESSION['activeMenu'] = "myAccount";
 }
 if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 {
         header("Location: ../secure");
         exit();
 }
+
 require_once('../config.php');
 require_once("../Components/language.php"); //Call function to activate the languageForm id
 require_once("../Components/theme.php"); //Call function to activate the themeForm id
@@ -126,6 +128,7 @@ if ($_SESSION['languageType'] == 'English') {
 ////[Translation]/////////-->Bottom
 
 ?>
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -293,6 +296,12 @@ if ($_SESSION['languageType'] == 'English') {
         </div>
     </div>
     <script src="../script.js"></script>
+<?php 
+//Add div of Menu Navigation
+require_once('../Components/menuNav.php');
+$menu = $_SESSION['activeMenu'];
+echo $menu;
+?>
 </body>
 
 </html>

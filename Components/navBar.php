@@ -82,9 +82,13 @@ if ($_SESSION['languageType'] == 'English') {
 ////[Translation]/////////-->Bottom
 
 ?>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+
 <div id="navigation">
     <?php 
-        if ($theme == 'midnightStyle') {
+        if ($theme == 'midnightStyle.css') {
             echo "<div id='starrySky1' class='starClass'>*</div>
                     <div id='starrySky2' class='starClass'>*</div>
                     <div id='starrySky3' class='starClass'>*</div>
@@ -99,15 +103,15 @@ if ($_SESSION['languageType'] == 'English') {
     ?>
 <script>
             // Animation using Anime.js
-            anime({
-                targets: '#starrySky1',
+            // anime({
+            //     targets: '#starrySky1',
 
-                scale: [
-                    { value: 1.5, duration: 3000, easing: 'easeInOutQuad' }, // Ease in and out
-                    { value: 1, duration: 3000, easing: 'easeOutInQuad' }   // Ease out and in
-                ],
-                loop: true // Repeat animation indefinitely
-            });
+            //     scale: [
+            //         { value: 1.5, duration: 3000, easing: 'easeInOutQuad' }, // Ease in and out
+            //         { value: 1, duration: 3000, easing: 'easeOutInQuad' }   // Ease out and in
+            //     ],
+            //     loop: true // Repeat animation indefinitely
+            // });
         </script>
 
     <div id="theSun"></div> 
@@ -134,8 +138,8 @@ if ($_SESSION['languageType'] == 'English') {
             <button id='dropDownButton'><i class="fas fa-bars"></i></button>
             <div class="dropDownOptions">
                 <div class='dropDownLinksDiv'><a class='dropDownLinks' href="../"><i class='fas fa-cloud-sun'></i> <?php echo $dashboardTranslate?></a></div>
-                <div class='dropDownLinksDiv'><a class='dropDownLinks' href="/myAccount"><i class='fas fa-user-tie'></i> <?php echo $myAccountTranslate?></a></div>
-                <div class='dropDownLinksDiv'><a class='dropDownLinks' href="/setting"><i class='fas fa-wrench'></i> <?php echo $settingTranslate?></a></div>
+                <div class='dropDownLinksDiv smallDevicesHidden'><a class='dropDownLinks' href="/myAccount"><i class='fas fa-user-tie'></i> <?php echo $myAccountTranslate?></a></div>
+                <div class='dropDownLinksDiv smallDevicesHidden'><a class='dropDownLinks' href="/setting"><i class='fas fa-wrench'></i> <?php echo $settingTranslate?></a></div>
                 <div class='dropDownLinksDiv logOutLink'><a class='dropDownLinks logOutLink' href="?logOut=true"><?php echo $logOutTranslate?><i class='bx bx-log-out' ></i> </a></div> 
             </div>
         </div>
