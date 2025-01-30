@@ -121,10 +121,11 @@
     width: 30px;
     height: 30px;
     /* background-image: linear-gradient(360deg, rgb(254, 254, 236), orange, rgb(250, 182, 55), rgb(245, 215, 159)); */
-    background-image: linear-gradient(360deg, rgb(226, 226, 220), rgb(239, 225, 199), rgb(251, 240, 218), rgb(235, 227, 217));
-    border: solid 1px rgb(250, 229, 160);
+    /* background-image: linear-gradient(360deg, rgb(226, 226, 220), rgb(239, 225, 199), rgb(251, 240, 218), rgb(235, 227, 217)); */
+    background-image: linear-gradient(360deg, rgb(226, 226, 220), rgb(228, 242, 250), rgb(193, 226, 249), rgb(235, 227, 217));
+    border: solid 1px rgb(251, 249, 240);
     border-radius: 90%;
-    box-shadow: 1px 5px 25px rgb(246, 226, 190);
+    box-shadow: 1px 5px 25px rgb(255, 255, 255);
     /* box-shadow: 1px 10px 25px red; */
     /* text-shadow: 15px 5px 15px red; */
     position: absolute;
@@ -2493,7 +2494,7 @@ table {
         border-radius: 50%;
         bottom: 20px;
         /* background-image: linear-gradient(360deg, rgb(226, 226, 220), rgb(239, 225, 199), rgb(251, 240, 218), rgb(235, 227, 217)); */
-        background-image: linear-gradient(rgb(254, 250, 241), rgb(250, 208, 123), white);
+        background-image: linear-gradient(rgb(239, 250, 253), rgb(157, 222, 250), white);
         animation: menuEffection 2s infinite;
     }
 }
@@ -2501,16 +2502,16 @@ table {
 @keyframes menuEffection {
     0% {
 
-        box-shadow: 0px 2px 2px rgb(254, 254, 78); /* Light shadow */
+        box-shadow: 0px 2px 2px rgb(255, 255, 255); /* Light shadow */
     }
     50% {
 
-        box-shadow: 0px 7px 25px rgb(247, 247, 114); /* Stronger shadow */
+        box-shadow: 0px 7px 25px rgb(254, 254, 254); /* Stronger shadow */
         transition-timing-function: ease-in-out;
     }
     100% {
 
-        box-shadow: 0px 2px 2px rgb(249, 249, 137); /* Back to light shadow */
+        box-shadow: 0px 2px 2px rgb(255, 255, 255); /* Back to light shadow */
         transition-timing-function: ease-out-in;
     }
 }

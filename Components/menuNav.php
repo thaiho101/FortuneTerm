@@ -1,5 +1,6 @@
 <?php
 session_start(); // Start session before using $_SESSION
+
 if ($_SERVER['REQUEST_URI'] === "/" || strpos($_SERVER['REQUEST_URI'], "index.php") !== false) {
     $_SESSION['activeMenu'] = "dashboard";
 }
@@ -18,14 +19,11 @@ if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["dashboard"])) {
     $_SESSION['activeMenu'] = "setting";
 } 
 
-
-// echo $_SESSION['activeMenu'];
-
 //Default class
-// $menuButtonSelected = 'unSelected';
 $menuDashboardSelected = 'unSelected';
 $menuMyaccountSelected = 'unSelected';
 $menuSettingSelected = 'unSelected';
+
 //Configure selected class
 if(isset($_SESSION['activeMenu']))
 {
@@ -33,33 +31,10 @@ if(isset($_SESSION['activeMenu']))
         $menuDashboardSelected = "menuButtonSelected";
     } elseif ($_SESSION['activeMenu'] === "myAccount") {
         $menuMyaccountSelected = "menuButtonSelected";
-        // $menuDashboardDefault = 'unSelected';
     } elseif ($_SESSION['activeMenu'] === "setting") {
         $menuSettingSelected = "menuButtonSelected";
-        // $menuDashboardDefault = 'unSelected';
     }
-    // header("Location: " . $_SERVER['PHP_SELF']); // Prevent resubmission
-    // exit();
 }
-
-// if ($_SERVER['REQUEST_METHOD'] === "POST") {
-//     if (isset($_POST["dashboard"])) {
-//         $_SESSION['activeMenu'] = "dashboard";
-//         header("Location: /"); // Redirect to the main dashboard
-//     } elseif (isset($_POST["myAccount"])) {
-//         $_SESSION['activeMenu'] = "myAccount";
-//         header("Location: /myAccount"); // Redirect to the myAccount page
-//     } elseif (isset($_POST["setting"])) {
-//         $_SESSION['activeMenu'] = "setting";
-//         header("Location: /setting"); // Redirect to the settings page
-//     }
-//     exit();
-// }
-
-
-
-
-
 ?>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -68,7 +43,7 @@ if(isset($_SESSION['activeMenu']))
     <div id='menuNav'>
         <div class='buttonLinks'>
             <form method='post' action="../">
-                <button type='submit' name='dashboard' class='<?php echo $menuDashboardSelected . " " . $menuDashboardDefault;?>'>
+                <button type='submit' name='dashboard' class='<?php echo $menuDashboardSelected;?>'>
                     <div class='menuButtonGap'>
                         <i class='fas fa-cloud-sun iconMenu'></i>
                         <div class='buttonLabelLinks'>Dashboard</div>
