@@ -2292,10 +2292,9 @@ table {
 
 #menuNav {
     display: flex;
-    gap: 5px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 1px;
+    padding-top: 8px;
     padding-bottom: 5px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
@@ -2307,13 +2306,13 @@ table {
 
 .buttonLinks {
     font-size: 20px;
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     text-align: center;
     height: 40px;
-    width: 90px;
+    min-width: 90px;
     color: white;
 }
 
@@ -2329,10 +2328,16 @@ table {
 
 .iconMenu {
     font-size: 20px;
+    transition: all 0.5s ease-in-out;
 }
 
 .menuButtonGap {
-    row-gap: 50px;
+    /* row-gap: 50px; */
+    /* width: 100px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
 }
 
 .unSelected {
@@ -2368,10 +2373,19 @@ table {
         height: 50px;
         width: 50px;
         border-radius: 50%;
-        bottom: 20px;
+        bottom: 25px;
         background-image: linear-gradient(white, rgb(255, 216, 100), white);
         animation: menuEffection 2s infinite;
     }
+}
+
+.iconMenu:hover {
+    transform: scale(1.2);
+}
+
+.iconMenu {
+    transform: scale(1);
+    transition: 0.5s transform ease-in-out;
 }
 
 @keyframes menuEffection {
