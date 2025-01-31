@@ -1,6 +1,7 @@
 <?php
 session_start(); // Start session before using $_SESSION
 
+
 if ($_SERVER['REQUEST_URI'] === "/" || strpos($_SERVER['REQUEST_URI'], "index.php") !== false) {
     $_SESSION['activeMenu'] = "dashboard";
 }
@@ -35,6 +36,65 @@ if(isset($_SESSION['activeMenu']))
         $menuSettingSelected = "menuButtonSelected";
     }
 }
+
+////[Translation]/////////-->Header
+if ($_SESSION['languageType'] == 'English') {
+    $greeting = "Welcome, ";
+    $dashboardTranslate = "Dashboard";
+    $myAccountTranslate = "My Account";
+    $settingTranslate = "Setting";
+    $logOutTranslate = "Log out";
+} else if ($_SESSION['languageType'] == 'Vietnamese') {
+    $greeting = "Xin chào, ";
+    $dashboardTranslate = "Bảng điều khiển";
+    $myAccountTranslate = "Tài khoản của tôi";
+    $settingTranslate = "Cài đặt";
+    $logOutTranslate = "Đăng xuất";
+} else if ($_SESSION['languageType'] == 'Spanish') {
+    $greeting = "Bienvenido, ";
+    $dashboardTranslate = "Tablero";
+    $myAccountTranslate = "Mi Cuenta";
+    $settingTranslate = "Configuración";
+    $logOutTranslate = "Cerrar sesión";
+} else if ($_SESSION['languageType'] == 'German') {
+    $greeting = "Willkommen, ";
+    $dashboardTranslate = "Instrumententafel";
+    $myAccountTranslate = "Mein Konto";
+    $settingTranslate = "Einstellungen";
+    $logOutTranslate = "Abmelden";
+} else if ($_SESSION['languageType'] == 'French') {
+    $greeting = "Bienvenue, ";
+    $dashboardTranslate = "Tableau de Bord";
+    $myAccountTranslate = "Mon Compte";
+    $settingTranslate = "Paramètres";
+    $logOutTranslate = "Se déconnecter";
+} else if ($_SESSION['languageType'] == 'Korean') {
+    $greeting = "환영합니다, ";
+    $dashboardTranslate = "대시보드";
+    $myAccountTranslate = "내 계정";
+    $settingTranslate = "설정";
+    $logOutTranslate = "로그아웃";
+} else if ($_SESSION['languageType'] == 'Chinese') {
+    $greeting = "欢迎, ";
+    $dashboardTranslate = "仪表板";
+    $myAccountTranslate = "我的账户";
+    $settingTranslate = "设置";
+    $logOutTranslate = "登出";
+} else if ($_SESSION['languageType'] == 'Japanese') {
+    $greeting = "ようこそ, ";
+    $dashboardTranslate = "ダッシュボード";
+    $myAccountTranslate = "マイアカウント";
+    $settingTranslate = "設定";
+    $logOutTranslate = "ログアウト";
+} else {
+    // Default to English
+    $greeting = "Welcome, ";
+    $dashboardTranslate = "Dashboard";
+    $myAccountTranslate = "My Account";
+    $settingTranslate = "Setting";
+    $logOutTranslate = "Log out";
+}
+////[Translation]/////////-->Bottom
 ?>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -46,7 +106,7 @@ if(isset($_SESSION['activeMenu']))
                 <button type='submit' name='dashboard' class='<?php echo $menuDashboardSelected;?>'>
                     <div class='menuButtonGap'>
                         <i class='fas fa-cloud-sun iconMenu'></i>
-                        <div class='buttonLabelLinks'>Dashboard</div>
+                        <div class='buttonLabelLinks'><?php echo $dashboardTranslate?></div>
                     </div>
                 </button>
             </form>
@@ -55,7 +115,7 @@ if(isset($_SESSION['activeMenu']))
             <form method='post' action="/myAccount">
                 <button type='submit' name='myAccount' class='<?php echo $menuMyaccountSelected;?>'>
                     <i class='fas fa-user-tie iconMenu'></i>
-                    <div class='buttonLabelLinks'>My Account</div>
+                    <div class='buttonLabelLinks'><?php echo $myAccountTranslate?></div>
                 </button>
             </form>
         </div>
@@ -63,7 +123,7 @@ if(isset($_SESSION['activeMenu']))
             <form method='post' action="/setting">
                 <button type='submit' name='setting' class='<?php echo $menuSettingSelected;?>'>
                         <i class='fas fa-wrench iconMenu'></i>
-                        <div class='buttonLabelLinks'>Setting</div>
+                        <div class='buttonLabelLinks'><?php echo $settingTranslate?></div>
                 </button>
             </form>
         </div>

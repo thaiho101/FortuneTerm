@@ -356,7 +356,7 @@ body, div {
         /* font-weight: 50; */
         font-style: normal;
 
-        -webkit-text-stroke: 1.3px goldenrod;
+        -webkit-text-stroke: 1.3px rgb(254, 228, 156);
 }
 
 /* .webTitle {
@@ -428,8 +428,9 @@ body, div {
     color: white;
     /* background-color:#4682B4; */
     /* background-color:#6199c7; */
-    /* background-color: rgb(205, 94, 116); */
-    background-color: rgb(158, 131, 98);
+    background-color: rgb(50, 65, 76);
+    /* background-color: rgb(158, 131, 98); */
+
     border-top-color: white;
     border-left-color: rgb(213, 213, 213);
     border-left-width: 2px;
@@ -515,6 +516,11 @@ body, div {
 
 .insertBoxFBCost {
     height: 51px;
+}
+
+.insertBoxFBCost::placeholder, .insertBoxOtherCost::placeholder {
+    color: rgb(107, 107, 107);
+    font-weight: bold;
 }
 
 .insertBoxOtherCost {
@@ -759,7 +765,6 @@ body, div {
 
 .currentSetBudgetColor {
     color: rgb(0, 166, 0);
-    font-weight: bold;
 }
 
 .fa-check {
@@ -2416,10 +2421,9 @@ table {
 
 #menuNav {
     display: flex;
-    gap: 5px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 1px;
+    padding-top: 8px;
     padding-bottom: 5px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
@@ -2431,13 +2435,13 @@ table {
 
 .buttonLinks {
     font-size: 20px;
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     text-align: center;
     height: 40px;
-    width: 90px;
+    min-width: 90px;
     color: white;
 }
 
@@ -2453,10 +2457,11 @@ table {
 
 .iconMenu {
     font-size: 20px;
+    transition: all 0.5s ease-in-out;
 }
 
 .menuButtonGap {
-    row-gap: 50px;
+    /* row-gap: 50px; */
 }
 
 .unSelected {
@@ -2481,23 +2486,34 @@ table {
     background-color: transparent;
     border-color: transparent;
     cursor: pointer;
-
-    .iconMenu {
-        position: fixed;
-        color: black;
-        border: solid 3px white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        bottom: 20px;
-        /* background-image: linear-gradient(360deg, rgb(226, 226, 220), rgb(239, 225, 199), rgb(251, 240, 218), rgb(235, 227, 217)); */
-        background-image: linear-gradient(rgb(239, 250, 253), rgb(157, 222, 250), white);
-        animation: menuEffection 2s infinite;
-    }
 }
+
+/* Flattening the nested .iconMenu */
+.menuButtonSelected .iconMenu {
+    position: fixed;
+    color: black;
+    border: solid 3px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    bottom: 25px;
+    background-image: linear-gradient(rgb(239, 250, 253), rgb(157, 222, 250), white);
+    animation: menuEffection 2s infinite;
+
+}
+
+.iconMenu:hover {
+    transform: scale(1.2);
+}
+
+.iconMenu {
+    transform: scale(1);
+    transition: 0.5s transform ease-in-out;
+}
+
 
 @keyframes menuEffection {
     0% {
