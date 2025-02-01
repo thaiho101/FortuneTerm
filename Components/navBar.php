@@ -1,4 +1,5 @@
 <?php
+session_start(); // Start session before using $_SESSION
 // require_once("../config.php");
 $userId = $_SESSION['user_id']; 
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
