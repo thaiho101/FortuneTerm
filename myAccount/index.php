@@ -299,8 +299,6 @@ if ($_SESSION['languageType'] == 'English') {
 <?php 
 //Add div of Menu Navigation
 require_once('../Components/menuNav.php');
-$menu = $_SESSION['activeMenu'];
-echo $menu;
 ?>
 </body>
 
