@@ -2295,13 +2295,13 @@ table {
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 8px;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     border-bottom-left-radius: 1%;
     border-bottom-right-radius: 1%;
     background: linear-gradient(135deg, white, #00f2fe, #4facfe, #4facfe, #00f2fe);
-
+    border: groove 1.5px rgb(252, 252, 251);
 }
 
 .buttonLinks {
@@ -2373,7 +2373,7 @@ table {
         height: 50px;
         width: 50px;
         border-radius: 50%;
-        bottom: 25px;
+        bottom: 20px;
         background-image: linear-gradient(white, rgb(255, 216, 100), white);
         animation: menuEffection 2s infinite;
     }
