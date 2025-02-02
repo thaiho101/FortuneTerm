@@ -102,6 +102,15 @@ if ($_SESSION['languageType'] == 'English') {
 <div id='menuNavigationDiv'>
     <div id='menuNav'>
         <div class='buttonLinks'>
+            <form method='post' action="/myAccount">
+                <button type='submit' name='myAccount' class='<?php echo $menuMyaccountSelected;?>'>
+                    <i class='fas fa-user-tie iconMenu'></i>
+                    <div class='buttonLabelLinks'><?php echo $myAccountTranslate?></div>
+                </button>
+            </form>
+        </div>
+
+        <div class='buttonLinks'>
             <form method='post' action="../">
                 <button type='submit' name='dashboard' class='<?php echo $menuDashboardSelected;?>'>
                     <div class='menuButtonGap'>
@@ -111,14 +120,7 @@ if ($_SESSION['languageType'] == 'English') {
                 </button>
             </form>
         </div>
-        <div class='buttonLinks'>
-            <form method='post' action="/myAccount">
-                <button type='submit' name='myAccount' class='<?php echo $menuMyaccountSelected;?>'>
-                    <i class='fas fa-user-tie iconMenu'></i>
-                    <div class='buttonLabelLinks'><?php echo $myAccountTranslate?></div>
-                </button>
-            </form>
-        </div>
+
         <div class='buttonLinks'>
             <form method='post' action="/setting">
                 <button type='submit' name='setting' class='<?php echo $menuSettingSelected;?>'>

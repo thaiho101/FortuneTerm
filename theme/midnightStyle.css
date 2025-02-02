@@ -122,7 +122,7 @@
     height: 30px;
     /* background-image: linear-gradient(360deg, rgb(254, 254, 236), orange, rgb(250, 182, 55), rgb(245, 215, 159)); */
     /* background-image: linear-gradient(360deg, rgb(226, 226, 220), rgb(239, 225, 199), rgb(251, 240, 218), rgb(235, 227, 217)); */
-    background-image: linear-gradient(360deg, rgb(226, 226, 220), rgb(228, 242, 250), rgb(193, 226, 249), rgb(235, 227, 217));
+    background-image: linear-gradient(360deg, rgb(234, 250, 253), rgb(228, 242, 250), rgb(193, 226, 249), rgb(223, 247, 248));
     border: solid 1px rgb(251, 249, 240);
     border-radius: 90%;
     box-shadow: 1px 5px 25px rgb(255, 255, 255);
@@ -2424,13 +2424,13 @@ table {
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 8px;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     border-bottom-left-radius: 1%;
     border-bottom-right-radius: 1%;
     background: linear-gradient(235deg, #1E1E2C, rgb(65, 64, 64), rgb(99, 98, 98), #262634, #1E1E2C, gray);
-
+    border: groove 1.5px rgb(231, 231, 232);
 }
 
 .buttonLinks {
@@ -2499,7 +2499,7 @@ table {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    bottom: 25px;
+    bottom: 20px;
     background-image: linear-gradient(rgb(239, 250, 253), rgb(157, 222, 250), white);
     animation: menuEffection 2s infinite;
 
