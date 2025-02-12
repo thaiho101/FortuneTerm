@@ -669,6 +669,10 @@ $resultTotal = $statement->get_result();
                         const div = document.createElement('div');
                         if (i <= remainingBudget && (remainingBudget > fiftyPercent)) {
                             div.classList.add('percentPortionCompleted');
+                        } else if (remainingBudget < 0) {
+                            // div.classList.add('minusBalance');
+                            const lowBudgetForShopping = document.querySelector('.batteryParent');
+                            lowBudgetForShopping.classList.add('minusBudgetAffect');
                         } else if (i <= remainingBudget && (remainingBudget < lessThanTwentyPercent)) {
                             div.classList.add('percentPortionCompletedLessThanTwentyPercent');
                             const lowBudgetForShopping = document.querySelector('.batteryParent');

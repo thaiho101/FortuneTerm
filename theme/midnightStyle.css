@@ -1730,6 +1730,28 @@ table {
 	}
 }
 
+.minusBudgetAffect {
+    animation: minusBalanceForShopping 2s ease-in-out infinite;
+}
+
+@keyframes minusBalanceForShopping {
+	0% {
+		box-shadow: 0px 0px 1px red;
+	}
+
+	50% {
+		box-shadow: 0px 0px 15px red;
+	}
+
+    75% {
+		box-shadow: 0px 0px 30px red;
+	}
+
+	100% {
+		box-shadow: 0px 0px 20px red;
+	}
+}
+
 /* //// Battery Animation //////////////////////-->Bottom*/
 
 #menuNavigationDiv {
