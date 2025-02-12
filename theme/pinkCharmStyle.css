@@ -1511,10 +1511,7 @@ table {
     justify-content: center;
     align-items: center;
     height: 20px;
-    /* width: 80%; */
-
-
-    background-color: gray;
+    background: linear-gradient(to top, rgb(180, 179, 179) 0%,	#cbcccb 70%, rgb(158, 157, 157));
     animation: progressBudgetAnimation 0.7s ease-in-out infinite;
 
 }
