@@ -643,12 +643,48 @@ $resultTotal = $statement->get_result();
     <td class='gridTableColor redundantCol'></td> 
     <td class='gridTableColor totalCostLabel totalBalanceColor' colspan='2'>" . $balanceForShoppingTranslate . "</td> 
     <td class='gridTableColor balanceStyle totalCostStyle totalCostTextStyle totalBalanceColor $totalHidden'>" . $currencySymbol . " " . CurrencyFormatter::format($balanceForShopping, $currencyType) . "</td>
-    <td class='gridTableColor redundantIdStyle dataEditStyle' colspan='3'></td>
+    <td class='gridTableColor redundantIdStyle dataEditStyle' id='batterySection' colspan='3'>
+        <div class='batteryParent'>
+            <div class='batteryChild'>
+            </div>
+        </div>
+    </td>
     </tr></tfoot>";      
 
     echo "</table>";
     $statement->close();
+    $fiftyPercent = $budget / 2;
+    $lessThanTwentyPercent = $budget / 7;
 ?>
+                <script>
+                    const totalBudget = <?php echo $budget; ?>;
+                    const remainingBudget = <?php echo $balanceForShopping; ?>;
+                    const fiftyPercent = <?php echo $fiftyPercent; ?>;
+                    const lessThanTwentyPercent = <?php echo $lessThanTwentyPercent; ?>;
+
+                    const progressBar = document.querySelector('.batteryChild');
+
+                    progressBar.innerHTML = "";
+                    for (let i = 1; i <= totalBudget; i++) {
+                        const div = document.createElement('div');
+                        if (i <= remainingBudget && (remainingBudget > fiftyPercent)) {
+                            div.classList.add('percentPortionCompleted');
+                        } else if (remainingBudget < 0) {
+                            // div.classList.add('minusBalance');
+                            const lowBudgetForShopping = document.querySelector('.batteryParent');
+                            lowBudgetForShopping.classList.add('minusBudgetAffect');
+                        } else if (i <= remainingBudget && (remainingBudget < lessThanTwentyPercent)) {
+                            div.classList.add('percentPortionCompletedLessThanTwentyPercent');
+                            const lowBudgetForShopping = document.querySelector('.batteryParent');
+                            lowBudgetForShopping.classList.add('lowBudgetAffect');
+                        } else if (i <= remainingBudget && (remainingBudget < fiftyPercent)) {
+                            div.classList.add('percentPortionCompletedLessThanFiftyPercent');
+                        } else {
+                            div.classList.add('percentPortionRemaining');
+                        }
+                        progressBar.appendChild(div);
+                    }
+                </script>
             </div>
         </div>
 
