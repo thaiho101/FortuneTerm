@@ -2562,7 +2562,7 @@ table {
 
 /* //// Battery Animation //////////////////////-->Header*/
 .batteryParent {
-    justify-self: center;
+    justify-self: center !important;
 }
 /* //// Battery Animation //////////////////////-->Bottom*/
 }
