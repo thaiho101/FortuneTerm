@@ -2566,7 +2566,7 @@ table {
 }
 
 .batteryParent {
-    justify-self: left;
+    justify-self: center;
 }
 /* //// Battery Animation //////////////////////-->Bottom*/
 }
