@@ -2561,8 +2561,12 @@ table {
 /* Menu Navigation -->Bottom*/
 
 /* //// Battery Animation //////////////////////-->Header*/
+#batterySection {
+    padding-left: 36px;
+}
+
 .batteryParent {
-    justify-self: center !important;
+    justify-self: left;
 }
 /* //// Battery Animation //////////////////////-->Bottom*/
 }
