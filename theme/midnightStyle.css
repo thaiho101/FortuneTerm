@@ -1106,7 +1106,11 @@ table {
     font-size: 16px;
     font-weight: bold;
     /* color: blue; */
-} 
+}
+
+.totalCostAddWidth {
+    width: 100px;
+}
 
 /* Graph Section */
 #graph {
@@ -1756,7 +1760,43 @@ table {
     display: none;
 }
 
+.remainingBudgetArea {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(241, 174, 2);
+    border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+}
 
+.remainingBudgetArea {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(241, 174, 2);
+    border-top-color: black;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    /* background-color: #262634; */
+   
+}
+
+.titleTableColor {
+    background-color: rgb(177, 176, 176);
+    border-color: white;
+}
+
+/* .remainingShoppingPowerTopBorder {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.remainingShoppingPowerBottomBorder {
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-color: transparent;
+} */
 
 
 
@@ -2669,6 +2709,16 @@ table {
     display: none;
 }
 /* Menu Navigation -->Bottom*/
+
+/* //// Battery Animation //////////////////////-->Header*/
+#batterySection {
+    padding-left: 36px;
+}
+
+.batteryParent {
+    justify-self: center;
+}
+/* //// Battery Animation //////////////////////-->Bottom*/
 
 }
 

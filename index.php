@@ -411,12 +411,12 @@ if($yearSelected == '' || $monthSelected == '')
                 <table class='headerTable'>
                     <thead id='contentHeader'>
                         <tr class='headerRow'>
-                            <th class='fontStyle expand wrapText tdLength'><?php echo $dayOfWeekTranslate;?></th>
-                            <th class='fontStyle expand tdLength'><?php echo $dateTranslate;?></th>
-                            <th class='fontStyle expand tdLength'><?php echo $marketTranslate;?></th>
-                            <th class='fontStyle expand wrapText tdLength'><?php echo $foodAndBeverageCostTranslate;?></th>
-                            <th class='fontStyle expand wrapText tdLength'><?php echo $otherCostTranslate;?></th>
-                            <th class='fontStyle expand tdLength actionStyle' colspan='2'><i class='fa fa-cog fa-spin'></i></th>
+                            <th class='fontStyle expand wrapText tdLength titleTableColor'><?php echo $dayOfWeekTranslate;?></th>
+                            <th class='fontStyle expand tdLength titleTableColor'><?php echo $dateTranslate;?></th>
+                            <th class='fontStyle expand tdLength titleTableColor'><?php echo $marketTranslate;?></th>
+                            <th class='fontStyle expand wrapText tdLength titleTableColor'><?php echo $foodAndBeverageCostTranslate;?></th>
+                            <th class='fontStyle expand wrapText tdLength titleTableColor'><?php echo $otherCostTranslate;?></th>
+                            <th class='fontStyle expand tdLength actionStyle titleTableColor' colspan='2'><i class='fa fa-cog fa-spin'></i></th>
                         </tr>
                     </thead>
                 </table>
@@ -613,13 +613,13 @@ $resultTotal = $statement->get_result();
         {
             $totalFBCost = $row['totalFBCost'];
             $totalOtherCost = $row['totalOtherCost'];
+            $totalCost = $totalFBCost + $totalOtherCost;
             echo "<tr class='fontStyle'>
                 <td class='gridTableColor redundantCol'></td> 
                 <td class='gridTableColor totalCostLabel totalCostColor' colspan='2'>" . $totalCostTranslate . "</td> 
                 <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor'>" . $currencySymbol . " " . CurrencyFormatter::format($row['totalFBCost'], $currencyType) . "</td> 
                 <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor'>" . $currencySymbol . " " . CurrencyFormatter::format($row['totalOtherCost'], $currencyType) . "</td> 
-                <td class='gridTableColor redundantIdStyle dataEditStyle'></td>
-                <td class='gridTableColor redundantIdStyle dataDeleteStyle'></td>";
+                <td class='gridTableColor totalCostStyle totalCostTextStyle totalCostColor totalCostAddWidth' colspan='2'>" . $currencySymbol . " " . CurrencyFormatter::format($totalCost, $currencyType) . "</td>";
         }
     }
     $budget = 0;
@@ -636,14 +636,14 @@ $resultTotal = $statement->get_result();
     <td class='gridTableColor redundantCol'></td> 
     <td class='gridTableColor totalCostLabel totalBudgetColor' colspan='2'>" . $totalBudgetTranslate . "</td> 
     <td class='gridTableColor budgetStyle totalCostStyle totalCostTextStyle totalBudgetColor $totalHidden'>" . $currencySymbol . " " . CurrencyFormatter::format($budget, $currencyType) . "</td>
-    <td class='gridTableColor redundantIdStyle dataEditStyle' colspan='3'></td>
+    <td class='gridTableColor redundantIdStyle dataEditStyle remainingBudgetArea remainingShoppingPowerTopBorder' colspan='3'>" . $shoppingPowerTranslate . "</td>
     </tr>";
 
     echo "<tr class='fontStyle'>
     <td class='gridTableColor redundantCol'></td> 
     <td class='gridTableColor totalCostLabel totalBalanceColor' colspan='2'>" . $balanceForShoppingTranslate . "</td> 
     <td class='gridTableColor balanceStyle totalCostStyle totalCostTextStyle totalBalanceColor $totalHidden'>" . $currencySymbol . " " . CurrencyFormatter::format($balanceForShopping, $currencyType) . "</td>
-    <td class='gridTableColor redundantIdStyle dataEditStyle' id='batterySection' colspan='3'>
+    <td class='gridTableColor redundantIdStyle dataEditStyle remainingBudgetArea remainingShoppingPowerBottomBorder' id='batterySection' colspan='3'>
         <div class='batteryParent'>
             <div class='batteryChild'>
             </div>
@@ -653,6 +653,7 @@ $resultTotal = $statement->get_result();
 
     echo "</table>";
     $statement->close();
+
     $fiftyPercent = $budget / 2;
     $lessThanTwentyPercent = $budget / 7;
 ?>
