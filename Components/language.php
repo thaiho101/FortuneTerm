@@ -61,6 +61,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "Day of Week";
     $totalCostTranslate = "Total Cost";
     $balanceForShoppingTranslate = "Balance for Shopping";
+    $shoppingPowerTranslate = "Shopping Power";
     $mostVisitedMarkets = "Most Visited Markets";
     $marketCostDistribution = "Market Cost Distribution";
     $foodAndBeverageTranslate = "Food & Beverage";
@@ -89,6 +90,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "Thứ";
     $totalCostTranslate = "Tổng Chi Phí";
     $balanceForShoppingTranslate = "Số Tiền Mua Sắm Còn Lại";
+    $shoppingPowerTranslate = "Sức Mua Sắm";
     $mostVisitedMarkets = "Các Chợ Được Ghé Thăm Nhiều Nhất";
     $marketCostDistribution = "Phân Bổ Chi Phí";
     $foodAndBeverageTranslate = "Đồ ăn & Thức uống";
@@ -117,6 +119,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "Día de la Semana";
     $totalCostTranslate = "Costo Total";
     $balanceForShoppingTranslate = "Saldo para Compras";
+    $shoppingPowerTranslate = "Poder de Compra";
     $mostVisitedMarkets = "Mercados Más Visitados";
     $marketCostDistribution = "Distribución de Costos de Mercado";
     $foodAndBeverageTranslate = "Comida y Bebidas";
@@ -145,6 +148,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "Wochentag";
     $totalCostTranslate = "Gesamtkosten";
     $balanceForShoppingTranslate = "Verfügbares Guthaben";
+    $shoppingPowerTranslate = "Kaufkraft";
     $mostVisitedMarkets = "Meistbesuchte Märkte";
     $marketCostDistribution = "Marktkostenverteilung";
     $foodAndBeverageTranslate = "Essen & Trinken";
@@ -173,6 +177,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "Jour de la Semaine";
     $totalCostTranslate = "Coût Total";
     $balanceForShoppingTranslate = "Solde pour les Achats";
+    $shoppingPowerTranslate = "Pouvoir d'Achat";
     $mostVisitedMarkets = "Marchés les Plus Visités";
     $marketCostDistribution = "Répartition des Coûts du Marché";
     $foodAndBeverageTranslate = "Nourriture et Boissons";
@@ -201,6 +206,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "요일";
     $totalCostTranslate = "총 비용";
     $balanceForShoppingTranslate = "쇼핑 잔액";
+    $shoppingPowerTranslate = "쇼핑력";
     $mostVisitedMarkets = "가장 많이 방문한 시장";
     $marketCostDistribution = "시장 비용 분포";
     $foodAndBeverageTranslate = "음식 및 음료";
@@ -229,6 +235,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "星期几";
     $totalCostTranslate = "总费用";
     $balanceForShoppingTranslate = "可用购物余额";
+    $shoppingPowerTranslate = "购物力";
     $mostVisitedMarkets = "访问最多的市场";
     $marketCostDistribution = "市场成本分布";
     $foodAndBeverageTranslate = "餐饮";
@@ -257,6 +264,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "曜日";
     $totalCostTranslate = "合計費用";
     $balanceForShoppingTranslate = "買い物の残高";
+    $shoppingPowerTranslate = "購買力";
     $mostVisitedMarkets = "最も訪問された市場";
     $marketCostDistribution = "市場コスト分布";
     $foodAndBeverageTranslate = "食べ物と飲み物";
@@ -286,6 +294,7 @@ if ($_SESSION['languageType'] == 'English') {
     $dayOfWeekTranslate = "Day of Week";
     $totalCostTranslate = "Total Cost";
     $balanceForShoppingTranslate = "Balance for Shopping";
+    $shoppingPowerTranslate = "Shopping Power";
     $mostVisitedMarkets = "Most Visited Markets";
     $marketCostDistribution = "Market Cost Distribution";
     $foodAndBeverageTranslate = "Food & Beverage";
