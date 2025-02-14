@@ -1622,7 +1622,8 @@ table {
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 14px;
     font-weight: bold;
-    color: rgb(241, 174, 2);
+    color: darkorange;
+    -webkit-text-stroke: .2px black;
     border-top-color: black;
     border-right-color: transparent;
     border-bottom-color: transparent;
@@ -1642,7 +1643,8 @@ table {
 
 .titleTableColor {
     background-color: rgb(181, 226, 241);
-    border-color: white;
+    background-image: linear-gradient(white, lightblue, white);
+    border-color: silver;
 }
 
 
