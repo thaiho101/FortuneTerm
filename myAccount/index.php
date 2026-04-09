@@ -10,7 +10,7 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
         exit();
 }
 
-require_once('../config.php');
+require_once('../config/config.php');
 require_once("../Components/language.php"); //Call function to activate the languageForm id
 require_once("../Components/theme.php"); //Call function to activate the themeForm id
 ////[Translation]/////////-->Header
