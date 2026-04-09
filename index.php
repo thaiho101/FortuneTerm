@@ -20,7 +20,7 @@ header("Pragma: no-cache");
 // Set Expires to a past date to invalidate the cache
 header("Expires: 0");
 
-require_once("config.php"); 
+require_once("./config/config.php"); 
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 if ($conn->connect_error)
