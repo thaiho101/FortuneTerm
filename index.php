@@ -828,7 +828,8 @@ $statement->close();
 //Add div of Menu Navigation
 require_once('./Components/menuNav.php');
 ?>
-    <button id="scrollToHomeLink" onclick="focusOnHomeLink()"><i class='fas fa-arrow-up'></i></button>
+    <!-- <button id="scrollToHomeLink" onclick="focusOnHomeLink()"><i class='fas fa-arrow-up'></i></button> -->
+     <a id="scrollToHomeLink" href='#homeLink'><i class='fas fa-arrow-up'></i></a>
 </body>
 </html>
 <?php

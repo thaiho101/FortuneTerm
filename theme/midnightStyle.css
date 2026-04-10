@@ -1264,6 +1264,9 @@ table {
 
 #scrollToHomeLink {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -1273,6 +1276,8 @@ table {
     background-image: linear-gradient(white, silver, white);
     box-shadow: 4px 4px 5px rgb(161, 161, 161);
     z-index: 1000;
+    background: rgba(255, 255, 255, 0.494);
+    text-decoration: none;
 }
 
 #scrollToHomeLink:hover {
