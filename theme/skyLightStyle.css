@@ -3239,4 +3239,8 @@ table {
     .insertBoxDate, .insertBoxMarket, .insertBoxFBCost, .insertBoxOtherCost {
         border-bottom-width: 0.5px;
     }
+
+    .monthOptionStyle {
+        width: 45px;
+    }
 } 
