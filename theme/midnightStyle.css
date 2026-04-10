@@ -3331,3 +3331,39 @@ table {
 /* Responsive Layout for iPad -->Bottom*/
   
 
+@media (max-width: 768px) {
+    .form-row {
+        width: 100%;
+        height: 100%;
+        align-items: stretch;
+    }
+
+    .insertLabel {
+        width: 42%;
+    }
+
+    .insertBox {
+        width: 58%;
+    }
+
+    .insertBoxDate {
+
+    }
+
+    .insertBoxMarket {
+        height: 2.9rem;
+    }
+
+    .insertBoxFBCost {
+
+    }
+
+    .insertBoxOtherCost {
+
+    }
+
+    .insertBoxDate, .insertBoxMarket, .insertBoxFBCost, .insertBoxOtherCost {
+        border-bottom-width: 0.5px;
+    }
+    
+} 
