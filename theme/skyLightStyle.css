@@ -573,10 +573,9 @@ body, div {
     margin-top: 10%;
     border-radius: 8px;
     border-color: silver;
-    background-image: linear-gradient(white, rgb(219, 219, 219), white);
-    border-width: 2px 1px 3px 1px;
+    background: rgba(255, 255, 255, 0.702);
+    border: 0.5px solid rgba(192, 192, 192, 0.533);
     box-shadow: 2px 2px 5px gray;
-    border: outset 2px silver;
     width: 70px;
     cursor: pointer;
 }
@@ -2052,29 +2051,20 @@ table {
 
     /* Buttons: Center-align and adjust margins */
     .insertButtonDiv {
-        /* padding-top: 10px; */
-        /* display: flex; */
-        /* justify-items: center; */
-        /* padding-right: 50px; */
         display: flex; /* Enable flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically (if needed) */
     height: 100%; /* Optional: adjust height to align vertically */
     }
     .insertButton {
-        /* margin-left: 0; */
-        /* width: 100%; */
-            /* margin-left: 70%; */
-            /* padding-top: 10px; */
         color: black;
         width: 100px;
         align-content: center;
-        /* margin-left: 70%; */
         border-radius: 6px;
         border-color: silver;
-        background-image: linear-gradient(white, rgb(219, 219, 219), white);
-        border-width: 2px 1px 3px 1px;
-        box-shadow: 4px 2px 5px gray;
+        background: rgb(255, 255, 255);
+        border: 0.5px solid rgba(192, 192, 192, 0.649);
+        box-shadow: 4px 2px 5px rgba(128, 128, 128, 0.717);
         cursor: pointer;
         padding: 5px;
     }
