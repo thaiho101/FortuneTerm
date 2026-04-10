@@ -1170,22 +1170,22 @@ table {
 }
 
 #dropDownButton {
-    /* border-radius: 5px;
-    border: solid 1px silver; */
     color: black;
-        align-content: center;
-        border-radius: 4px;
-        border-color: silver;
-        background-image: linear-gradient(white, rgb(219, 219, 219), white);
-        border-width: 2px 1px 3px 1px;
-        box-shadow: 4px 2px 5px gray;
-        cursor: pointer;
-        padding: 6px;
+    align-content: center;
+    border-radius: 50px;
+    width: 37px;
+    height: 37px;
+    border-color: rgba(192, 192, 192, 0.441);
+    background: linear-gradient(white, rgba(219, 219, 219, 0.446));
+    border: 0.5px solid silver;
+    box-shadow: 4px 2px 5px gray;
+    cursor: pointer;
+    padding: 6px;
 }
 
 #dropDownButton:hover {
-    border-width: 2px 1px 3px 1px;
-    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+    border: 0.5px solid silver;
+    box-shadow: 4px 2px 5px rgba(128, 128, 128, 0.422);
 }
 
 .dropDownOptions {
@@ -1194,9 +1194,7 @@ table {
     overflow: auto;
     border-radius: 8px;
     background-color: white;
-    border: solid 2px rgb(78, 176, 209);
-    border: solid 2px silver;
-    background-color: rgb(237, 237, 237);
+    border: solid 0.5px rgba(192, 192, 192, 0.518);
 }
 
 .dropDownSection:hover {
@@ -1209,15 +1207,14 @@ table {
 
     .dropDownLinks {
         text-decoration: none;
-        color: black;
-        /* background-color: silver; */
+        color: black
 
     }
 
     .dropDownLinksDiv:hover {
         /* width: 150px; */
-        background-color: rgb(156, 244, 244);
-        background-image: linear-gradient(white, rgb(250, 228, 148), white);
+        background-color: rgba(156, 244, 244, 0.184);
+        background-image: linear-gradient(white, rgba(0, 255, 255, 0.125), white);
 
     }
 }
