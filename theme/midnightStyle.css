@@ -444,8 +444,7 @@ body, div {
     padding-top: 30px;
     padding-bottom: 40px;
     flex: 1;
-    border: solid silver;
-    border-radius: 8px;
+    border-bottom: 0.5px solid rgba(177, 175, 175, 0.498);
 }
 
 #insertionForm {
@@ -709,10 +708,9 @@ body, div {
     margin-top: 10%;
     border-radius: 8px;
     border-color: silver;
-    background-image: linear-gradient(white, rgb(219, 219, 219), white);
-    border-width: 2px 1px 3px 1px;
+    background: rgba(255, 255, 255, 0.702);
+    border: 0.5px solid rgba(192, 192, 192, 0.533);
     box-shadow: 2px 2px 5px gray;
-    border: outset 2px silver;
     width: 70px;
     cursor: pointer;
 }
@@ -827,7 +825,7 @@ body, div {
     /* background-color: #BBDEFB; */
     padding: 10px;
     flex: 4;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     display: flex;
     flex-direction: column;
 }
@@ -851,7 +849,7 @@ body, div {
 }
 
 #currencyType {
-    background-image: linear-gradient(white, orange, rgb(252, 199, 100));
+    background: rgba(255, 194, 40, 0.745);
     border-radius: 4px;
     border: outset 1.5px silver;
     /* font-weight: 50rem; */
@@ -931,6 +929,11 @@ body, div {
     font-size: 15px;
     background-color: white;
 }
+
+.headerRow th {
+    border: 0.5px solid rgba(192, 192, 192, 0.505);
+}
+
 
 .headerRow th:nth-child(1), th:nth-child(5) {
     /* background-color: orange; */
@@ -1166,22 +1169,22 @@ table {
 }
 
 #dropDownButton {
-    /* border-radius: 5px;
-    border: solid 1px silver; */
     color: black;
-        align-content: center;
-        border-radius: 4px;
-        border-color: silver;
-        background-image: linear-gradient(white, rgb(219, 219, 219), white);
-        border-width: 2px 1px 3px 1px;
-        box-shadow: 4px 2px 5px gray;
-        cursor: pointer;
-        padding: 6px;
+    align-content: center;
+    border-radius: 50px;
+    width: 37px;
+    height: 37px;
+    border-color: rgba(192, 192, 192, 0.441);
+    background: linear-gradient(white, rgba(219, 219, 219, 0.446));
+    border: 0.5px solid silver;
+    box-shadow: 4px 2px 5px gray;
+    cursor: pointer;
+    padding: 6px;
 }
 
 #dropDownButton:hover {
-    border-width: 2px 1px 3px 1px;
-    box-shadow: 4px 2px 8px rgb(228, 227, 227);
+    border: 0.5px solid silver;
+    box-shadow: 4px 2px 5px rgba(128, 128, 128, 0.422);
 }
 
 .dropDownOptions {
@@ -1190,9 +1193,7 @@ table {
     overflow: auto;
     border-radius: 8px;
     background-color: white;
-    border: solid 2px rgb(78, 176, 209);
-    border: solid 2px silver;
-    background-color: rgb(237, 237, 237);
+    border: solid 0.5px rgba(192, 192, 192, 0.518);
 }
 
 .dropDownSection:hover {
@@ -1205,15 +1206,14 @@ table {
 
     .dropDownLinks {
         text-decoration: none;
-        color: black;
-        /* background-color: silver; */
+        color: black
 
     }
 
     .dropDownLinksDiv:hover {
         /* width: 150px; */
-        background-color: rgb(156, 244, 244);
-        background-image: linear-gradient(white, rgb(250, 228, 148), white);
+        background-color: rgba(156, 244, 244, 0.184);
+        background-image: linear-gradient(white, rgba(0, 255, 255, 0.125), white);
 
     }
 }
@@ -2199,19 +2199,14 @@ table {
     height: 100%; /* Optional: adjust height to align vertically */
     }
     .insertButton {
-        /* margin-left: 0; */
-        /* width: 100%; */
-            /* margin-left: 70%; */
-            /* padding-top: 10px; */
         color: black;
         width: 100px;
         align-content: center;
-        /* margin-left: 70%; */
         border-radius: 6px;
         border-color: silver;
-        background-image: linear-gradient(white, rgb(219, 219, 219), white);
-        border-width: 2px 1px 3px 1px;
-        box-shadow: 4px 2px 5px gray;
+        background: rgb(255, 255, 255);
+        border: 0.5px solid rgba(192, 192, 192, 0.649);
+        box-shadow: 4px 2px 5px rgba(128, 128, 128, 0.717);
         cursor: pointer;
         padding: 5px;
     }
@@ -2675,8 +2670,17 @@ table {
     border-radius: 50%;
     bottom: 20px;
     background-image: linear-gradient(rgb(239, 250, 253), rgb(157, 222, 250), white);
-    animation: menuEffection 2s infinite;
+        animation: menuEffection 2s infinite, activePop 1s ease;
+    }
+}
 
+@keyframes activePop {
+    from {
+        transform: scale(.9);
+    }
+    to {
+        transform: scale(1.05);
+    }
 }
 
 .iconMenu:hover {
@@ -3327,3 +3331,39 @@ table {
 /* Responsive Layout for iPad -->Bottom*/
   
 
+@media (max-width: 768px) {
+    .form-row {
+        width: 100%;
+        height: 100%;
+        align-items: stretch;
+    }
+
+    .insertLabel {
+        width: 42%;
+    }
+
+    .insertBox {
+        width: 58%;
+    }
+
+    .insertBoxDate {
+
+    }
+
+    .insertBoxMarket {
+        height: 2.9rem;
+    }
+
+    .insertBoxFBCost {
+
+    }
+
+    .insertBoxOtherCost {
+
+    }
+
+    .insertBoxDate, .insertBoxMarket, .insertBoxFBCost, .insertBoxOtherCost {
+        border-bottom-width: 0.5px;
+    }
+    
+} 
