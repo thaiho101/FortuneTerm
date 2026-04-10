@@ -444,8 +444,7 @@ body, div {
     padding-top: 30px;
     padding-bottom: 40px;
     flex: 1;
-    border: solid silver;
-    border-radius: 8px;
+    border-bottom: 0.5px solid rgba(177, 175, 175, 0.498);
 }
 
 #insertionForm {
@@ -827,7 +826,7 @@ body, div {
     /* background-color: #BBDEFB; */
     padding: 10px;
     flex: 4;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     display: flex;
     flex-direction: column;
 }
@@ -931,6 +930,11 @@ body, div {
     font-size: 15px;
     background-color: white;
 }
+
+.headerRow th {
+    border: 0.5px solid rgba(192, 192, 192, 0.505);
+}
+
 
 .headerRow th:nth-child(1), th:nth-child(5) {
     /* background-color: orange; */
