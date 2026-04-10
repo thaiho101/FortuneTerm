@@ -2670,8 +2670,17 @@ table {
     border-radius: 50%;
     bottom: 20px;
     background-image: linear-gradient(rgb(239, 250, 253), rgb(157, 222, 250), white);
-    animation: menuEffection 2s infinite;
+        animation: menuEffection 2s infinite, activePop 1s ease;
+    }
+}
 
+@keyframes activePop {
+    from {
+        transform: scale(.9);
+    }
+    to {
+        transform: scale(1.05);
+    }
 }
 
 .iconMenu:hover {

@@ -2546,7 +2546,16 @@ table {
         border-radius: 50%;
         bottom: 20px;
         background-image: linear-gradient(white, rgb(255, 216, 100), white);
-        animation: menuEffection 2s infinite;
+        animation: menuEffection 2s infinite, activePop 1s ease;
+    }
+}
+
+@keyframes activePop {
+    from {
+        transform: scale(.9);
+    }
+    to {
+        transform: scale(1.05);
     }
 }
 
