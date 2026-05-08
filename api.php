@@ -11,7 +11,7 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated'])
 }
 
 header("Content-Type: application/json");
-require_once("config.php");
+require_once("./config/config.php");
 
 $userId = $_SESSION['user_id'];
 // Kết nối cơ sở dữ liệu
