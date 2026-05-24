@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 #wholePage {
     font-family: "poppins", sans-serif;
     display: block;
@@ -95,6 +100,11 @@ form {
     font-weight: bold;
 }
 
+.greeting {
+    padding-bottom: 20px;
+    color: white;
+}
+
 .emailSection, .passwordSection {
     display: flex;
     margin-left: 8%;
@@ -177,6 +187,7 @@ form {
 .password-wrapper {
     display: flex;
     align-items: center;
+    /* position: relative; */
 }
 
 .password-wrapper-section {
@@ -205,6 +216,7 @@ form {
 }
 
 .visiblePasswordButton {
+    /* position: absolute; */
     background: none;
     border: none;
     cursor: pointer;
@@ -251,17 +263,22 @@ form {
 /* Media reponsive on Mobile */
 /* Responsive Layout for Mobile Devices */
 @media (max-width: 768px) {
+    .loginPanel input {
+        font-size: 16px;
+    }
+
     #wholePage {
         font-family: "poppins", sans-serif;
         display: block;
         justify-content: center;
         align-items: center;
-        width: 100vw;
-        height: 90vh;
+        width: 100%;
+        min-height: 100dvh;
         background-image: url("background.jpg");
-        background-size: 300%;
+        background-size: 450%;
         background-repeat: no-repeat;
         background-position: center;
+        overflow-x: hidden;
     }
 
     #navBar {
@@ -272,33 +289,40 @@ form {
     #navBar a {
         font-family: "poppins", sans-serif;
         text-decoration: none;
-        font-size: 35px;
         color: white;
-        
+        font-size: 50px;
         font-family: "Lilita One", serif;
-        font-weight: 50;
-        font-style: normal;
-
-        -webkit-text-stroke: 1.3px brown;
+        font-weight: 70;
     }
-    
-    #loginParent {
-        margin-top: -20%;
-        width: 100vw;
-        height: 100vh;
+
+    #homeLink {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+    }
+    
+    #loginParent {
+        /* margin-top: -20%; */
+        width: 100%;
+        min-height: calc(100dvh - 60px);
+        max-width: none;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        box-sizing: border-box;
     }
 
     #loginPanel {
         font-family: "poppins", sans-serif;
         display: block;
         color: red;
-        max-width: 300px;
-        width: 60%;
-        min-height: 200px;
-        height: 40%;
         border: solid .2px white;
         border-radius: 16px;
         backdrop-filter: blur(25px);
@@ -311,41 +335,71 @@ form {
 
         border-right-width: 1px;
         border-right-color: silver;
+
+        width: 100%;
+        /* max-width: 360px; */
+        max-width: none;
+        min-height: 500px;
+        height: auto;
+        box-sizing: border-box;
+        padding: 20px;
     }
 
     .loginLabel {
-        font-size: 25px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        font-size: 35px;
     }
 
 
 
     .emailSection, .passwordSection {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 20px 0;
         display: flex;
-        margin-left: 5%;
-        padding-bottom: 15px;
+        align-items: center;
+        gap: 10px;
+        box-sizing: border-box;
     }
     
     .userIcon, .passwordIcon {
-        padding-right: 2px;
+        /* padding-right: 2px; */
         color: white;
         font-size: 20px;
     }
     
     .emailInputBox, .passwordInputBox {
         border-radius: 50px;
-        width: 75%;
-        text-align: right;
+        width: 100%;
+        min-width: 0;
+        height: 42px;
+        text-align: left;
+        padding: 10px 15px;
         background-color: transparent;
         color: white;
         border: inset 2px white;
         font-size: 15px;
     }
+
+    .password-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        position: relative;
+    }
+
+    .passwordInputBox {
+        padding-right: 40px;
+    }
+
+    .visiblePasswordButton {
+        position: absolute;
+        right: 10px;
+    }
     
     .emailInputBox::placeholder, .passwordInputBox::placeholder {
         font-family: "poppins", sans-serif;
-        color: white;
+        color: rgba(219, 218, 218, 0.778);
         font-size: 15px;
     }
 
@@ -387,15 +441,18 @@ form {
     .registerSection {
         display: flex;
         justify-content: center;
-        padding-top: 5px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        gap: 10px;
+
     }
     
-    .registerSection {
+    /* .registerSection {
         padding-top: 20px;
         color: white;
         display: block;
         text-align: center;
-    }
+    } */
     
     #loginPanel:hover {
         backdrop-filter: blur(5px);
@@ -406,15 +463,16 @@ form {
         transform: scale(1);
         backdrop-filter: 0;
         transition: 0.5s transform ease-in-out, 0.5s backdrop-filter ease-in-out;
+        width: 100%;
     }
 
     .emailInputBox {
         height: 25px;
-        width: 190px;
+        /* width: 190px; */
     }
 
     .passwordInputBox {
-        width: 160px;
+        /* width: 160px; */
         height: 25px;
     }
     
