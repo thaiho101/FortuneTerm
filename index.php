@@ -653,20 +653,26 @@ $resultTotal = $statement->get_result();
 
     echo "</table>";
     $statement->close();
-
-    $fiftyPercent = $budget / 2;
-    $lessThanTwentyPercent = $budget / 7;
 ?>
                 <script>
-                    const totalBudget = <?php echo $budget; ?>;
-                    const remainingBudget = <?php echo $balanceForShopping; ?>;
-                    const fiftyPercent = <?php echo $fiftyPercent; ?>;
-                    const lessThanTwentyPercent = <?php echo $lessThanTwentyPercent; ?>;
+
+                    const totalBudget = <?php echo $budget; ?>; //E.g. 1000
+                    const totalBudgetRatioDefault = 100;    //Prepare for a formula calculation
+                    const ratio = totalBudget/totalBudgetRatioDefault;      //Calc the ratio for the totalBudgetRatioFinal below
+
+                    const totalBudgetRatioFinal = totalBudget/ratio; //There will be always 100 div sections for battery distribution. Also, prevent the big number currency such as: Vietnam dong like millions div....
+
+                    const remainingBudgetDefault = <?php echo $balanceForShopping; ?>;
+                    const remainingBudgetRatio = remainingBudgetDefault/totalBudget;
+                    const remainingBudget = remainingBudgetRatio*totalBudgetRatioFinal;
+
+                    const fiftyPercent = totalBudgetRatioFinal/2;
+                    const lessThanTwentyPercent = totalBudgetRatioFinal/7;
 
                     const progressBar = document.querySelector('.batteryChild');
 
                     progressBar.innerHTML = "";
-                    for (let i = 1; i <= totalBudget; i++) {
+                    for (let i = 1; i <= totalBudgetRatioFinal; i++) {
                         const div = document.createElement('div');
                         if (i <= remainingBudget && (remainingBudget > fiftyPercent)) {
                             div.classList.add('percentPortionCompleted');
@@ -678,7 +684,7 @@ $resultTotal = $statement->get_result();
                             div.classList.add('percentPortionCompletedLessThanTwentyPercent');
                             const lowBudgetForShopping = document.querySelector('.batteryParent');
                             lowBudgetForShopping.classList.add('lowBudgetAffect');
-                        } else if (i <= remainingBudget && (remainingBudget < fiftyPercent)) {
+                        } else if (i <= remainingBudget && (remainingBudget <= fiftyPercent)) {
                             div.classList.add('percentPortionCompletedLessThanFiftyPercent');
                         } else {
                             div.classList.add('percentPortionRemaining');
