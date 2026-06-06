@@ -997,7 +997,9 @@ table {
 }
 /* ------Scrollbar of content----->Bottom */
 
-
+.silverBackgroundRow {
+    background-color: rgba(243, 241, 241, 0.804);
+}
 
 .actionStyle {
     width: 100px;
