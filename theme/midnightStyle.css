@@ -2684,7 +2684,7 @@ table {
     background-image: linear-gradient(rgb(239, 250, 253), rgb(157, 222, 250), white);
         animation: menuEffection 2s infinite, activePop 1s ease;
     }
-}
+
 
 @keyframes activePop {
     from {
@@ -2736,8 +2736,8 @@ table {
     justify-self: center;
 }
 /* //// Battery Animation //////////////////////-->Bottom*/
-
 }
+
 
 
 
