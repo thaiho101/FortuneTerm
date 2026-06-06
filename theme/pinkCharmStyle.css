@@ -824,6 +824,11 @@ table {
     font-family: 'Roboto', sans-serif;
 }
 
+.content table,
+.content table td {
+    border: .5px solid rgba(192, 192, 192, 0.346);
+}
+
 
 
 .wrapText {
@@ -862,7 +867,9 @@ table {
 }
 /* ------Scrollbar of content----->Bottom */
 
-
+.silverBackgroundRow {
+    background-color: rgba(72, 72, 72, 0.075);
+}
 
 .actionStyle {
     width: 100px;
@@ -933,7 +940,7 @@ table {
 }
 
 .gridTableColor {
-    border: 1px solid silver;
+    border: 1px solid rgba(180, 179, 179, 0.455);
 }
 
 .redundantCol {

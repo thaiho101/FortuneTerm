@@ -954,6 +954,11 @@ table {
     font-family: 'Roboto', sans-serif;
 }
 
+.content table,
+.content table td {
+    border: .5px solid rgba(192, 192, 192, 0.346);
+}
+
 
 
 .wrapText {
@@ -992,7 +997,9 @@ table {
 }
 /* ------Scrollbar of content----->Bottom */
 
-
+.silverBackgroundRow {
+    background-color: rgba(243, 241, 241, 0.804);
+}
 
 .actionStyle {
     width: 100px;
@@ -1063,7 +1070,7 @@ table {
 }
 
 .gridTableColor {
-    border: 1px solid silver;
+    border: 1px solid rgba(180, 179, 179, 0.455);
 }
 
 .redundantCol {
@@ -2677,7 +2684,7 @@ table {
     background-image: linear-gradient(rgb(239, 250, 253), rgb(157, 222, 250), white);
         animation: menuEffection 2s infinite, activePop 1s ease;
     }
-}
+
 
 @keyframes activePop {
     from {
@@ -2729,8 +2736,8 @@ table {
     justify-self: center;
 }
 /* //// Battery Animation //////////////////////-->Bottom*/
-
 }
+
 
 
 
