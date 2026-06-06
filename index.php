@@ -458,6 +458,7 @@ $result = $statement->get_result();
 if($result->num_rows > 0)
 {
     echo "<table border='1'>";
+    // $evenOdd = 0;
         while($row = $result->fetch_assoc())
         {
             $numFBColor = $row['food_bev_cost'] == 0 ? 'silverNumber' : 'blueNumber';
@@ -547,8 +548,8 @@ if($result->num_rows > 0)
             }
             
             ////[Translation]/////////-->Bottom
-
-            echo "<tr class='rowHighLight fontStyle' id= " . $row['mcID'] . ">
+            // $evenOddClass = $evenOdd === 0 ? "silverBackgroundRow" : "";
+            echo "<tr class='rowHighLight fontStyle " . $evenOddClass . "' id= " . $row['mcID'] . ">
                     <td class='expand tdLength'>" . $dayOfWeek . "</td>
                     <td class='expand tdLength'>" . $row['ShoppingDate'] . "</td>
                     <td class='expand tdLength'>" . $row['market_name'] . "</td>
@@ -559,7 +560,12 @@ if($result->num_rows > 0)
                     </td>
                     <td class='gridTableColor dataDeleteStyle'>
                             <button id=" ."delete_" . $row['mcID'] . " name='delete' class='deleteSubmitStyle'><i class='fas fa-trash-alt'></i></button>
-                    </td>";
+                    </td></tr>";
+            // if ($evenOdd === 0) {
+            //     $evenOdd = 1;
+            // } else {
+            //     $evenOdd = 0;
+            // }
         }
     echo "</table>";
 }
